@@ -25,7 +25,7 @@ public class Grupo implements Serializable {
 
     @NotNull
     @Size(min = 1, max = 35)
-    @Column(name = "nm_grupo", length = 35, nullable = false)
+    @Column(name = "nm_grupo", length = 35, nullable = false, unique = true)
     private String nmGrupo;
 
     @Max(value = 100)

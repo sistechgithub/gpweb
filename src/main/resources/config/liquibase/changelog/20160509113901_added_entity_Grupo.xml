@@ -22,8 +22,8 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="nm_grupo" type="varchar(35)">
-                <constraints nullable="false" />
-            </column>
+                <constraints unique="true" nullable="false" />
+            </column>            
             
             <column name="vl_comissao" type="decimal(10,2)">
                 <constraints nullable="true" />

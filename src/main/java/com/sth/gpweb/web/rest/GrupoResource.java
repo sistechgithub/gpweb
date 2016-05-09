@@ -51,9 +51,15 @@ public class GrupoResource {
     @Timed
     public ResponseEntity<Grupo> createGrupo(@Valid @RequestBody Grupo grupo) throws URISyntaxException {
         log.debug("REST request to save Grupo : {}", grupo);
+        
         if (grupo.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("grupo", "idexists", "A new grupo cannot already have an ID")).body(null);
         }
+        
+        if (grupoService.findNmGrupoExists(grupo.getNmGrupo()) != null) {
+            return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("grupo", "nmexists", "A new grupo cannot already have an ID")).body(null);
+        }        
+        
         Grupo result = grupoService.save(grupo);
         return ResponseEntity.created(new URI("/api/grupos/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert("grupo", result.getId().toString()))

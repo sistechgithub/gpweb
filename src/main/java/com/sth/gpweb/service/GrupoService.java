@@ -49,4 +49,12 @@ public interface GrupoService {
      *  @return the list of entities
      */
     Page<Grupo> search(String query, Pageable pageable);
+    
+    /**
+     * Search for the nmGrupo already exists.
+     * 
+     *  @param query the nmGrupo
+     *  @return the list of entities
+     */
+    String findNmGrupoExists(String nmGrupo);
 }
