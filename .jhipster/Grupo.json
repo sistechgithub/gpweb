@@ -1,0 +1,77 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "nmGrupo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": "1",
+            "fieldValidateRulesMaxlength": "35"
+        },
+        {
+            "fieldName": "vlComissao",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "max"
+            ],
+            "fieldValidateRulesMax": "100"
+        },
+        {
+            "fieldName": "vlDesconto",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "max"
+            ],
+            "fieldValidateRulesMax": 100
+        },
+        {
+            "fieldName": "flPromo",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "flDesco",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "dtPromo",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "dtOperacao",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "flSemContagem",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "flEnvio",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "nnNovo",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nnDay",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nnDayWeek",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nnType",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20160509113901",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "grupo",
+    "pagination": "pagination"
+}
