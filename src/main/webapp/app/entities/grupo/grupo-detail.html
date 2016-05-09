@@ -1,0 +1,65 @@
+
+<div>
+    <h2><span translate="gpwebApp.grupo.detail.title">Grupo</span> {{vm.grupo.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="gpwebApp.grupo.nmGrupo">Nm Grupo</span></dt>
+        <dd>
+            <span>{{vm.grupo.nmGrupo}}</span>
+        </dd>
+        <dt><span translate="gpwebApp.grupo.vlComissao">Vl Comissao</span></dt>
+        <dd>
+            <span>{{vm.grupo.vlComissao}}</span>
+        </dd>
+        <dt><span translate="gpwebApp.grupo.vlDesconto">Vl Desconto</span></dt>
+        <dd>
+            <span>{{vm.grupo.vlDesconto}}</span>
+        </dd>
+        <dt><span translate="gpwebApp.grupo.flPromo">Fl Promo</span></dt>
+        <dd>
+            <span>{{vm.grupo.flPromo}}</span>
+        </dd>
+        <dt><span translate="gpwebApp.grupo.flDesco">Fl Desco</span></dt>
+        <dd>
+            <span>{{vm.grupo.flDesco}}</span>
+        </dd>
+        <dt><span translate="gpwebApp.grupo.dtPromo">Dt Promo</span></dt>
+        <dd>
+            <span>{{vm.grupo.dtPromo | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span translate="gpwebApp.grupo.dtOperacao">Dt Operacao</span></dt>
+        <dd>
+            <span>{{vm.grupo.dtOperacao | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span translate="gpwebApp.grupo.flSemContagem">Fl Sem Contagem</span></dt>
+        <dd>
+            <span>{{vm.grupo.flSemContagem}}</span>
+        </dd>
+        <dt><span translate="gpwebApp.grupo.flEnvio">Fl Envio</span></dt>
+        <dd>
+            <span>{{vm.grupo.flEnvio}}</span>
+        </dd>
+        <dt><span translate="gpwebApp.grupo.nnNovo">Nn Novo</span></dt>
+        <dd>
+            <span>{{vm.grupo.nnNovo}}</span>
+        </dd>
+        <dt><span translate="gpwebApp.grupo.nnDay">Nn Day</span></dt>
+        <dd>
+            <span>{{vm.grupo.nnDay}}</span>
+        </dd>
+        <dt><span translate="gpwebApp.grupo.nnDayWeek">Nn Day Week</span></dt>
+        <dd>
+            <span>{{vm.grupo.nnDayWeek}}</span>
+        </dd>
+        <dt><span translate="gpwebApp.grupo.nnType">Nn Type</span></dt>
+        <dd>
+            <span>{{vm.grupo.nnType}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>
