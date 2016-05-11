@@ -77,7 +77,7 @@
             }
         },
         "field": {
-            "id": "ID"
+            "id": "Code"
         },
         "ribbon": {
             "dev":"Development"
@@ -127,5 +127,10 @@
     "footer": {
         "company": "Business Systems",
         "version": "Version"
+    },
+    "pagination": {
+        "showing": "Showing",
+        "of": "of",
+        "items": "items"
     }
 }

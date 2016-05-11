@@ -127,5 +127,10 @@
     "footer": {
         "company": "Sistemas Empresariais",
         "version": "Versão"
+    },
+    "pagination": {
+        "showing": "Mostrando",
+        "of": "de",
+        "items": "itens"
     }
 }

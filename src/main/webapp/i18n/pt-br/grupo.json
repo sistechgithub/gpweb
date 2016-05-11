@@ -3,7 +3,7 @@
         "grupo" : {
             "home": {
                 "title": "Grupos",
-                "createLabel": "Criar novo Grupo",
+                "createLabel": "Adicionar",
                 "createOrEditLabel": "Criar ou editar Grupo",
                 "search": "Pesquisar por Grupo"
             },
@@ -16,11 +16,11 @@
             "detail": {
                 "title": "Grupo"
             },
-            "nmGrupo": "Nm Grupo",
-            "vlComissao": "Vl Comissao",
+            "nmGrupo": "Nome",
+            "vlComissao": "Comissão (%)",
             "vlDesconto": "Vl Desconto",
-            "flPromo": "Fl Promo",
-            "flDesco": "Fl Desco",
+            "flPromo": "Promoção",
+            "flDesco": "Sem Desconto",
             "dtPromo": "Dt Promo",
             "dtOperacao": "Dt Operacao",
             "flSemContagem": "Fl Sem Contagem",
@@ -28,7 +28,8 @@
             "nnNovo": "Nn Novo",
             "nnDay": "Nn Day",
             "nnDayWeek": "Nn Day Week",
-            "nnType": "Nn Type"
+            "nnType": "Nn Type",
+            "acoes": "Ações"
         }
     }
 }

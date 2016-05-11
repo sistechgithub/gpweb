@@ -2,8 +2,8 @@
     "gpwebApp": {
         "grupo" : {
             "home": {
-                "title": "Grupos",
-                "createLabel": "Create a new Grupo",
+                "title": "Groups",
+                "createLabel": "Add",
                 "createOrEditLabel": "Create or edit a Grupo",
                 "search": "Search for Grupo"
             },
@@ -14,13 +14,13 @@
                 "question": "Are you sure you want to delete Grupo {{ id }}?"
             },
             "detail": {
-                "title": "Grupo"
+                "title": "Group"
             },
-            "nmGrupo": "Nm Grupo",
-            "vlComissao": "Vl Comissao",
+            "nmGrupo": "Name",
+            "vlComissao": "Commission (%)",
             "vlDesconto": "Vl Desconto",
-            "flPromo": "Fl Promo",
-            "flDesco": "Fl Desco",
+            "flPromo": "Promotion",
+            "flDesco": "No Discount",
             "dtPromo": "Dt Promo",
             "dtOperacao": "Dt Operacao",
             "flSemContagem": "Fl Sem Contagem",
@@ -28,7 +28,8 @@
             "nnNovo": "Nn Novo",
             "nnDay": "Nn Day",
             "nnDayWeek": "Nn Day Week",
-            "nnType": "Nn Type"
+            "nnType": "Nn Type",
+            "acoes": "Actions"
         }
     }
 }

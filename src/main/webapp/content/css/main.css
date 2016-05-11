@@ -689,12 +689,12 @@ Página Grupos
   max-width: 110px;
 }
 .col-grupo-nome{
-  min-width: 500px;
-  max-width: 500px;
+  min-width: 470px;
+  max-width: 470px;
 }
 .col-grupo-comissao{
-  min-width: 155px;
-  max-width: 155px;
+  min-width: 160px;
+  max-width: 160px;
 }
 .col-grupo-promocao{
   min-width: 135px;
