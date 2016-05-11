@@ -16,14 +16,20 @@
             'ui.router',
             'infinite-scroll',
             // jhipster-needle-angularjs-add-module JHipster will add new module here
-            'angular-loading-bar'
+            'angular-loading-bar',
+            'oc.lazyLoad'
         ])
         .run(run);
 
-    run.$inject = ['stateHandler', 'translationHandler'];
+    run.$inject = ['stateHandler', 'translationHandler', '$ocLazyLoad'];
 
-    function run(stateHandler, translationHandler) {
+    function run(stateHandler, translationHandler, $ocLazyLoad) {
         stateHandler.initialize();
         translationHandler.initialize();
+        
+        $ocLazyLoad.load([{
+            files: ['content/js/AdminLTE.js'],
+            cache: true
+        }]);
     }
 })();

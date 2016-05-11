@@ -5,9 +5,9 @@
         .module('gpwebApp')
         .controller('NavbarController', NavbarController);
 
-    NavbarController.$inject = ['$state', 'Auth', 'Principal', 'ProfileService', 'LoginService'];
+    NavbarController.$inject = ['$state', '$ocLazyLoad', 'Auth', 'Principal', 'ProfileService', 'LoginService'];
 
-    function NavbarController ($state, Auth, Principal, ProfileService, LoginService) {
+    function NavbarController ($state, $ocLazyLoad, Auth, Principal, ProfileService, LoginService) {
         var vm = this;
 
         vm.isNavbarCollapsed = true;
@@ -42,5 +42,14 @@
         function collapseNavbar() {
             vm.isNavbarCollapsed = true;
         }
+        
+        $ocLazyLoad.load([{
+          files: ['content/js/AdminLTE-navbar.js'],
+          cache: false
+        },{
+          files: ['content/js/fullscreen.js'],
+          cache: false
+        }]);
+
     }
 })();

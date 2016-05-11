@@ -4,10 +4,14 @@
         "browsehappy": "You are using an <strong>outdated</strong> browser. Please <a href=\"http://browsehappy.com/?locale=en\">upgrade your browser</a> to improve your experience.",
         "menu": {
             "home": "Home",
+            "fullscreen": "Fullscreen",
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
-                "main": "Entities",
-                "grupo": "Grupo",
+                "records": "Records",
+                "person": "Person",
+                "stock": "Stock",
+                "payments": "Payments",
+                "grupo": "Group",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
@@ -120,5 +124,8 @@
         "idexists": "A new {{ entityName }} cannot already have an ID",
         "nmexists": "A new {{ entityName }} already used!"
     },
-    "footer": "This is your footer"
+    "footer": {
+        "company": "Business Systems",
+        "version": "Version"
+    }
 }
