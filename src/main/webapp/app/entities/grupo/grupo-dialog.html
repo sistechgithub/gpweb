@@ -4,143 +4,180 @@
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
                 ng-click="vm.clear()">&times;</button>
+        <i class="mdi mdi-package"></i>	
         <h4 class="modal-title" id="myGrupoLabel" translate="gpwebApp.grupo.home.createOrEditLabel">Create or edit a Grupo</h4>
     </div>
     <div class="modal-body">
         <jhi-alert-error></jhi-alert-error>
-        <div class="form-group" ng-show="vm.grupo.id">
-            <label for="id" translate="global.field.id">ID</label>
-            <input type="text" class="form-control" id="id" name="id"
-                    ng-model="vm.grupo.id" readonly />
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gpwebApp.grupo.nmGrupo" for="field_nmGrupo">Nm Grupo</label>
-            <input type="text" class="form-control" name="nmGrupo" id="field_nmGrupo"
-                    ng-model="vm.grupo.nmGrupo"
-                    required ng-minlength="1" ng-maxlength="35" />
-            <div ng-show="editForm.nmGrupo.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.nmGrupo.$error.required" translate="entity.validation.required">
-                    This field is required.
-                </p>
-                <p class="help-block"
-                    ng-show="editForm.nmGrupo.$error.minlength" translate="entity.validation.minlength" translate-value-min="1">
-                    This field is required to be at least 1 characters.
-                </p>
-                <p class="help-block"
-                    ng-show="editForm.nmGrupo.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="35">
-                    This field cannot be longer than 35 characters.
-                </p>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gpwebApp.grupo.vlComissao" for="field_vlComissao">Vl Comissao</label>
-            <input type="number" class="form-control" name="vlComissao" id="field_vlComissao"
-                    ng-model="vm.grupo.vlComissao"
-                    max="100" />
-            <div ng-show="editForm.vlComissao.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.vlComissao.$error.max" translate="entity.validation.max" translate-value-max="100">
-                    This field cannot be more than 100.
-                </p>
-                <p class="help-block"
-                    ng-show="editForm.vlComissao.$error.number" translate="entity.validation.number">
-                    This field should be a number.
-                </p>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gpwebApp.grupo.vlDesconto" for="field_vlDesconto">Vl Desconto</label>
-            <input type="number" class="form-control" name="vlDesconto" id="field_vlDesconto"
-                    ng-model="vm.grupo.vlDesconto"
-                    max="100" />
-            <div ng-show="editForm.vlDesconto.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.vlDesconto.$error.max" translate="entity.validation.max" translate-value-max="100">
-                    This field cannot be more than 100.
-                </p>
-                <p class="help-block"
-                    ng-show="editForm.vlDesconto.$error.number" translate="entity.validation.number">
-                    This field should be a number.
-                </p>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gpwebApp.grupo.flPromo" for="field_flPromo">Fl Promo</label>
-            <input type="checkbox" class="form-control" name="flPromo" id="field_flPromo"
-                    ng-model="vm.grupo.flPromo"
-                     />
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gpwebApp.grupo.flDesco" for="field_flDesco">Fl Desco</label>
-            <input type="checkbox" class="form-control" name="flDesco" id="field_flDesco"
-                    ng-model="vm.grupo.flDesco"
-                     />
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gpwebApp.grupo.dtPromo" for="field_dtPromo">Dt Promo</label>
-                <div class="input-group">
-                    <input id="field_dtPromo" type="text" class="form-control" name="dtPromo" uib-datepicker-popup="{{dateformat}}" ng-model="vm.grupo.dtPromo" is-open="vm.datePickerOpenStatus.dtPromo"
-                    />
-                    <span class="input-group-btn">
-                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dtPromo')"><i class="glyphicon glyphicon-calendar"></i></button>
-                    </span>
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="form-group" ng-show="vm.grupo.id">
+                    <label for="id" translate="global.field.id">Código</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                            ng-model="vm.grupo.id" readonly />
                 </div>
+            </div>  
         </div>
-        <div class="form-group">
-            <label class="control-label" translate="gpwebApp.grupo.dtOperacao" for="field_dtOperacao">Dt Operacao</label>
-                <div class="input-group">
-                    <input id="field_dtOperacao" type="text" class="form-control" name="dtOperacao" uib-datepicker-popup="{{dateformat}}" ng-model="vm.grupo.dtOperacao" is-open="vm.datePickerOpenStatus.dtOperacao"
-                    />
-                    <span class="input-group-btn">
-                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dtOperacao')"><i class="glyphicon glyphicon-calendar"></i></button>
-                    </span>
+        <div class="row">          
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label class="control-label" translate="gpwebApp.grupo.nmGrupo" for="field_nmGrupo">Nome</label>
+                    <input type="text" class="form-control text-uppercase" name="nmGrupo" id="field_nmGrupo"
+                            ng-model="vm.grupo.nmGrupo"
+                            required ng-minlength="1" ng-maxlength="35" />
+                    <div ng-show="editForm.nmGrupo.$invalid">
+                        <p class="help-block"
+                            ng-show="editForm.nmGrupo.$error.required" translate="entity.validation.required">
+                            This field is required.
+                        </p>
+                        <p class="help-block"
+                            ng-show="editForm.nmGrupo.$error.minlength" translate="entity.validation.minlength" translate-value-min="1">
+                            This field is required to be at least 1 characters.
+                        </p>
+                        <p class="help-block"
+                            ng-show="editForm.nmGrupo.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="35">
+                            This field cannot be longer than 35 characters.
+                        </p>
+                    </div>
                 </div>
+            </div>            
         </div>
-        <div class="form-group">
-            <label class="control-label" translate="gpwebApp.grupo.flSemContagem" for="field_flSemContagem">Fl Sem Contagem</label>
-            <input type="checkbox" class="form-control" name="flSemContagem" id="field_flSemContagem"
-                    ng-model="vm.grupo.flSemContagem"
-                     />
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gpwebApp.grupo.flEnvio" for="field_flEnvio">Fl Envio</label>
-            <input type="checkbox" class="form-control" name="flEnvio" id="field_flEnvio"
-                    ng-model="vm.grupo.flEnvio"
-                     />
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gpwebApp.grupo.nnNovo" for="field_nnNovo">Nn Novo</label>
-            <input type="number" class="form-control" name="nnNovo" id="field_nnNovo"
-                    ng-model="vm.grupo.nnNovo"
-                     />
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gpwebApp.grupo.nnDay" for="field_nnDay">Nn Day</label>
-            <input type="number" class="form-control" name="nnDay" id="field_nnDay"
-                    ng-model="vm.grupo.nnDay"
-                     />
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gpwebApp.grupo.nnDayWeek" for="field_nnDayWeek">Nn Day Week</label>
-            <input type="text" class="form-control" name="nnDayWeek" id="field_nnDayWeek"
-                    ng-model="vm.grupo.nnDayWeek"
-                     />
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gpwebApp.grupo.nnType" for="field_nnType">Nn Type</label>
-            <input type="number" class="form-control" name="nnType" id="field_nnType"
-                    ng-model="vm.grupo.nnType"
-                     />
+        
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label class="control-label" translate="gpwebApp.grupo.vlComissao" for="field_vlComissao">Comissão (%)</label>
+                    <input type="number" class="form-control" name="vlComissao" id="field_vlComissao"
+                            ng-model="vm.grupo.vlComissao"
+                            max="100" />
+                    <div ng-show="editForm.vlComissao.$invalid">
+                        <p class="help-block"
+                            ng-show="editForm.vlComissao.$error.max" translate="entity.validation.max" translate-value-max="100">
+                            This field cannot be more than 100.
+                        </p>
+                        <p class="help-block"
+                            ng-show="editForm.vlComissao.$error.number" translate="entity.validation.number">
+                            This field should be a number.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
 
+        <div class="row">			
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="flDesco" ng-model="vm.grupo.flDesco"/>
+                            <span class="checkbox__label" translate="gpwebApp.grupo.flDesco">Sem Desconto</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">			
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="flPromo" ng-model="vm.grupo.flPromo"/>
+                            <span class="checkbox__label" translate="gpwebApp.grupo.flPromo">Promoção</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Só mostra caso tenha selecionado promoção -->
+        <div class="panel-body" ng-show="vm.grupo.flPromo" ng-init="rgAux1 = false; rgAux2 = false; rgAux3 = false;">
+
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-xs-3 col-sm-2 col-md-1 radio no-padding">
+                        <label>
+                            <input type="radio" name="nn_type" id="field_nn_type1" value="1" ng-model="vm.grupo.nnType" ng-click="rgAux2 = false; rgAux3 = false;"/>
+                            <span class="radio__label" translate="gpwebApp.grupo.dtPromo">Até:</span>
+                      </label>
+                    </div>						
+
+                    <div class="col-md-3 input-group"> 
+                        <input type="text" class="form-control" name="dtPromo"	uib-datepicker-popup="{{dateformat}}" ng-model="vm.grupo.dtPromo" is-open="vm.datePickerOpenStatus.dtPromo" ng-disabled="vm.grupo.nnType != 1"/>
+                        <div class="input-group-addon">
+                            <i class="mdi mdi-calendar" ng-click="vm.openCalendar('dtPromo')"></i>
+                        </div>
+                    </div>  
+                </div>	
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-xs-3 col-sm-2 col-md-1 radio no-padding">
+                        <label>
+                            <input type="radio" name="nn_type" id="field_nn_type2" value="2" ng-model="vm.grupo.nnType" ng-click="rgAux1 = false; rgAux3 = false;"/>
+                            <span class="radio__label" translate="gpwebApp.grupo.nnDay">Dia:</span>
+                        </label>
+                    </div>
+
+                    <div class="col-xs-9 col-sm-10 col-md-3 input-group">
+                        <input class="form-control" type="number" name="nDay" id="nDay" ng-model="vm.grupo.nnDay" 
+                         ng-disabled="vm.grupo.nnType != 2" min="1" max="31"/>
+                    </div>					
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-xs-3 col-sm-2 col-md-1 radio no-padding">
+                        <label>
+                            <input type="radio" name="nn_type" id="field_nn_type3" value="3" ng-model="vm.grupo.nnType" ng-click="rgAux1 = false; rgAux2 = false;"/>
+                            <span class="radio__label" translate="gpwebApp.grupo.nnDayWeek">Em:</span>
+                        </label>
+                    </div>
+
+                    <div class="col-xs-9 col-sm-10 col-md-3 input-group">
+                        <select class="form-control" id="selDay" ng-model="vm.grupo.nnDayWeek"  
+                            ng-disabled="vm.grupo.nnType != 3">
+                            <option value="DOMINGOS">DOMINGOS</option>
+                            <option value="SEGUNDAS">SEGUNDAS</option>
+                            <option value="TERCAS">TERÇAS</option>
+                            <option value="QUARTAS">QUARTAS</option>
+                            <option value="QUINTAS">QUINTAS</option>
+                            <option value="SEXTAS">SEXTAS</option>
+                            <option value="SABADOS" id="teste">SÁBADOS</option>
+                        </select>
+                    </div>											
+                </div>                
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-xs-12 col-sm-4 col-md-2 input-group">
+                        <label class="control-label" translate="gpwebApp.grupo.vlDesconto" for="field_vlDesconto">Desconto (%)</label>
+                        <input type="number" class="form-control" name="vlDesconto" id="field_vlDesconto"
+                                ng-model="vm.grupo.vlDesconto"
+                                max="100" />
+                        <div ng-show="editForm.vlDesconto.$invalid">
+                            <p class="help-block"
+                                ng-show="editForm.vlDesconto.$error.max" translate="entity.validation.max" translate-value-max="100">
+                                This field cannot be more than 100.
+                            </p>
+                            <p class="help-block"
+                                ng-show="editForm.vlDesconto.$error.number" translate="entity.validation.number">
+                                This field should be a number.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>	
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
-            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+            <span class="mdi mdi-close"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
         </button>
-        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
-            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-success">
+            <span class="mdi mdi-content-save"></span>&nbsp;&nbsp;<span translate="entity.action.save">Save</span>
         </button>
     </div>
 </form>

@@ -8,7 +8,7 @@
     <div class="box-header">
         <div class="row">
             <div class="col-xs-4 col-sm-5">
-                <button class="btn btn-primary" ui-sref="grupo.new" >
+                <button class="btn btn-success" ui-sref="grupo.new" >
                     <span class="mdi mdi-plus"></span>
                     <span class="hidden-xs"  translate="gpwebApp.grupo.home.createLabel">
                         Adicionar
@@ -52,10 +52,20 @@
                 <tbody>
                     <tr ng-repeat="grupo in vm.grupos track by grupo.id">
                         <td><a ui-sref="grupo-detail({id:grupo.id})">{{grupo.id}}</a></td>
-                        <td>{{grupo.nmGrupo}}</td>
-                        <td>{{grupo.vlComissao}}</td>
-                        <td>{{grupo.flPromo}}</td>
-                        <td>{{grupo.flDesco}}</td>
+                        <td class="text-uppercase">{{grupo.nmGrupo}}</td>
+                        <td class="text-right">{{grupo.vlComissao | currency:'':2}}</td>
+                        <td class="text-center">
+                            <i class="mdi"
+                                ng-class="{'mdi-check text-success': grupo.flPromo,
+                                'mdi-close text-danger': !grupo.flPromo}">
+                            </i>
+                        </td>
+                        <td class="text-center">
+                            <i class="mdi"
+                                ng-class="{'mdi-check text-success': grupo.flDesco,
+                                'mdi-close text-danger': !grupo.flDesco}">
+                            </i>
+                        </td>
                         <td class="text-right">
                             <div>
                                 <button type="submit"

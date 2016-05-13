@@ -18,17 +18,17 @@
             },
             "nmGrupo": "Name",
             "vlComissao": "Commission (%)",
-            "vlDesconto": "Vl Desconto",
+            "vlDesconto": "Discount (%)",
             "flPromo": "Promotion",
             "flDesco": "No Discount",
-            "dtPromo": "Dt Promo",
-            "dtOperacao": "Dt Operacao",
             "flSemContagem": "Fl Sem Contagem",
             "flEnvio": "Fl Envio",
-            "nnNovo": "Nn Novo",
-            "nnDay": "Nn Day",
-            "nnDayWeek": "Nn Day Week",
+            "dtOperacao": "Dt Operacao",
+            "dtPromo": "To:",
+            "nnDay": "Day:",
+            "nnDayWeek": "In:",
             "nnType": "Nn Type",
+            "nnNovo": "Nn Novo",
             "acoes": "Actions"
         }
     }
