@@ -16,20 +16,25 @@
             "detail": {
                 "title": "Grupo"
             },
-            "nmGrupo": "Nome",
-            "vlComissao": "Comissão (%)",
-            "vlDesconto": "Desconto (%)",
-            "flPromo": "Promoção",
-            "flDesco": "Sem Desconto",
+            "group": "Grupo",
+            "name": "Nome",
+            "commission": "Comissão (%)",
+            "noDiscount": "Sem Desconto",
+            "promotion": "Promoção",
+            "byPeriod": "Até",
+            "perDay": "Dia",
+            "perWeek": "Em",
+            "byPeriodDetail": "Válida até:",
+            "perDayDetail": "Válida para todo dia:",
+            "perWeekDetail": "Válida apenas nas(os):",
+            "discount": "Desconto (%)",
+            "actions": "Ações",
+            
+            "dtOperacao": "Dt Operacao",
             "flSemContagem": "Fl Sem Contagem",
             "flEnvio": "Fl Envio",
-            "dtOperacao": "Dt Operacao",
-            "dtPromo": "Até:",
-            "nnDay": "Dia:",
-            "nnDayWeek": "Em:",
             "nnType": "Nn Type",
-            "nnNovo": "Nn Novo",
-            "acoes": "Ações"
+            "nnNovo": "Nn Novo"
         }
     }
 }

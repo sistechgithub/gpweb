@@ -5,7 +5,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
                 ng-click="vm.clear()">&times;</button>
         <i class="mdi mdi-package"></i>	
-        <h4 class="modal-title" id="myGrupoLabel" translate="gpwebApp.grupo.home.createOrEditLabel">Create or edit a Grupo</h4>
+        <h4 class="modal-title" id="myGrupoLabel" translate="gpwebApp.grupo.home.createOrEditLabel">Criar ou editar Grupo</h4>
     </div>
     <div class="modal-body">
         <jhi-alert-error></jhi-alert-error>
@@ -21,7 +21,7 @@
         <div class="row">          
             <div class="col-sm-12">
                 <div class="form-group">
-                    <label class="control-label" translate="gpwebApp.grupo.nmGrupo" for="field_nmGrupo">Nome</label>
+                    <label class="control-label" translate="gpwebApp.grupo.name" for="field_nmGrupo">Nome</label>
                     <input type="text" class="form-control text-uppercase" name="nmGrupo" id="field_nmGrupo"
                             ng-model="vm.grupo.nmGrupo"
                             required ng-minlength="1" ng-maxlength="35" />
@@ -46,7 +46,7 @@
         <div class="row">
             <div class="col-sm-3">
                 <div class="form-group">
-                    <label class="control-label" translate="gpwebApp.grupo.vlComissao" for="field_vlComissao">Comissão (%)</label>
+                    <label class="control-label" translate="gpwebApp.grupo.commission" for="field_vlComissao">Comissão (%)</label>
                     <input type="number" class="form-control" name="vlComissao" id="field_vlComissao"
                             ng-model="vm.grupo.vlComissao"
                             max="100" />
@@ -70,7 +70,7 @@
                     <div class="checkbox">
                         <label>
                             <input type="checkbox" name="flDesco" ng-model="vm.grupo.flDesco"/>
-                            <span class="checkbox__label" translate="gpwebApp.grupo.flDesco">Sem Desconto</span>
+                            <span class="checkbox__label" translate="gpwebApp.grupo.noDiscount">Sem Desconto</span>
                         </label>
                     </div>
                 </div>
@@ -83,7 +83,7 @@
                     <div class="checkbox">
                         <label>
                             <input type="checkbox" name="flPromo" ng-model="vm.grupo.flPromo"/>
-                            <span class="checkbox__label" translate="gpwebApp.grupo.flPromo">Promoção</span>
+                            <span class="checkbox__label" translate="gpwebApp.grupo.promotion">Promoção</span>
                         </label>
                     </div>
                 </div>
@@ -98,7 +98,7 @@
                     <div class="col-xs-3 col-sm-2 col-md-1 radio no-padding">
                         <label>
                             <input type="radio" name="nn_type" id="field_nn_type1" value="1" ng-model="vm.grupo.nnType" ng-click="rgAux2 = false; rgAux3 = false;"/>
-                            <span class="radio__label" translate="gpwebApp.grupo.dtPromo">Até:</span>
+                            <span class="radio__label" translate="gpwebApp.grupo.byPeriod">Até:</span>
                       </label>
                     </div>						
 
@@ -116,7 +116,7 @@
                     <div class="col-xs-3 col-sm-2 col-md-1 radio no-padding">
                         <label>
                             <input type="radio" name="nn_type" id="field_nn_type2" value="2" ng-model="vm.grupo.nnType" ng-click="rgAux1 = false; rgAux3 = false;"/>
-                            <span class="radio__label" translate="gpwebApp.grupo.nnDay">Dia:</span>
+                            <span class="radio__label" translate="gpwebApp.grupo.perDay">Dia:</span>
                         </label>
                     </div>
 
@@ -132,7 +132,7 @@
                     <div class="col-xs-3 col-sm-2 col-md-1 radio no-padding">
                         <label>
                             <input type="radio" name="nn_type" id="field_nn_type3" value="3" ng-model="vm.grupo.nnType" ng-click="rgAux1 = false; rgAux2 = false;"/>
-                            <span class="radio__label" translate="gpwebApp.grupo.nnDayWeek">Em:</span>
+                            <span class="radio__label" translate="gpwebApp.grupo.perWeek">Em:</span>
                         </label>
                     </div>
 
@@ -145,7 +145,7 @@
                             <option value="QUARTAS">QUARTAS</option>
                             <option value="QUINTAS">QUINTAS</option>
                             <option value="SEXTAS">SEXTAS</option>
-                            <option value="SABADOS" id="teste">SÁBADOS</option>
+                            <option value="SABADOS">SÁBADOS</option>
                         </select>
                     </div>											
                 </div>                
@@ -153,7 +153,7 @@
             <div class="row">
                 <div class="form-group">
                     <div class="col-xs-12 col-sm-4 col-md-2 input-group">
-                        <label class="control-label" translate="gpwebApp.grupo.vlDesconto" for="field_vlDesconto">Desconto (%)</label>
+                        <label class="control-label" translate="gpwebApp.grupo.discount" for="field_vlDesconto">Desconto (%)</label>
                         <input type="number" class="form-control" name="vlDesconto" id="field_vlDesconto"
                                 ng-model="vm.grupo.vlDesconto"
                                 max="100" />

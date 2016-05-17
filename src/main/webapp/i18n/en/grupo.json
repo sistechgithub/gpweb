@@ -5,7 +5,7 @@
                 "title": "Groups",
                 "createLabel": "Add",
                 "createOrEditLabel": "Create or edit a Grupo",
-                "search": "Search for Grupo"
+                "search": "Search for Group"
             },
             "created": "A new Grupo is created with identifier {{ param }}",
             "updated": "A Grupo is updated with identifier {{ param }}",
@@ -16,20 +16,26 @@
             "detail": {
                 "title": "Group"
             },
-            "nmGrupo": "Name",
-            "vlComissao": "Commission (%)",
-            "vlDesconto": "Discount (%)",
-            "flPromo": "Promotion",
-            "flDesco": "No Discount",
+            
+            "group": "Group",
+            "name": "Name",
+            "commission": "Commission (%)",
+            "noDiscount": "No Discount",
+            "promotion": "Promotion",
+            "byPeriod": "To:",
+            "perDay": "Day:",
+            "perWeek": "In:",
+            "byPeriodDetail": "Valid until:",
+            "perDayDetail": "Valid for the whole day:",
+            "perWeekDetail": "Valid only in:",
+            "discount": "Discount (%)",
+            "actions": "Actions",
+            
+            "dtOperacao": "Dt Operacao",
             "flSemContagem": "Fl Sem Contagem",
             "flEnvio": "Fl Envio",
-            "dtOperacao": "Dt Operacao",
-            "dtPromo": "To:",
-            "nnDay": "Day:",
-            "nnDayWeek": "In:",
             "nnType": "Nn Type",
-            "nnNovo": "Nn Novo",
-            "acoes": "Actions"
+            "nnNovo": "Nn Novo"
         }
     }
 }
