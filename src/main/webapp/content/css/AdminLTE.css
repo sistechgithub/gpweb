@@ -1852,7 +1852,7 @@ a:focus {
   display: inline-block;
   font-weight: 600;
   line-height: 1.42857143;
-  margin: 13px 10px;
+  margin: 13px 10px 13px 0px;
 }
 .box-title h1,
 .box-title h2,

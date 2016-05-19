@@ -427,7 +427,9 @@ Icones Material Design
   left: -3px;
 }
 .mdi-2x::before {
-    font-size: 28px;
+    position: relative;
+    top: 2px;
+    font-size: 26px;
 }
 
 /* ==========================================================================
