@@ -2,10 +2,10 @@
     "gpwebApp": {
         "grupo" : {
             "home": {
-                "title": "Grupos",
-                "createLabel": "Create a new Grupo",
+                "title": "Groups",
+                "createLabel": "Add",
                 "createOrEditLabel": "Create or edit a Grupo",
-                "search": "Search for Grupo"
+                "search": "Search for Group"
             },
             "created": "A new Grupo is created with identifier {{ param }}",
             "updated": "A Grupo is updated with identifier {{ param }}",
@@ -14,21 +14,28 @@
                 "question": "Are you sure you want to delete Grupo {{ id }}?"
             },
             "detail": {
-                "title": "Grupo"
+                "title": "Group"
             },
-            "nmGrupo": "Nm Grupo",
-            "vlComissao": "Vl Comissao",
-            "vlDesconto": "Vl Desconto",
-            "flPromo": "Fl Promo",
-            "flDesco": "Fl Desco",
-            "dtPromo": "Dt Promo",
+            
+            "group": "Group",
+            "name": "Name",
+            "commission": "Commission (%)",
+            "noDiscount": "No Discount",
+            "promotion": "Promotion",
+            "byPeriod": "To:",
+            "perDay": "Day:",
+            "perWeek": "In:",
+            "byPeriodDetail": "Valid until:",
+            "perDayDetail": "Valid for the whole day:",
+            "perWeekDetail": "Valid only in:",
+            "discount": "Discount (%)",
+            "actions": "Actions",
+            
             "dtOperacao": "Dt Operacao",
             "flSemContagem": "Fl Sem Contagem",
             "flEnvio": "Fl Envio",
-            "nnNovo": "Nn Novo",
-            "nnDay": "Nn Day",
-            "nnDayWeek": "Nn Day Week",
-            "nnType": "Nn Type"
+            "nnType": "Nn Type",
+            "nnNovo": "Nn Novo"
         }
     }
 }
