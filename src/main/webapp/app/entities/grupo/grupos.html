@@ -1,28 +1,33 @@
-<div>
-    <h2 translate="gpwebApp.grupo.home.title">Grupos</h2>
+<div class="box">
+    <div class="box-header with-border">
+        <h2 class="box-title" translate="gpwebApp.grupo.home.title">Grupos</h2>
+    </div><!-- /.box-header -->
+    
     <jhi-alert></jhi-alert>
-    <div class="container-fluid">
+    
+    <div class="box-header">
         <div class="row">
-            <div class="col-xs-4 no-padding-left">
-                <button class="btn btn-primary" ui-sref="grupo.new" >
-                    <span class="glyphicon glyphicon-plus"></span>
+            <div class="col-xs-4 col-sm-5">
+                <button class="btn btn-success" ui-sref="grupo.new" >
+                    <span class="mdi mdi-plus"></span>
                     <span class="hidden-xs"  translate="gpwebApp.grupo.home.createLabel">
-                        Create new Grupo
+                        Adicionar
                     </span>
                 </button>
             </div>
-            <div class="col-xs-8 no-padding-right">
+            <div class="col-xs-8 col-sm-7 search-pad-col">
                 <form name="searchForm" class="form-inline">
                     <div class="input-group pull-right" >
                         <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'gpwebApp.grupo.home.search' | translate }}">
                         <span  class="input-group-btn width-min" >
-                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
-                                <span class="glyphicon glyphicon-search"></span>
+                            <button class="btn btn-sm btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="mdi mdi-magnify"></span>
                             </button>
                         </span>
                         <span class="input-group-btn width-min" ng-if="vm.currentSearch">
-                            <button class="btn btn-info" ng-click="vm.clear()">
-                                <span class="glyphicon glyphicon-trash"></span>
+                            <button class="btn btn-sm btn-danger" ng-click="vm.clear()" 
+                                    data-toggle="tooltip" data-placement="top" title="Limpar Busca">
+                                <span class="mdi mdi-delete"></span>
                             </button>
                         </span>
                     </div>
@@ -31,71 +36,66 @@
         </div>
     </div>
     <br/>
-    <div class="table-responsive">
-        <table class="jh-table table table-striped">
-            <thead>
-                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
-                    <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="nmGrupo"><span translate="gpwebApp.grupo.nmGrupo">Nm Grupo</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="vlComissao"><span translate="gpwebApp.grupo.vlComissao">Vl Comissao</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="vlDesconto"><span translate="gpwebApp.grupo.vlDesconto">Vl Desconto</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="flPromo"><span translate="gpwebApp.grupo.flPromo">Fl Promo</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="flDesco"><span translate="gpwebApp.grupo.flDesco">Fl Desco</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="dtPromo"><span translate="gpwebApp.grupo.dtPromo">Dt Promo</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="dtOperacao"><span translate="gpwebApp.grupo.dtOperacao">Dt Operacao</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="flSemContagem"><span translate="gpwebApp.grupo.flSemContagem">Fl Sem Contagem</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="flEnvio"><span translate="gpwebApp.grupo.flEnvio">Fl Envio</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="nnNovo"><span translate="gpwebApp.grupo.nnNovo">Nn Novo</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="nnDay"><span translate="gpwebApp.grupo.nnDay">Nn Day</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="nnDayWeek"><span translate="gpwebApp.grupo.nnDayWeek">Nn Day Week</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="nnType"><span translate="gpwebApp.grupo.nnType">Nn Type</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="grupo in vm.grupos track by grupo.id">
-                    <td><a ui-sref="grupo-detail({id:grupo.id})">{{grupo.id}}</a></td>
-                    <td>{{grupo.nmGrupo}}</td>
-                    <td>{{grupo.vlComissao}}</td>
-                    <td>{{grupo.vlDesconto}}</td>
-                    <td>{{grupo.flPromo}}</td>
-                    <td>{{grupo.flDesco}}</td>
-                        <td>{{grupo.dtPromo | date:'mediumDate'}}</td>
-                        <td>{{grupo.dtOperacao | date:'mediumDate'}}</td>
-                    <td>{{grupo.flSemContagem}}</td>
-                    <td>{{grupo.flEnvio}}</td>
-                    <td>{{grupo.nnNovo}}</td>
-                    <td>{{grupo.nnDay}}</td>
-                    <td>{{grupo.nnDayWeek}}</td>
-                    <td>{{grupo.nnType}}</td>
-                    <td class="text-right">
-                        <div class="btn-group flex-btn-group-container">
-                            <button type="submit"
-                                    ui-sref="grupo-detail({id:grupo.id})"
-                                    class="btn btn-info btn-sm">
-                                <span class="glyphicon glyphicon-eye-open"></span>
-                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
-                            </button>
-                            <button type="submit"
-                                    ui-sref="grupo.edit({id:grupo.id})"
-                                    class="btn btn-primary btn-sm">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
-                            </button>
-                            <button type="submit"
-                                    ui-sref="grupo.delete({id:grupo.id})"
-                                    class="btn btn-danger btn-sm">
-                                <span class="glyphicon glyphicon-remove-circle"></span>
-                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    <div class="box-body">
+        <div class="table-responsive">
+            <table class="jh-table table table-bordered table-striped table-hover">
+                <thead>
+                    <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                        <th class="col-md-1 col-grupo-codigo" jh-sort-by="id"><span translate="global.field.id">Código</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>
+                        <th class="col-md-7 col-grupo-nome" jh-sort-by="nmGrupo"><span translate="gpwebApp.grupo.name">Nome</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>
+                        <th class="col-md-1 col-grupo-comissao" jh-sort-by="vlComissao"><span translate="gpwebApp.grupo.commission">Comissão (%)</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>
+                        <th class="col-md-1 col-grupo-promocao" jh-sort-by="flPromo"><span translate="gpwebApp.grupo.promotion">Promoção</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>
+                        <th class="col-md-1 col-grupo-semdesconto" jh-sort-by="flDesco"><span translate="gpwebApp.grupo.noDiscount">Sem Desconto</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>
+                        <th class="col-md-1 col-grupo-acoes text-center" translate="gpwebApp.grupo.actions">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="grupo in vm.grupos track by grupo.id">
+                        <td><a ui-sref="grupo-detail({id:grupo.id})">{{grupo.id}}</a></td>
+                        <td class="text-uppercase">{{grupo.nmGrupo}}</td>
+                        <td class="text-right">{{grupo.vlComissao | currency:'':2}}</td>
+                        <td class="text-center">
+                            <i class="mdi"
+                                ng-class="{'mdi-check text-success': grupo.flPromo,
+                                'mdi-close text-danger': !grupo.flPromo}">
+                            </i>
+                        </td>
+                        <td class="text-center">
+                            <i class="mdi"
+                                ng-class="{'mdi-check text-success': grupo.flDesco,
+                                'mdi-close text-danger': !grupo.flDesco}">
+                            </i>
+                        </td>
+                        <td class="text-right">
+                            <div>
+                                <button type="submit"
+                                        ui-sref="grupo-detail({id:grupo.id})"
+                                        class="btn btn-success btn-sm"
+                                        data-toggle="tooltip" data-placement="top" title="Visualizar">
+                                    <span class="mdi mdi-eye"></span>
+                                </button>
+                                <button type="submit"
+                                        ui-sref="grupo.edit({id:grupo.id})"
+                                        class="btn btn-primary btn-sm"
+                                        data-toggle="tooltip" data-placement="top" title="Editar">
+                                    <span class="mdi mdi-pencil"></span>
+                                </button>
+                                <button type="submit"
+                                        ui-sref="grupo.delete({id:grupo.id})"
+                                        class="btn btn-danger btn-sm"
+                                        data-toggle="tooltip" data-placement="top" title="Deletar">
+                                    <span class="mdi mdi-delete"></span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div><!-- /.table-responsive -->
+    </div><!-- /.box-body -->
+    
     <div class="text-center">
         <jhi-item-count page="vm.page" total="vm.queryCount"></jhi-item-count>
         <uib-pagination class="pagination-sm" total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
-    </div>
+    </div><!-- /.pagination -->
 </div>

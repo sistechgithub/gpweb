@@ -25,29 +25,30 @@
                 <span class="voffset1"></span>
             </div>
         </div>
-        <table class="table table-condensed">
-            <thead>
-                <tr>
-                    <th class="text-right" translate="metrics.jvm.threads.dump.blockedtime">Blocked Time</th>
-                    <th class="text-right" translate="metrics.jvm.threads.dump.blockedcount">Blocked Count</th>
-                    <th class="text-right" translate="metrics.jvm.threads.dump.waitedtime">Waited Time</th>
-                    <th class="text-right" translate="metrics.jvm.threads.dump.waitedcount">Waited Count</th>
-                    <th translate="metrics.jvm.threads.dump.lockname">Lock Name</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>{{v.blockedTime}}</td>
-                    <td>{{v.blockedCount}}</td>
-                    <td>{{v.waitedTime}}</td>
-                    <td>{{v.waitedCount}}</td>
-                    <td>{{v.lockName}}</td>
-                </tr>
-            </tbody>
-        </table>
-
+        <div class="table-responsive">
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th class="text-right" translate="metrics.jvm.threads.dump.blockedtime">Blocked Time</th>
+                        <th class="text-right" translate="metrics.jvm.threads.dump.blockedcount">Blocked Count</th>
+                        <th class="text-right" translate="metrics.jvm.threads.dump.waitedtime">Waited Time</th>
+                        <th class="text-right" translate="metrics.jvm.threads.dump.waitedcount">Waited Count</th>
+                        <th translate="metrics.jvm.threads.dump.lockname">Lock Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{v.blockedTime}}</td>
+                        <td>{{v.blockedCount}}</td>
+                        <td>{{v.waitedTime}}</td>
+                        <td>{{v.waitedCount}}</td>
+                        <td>{{v.lockName}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 <div class="modal-footer">
-    <button type="button" class="btn btn-default  pull-left" data-dismiss="modal" ng-click="vm.cancel()">Done</button>
+    <button type="button" class="btn btn-default  pull-right" data-dismiss="modal" ng-click="vm.cancel()">Done</button>
 </div>

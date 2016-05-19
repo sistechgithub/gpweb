@@ -3,7 +3,7 @@
         "grupo" : {
             "home": {
                 "title": "Grupos",
-                "createLabel": "Criar novo Grupo",
+                "createLabel": "Adicionar",
                 "createOrEditLabel": "Criar ou editar Grupo",
                 "search": "Pesquisar por Grupo"
             },
@@ -16,19 +16,25 @@
             "detail": {
                 "title": "Grupo"
             },
-            "nmGrupo": "Nm Grupo",
-            "vlComissao": "Vl Comissao",
-            "vlDesconto": "Vl Desconto",
-            "flPromo": "Fl Promo",
-            "flDesco": "Fl Desco",
-            "dtPromo": "Dt Promo",
+            "group": "Grupo",
+            "name": "Nome",
+            "commission": "Comissão (%)",
+            "noDiscount": "Sem Desconto",
+            "promotion": "Promoção",
+            "byPeriod": "Até",
+            "perDay": "Dia",
+            "perWeek": "Em",
+            "byPeriodDetail": "Válida até:",
+            "perDayDetail": "Válida para todo dia:",
+            "perWeekDetail": "Válida apenas nas(os):",
+            "discount": "Desconto (%)",
+            "actions": "Ações",
+            
             "dtOperacao": "Dt Operacao",
             "flSemContagem": "Fl Sem Contagem",
             "flEnvio": "Fl Envio",
-            "nnNovo": "Nn Novo",
-            "nnDay": "Nn Day",
-            "nnDayWeek": "Nn Day Week",
-            "nnType": "Nn Type"
+            "nnType": "Nn Type",
+            "nnNovo": "Nn Novo"
         }
     }
 }

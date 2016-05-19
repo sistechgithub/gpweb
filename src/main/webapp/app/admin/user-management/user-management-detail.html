@@ -1,36 +1,118 @@
-<div>
-    <h2><span translate="userManagement.detail.title">User</span> "{{vm.user.login}}"</h2>
-    <dl class="dl-horizontal">
-        <dt><span translate="userManagement.login">Login</span></dt>
-        <dd><span>{{vm.user.login}}</span></dd>
-        <dt><span translate="userManagement.firstName">First Name</span></dt>
-        <dd>{{vm.user.firstName}}</dd>
-        <dt><span translate="userManagement.lastName">Last Name</span></dt>
-        <dd>{{vm.user.lastName}}</dd>
-        <dt><span translate="userManagement.email">Email</span></dt>
-        <dd>{{vm.user.email}}</dd>
-        <dt><span translate="userManagement.activated">Activated</span></dt>
-        <dd>{{vm.user.activated}}</dd>
-        <dt><span translate="userManagement.langKey">Lang Key</span></dt>
-        <dd>{{vm.user.langKey}}</dd>
-        <dt><span translate="userManagement.createdBy">Created By</span></dt>
-        <dd>{{vm.user.createdBy}}</dd>
-        <dt><span translate="userManagement.createdDate">Created Date</span></dt>
-        <dd>{{vm.user.createdDate | date:'dd/MM/yy HH:mm' }}</dd>
-        <dt><span translate="userManagement.lastModifiedBy">Last Modified By</span></dt>
-        <dd>{{vm.user.lastModifiedBy}}</dd>
-        <dt><span translate="userManagement.lastModifiedDate">Last Modified Date</span></dt>
-        <dd>{{vm.user.lastModifiedDate | date:'dd/MM/yy HH:mm'}}</dd>
-        <dt><span translate="userManagement.profiles">Profiles</span></dt>
-        <dd>
-            <ul class="list-unstyled">
-                <li ng-repeat="authority in vm.user.authorities"><span>{{authority}}</span></li>
-            </ul>
-        </dd>
-    </dl>
-    <button type="submit"
-            ui-sref="user-management"
-            class="btn btn-info">
-        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
-    </button>
+<div class="box">
+    <div class="box-header with-border no-margin">
+        <h2 class="box-title"><span translate="userManagement.detail.title">User</span> "{{vm.user.login}}"</h2>
+        <a class=" btn btn-default btn-print pull-right hidden-xs" href="javascript:window.print();"><i class="mdi mdi-printer mdi-2x"></i></a>
+    </div>
+    <div class="box-body">
+        <br><br>
+        <div class="row">
+            <dl class="dl-horizontal jh-entity-details">
+                <div class="col-xs-12 col-md-6 no-pad-right">
+                    <dt><span translate="userManagement.login">Login</span>:</dt>
+                    <dd>
+                        <span class="text-uppercase">{{vm.user.login}}</span>
+                    </dd>
+                    <hr>                   
+                </div>
+                <div class="col-xs-12 col-md-6 no-pad-left">
+                    <dt><span translate="userManagement.firstName">First Name</span>:</dt>
+                    <dd>
+                        <span class="text-uppercase">{{vm.user.firstName}}</span>
+                    </dd>
+                    <hr>                     
+                </div>
+            </dl>
+            <dl class="dl-horizontal jh-entity-details">
+                <div class="col-xs-12 col-md-6 no-pad-right">
+                    <dt><span translate="userManagement.lastName">Last Name</span>:</dt>
+                    <dd>
+                        <span class="text-uppercase">{{vm.user.lastName}}</span>
+                    </dd>
+                    <hr>                   
+                </div>
+                <div class="col-xs-12 col-md-6 no-pad-left">
+                    <dt><span translate="userManagement.email">Email</span>:</dt>
+                    <dd>
+                        <span>{{vm.user.email}}</span>
+                    </dd>
+                    <hr>                     
+                </div>
+            </dl>
+            <dl class="dl-horizontal jh-entity-details">
+                <div class="col-xs-12 col-md-6 no-pad-right">
+                    <dt><span translate="userManagement.activated">Activated</span>:</dt>
+                    <dd>
+                        <span class="text-uppercase">{{vm.user.activated}}</span>
+                    </dd>
+                    <hr>                   
+                </div>
+                <div class="col-xs-12 col-md-6 no-pad-left">
+                    <dt><span translate="userManagement.langKey">Lang Key</span>:</dt>
+                    <dd>
+                        <span class="text-uppercase">{{vm.user.langKey}}</span>
+                    </dd>
+                    <hr>                     
+                </div>
+            </dl>
+            <dl class="dl-horizontal jh-entity-details">
+                <div class="col-xs-12 col-md-6 no-pad-right">
+                    <dt><span translate="userManagement.createdBy">Created By</span>:</dt>
+                    <dd>
+                        <span class="text-uppercase">{{vm.user.createdBy}}</span>
+                    </dd>
+                    <hr>                   
+                </div>
+                <div class="col-xs-12 col-md-6 no-pad-left">
+                    <dt><span translate="userManagement.createdDate">Created Date</span>:</dt>
+                    <dd>
+                        <span>{{vm.user.createdDate | date:'dd/MM/yy HH:mm' }}</span>
+                    </dd>
+                    <hr>                     
+                </div>
+            </dl>
+            <dl class="dl-horizontal jh-entity-details">
+                <div class="col-xs-12 col-md-6 no-pad-right">
+                    <dt><span translate="userManagement.createdBy">Created By</span>:</dt>
+                    <dd>
+                        <span class="text-uppercase">{{vm.user.createdBy}}</span>
+                    </dd>
+                    <hr>                   
+                </div>
+                <div class="col-xs-12 col-md-6 no-pad-left">
+                    <dt><span translate="userManagement.lastModifiedBy">Last Modified By</span>:</dt>
+                    <dd>
+                        <span>{{vm.user.lastModifiedBy}}</span>
+                    </dd>
+                    <hr>                     
+                </div>
+            </dl>
+            <dl class="dl-horizontal jh-entity-details">
+                <div class="col-xs-12 col-md-12">
+                    <dt><span translate="userManagement.lastModifiedDate">Last Modified Date</span>:</dt>
+                    <dd>
+                        <span class="text-uppercase">{{vm.user.lastModifiedDate | date:'dd/MM/yy HH:mm'}}</span>
+                    </dd>
+                    <hr>                   
+                </div>
+            </dl>
+            <dl class="dl-horizontal jh-entity-details">
+                <div class="col-xs-12 col-md-12">
+                    <dt><span translate="userManagement.profiles">Profiles</span>:</dt>
+                    <dd>
+                        <ul class="list-unstyled">
+                            <li ng-repeat="authority in vm.user.authorities"><span>{{authority}}</span></li>
+                        </ul>
+                    </dd>
+                    <hr>                     
+                </div>
+            </dl>
+        </div>
+    </div>
+    <div class="box-footer no-border">
+        <button type="submit"
+                onclick="window.history.back()"
+                class="btn btn-info pull-right">
+            <span class="mdi mdi-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+        </button>
+    </div>
 </div>
