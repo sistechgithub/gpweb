@@ -1,0 +1,72 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="mySub_grupoLabel" translate="gpwebApp.sub_grupo.home.createOrEditLabel">Create or edit a Sub Grupo</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.sub_grupo.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.sub_grupo.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gpwebApp.sub_grupo.nm_sub_grupo" for="field_nm_sub_grupo">Nm Sub Grupo</label>
+            <input type="text" class="form-control" name="nm_sub_grupo" id="field_nm_sub_grupo"
+                    ng-model="vm.sub_grupo.nm_sub_grupo"
+                    required />
+            <div ng-show="editForm.nm_sub_grupo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.nm_sub_grupo.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gpwebApp.sub_grupo.vl_custo" for="field_vl_custo">Vl Custo</label>
+            <input type="number" class="form-control" name="vl_custo" id="field_vl_custo"
+                    ng-model="vm.sub_grupo.vl_custo"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gpwebApp.sub_grupo.vl_valor" for="field_vl_valor">Vl Valor</label>
+            <input type="number" class="form-control" name="vl_valor" id="field_vl_valor"
+                    ng-model="vm.sub_grupo.vl_valor"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gpwebApp.sub_grupo.dt_operacao" for="field_dt_operacao">Dt Operacao</label>
+                <div class="input-group">
+                    <input id="field_dt_operacao" type="text" class="form-control" name="dt_operacao" uib-datepicker-popup="{{dateformat}}" ng-model="vm.sub_grupo.dt_operacao" is-open="vm.datePickerOpenStatus.dt_operacao"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dt_operacao')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gpwebApp.sub_grupo.fl_envio" for="field_fl_envio">Fl Envio</label>
+            <input type="checkbox" class="form-control" name="fl_envio" id="field_fl_envio"
+                    ng-model="vm.sub_grupo.fl_envio"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gpwebApp.sub_grupo.nn_novo" for="field_nn_novo">Nn Novo</label>
+            <input type="number" class="form-control" name="nn_novo" id="field_nn_novo"
+                    ng-model="vm.sub_grupo.nn_novo"
+                     />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
