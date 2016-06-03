@@ -1,0 +1,37 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "nm_sub_grupo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "vl_custo",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "vl_valor",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "dt_operacao",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "fl_envio",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "nn_novo",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20160523122154",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "sub_grupo",
+    "pagination": "pagination"
+}
