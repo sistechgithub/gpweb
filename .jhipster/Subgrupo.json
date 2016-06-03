@@ -1,0 +1,36 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "nmSubgrupo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "35"
+        },
+        {
+            "fieldName": "vlValor",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "vlCusto",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "dtOperacao",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "flEnvio",
+            "fieldType": "Boolean"
+        }
+    ],
+    "changelogDate": "20160603123751",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "subgrupo",
+    "pagination": "pagination"
+}
