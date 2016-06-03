@@ -12,7 +12,7 @@
                 "stock": "Stock",
                 "payments": "Payments",
                 "grupo": "Group",
-                "subGrupo": "Sub Grupo",
+                "subgrupo": "Subgrupo",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

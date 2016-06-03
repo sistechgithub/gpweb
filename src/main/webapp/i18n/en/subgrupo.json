@@ -1,0 +1,26 @@
+{
+    "gpwebApp": {
+        "subgrupo" : {
+            "home": {
+                "title": "Subgrupos",
+                "createLabel": "Create a new Subgrupo",
+                "createOrEditLabel": "Create or edit a Subgrupo",
+                "search": "Search for Subgrupo"
+            },
+            "created": "A new Subgrupo is created with identifier {{ param }}",
+            "updated": "A Subgrupo is updated with identifier {{ param }}",
+            "deleted": "A Subgrupo is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Subgrupo {{ id }}?"
+            },
+            "detail": {
+                "title": "Subgrupo"
+            },
+            "nmSubgrupo": "Nm Subgrupo",
+            "vlValor": "Vl Valor",
+            "vlCusto": "Vl Custo",
+            "dtOperacao": "Dt Operacao",
+            "flEnvio": "Fl Envio"
+        }
+    }
+}

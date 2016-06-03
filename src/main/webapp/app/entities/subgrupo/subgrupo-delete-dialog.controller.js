@@ -3,18 +3,18 @@
 
     angular
         .module('gpwebApp')
-        .controller('Sub_grupoDeleteController',Sub_grupoDeleteController);
+        .controller('SubgrupoDeleteController',SubgrupoDeleteController);
 
-    Sub_grupoDeleteController.$inject = ['$uibModalInstance', 'entity', 'Sub_grupo'];
+    SubgrupoDeleteController.$inject = ['$uibModalInstance', 'entity', 'Subgrupo'];
 
-    function Sub_grupoDeleteController($uibModalInstance, entity, Sub_grupo) {
+    function SubgrupoDeleteController($uibModalInstance, entity, Subgrupo) {
         var vm = this;
-        vm.sub_grupo = entity;
+        vm.subgrupo = entity;
         vm.clear = function() {
             $uibModalInstance.dismiss('cancel');
         };
         vm.confirmDelete = function (id) {
-            Sub_grupo.delete({id: id},
+            Subgrupo.delete({id: id},
                 function () {
                     $uibModalInstance.close(true);
                 });

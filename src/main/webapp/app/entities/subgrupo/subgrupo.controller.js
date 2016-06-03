@@ -3,11 +3,11 @@
 
     angular
         .module('gpwebApp')
-        .controller('Sub_grupoController', Sub_grupoController);
+        .controller('SubgrupoController', SubgrupoController);
 
-    Sub_grupoController.$inject = ['$scope', '$state', 'Sub_grupo', 'Sub_grupoSearch', 'ParseLinks', 'AlertService', 'pagingParams', 'paginationConstants'];
+    SubgrupoController.$inject = ['$scope', '$state', 'Subgrupo', 'SubgrupoSearch', 'ParseLinks', 'AlertService', 'pagingParams', 'paginationConstants'];
 
-    function Sub_grupoController ($scope, $state, Sub_grupo, Sub_grupoSearch, ParseLinks, AlertService, pagingParams, paginationConstants) {
+    function SubgrupoController ($scope, $state, Subgrupo, SubgrupoSearch, ParseLinks, AlertService, pagingParams, paginationConstants) {
         var vm = this;
         vm.loadAll = loadAll;
         vm.loadPage = loadPage;
@@ -22,14 +22,14 @@
 
         function loadAll () {
             if (pagingParams.search) {
-                Sub_grupoSearch.query({
+                SubgrupoSearch.query({
                     query: pagingParams.search,
                     page: pagingParams.page - 1,
                     size: paginationConstants.itemsPerPage,
                     sort: sort()
                 }, onSuccess, onError);
             } else {
-                Sub_grupo.query({
+                Subgrupo.query({
                     page: pagingParams.page - 1,
                     size: paginationConstants.itemsPerPage,
                     sort: sort()
@@ -46,7 +46,7 @@
                 vm.links = ParseLinks.parse(headers('link'));
                 vm.totalItems = headers('X-Total-Count');
                 vm.queryCount = vm.totalItems;
-                vm.sub_grupos = data;
+                vm.subgrupos = data;
                 vm.page = pagingParams.page;
             }
             function onError(error) {

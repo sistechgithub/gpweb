@@ -9,17 +9,17 @@
 
     function stateConfig($stateProvider) {
         $stateProvider
-        .state('sub-grupo', {
+        .state('subgrupo', {
             parent: 'entity',
-            url: '/sub-grupo?page&sort&search',
+            url: '/subgrupo?page&sort&search',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'gpwebApp.sub_grupo.home.title'
+                pageTitle: 'gpwebApp.subgrupo.home.title'
             },
             views: {
                 'content@': {
-                    templateUrl: 'app/entities/sub-grupo/sub-grupos.html',
-                    controller: 'Sub_grupoController',
+                    templateUrl: 'app/entities/subgrupo/subgrupos.html',
+                    controller: 'SubgrupoController',
                     controllerAs: 'vm'
                 }
             },
@@ -45,113 +45,112 @@
                     };
                 }],
                 translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
-                    $translatePartialLoader.addPart('sub_grupo');
+                    $translatePartialLoader.addPart('subgrupo');
                     $translatePartialLoader.addPart('global');
                     return $translate.refresh();
                 }]
             }
         })
-        .state('sub-grupo-detail', {
+        .state('subgrupo-detail', {
             parent: 'entity',
-            url: '/sub-grupo/{id}',
+            url: '/subgrupo/{id}',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'gpwebApp.sub_grupo.detail.title'
+                pageTitle: 'gpwebApp.subgrupo.detail.title'
             },
             views: {
                 'content@': {
-                    templateUrl: 'app/entities/sub-grupo/sub-grupo-detail.html',
-                    controller: 'Sub_grupoDetailController',
+                    templateUrl: 'app/entities/subgrupo/subgrupo-detail.html',
+                    controller: 'SubgrupoDetailController',
                     controllerAs: 'vm'
                 }
             },
             resolve: {
                 translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
-                    $translatePartialLoader.addPart('sub_grupo');
+                    $translatePartialLoader.addPart('subgrupo');
                     return $translate.refresh();
                 }],
-                entity: ['$stateParams', 'Sub_grupo', function($stateParams, Sub_grupo) {
-                    return Sub_grupo.get({id : $stateParams.id});
+                entity: ['$stateParams', 'Subgrupo', function($stateParams, Subgrupo) {
+                    return Subgrupo.get({id : $stateParams.id});
                 }]
             }
         })
-        .state('sub-grupo.new', {
-            parent: 'sub-grupo',
+        .state('subgrupo.new', {
+            parent: 'subgrupo',
             url: '/new',
             data: {
                 authorities: ['ROLE_USER']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
-                    templateUrl: 'app/entities/sub-grupo/sub-grupo-dialog.html',
-                    controller: 'Sub_grupoDialogController',
+                    templateUrl: 'app/entities/subgrupo/subgrupo-dialog.html',
+                    controller: 'SubgrupoDialogController',
                     controllerAs: 'vm',
                     backdrop: 'static',
                     size: 'lg',
                     resolve: {
                         entity: function () {
                             return {
-                                nm_sub_grupo: null,
-                                vl_custo: null,
-                                vl_valor: null,
-                                dt_operacao: null,
-                                fl_envio: null,
-                                nn_novo: null,
+                                nmSubgrupo: null,
+                                vlValor: null,
+                                vlCusto: null,
+                                dtOperacao: null,
+                                flEnvio: null,
                                 id: null
                             };
                         }
                     }
                 }).result.then(function() {
-                    $state.go('sub-grupo', null, { reload: true });
+                    $state.go('subgrupo', null, { reload: true });
                 }, function() {
-                    $state.go('sub-grupo');
+                    $state.go('subgrupo');
                 });
             }]
         })
-        .state('sub-grupo.edit', {
-            parent: 'sub-grupo',
+        .state('subgrupo.edit', {
+            parent: 'subgrupo',
             url: '/{id}/edit',
             data: {
                 authorities: ['ROLE_USER']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
-                    templateUrl: 'app/entities/sub-grupo/sub-grupo-dialog.html',
-                    controller: 'Sub_grupoDialogController',
+                    templateUrl: 'app/entities/subgrupo/subgrupo-dialog.html',
+                    controller: 'SubgrupoDialogController',
                     controllerAs: 'vm',
                     backdrop: 'static',
                     size: 'lg',
                     resolve: {
-                        entity: ['Sub_grupo', function(Sub_grupo) {
-                            return Sub_grupo.get({id : $stateParams.id});
+                        entity: ['Subgrupo', function(Subgrupo) {
+                            return Subgrupo.get({id : $stateParams.id});
                         }]
                     }
                 }).result.then(function() {
-                    $state.go('sub-grupo', null, { reload: true });
+                    $state.go('subgrupo', null, { reload: true });
                 }, function() {
                     $state.go('^');
                 });
             }]
         })
-        .state('sub-grupo.delete', {
-            parent: 'sub-grupo',
+        .state('subgrupo.delete', {
+            parent: 'subgrupo',
             url: '/{id}/delete',
             data: {
                 authorities: ['ROLE_USER']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
-                    templateUrl: 'app/entities/sub-grupo/sub-grupo-delete-dialog.html',
-                    controller: 'Sub_grupoDeleteController',
+                    templateUrl: 'app/entities/subgrupo/subgrupo-delete-dialog.html',
+                    controller: 'SubgrupoDeleteController',
                     controllerAs: 'vm',
                     size: 'md',
                     resolve: {
-                        entity: ['Sub_grupo', function(Sub_grupo) {
-                            return Sub_grupo.get({id : $stateParams.id});
+                        entity: ['Subgrupo', function(Subgrupo) {
+                            return Subgrupo.get({id : $stateParams.id});
                         }]
                     }
                 }).result.then(function() {
-                    $state.go('sub-grupo', null, { reload: true });
+                    $state.go('subgrupo', null, { reload: true });
                 }, function() {
                     $state.go('^');
                 });
