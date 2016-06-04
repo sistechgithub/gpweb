@@ -40,6 +40,9 @@ public class Subgrupo implements Serializable {
     @Column(name = "fl_envio")
     private Boolean flEnvio;
 
+    @Column(name = "nn_novo")
+    private Integer nnNovo;
+
     public Long getId() {
         return id;
     }
@@ -88,6 +91,14 @@ public class Subgrupo implements Serializable {
         this.flEnvio = flEnvio;
     }
 
+    public Integer getNnNovo() {
+        return nnNovo;
+    }
+
+    public void setNnNovo(Integer nnNovo) {
+        this.nnNovo = nnNovo;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -117,6 +128,7 @@ public class Subgrupo implements Serializable {
             ", vlCusto='" + vlCusto + "'" +
             ", dtOperacao='" + dtOperacao + "'" +
             ", flEnvio='" + flEnvio + "'" +
+            ", nnNovo='" + nnNovo + "'" +
             '}';
     }
 }
