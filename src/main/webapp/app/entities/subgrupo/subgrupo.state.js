@@ -96,6 +96,7 @@
                                 vlCusto: null,
                                 dtOperacao: null,
                                 flEnvio: null,
+                                nnNovo: null,
                                 id: null
                             };
                         }

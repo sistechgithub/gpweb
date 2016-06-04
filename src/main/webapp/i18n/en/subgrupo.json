@@ -20,7 +20,8 @@
             "vlValor": "Vl Valor",
             "vlCusto": "Vl Custo",
             "dtOperacao": "Dt Operacao",
-            "flEnvio": "Fl Envio"
+            "flEnvio": "Fl Envio",
+            "nnNovo": "Nn Novo"
         }
     }
 }
