@@ -27,7 +27,7 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import java.time.LocalDate;
 import java.time.ZoneId;
-import java.math.BigDecimal;;
+import java.math.BigDecimal;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -60,6 +60,9 @@ public class SubgrupoResourceIntTest {
 
     private static final Boolean DEFAULT_FL_ENVIO = false;
     private static final Boolean UPDATED_FL_ENVIO = true;
+
+    private static final Integer DEFAULT_NN_NOVO = 1;
+    private static final Integer UPDATED_NN_NOVO = 2;
 
     @Inject
     private SubgrupoRepository subgrupoRepository;
@@ -99,6 +102,7 @@ public class SubgrupoResourceIntTest {
         subgrupo.setVlCusto(DEFAULT_VL_CUSTO);
         subgrupo.setDtOperacao(DEFAULT_DT_OPERACAO);
         subgrupo.setFlEnvio(DEFAULT_FL_ENVIO);
+        subgrupo.setNnNovo(DEFAULT_NN_NOVO);
     }
 
     @Test
@@ -122,6 +126,7 @@ public class SubgrupoResourceIntTest {
         assertThat(testSubgrupo.getVlCusto()).isEqualTo(DEFAULT_VL_CUSTO);
         assertThat(testSubgrupo.getDtOperacao()).isEqualTo(DEFAULT_DT_OPERACAO);
         assertThat(testSubgrupo.isFlEnvio()).isEqualTo(DEFAULT_FL_ENVIO);
+        assertThat(testSubgrupo.getNnNovo()).isEqualTo(DEFAULT_NN_NOVO);
 
         // Validate the Subgrupo in ElasticSearch
         Subgrupo subgrupoEs = subgrupoSearchRepository.findOne(testSubgrupo.getId());
@@ -161,7 +166,8 @@ public class SubgrupoResourceIntTest {
                 .andExpect(jsonPath("$.[*].vlValor").value(hasItem(DEFAULT_VL_VALOR.intValue())))
                 .andExpect(jsonPath("$.[*].vlCusto").value(hasItem(DEFAULT_VL_CUSTO.intValue())))
                 .andExpect(jsonPath("$.[*].dtOperacao").value(hasItem(DEFAULT_DT_OPERACAO.toString())))
-                .andExpect(jsonPath("$.[*].flEnvio").value(hasItem(DEFAULT_FL_ENVIO.booleanValue())));
+                .andExpect(jsonPath("$.[*].flEnvio").value(hasItem(DEFAULT_FL_ENVIO.booleanValue())))
+                .andExpect(jsonPath("$.[*].nnNovo").value(hasItem(DEFAULT_NN_NOVO)));
     }
 
     @Test
@@ -179,7 +185,8 @@ public class SubgrupoResourceIntTest {
             .andExpect(jsonPath("$.vlValor").value(DEFAULT_VL_VALOR.intValue()))
             .andExpect(jsonPath("$.vlCusto").value(DEFAULT_VL_CUSTO.intValue()))
             .andExpect(jsonPath("$.dtOperacao").value(DEFAULT_DT_OPERACAO.toString()))
-            .andExpect(jsonPath("$.flEnvio").value(DEFAULT_FL_ENVIO.booleanValue()));
+            .andExpect(jsonPath("$.flEnvio").value(DEFAULT_FL_ENVIO.booleanValue()))
+            .andExpect(jsonPath("$.nnNovo").value(DEFAULT_NN_NOVO));
     }
 
     @Test
@@ -206,6 +213,7 @@ public class SubgrupoResourceIntTest {
         updatedSubgrupo.setVlCusto(UPDATED_VL_CUSTO);
         updatedSubgrupo.setDtOperacao(UPDATED_DT_OPERACAO);
         updatedSubgrupo.setFlEnvio(UPDATED_FL_ENVIO);
+        updatedSubgrupo.setNnNovo(UPDATED_NN_NOVO);
 
         restSubgrupoMockMvc.perform(put("/api/subgrupos")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -221,6 +229,7 @@ public class SubgrupoResourceIntTest {
         assertThat(testSubgrupo.getVlCusto()).isEqualTo(UPDATED_VL_CUSTO);
         assertThat(testSubgrupo.getDtOperacao()).isEqualTo(UPDATED_DT_OPERACAO);
         assertThat(testSubgrupo.isFlEnvio()).isEqualTo(UPDATED_FL_ENVIO);
+        assertThat(testSubgrupo.getNnNovo()).isEqualTo(UPDATED_NN_NOVO);
 
         // Validate the Subgrupo in ElasticSearch
         Subgrupo subgrupoEs = subgrupoSearchRepository.findOne(testSubgrupo.getId());
@@ -264,6 +273,7 @@ public class SubgrupoResourceIntTest {
             .andExpect(jsonPath("$.[*].vlValor").value(hasItem(DEFAULT_VL_VALOR.intValue())))
             .andExpect(jsonPath("$.[*].vlCusto").value(hasItem(DEFAULT_VL_CUSTO.intValue())))
             .andExpect(jsonPath("$.[*].dtOperacao").value(hasItem(DEFAULT_DT_OPERACAO.toString())))
-            .andExpect(jsonPath("$.[*].flEnvio").value(hasItem(DEFAULT_FL_ENVIO.booleanValue())));
+            .andExpect(jsonPath("$.[*].flEnvio").value(hasItem(DEFAULT_FL_ENVIO.booleanValue())))
+            .andExpect(jsonPath("$.[*].nnNovo").value(hasItem(DEFAULT_NN_NOVO)));
     }
 }

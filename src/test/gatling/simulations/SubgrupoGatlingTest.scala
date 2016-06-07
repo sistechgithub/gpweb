@@ -67,7 +67,7 @@ class SubgrupoGatlingTest extends Simulation {
             .exec(http("Create new subgrupo")
             .post("/api/subgrupos")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "nmSubgrupo":"SAMPLE_TEXT", "vlValor":null, "vlCusto":null, "dtOperacao":"2020-01-01T00:00:00.000Z", "flEnvio":null}""")).asJSON
+            .body(StringBody("""{"id":null, "nmSubgrupo":"SAMPLE_TEXT", "vlValor":null, "vlCusto":null, "dtOperacao":"2020-01-01T00:00:00.000Z", "flEnvio":null, "nnNovo":"0"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_subgrupo_url"))).exitHereIfFailed
             .pause(10)

@@ -1,0 +1,32 @@
+{
+    "gpwebApp": {
+        "marca" : {
+            "home": {
+                "title": "Marcas",
+                "createLabel": "Criar novo Marca",
+                "createOrEditLabel": "Criar ou editar Marca",
+                "search": "Pesquisar por Marca"
+            },
+            "created": "Um novo Marca é criado com o identificador {{ param }}",
+            "updated": "Um Marca é atualizado com o identificador {{ param }}",
+            "deleted": "Um Marca é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Marca {{ id }}?"
+            },
+            "detail": {
+                "title": "Marca"
+            },
+            "nmFabricante": "Nm Fabricante",
+            "cdCgc": "Cd Cgc",
+            "cdCgf": "Cd Cgf",
+            "nnNumero": "Nn Numero",
+            "dsComplemento": "Ds Complemento",
+            "cdTel": "Cd Tel",
+            "cdFax": "Cd Fax",
+            "flInativo": "Fl Inativo",
+            "nmFantasia": "Nm Fantasia",
+            "vlComissao": "Vl Comissao",
+            "dtOperacao": "Dt Operacao"
+        }
+    }
+}

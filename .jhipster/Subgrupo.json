@@ -26,6 +26,10 @@
         {
             "fieldName": "flEnvio",
             "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "nnNovo",
+            "fieldType": "Integer"
         }
     ],
     "changelogDate": "20160603123751",
