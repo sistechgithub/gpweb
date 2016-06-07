@@ -1,0 +1,137 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "nmFilial",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": "1",
+            "fieldValidateRulesMaxlength": "60"
+        },
+        {
+            "fieldName": "nnNumero",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "dsComplemento",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 20
+        },
+        {
+            "fieldName": "cdCnpj",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "14"
+        },
+        {
+            "fieldName": "cdCgf",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "18"
+        },
+        {
+            "fieldName": "dsSite",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "30"
+        },
+        {
+            "fieldName": "flAtiva",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "nmRazao",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "150"
+        },
+        {
+            "fieldName": "cdTel",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "13"
+        },
+        {
+            "fieldName": "cdTel1",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "13"
+        },
+        {
+            "fieldName": "cdTel2",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "13"
+        },
+        {
+            "fieldName": "cdFax",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "13"
+        },
+        {
+            "fieldName": "dtOperacao",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "nnVersao",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "flTprec",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "dsPisCofins",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "2"
+        },
+        {
+            "fieldName": "nnMdfVersao",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "flEnviaEmail",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "dsObs",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "200"
+        }
+    ],
+    "changelogDate": "20160607125732",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "filial",
+    "pagination": "pagination"
+}

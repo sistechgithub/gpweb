@@ -1,0 +1,40 @@
+{
+    "gpwebApp": {
+        "filial" : {
+            "home": {
+                "title": "Filials",
+                "createLabel": "Criar novo Filial",
+                "createOrEditLabel": "Criar ou editar Filial",
+                "search": "Pesquisar por Filial"
+            },
+            "created": "Um novo Filial é criado com o identificador {{ param }}",
+            "updated": "Um Filial é atualizado com o identificador {{ param }}",
+            "deleted": "Um Filial é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Filial {{ id }}?"
+            },
+            "detail": {
+                "title": "Filial"
+            },
+            "nmFilial": "Nm Filial",
+            "nnNumero": "Nn Numero",
+            "dsComplemento": "Ds Complemento",
+            "cdCnpj": "Cd Cnpj",
+            "cdCgf": "Cd Cgf",
+            "dsSite": "Ds Site",
+            "flAtiva": "Fl Ativa",
+            "nmRazao": "Nm Razao",
+            "cdTel": "Cd Tel",
+            "cdTel1": "Cd Tel 1",
+            "cdTel2": "Cd Tel 2",
+            "cdFax": "Cd Fax",
+            "dtOperacao": "Dt Operacao",
+            "nnVersao": "Nn Versao",
+            "flTprec": "Fl Tprec",
+            "dsPisCofins": "Ds Pis Cofins",
+            "nnMdfVersao": "Nn Mdf Versao",
+            "flEnviaEmail": "Fl Envia Email",
+            "dsObs": "Ds Obs"
+        }
+    }
+}

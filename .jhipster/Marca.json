@@ -1,0 +1,85 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "nmFabricante",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": "1",
+            "fieldValidateRulesMaxlength": "35"
+        },
+        {
+            "fieldName": "cdCgc",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "18"
+        },
+        {
+            "fieldName": "cdCgf",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "18"
+        },
+        {
+            "fieldName": "nnNumero",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "dsComplemento",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "20"
+        },
+        {
+            "fieldName": "cdTel",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "13"
+        },
+        {
+            "fieldName": "cdFax",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "13"
+        },
+        {
+            "fieldName": "flInativo",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "nmFantasia",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "35"
+        },
+        {
+            "fieldName": "vlComissao",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "dtOperacao",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20160607135410",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "marca",
+    "pagination": "pagination"
+}
