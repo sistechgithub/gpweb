@@ -13,6 +13,8 @@
                 "payments": "Payments",
                 "grupo": "Group",
                 "subgrupo": "Subgrupo",
+                "promocao": "Promocao",
+                "filial": "Filial",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
