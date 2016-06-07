@@ -1,0 +1,224 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myFilialLabel" translate="gpwebApp.filial.home.createOrEditLabel">Create or edit a Filial</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.filial.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.filial.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gpwebApp.filial.nmFilial" for="field_nmFilial">Nm Filial</label>
+            <input type="text" class="form-control" name="nmFilial" id="field_nmFilial"
+                    ng-model="vm.filial.nmFilial"
+                    required ng-minlength="1" ng-maxlength="60" />
+            <div ng-show="editForm.nmFilial.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.nmFilial.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.nmFilial.$error.minlength" translate="entity.validation.minlength" translate-value-min="1">
+                    This field is required to be at least 1 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.nmFilial.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="60">
+                    This field cannot be longer than 60 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gpwebApp.filial.nnNumero" for="field_nnNumero">Nn Numero</label>
+            <input type="number" class="form-control" name="nnNumero" id="field_nnNumero"
+                    ng-model="vm.filial.nnNumero"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gpwebApp.filial.dsComplemento" for="field_dsComplemento">Ds Complemento</label>
+            <input type="text" class="form-control" name="dsComplemento" id="field_dsComplemento"
+                    ng-model="vm.filial.dsComplemento"
+                    ng-maxlength="20" />
+            <div ng-show="editForm.dsComplemento.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.dsComplemento.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="20">
+                    This field cannot be longer than 20 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gpwebApp.filial.cdCnpj" for="field_cdCnpj">Cd Cnpj</label>
+            <input type="text" class="form-control" name="cdCnpj" id="field_cdCnpj"
+                    ng-model="vm.filial.cdCnpj"
+                    ng-maxlength="14" />
+            <div ng-show="editForm.cdCnpj.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.cdCnpj.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="14">
+                    This field cannot be longer than 14 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gpwebApp.filial.cdCgf" for="field_cdCgf">Cd Cgf</label>
+            <input type="text" class="form-control" name="cdCgf" id="field_cdCgf"
+                    ng-model="vm.filial.cdCgf"
+                    ng-maxlength="18" />
+            <div ng-show="editForm.cdCgf.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.cdCgf.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="18">
+                    This field cannot be longer than 18 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gpwebApp.filial.dsSite" for="field_dsSite">Ds Site</label>
+            <input type="text" class="form-control" name="dsSite" id="field_dsSite"
+                    ng-model="vm.filial.dsSite"
+                    ng-maxlength="30" />
+            <div ng-show="editForm.dsSite.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.dsSite.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="30">
+                    This field cannot be longer than 30 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gpwebApp.filial.flAtiva" for="field_flAtiva">Fl Ativa</label>
+            <input type="checkbox" class="form-control" name="flAtiva" id="field_flAtiva"
+                    ng-model="vm.filial.flAtiva"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gpwebApp.filial.nmRazao" for="field_nmRazao">Nm Razao</label>
+            <input type="text" class="form-control" name="nmRazao" id="field_nmRazao"
+                    ng-model="vm.filial.nmRazao"
+                    ng-maxlength="150" />
+            <div ng-show="editForm.nmRazao.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.nmRazao.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="150">
+                    This field cannot be longer than 150 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gpwebApp.filial.cdTel" for="field_cdTel">Cd Tel</label>
+            <input type="text" class="form-control" name="cdTel" id="field_cdTel"
+                    ng-model="vm.filial.cdTel"
+                    ng-maxlength="13" />
+            <div ng-show="editForm.cdTel.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.cdTel.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="13">
+                    This field cannot be longer than 13 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gpwebApp.filial.cdTel1" for="field_cdTel1">Cd Tel 1</label>
+            <input type="text" class="form-control" name="cdTel1" id="field_cdTel1"
+                    ng-model="vm.filial.cdTel1"
+                    ng-maxlength="13" />
+            <div ng-show="editForm.cdTel1.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.cdTel1.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="13">
+                    This field cannot be longer than 13 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gpwebApp.filial.cdTel2" for="field_cdTel2">Cd Tel 2</label>
+            <input type="text" class="form-control" name="cdTel2" id="field_cdTel2"
+                    ng-model="vm.filial.cdTel2"
+                    ng-maxlength="13" />
+            <div ng-show="editForm.cdTel2.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.cdTel2.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="13">
+                    This field cannot be longer than 13 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gpwebApp.filial.cdFax" for="field_cdFax">Cd Fax</label>
+            <input type="text" class="form-control" name="cdFax" id="field_cdFax"
+                    ng-model="vm.filial.cdFax"
+                    ng-maxlength="13" />
+            <div ng-show="editForm.cdFax.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.cdFax.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="13">
+                    This field cannot be longer than 13 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gpwebApp.filial.dtOperacao" for="field_dtOperacao">Dt Operacao</label>
+                <div class="input-group">
+                    <input id="field_dtOperacao" type="text" class="form-control" name="dtOperacao" uib-datepicker-popup="{{dateformat}}" ng-model="vm.filial.dtOperacao" is-open="vm.datePickerOpenStatus.dtOperacao"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dtOperacao')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gpwebApp.filial.nnVersao" for="field_nnVersao">Nn Versao</label>
+            <input type="number" class="form-control" name="nnVersao" id="field_nnVersao"
+                    ng-model="vm.filial.nnVersao"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gpwebApp.filial.flTprec" for="field_flTprec">Fl Tprec</label>
+            <input type="checkbox" class="form-control" name="flTprec" id="field_flTprec"
+                    ng-model="vm.filial.flTprec"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gpwebApp.filial.dsPisCofins" for="field_dsPisCofins">Ds Pis Cofins</label>
+            <input type="text" class="form-control" name="dsPisCofins" id="field_dsPisCofins"
+                    ng-model="vm.filial.dsPisCofins"
+                    ng-maxlength="2" />
+            <div ng-show="editForm.dsPisCofins.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.dsPisCofins.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="2">
+                    This field cannot be longer than 2 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gpwebApp.filial.nnMdfVersao" for="field_nnMdfVersao">Nn Mdf Versao</label>
+            <input type="number" class="form-control" name="nnMdfVersao" id="field_nnMdfVersao"
+                    ng-model="vm.filial.nnMdfVersao"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gpwebApp.filial.flEnviaEmail" for="field_flEnviaEmail">Fl Envia Email</label>
+            <input type="checkbox" class="form-control" name="flEnviaEmail" id="field_flEnviaEmail"
+                    ng-model="vm.filial.flEnviaEmail"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gpwebApp.filial.dsObs" for="field_dsObs">Ds Obs</label>
+            <input type="text" class="form-control" name="dsObs" id="field_dsObs"
+                    ng-model="vm.filial.dsObs"
+                    ng-maxlength="200" />
+            <div ng-show="editForm.dsObs.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.dsObs.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="200">
+                    This field cannot be longer than 200 characters.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
