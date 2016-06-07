@@ -1,0 +1,86 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myPromocaoLabel" translate="gpwebApp.promocao.home.createOrEditLabel">Create or edit a Promocao</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.promocao.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.promocao.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gpwebApp.promocao.dsPromocao" for="field_dsPromocao">Ds Promocao</label>
+            <input type="text" class="form-control" name="dsPromocao" id="field_dsPromocao"
+                    ng-model="vm.promocao.dsPromocao"
+                    required ng-minlength="1" ng-maxlength="30" />
+            <div ng-show="editForm.dsPromocao.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.dsPromocao.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.dsPromocao.$error.minlength" translate="entity.validation.minlength" translate-value-min="1">
+                    This field is required to be at least 1 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.dsPromocao.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="30">
+                    This field cannot be longer than 30 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gpwebApp.promocao.dtVencimento" for="field_dtVencimento">Dt Vencimento</label>
+                <div class="input-group">
+                    <input id="field_dtVencimento" type="text" class="form-control" name="dtVencimento" uib-datepicker-popup="{{dateformat}}" ng-model="vm.promocao.dtVencimento" is-open="vm.datePickerOpenStatus.dtVencimento"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dtVencimento')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gpwebApp.promocao.nnDiaData" for="field_nnDiaData">Nn Dia Data</label>
+            <input type="number" class="form-control" name="nnDiaData" id="field_nnDiaData"
+                    ng-model="vm.promocao.nnDiaData"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gpwebApp.promocao.nnDiaSemana" for="field_nnDiaSemana">Nn Dia Semana</label>
+            <input type="number" class="form-control" name="nnDiaSemana" id="field_nnDiaSemana"
+                    ng-model="vm.promocao.nnDiaSemana"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gpwebApp.promocao.flInativo" for="field_flInativo">Fl Inativo</label>
+            <input type="checkbox" class="form-control" name="flInativo" id="field_flInativo"
+                    ng-model="vm.promocao.flInativo"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gpwebApp.promocao.vlPromocao" for="field_vlPromocao">Vl Promocao</label>
+            <input type="number" class="form-control" name="vlPromocao" id="field_vlPromocao"
+                    ng-model="vm.promocao.vlPromocao"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gpwebApp.promocao.nnPontos" for="field_nnPontos">Nn Pontos</label>
+            <input type="number" class="form-control" name="nnPontos" id="field_nnPontos"
+                    ng-model="vm.promocao.nnPontos"
+                     />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

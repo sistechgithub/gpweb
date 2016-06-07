@@ -1,0 +1,45 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "dsPromocao",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": "1",
+            "fieldValidateRulesMaxlength": "30"
+        },
+        {
+            "fieldName": "dtVencimento",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "nnDiaData",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nnDiaSemana",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "flInativo",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "vlPromocao",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "nnPontos",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20160606140409",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "promocao",
+    "pagination": "pagination"
+}
