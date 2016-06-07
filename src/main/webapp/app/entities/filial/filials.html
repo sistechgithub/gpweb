@@ -1,0 +1,113 @@
+<div>
+    <h2 translate="gpwebApp.filial.home.title">Filials</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="filial.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs"  translate="gpwebApp.filial.home.createLabel">
+                        Create new Filial
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'gpwebApp.filial.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="nmFilial"><span translate="gpwebApp.filial.nmFilial">Nm Filial</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="nnNumero"><span translate="gpwebApp.filial.nnNumero">Nn Numero</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dsComplemento"><span translate="gpwebApp.filial.dsComplemento">Ds Complemento</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="cdCnpj"><span translate="gpwebApp.filial.cdCnpj">Cd Cnpj</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="cdCgf"><span translate="gpwebApp.filial.cdCgf">Cd Cgf</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dsSite"><span translate="gpwebApp.filial.dsSite">Ds Site</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="flAtiva"><span translate="gpwebApp.filial.flAtiva">Fl Ativa</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="nmRazao"><span translate="gpwebApp.filial.nmRazao">Nm Razao</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="cdTel"><span translate="gpwebApp.filial.cdTel">Cd Tel</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="cdTel1"><span translate="gpwebApp.filial.cdTel1">Cd Tel 1</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="cdTel2"><span translate="gpwebApp.filial.cdTel2">Cd Tel 2</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="cdFax"><span translate="gpwebApp.filial.cdFax">Cd Fax</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dtOperacao"><span translate="gpwebApp.filial.dtOperacao">Dt Operacao</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="nnVersao"><span translate="gpwebApp.filial.nnVersao">Nn Versao</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="flTprec"><span translate="gpwebApp.filial.flTprec">Fl Tprec</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dsPisCofins"><span translate="gpwebApp.filial.dsPisCofins">Ds Pis Cofins</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="nnMdfVersao"><span translate="gpwebApp.filial.nnMdfVersao">Nn Mdf Versao</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="flEnviaEmail"><span translate="gpwebApp.filial.flEnviaEmail">Fl Envia Email</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dsObs"><span translate="gpwebApp.filial.dsObs">Ds Obs</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="filial in vm.filials track by filial.id">
+                    <td><a ui-sref="filial-detail({id:filial.id})">{{filial.id}}</a></td>
+                    <td>{{filial.nmFilial}}</td>
+                    <td>{{filial.nnNumero}}</td>
+                    <td>{{filial.dsComplemento}}</td>
+                    <td>{{filial.cdCnpj}}</td>
+                    <td>{{filial.cdCgf}}</td>
+                    <td>{{filial.dsSite}}</td>
+                    <td>{{filial.flAtiva}}</td>
+                    <td>{{filial.nmRazao}}</td>
+                    <td>{{filial.cdTel}}</td>
+                    <td>{{filial.cdTel1}}</td>
+                    <td>{{filial.cdTel2}}</td>
+                    <td>{{filial.cdFax}}</td>
+                        <td>{{filial.dtOperacao | date:'mediumDate'}}</td>
+                    <td>{{filial.nnVersao}}</td>
+                    <td>{{filial.flTprec}}</td>
+                    <td>{{filial.dsPisCofins}}</td>
+                    <td>{{filial.nnMdfVersao}}</td>
+                    <td>{{filial.flEnviaEmail}}</td>
+                    <td>{{filial.dsObs}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="filial-detail({id:filial.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="filial.edit({id:filial.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="filial.delete({id:filial.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>
