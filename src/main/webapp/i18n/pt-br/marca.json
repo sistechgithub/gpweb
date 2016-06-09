@@ -3,30 +3,31 @@
         "marca" : {
             "home": {
                 "title": "Marcas",
-                "createLabel": "Criar novo Marca",
+                "createLabel": "Adicionar",
                 "createOrEditLabel": "Criar ou editar Marca",
-                "search": "Pesquisar por Marca"
+                "search": "Pesquisar"
             },
-            "created": "Um novo Marca é criado com o identificador {{ param }}",
-            "updated": "Um Marca é atualizado com o identificador {{ param }}",
-            "deleted": "Um Marca é deletado com o identificador {{ param }}",
+            "created": "Uma nova Marca foi criada com o código {{ param }}",
+            "updated": "A Marca de código {{ param }} foi atualizada",
+            "deleted": "A Marca de código {{ param }} foi deletada",
             "delete": {
-                "question": "Tem certeza de que deseja excluir Marca {{ id }}?"
+                "question": "Tem certeza de que deseja excluir a Marca {{ id }}?"
             },
             "detail": {
                 "title": "Marca"
             },
-            "nmFabricante": "Nm Fabricante",
-            "cdCgc": "Cd Cgc",
-            "cdCgf": "Cd Cgf",
-            "nnNumero": "Nn Numero",
-            "dsComplemento": "Ds Complemento",
-            "cdTel": "Cd Tel",
-            "cdFax": "Cd Fax",
-            "flInativo": "Fl Inativo",
-            "nmFantasia": "Nm Fantasia",
-            "vlComissao": "Vl Comissao",
-            "dtOperacao": "Dt Operacao"
+            "nmFabricante": "Razão Social",
+            "nmFabricante2": "Nome",
+            "cdCgc": "CNPJ",
+            "cdCgf": "Inscrição Estadual",
+            "cdTel": "Telefone",
+            "cdFax": "Fax",
+            "flInativo": "Inativo",
+            "nmFantasia": "Nome Fantasia",
+            "vlComissao": "Comissao (%)",
+            "dtOperacao": "Data de Operacao",
+            "nnNumero": "Numero",
+            "dsComplemento": "Complemento"
         }
     }
 }

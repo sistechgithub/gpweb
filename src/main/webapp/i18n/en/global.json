@@ -12,10 +12,10 @@
                 "stock": "Stock",
                 "payments": "Payments",
                 "grupo": "Group",
-                "subgrupo": "Subgrupo",
+                "subgrupo": "Subgroup",
                 "promocao": "Promocao",
                 "filial": "Filial",
-                "marca": "Marca",
+                "marca": "Brand",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
