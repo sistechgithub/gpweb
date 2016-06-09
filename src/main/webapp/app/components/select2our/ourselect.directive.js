@@ -70,7 +70,7 @@
 	              	  theme: "classic",
 	              	 minimumResultsForSearch: -1,
 	              	  ajax: {
-	              		url: "/api/_search/" + scope.entityUrl + "/new?size=20&sort=id,asc",
+	              		url: "/api/_search/" + scope.entityUrl + "/select?size=20&sort=id,asc",
 	              	    dataType: 'json',
 	              	    delay: 20,            	    
 	              	    data: function (params) {
