@@ -3,23 +3,20 @@
 
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
-                ng-click="vm.clear()">&times;</button>
-        <i class="mdi mdi-package"></i>	
+                ng-click="vm.clear()">&times;</button>	
         <h4 class="modal-title" id="myGrupoLabel" translate="gpwebApp.grupo.home.createOrEditLabel">Criar ou editar Grupo</h4>
     </div>
     <div class="modal-body">
         <jhi-alert-error></jhi-alert-error>
         <div class="row">
             <div class="col-sm-2">
-                <div class="form-group" ng-show="vm.grupo.id">
+                <div class="form-group">
                     <label for="id" translate="global.field.id">Código</label>
                     <input type="text" class="form-control" id="id" name="id"
                             ng-model="vm.grupo.id" readonly />
                 </div>
-            </div>  
-        </div>
-        <div class="row">          
-            <div class="col-sm-12">
+            </div>
+            <div class="col-sm-10">
                 <div class="form-group">
                     <label class="control-label" translate="gpwebApp.grupo.name" for="field_nmGrupo">Nome</label>
                     <input type="text" class="form-control text-uppercase" name="nmGrupo" id="field_nmGrupo"
@@ -28,19 +25,19 @@
                     <div ng-show="editForm.nmGrupo.$invalid">
                         <p class="help-block"
                             ng-show="editForm.nmGrupo.$error.required" translate="entity.validation.required">
-                            This field is required.
+                            O campo é obrigatório.
                         </p>
                         <p class="help-block"
                             ng-show="editForm.nmGrupo.$error.minlength" translate="entity.validation.minlength" translate-value-min="1">
-                            This field is required to be at least 1 characters.
+                            Este campo não pode ter menos que 1 caractere.
                         </p>
                         <p class="help-block"
                             ng-show="editForm.nmGrupo.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="35">
-                            This field cannot be longer than 35 characters.
+                            Este campo não pode ter mais que 35 caracteres.
                         </p>
                     </div>
                 </div>
-            </div>            
+            </div>  
         </div>
         
         <div class="row">
@@ -53,11 +50,11 @@
                     <div ng-show="editForm.vlComissao.$invalid">
                         <p class="help-block"
                             ng-show="editForm.vlComissao.$error.max" translate="entity.validation.max" translate-value-max="100">
-                            This field cannot be more than 100.
+                            Este campo não pode ter mais que 100 caracteres.
                         </p>
                         <p class="help-block"
                             ng-show="editForm.vlComissao.$error.number" translate="entity.validation.number">
-                            This field should be a number.
+                            Este campo não pode ter menos que 1 caractere.
                         </p>
                     </div>
                 </div>
@@ -100,15 +97,14 @@
                             <input type="radio" name="nn_type" id="field_nn_type1" value="1" ng-model="vm.grupo.nnType" ng-click="rgAux2 = false; rgAux3 = false;"/>
                             <span class="radio__label" translate="gpwebApp.grupo.byPeriod">Até:</span>
                       </label>
-                    </div>						
-
-                    <div class="col-md-3 input-group"> 
+                    </div>
+                    <div class="col-xs-9 col-sm-10 col-md-3 input-group"> 
                         <input type="text" class="form-control" name="dtPromo"	uib-datepicker-popup="{{dateformat}}" ng-model="vm.grupo.dtPromo" is-open="vm.datePickerOpenStatus.dtPromo" ng-disabled="vm.grupo.nnType != 1"/>
                         <div class="input-group-addon">
                             <i class="mdi mdi-calendar" ng-click="vm.openCalendar('dtPromo')"></i>
                         </div>
-                    </div>  
-                </div>	
+                    </div>
+                </div>
             </div>
 
             <div class="row">
@@ -148,10 +144,11 @@
                             <option value="SABADOS">SÁBADOS</option>
                         </select>
                     </div>											
-                </div>                
+                </div>
             </div>
+            
             <div class="row">
-                <div class="form-group">
+                <div class="form-group">                
                     <div class="col-xs-12 col-sm-4 col-md-2 input-group">
                         <label class="control-label" translate="gpwebApp.grupo.discount" for="field_vlDesconto">Desconto (%)</label>
                         <input type="number" class="form-control" name="vlDesconto" id="field_vlDesconto"
@@ -160,24 +157,24 @@
                         <div ng-show="editForm.vlDesconto.$invalid">
                             <p class="help-block"
                                 ng-show="editForm.vlDesconto.$error.max" translate="entity.validation.max" translate-value-max="100">
-                                This field cannot be more than 100.
+                                Este campo não pode ter mais que 100 caracteres.
                             </p>
                             <p class="help-block"
                                 ng-show="editForm.vlDesconto.$error.number" translate="entity.validation.number">
-                                This field should be a number.
+                                Este campo não pode ter menos que 1 caracteres.
                             </p>
                         </div>
-                    </div>
+                    </div> 
                 </div>
-            </div>
+            </div>    
         </div>	
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
-            <span class="mdi mdi-close"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+            <span translate="entity.action.cancel">Cancelar</span>
         </button>
         <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-success">
-            <span class="mdi mdi-content-save"></span>&nbsp;&nbsp;<span translate="entity.action.save">Save</span>
+            <span translate="entity.action.save">Salvar</span>
         </button>
     </div>
 </form>

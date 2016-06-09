@@ -81,7 +81,8 @@
             }
         },
         "field": {
-            "id" : "Código"
+            "id" : "Código",
+            "actions": "Ações"
         },
         "ribbon": {
             "dev":"Development"
