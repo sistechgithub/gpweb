@@ -3,25 +3,25 @@
         "subgrupo" : {
             "home": {
                 "title": "Subgrupos",
-                "createLabel": "Criar novo Subgrupo",
+                "createLabel": "Adicionar",
                 "createOrEditLabel": "Criar ou editar Subgrupo",
-                "search": "Pesquisar por Subgrupo"
+                "search": "Pesquisar"
             },
-            "created": "Um novo Subgrupo é criado com o identificador {{ param }}",
-            "updated": "Um Subgrupo é atualizado com o identificador {{ param }}",
-            "deleted": "Um Subgrupo é deletado com o identificador {{ param }}",
+            "created": "Um novo Subgrupo foi criado com o código {{ param }}",
+            "updated": "Um Subgrupo foi atualizado com o código {{ param }}",
+            "deleted": "Um Subgrupo foi deletado com o código {{ param }}",
             "delete": {
-                "question": "Tem certeza de que deseja excluir Subgrupo {{ id }}?"
+                "question": "Tem certeza de que deseja excluir o Subgrupo {{ id }}?"
             },
             "detail": {
                 "title": "Subgrupo"
             },
-            "nmSubgrupo": "Nm Subgrupo",
-            "vlValor": "Vl Valor",
-            "vlCusto": "Vl Custo",
-            "dtOperacao": "Dt Operacao",
-            "flEnvio": "Fl Envio",
-            "nnNovo": "Nn Novo"
+            "nmSubgrupo": "Nome",
+            "vlValor": "Valor",
+            "vlCusto": "Custo (%)",
+            "dtOperacao": "Data de operação",
+            "flEnvio": "Enviado",
+            "nnNovo": "Novo"
         }
     }
 }

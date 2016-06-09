@@ -1,97 +1,96 @@
+    <div class="box">
+        <div class="box-header with-border">
+            <h2 class="box-title"><span translate="gpwebApp.grupo.detail.title">Grupo</span> {{vm.grupo.id}}</h2>
+            <a class=" btn btn-default btn-print pull-right hidden-xs" href="javascript:window.print();"><i class="mdi mdi-printer mdi-2x"></i></a>
+        </div>    
+        <div class="box-body">
+            <br>     
+            <div class="row">
+                <dl class="dl-horizontal jh-entity-details">
+                    <div class="col-xs-12 col-md-6 no-pad-right">
+                        <dt><span translate="gpwebApp.grupo.name">Nome</span>:</dt>
+                        <dd>
+                            <span class="text-uppercase">{{vm.grupo.nmGrupo}}</span>
+                        </dd>
+                        <hr>                   
+                    </div>
+                    <div class="col-xs-12 col-md-6 no-pad-left">
+                        <dt><span translate="gpwebApp.grupo.commission">Comissão (%)</span>:</dt>
+                        <dd>
+                            <span>{{vm.grupo.vlComissao | currency:'':2}}</span>
+                        </dd>
+                        <hr>                     
+                    </div>
+                </dl>            
+            </div>          
+            <div class="row">
+                <dl class="dl-horizontal jh-entity-details">
+                    <div class="col-md-6 no-pad-right">
+                        <dt><span translate="gpwebApp.grupo.noDiscount">Sem Desconto</span>:</dt>
+                        <dd>
+                            <span class="text-uppercase">{{vm.grupo.flDesco ? 'Sim': 'Não'}}</span>
+                        </dd>
+                        <hr>
+                    </div>
+                    <div class="col-md-6 no-pad-left">
+                        <dt><span translate="gpwebApp.grupo.promotion">Promoção</span>:</dt>
+                        <dd>	                        
+                            <span class="text-uppercase">{{vm.grupo.flPromo ? 'Sim': 'Não'}}</span>                    
+                        </dd>
+                        <hr>
+                    </div>
+                </dl>    
+            </div>            
+            <div class="row">
+                <dl class="dl-horizontal">
+                    <div class="col-md-6 no-pad-right">                                        
+                        <!-- Filling in space when doesn't use promotion -->
+                        <dt ng-show="!vm.grupo.flPromo"></dt>
 
-<div class="box">
-    <div class="box-header with-border">
-        <h2 class="box-title"><span translate="gpwebApp.grupo.detail.title">Grupo</span> {{vm.grupo.id}}</h2>
-        <a class=" btn btn-default btn-print pull-right hidden-xs" href="javascript:window.print();"><i class="mdi mdi-printer mdi-2x"></i></a>
-    </div>    
-    <div class="box-body">
-        <br>     
-        <div class="row">
-            <dl class="dl-horizontal jh-entity-details">
-                <div class="col-xs-12 col-md-6 no-pad-right">
-                    <dt><span translate="gpwebApp.grupo.name">Nome</span>:</dt>
-                    <dd>
-                        <span class="text-uppercase">{{vm.grupo.nmGrupo}}</span>
-                    </dd>
-                    <hr>                   
-                </div>
-                <div class="col-xs-12 col-md-6 no-pad-left">
-                    <dt><span translate="gpwebApp.grupo.commission">Comissão (%)</span>:</dt>
-                    <dd>
-                        <span>{{vm.grupo.vlComissao | currency:'':2}}</span>
-                    </dd>
-                    <hr>                     
-                </div>
-            </dl>            
-        </div>          
-        <div class="row">
-            <dl class="dl-horizontal jh-entity-details">
-                <div class="col-md-6 no-pad-right">
-                    <dt><span translate="gpwebApp.grupo.noDiscount">Sem Desconto</span>:</dt>
-                    <dd>
-                        <span class="text-uppercase">{{vm.grupo.flDesco ? 'Sim': 'Não'}}</span>
-                    </dd>
-                    <hr>
-                </div>
-                <div class="col-md-6 no-pad-left">
-                    <dt><span translate="gpwebApp.grupo.promotion">Promoção</span>:</dt>
-                    <dd>	                        
-                        <span class="text-uppercase">{{vm.grupo.flPromo ? 'Sim': 'Não'}}</span>                    
-                    </dd>
-                    <hr>
-                </div>
-            </dl>    
-        </div>            
-        <div class="row">
-            <dl class="dl-horizontal">
-                <div class="col-md-6 no-pad-right">                                        
-                    <!-- Filling in space when doesn't use promotion -->
-                    <dt ng-show="!vm.grupo.flPromo"></dt>
+                        <!-- 1 - Setting promotion option by date -->
+                        <dt ng-show="vm.grupo.flPromo && (vm.grupo.nnType == 1)">
+                            <span translate="gpwebApp.grupo.byPeriodDetail">Válida até:</span>
+                        </dt>
+                        <dd ng-show="vm.grupo.flPromo && (vm.grupo.nnType == 1)">	                    	
+                            <span class="form-control-static">{{vm.grupo.dtPromo | date:'dd/MM/yyyy'}}</span>
+                        </dd>
 
-                    <!-- 1 - Setting promotion option by date -->
-                    <dt ng-show="vm.grupo.flPromo && (vm.grupo.nnType == 1)">
-                        <span translate="gpwebApp.grupo.byPeriodDetail">Válida até:</span>
-                    </dt>
-                    <dd ng-show="vm.grupo.flPromo && (vm.grupo.nnType == 1)">	                    	
-                        <span class="form-control-static">{{vm.grupo.dtPromo | date:'dd/MM/yyyy'}}</span>
-                    </dd>
-                    
-                    <!-- 2 - Setting promotion option by day -->
-                    <dt ng-show="vm.grupo.flPromo && (vm.grupo.nnType == 2)">
-                        <span translate="gpwebApp.grupo.perDayDetail">Válida para todo dia:</span>
-                    </dt>
-                    <dd ng-show="vm.grupo.flPromo && (vm.grupo.nnType == 2)">
-                        <span class="form-control-static">{{vm.grupo.nnDay}}</span>
-                    </dd>
-                    
-                    <!-- 3 - Setting promotion option by week day -->
-                    <dt ng-show="vm.grupo.flPromo && (vm.grupo.nnType == 3)">
-                        <span translate="gpwebApp.grupo.perWeekDetail">Válida apenas nas(os):</span>
-                    </dt>
-                    <dd ng-show="vm.grupo.flPromo && (vm.grupo.nnType == 3)">
-                        <span class="form-control-static">{{vm.grupo.nnDayWeek}}</span>
-                    </dd>       
-                    <hr ng-show="vm.grupo.flPromo">
-                </div>
-                <div class="col-md-6 no-pad-left">
-                    <!-- Desconto -->
-	                <dt ng-show="vm.grupo.flPromo">	                	
-	                    <span translate="gpwebApp.grupo.discount">Desconto (%)</span>:
-	                </dt>
-	                <dd ng-show="vm.grupo.flPromo">	                	
-	                    <span class="form-control-static">{{vm.grupo.vlDesconto | currency:'':2}}</span>
-	                </dd>
-	                <hr ng-show="vm.grupo.flPromo">
-                </div>    
-            </dl>    
-        </div>          
+                        <!-- 2 - Setting promotion option by day -->
+                        <dt ng-show="vm.grupo.flPromo && (vm.grupo.nnType == 2)">
+                            <span translate="gpwebApp.grupo.perDayDetail">Válida para todo dia:</span>
+                        </dt>
+                        <dd ng-show="vm.grupo.flPromo && (vm.grupo.nnType == 2)">
+                            <span class="form-control-static">{{vm.grupo.nnDay}}</span>
+                        </dd>
+
+                        <!-- 3 - Setting promotion option by week day -->
+                        <dt ng-show="vm.grupo.flPromo && (vm.grupo.nnType == 3)">
+                            <span translate="gpwebApp.grupo.perWeekDetail">Válida apenas nas(os):</span>
+                        </dt>
+                        <dd ng-show="vm.grupo.flPromo && (vm.grupo.nnType == 3)">
+                            <span class="form-control-static">{{vm.grupo.nnDayWeek}}</span>
+                        </dd>       
+                        <hr ng-show="vm.grupo.flPromo">
+                    </div>
+                    <div class="col-md-6 no-pad-left">
+                        <!-- Desconto -->
+                        <dt ng-show="vm.grupo.flPromo">	                	
+                            <span translate="gpwebApp.grupo.discount">Desconto (%)</span>:
+                        </dt>
+                        <dd ng-show="vm.grupo.flPromo">	                	
+                            <span class="form-control-static">{{vm.grupo.vlDesconto | currency:'':2}}</span>
+                        </dd>
+                        <hr ng-show="vm.grupo.flPromo">
+                    </div>    
+                </dl>    
+            </div>          
+        </div>
+        <br>
+        <div class="box-footer no-border">
+            <button type="submit"
+                    onclick="window.history.back()"
+                    class="btn btn-info pull-right">
+                <span translate="entity.action.back"> Back</span>
+            </button>
+        </div>
     </div>
-    <br>
-    <div class="box-footer no-border">
-        <button type="submit"
-                onclick="window.history.back()"
-                class="btn btn-info pull-right">
-            <span class="mdi mdi-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
-        </button>
-    </div>
-</div>
