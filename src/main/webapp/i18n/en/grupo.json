@@ -3,15 +3,15 @@
         "grupo" : {
             "home": {
                 "title": "Groups",
-                "createLabel": "Add",
-                "createOrEditLabel": "Create or edit a Grupo",
-                "search": "Search for Group"
+                "createLabel": "New",
+                "createOrEditLabel": "Create or edit a Group",
+                "search": "Search"
             },
-            "created": "A new Grupo is created with identifier {{ param }}",
-            "updated": "A Grupo is updated with identifier {{ param }}",
-            "deleted": "A Grupo is deleted with identifier {{ param }}",
+            "created": "A new Group is created with identifier {{ param }}",
+            "updated": "A Group is updated with identifier {{ param }}",
+            "deleted": "A Group is deleted with identifier {{ param }}",
             "delete": {
-                "question": "Are you sure you want to delete Grupo {{ id }}?"
+                "question": "Are you sure you want to delete Group {{ id }}?"
             },
             "detail": {
                 "title": "Group"
@@ -31,11 +31,11 @@
             "discount": "Discount (%)",
             "actions": "Actions",
             
-            "dtOperacao": "Dt Operacao",
-            "flSemContagem": "Fl Sem Contagem",
-            "flEnvio": "Fl Envio",
-            "nnType": "Nn Type",
-            "nnNovo": "Nn Novo"
+            "dtOperacao": "Date operation",
+            "flSemContagem": "No count",
+            "flEnvio": "Send",
+            "nnType": "Type",
+            "nnNovo": "New"
         }
     }
 }
