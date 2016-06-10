@@ -2,31 +2,32 @@
     "gpwebApp": {
         "marca" : {
             "home": {
-                "title": "Marcas",
-                "createLabel": "Create a new Marca",
-                "createOrEditLabel": "Create or edit a Marca",
-                "search": "Search for Marca"
+                "title": "Brands",
+                "createLabel": "New",
+                "createOrEditLabel": "Create or edit a Brand",
+                "search": "Search"
             },
-            "created": "A new Marca is created with identifier {{ param }}",
-            "updated": "A Marca is updated with identifier {{ param }}",
-            "deleted": "A Marca is deleted with identifier {{ param }}",
+            "created": "A new Brand is created with identifier {{ param }}",
+            "updated": "The code mark {{ param }} has been updated",
+            "deleted": "The code mark {{ param }} has been deleted",
             "delete": {
-                "question": "Are you sure you want to delete Marca {{ id }}?"
+                "question": "Are you sure you want to delete Brand {{ id }}?"
             },
             "detail": {
-                "title": "Marca"
+                "title": "Brand"
             },
-            "nmFabricante": "Nm Fabricante",
-            "cdCgc": "Cd Cgc",
-            "cdCgf": "Cd Cgf",
-            "nnNumero": "Nn Numero",
-            "dsComplemento": "Ds Complemento",
-            "cdTel": "Cd Tel",
-            "cdFax": "Cd Fax",
-            "flInativo": "Fl Inativo",
-            "nmFantasia": "Nm Fantasia",
-            "vlComissao": "Vl Comissao",
-            "dtOperacao": "Dt Operacao"            
+            "nmFabricante": "Company Name",
+            "nmFabricante2": "Name",
+            "cdCgc": "CNPJ",
+            "cdCgf": "State Registration",
+            "nnNumero": "Number",
+            "dsComplemento": "Complement",
+            "cdTel": "Phone",
+            "cdFax": "Fax",
+            "flInativo": "Inactive",
+            "nmFantasia": "Fantasy Name",
+            "vlComissao": "Commission",
+            "dtOperacao": "Date Operation"            
         }
     }
 }

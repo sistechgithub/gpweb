@@ -1,63 +1,143 @@
-
 <form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
 
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
                 ng-click="vm.clear()">&times;</button>
-        <h4 class="modal-title" id="myMarcaLabel" translate="gpwebApp.marca.home.createOrEditLabel">Create or edit a Marca</h4>
+        <h4 class="modal-title" id="myMarcaLabel" translate="gpwebApp.marca.home.createOrEditLabel">Criar ou editar	uma Marca</h4>
     </div>
+    
     <div class="modal-body">
         <jhi-alert-error></jhi-alert-error>
-        <div class="form-group" ng-show="vm.marca.id">
-            <label for="id" translate="global.field.id">ID</label>
-            <input type="text" class="form-control" id="id" name="id"
-                    ng-model="vm.marca.id" readonly />
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gpwebApp.marca.nmFabricante" for="field_nmFabricante">Nm Fabricante</label>
-            <input type="text" class="form-control" name="nmFabricante" id="field_nmFabricante"
-                    ng-model="vm.marca.nmFabricante"
-                    required ng-minlength="1" ng-maxlength="35" />
-            <div ng-show="editForm.nmFabricante.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.nmFabricante.$error.required" translate="entity.validation.required">
-                    This field is required.
-                </p>
-                <p class="help-block"
-                    ng-show="editForm.nmFabricante.$error.minlength" translate="entity.validation.minlength" translate-value-min="1">
-                    This field is required to be at least 1 characters.
-                </p>
-                <p class="help-block"
-                    ng-show="editForm.nmFabricante.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="35">
-                    This field cannot be longer than 35 characters.
-                </p>
+		<div class="row">
+			<div class="col-xs-12 col-sm-2">
+                <div class="form-group">
+                    <label for="id" translate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                            ng-model="vm.marca.id" readonly />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-10">
+                <div class="form-group">
+                    <label class="control-label" translate="gpwebApp.marca.nmFabricante" for="field_nmFabricante">Razão Social</label>
+                    <input type="text" class="form-control" name="nmFabricante" id="field_nmFabricante"
+                            ng-model="vm.marca.nmFabricante"
+                            required ng-minlength="1" ng-maxlength="35" />
+                    <div ng-show="editForm.nmFabricante.$invalid">
+                        <p class="help-block"
+                            ng-show="editForm.nmFabricante.$error.required" translate="entity.validation.required">
+                            O campo é obrigatório.
+                        </p>
+                        <p class="help-block"
+                            ng-show="editForm.nmFabricante.$error.minlength" translate="entity.validation.minlength" translate-value-min="1">
+                            Este campo não pode ter menos que 1 caractere.
+                        </p>
+                        <p class="help-block"
+                            ng-show="editForm.nmFabricante.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="35">
+                            Este campo não pode ter mais que 35 caracteres.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="form-group">
-            <label class="control-label" translate="gpwebApp.marca.cdCgc" for="field_cdCgc">Cd Cgc</label>
-            <input type="text" class="form-control" name="cdCgc" id="field_cdCgc"
-                    ng-model="vm.marca.cdCgc"
-                    ng-maxlength="18" />
-            <div ng-show="editForm.cdCgc.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.cdCgc.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="18">
-                    This field cannot be longer than 18 characters.
-                </p>
-            </div>
+        <div class="row">
+            <div class="col-md-12">  
+                <div class="form-group">
+                    <label class="control-label" translate="gpwebApp.marca.nmFantasia" for="field_nmFantasia">Nome Fantasia</label>
+                    <input type="text" class="form-control" name="nmFantasia" id="field_nmFantasia"
+                            ng-model="vm.marca.nmFantasia"
+                            ng-maxlength="35" />
+                    <div ng-show="editForm.nmFantasia.$invalid">
+                        <p class="help-block"
+                            ng-show="editForm.nmFantasia.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="35">
+                            Este campo não pode ter mais que 35 caracteres.
+                        </p>
+                    </div>
+                </div>
+            </div>                
         </div>
-        <div class="form-group">
-            <label class="control-label" translate="gpwebApp.marca.cdCgf" for="field_cdCgf">Cd Cgf</label>
-            <input type="text" class="form-control" name="cdCgf" id="field_cdCgf"
-                    ng-model="vm.marca.cdCgf"
-                    ng-maxlength="18" />
-            <div ng-show="editForm.cdCgf.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.cdCgf.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="18">
-                    This field cannot be longer than 18 characters.
-                </p>
+        
+        <div class="row">
+			<div class="col-xs-12 col-sm-4">  
+                <div class="form-group">
+                    <label class="control-label" translate="gpwebApp.marca.cdCgc" for="field_cdCgc">CNPJ</label>
+                    <input type="text" class="form-control" name="cdCgc" id="field_cdCgc"
+                            ng-model="vm.marca.cdCgc"
+                            ng-maxlength="18" />
+                    <div ng-show="editForm.cdCgc.$invalid">
+                        <p class="help-block"
+                            ng-show="editForm.cdCgc.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="18">
+                            Este campo não pode ter mais que 18 caracteres.
+                        </p>
+                    </div>
+                </div>
             </div>
+			<div class="col-xs-12 col-sm-4">
+                <div class="form-group">
+                    <label class="control-label" translate="gpwebApp.marca.cdCgf" for="field_cdCgf">Inscrição Estadual</label>
+                    <input type="text" class="form-control" name="cdCgf" id="field_cdCgf"
+                            ng-model="vm.marca.cdCgf"
+                            ng-maxlength="18" />
+                    <div ng-show="editForm.cdCgf.$invalid">
+                        <p class="help-block"
+                            ng-show="editForm.cdCgf.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="18">
+                            Este campo não pode ter mais que 18 caracteres.
+                        </p>
+                    </div>
+                </div>
+            </div>
+			<div class="col-xs-12 col-sm-4">
+                <div class="form-group">
+                    <label class="control-label" translate="gpwebApp.marca.cdTel" for="field_cdTel">Telefone</label>
+                    <input type="text" class="form-control" name="cdTel" id="field_cdTel"
+                            ng-model="vm.marca.cdTel"
+                            ng-maxlength="13" />
+                    <div ng-show="editForm.cdTel.$invalid">
+                        <p class="help-block"
+                            ng-show="editForm.cdTel.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="13">
+                            Este campo não pode ter mais que 13 caracteres.
+                        </p>
+                    </div>
+                </div> 
+            </div> 
         </div>
-        <div class="form-group">
+        <div class="row">
+            <div class="col-xs-12 col-sm-4">
+                <div class="form-group">
+                    <label class="control-label" translate="gpwebApp.marca.cdFax" for="field_cdFax">Fax</label>
+                    <input type="text" class="form-control" name="cdFax" id="field_cdFax"
+                            ng-model="vm.marca.cdFax"
+                            ng-maxlength="13" />
+                    <div ng-show="editForm.cdFax.$invalid">
+                        <p class="help-block"
+                            ng-show="editForm.cdFax.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="13">
+                            Este campo não pode ter mais que 13 caracteres.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-xs-12 col-sm-4">
+                <div class="form-group">
+                    <label class="control-label" translate="gpwebApp.marca.vlComissao" for="field_vlComissao">Comissao (%)</label>
+                    <input type="number" class="form-control" name="vlComissao" id="field_vlComissao"
+                            ng-model="vm.marca.vlComissao"
+                             />
+                </div>
+            </div>    
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <div class="form-group">
+                    <div class="checkbox">                   
+                        <label>
+                            <input type="checkbox" name="flInativo" ng-model="vm.marca.flInativo" />
+                            <span class="checkbox__label" translate="gpwebApp.marca.flInativo">Inativo</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>  
+        <!-- <div class="form-group">
             <label class="control-label" translate="gpwebApp.marca.nnNumero" for="field_nnNumero">Nn Numero</label>
             <input type="number" class="form-control" name="nnNumero" id="field_nnNumero"
                     ng-model="vm.marca.nnNumero"
@@ -74,73 +154,14 @@
                     This field cannot be longer than 20 characters.
                 </p>
             </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gpwebApp.marca.cdTel" for="field_cdTel">Cd Tel</label>
-            <input type="text" class="form-control" name="cdTel" id="field_cdTel"
-                    ng-model="vm.marca.cdTel"
-                    ng-maxlength="13" />
-            <div ng-show="editForm.cdTel.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.cdTel.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="13">
-                    This field cannot be longer than 13 characters.
-                </p>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gpwebApp.marca.cdFax" for="field_cdFax">Cd Fax</label>
-            <input type="text" class="form-control" name="cdFax" id="field_cdFax"
-                    ng-model="vm.marca.cdFax"
-                    ng-maxlength="13" />
-            <div ng-show="editForm.cdFax.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.cdFax.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="13">
-                    This field cannot be longer than 13 characters.
-                </p>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gpwebApp.marca.flInativo" for="field_flInativo">Fl Inativo</label>
-            <input type="checkbox" class="form-control" name="flInativo" id="field_flInativo"
-                    ng-model="vm.marca.flInativo"
-                     />
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gpwebApp.marca.nmFantasia" for="field_nmFantasia">Nm Fantasia</label>
-            <input type="text" class="form-control" name="nmFantasia" id="field_nmFantasia"
-                    ng-model="vm.marca.nmFantasia"
-                    ng-maxlength="35" />
-            <div ng-show="editForm.nmFantasia.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.nmFantasia.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="35">
-                    This field cannot be longer than 35 characters.
-                </p>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gpwebApp.marca.vlComissao" for="field_vlComissao">Vl Comissao</label>
-            <input type="number" class="form-control" name="vlComissao" id="field_vlComissao"
-                    ng-model="vm.marca.vlComissao"
-                     />
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gpwebApp.marca.dtOperacao" for="field_dtOperacao">Dt Operacao</label>
-                <div class="input-group">
-                    <input id="field_dtOperacao" type="text" class="form-control" name="dtOperacao" uib-datepicker-popup="{{dateformat}}" ng-model="vm.marca.dtOperacao" is-open="vm.datePickerOpenStatus.dtOperacao"
-                    />
-                    <span class="input-group-btn">
-                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dtOperacao')"><i class="glyphicon glyphicon-calendar"></i></button>
-                    </span>
-                </div>
-        </div>        
-
+        </div> -->
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
-            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+            <span translate="entity.action.cancel">Cancelar</span>
         </button>
-        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
-            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-success">
+            <span translate="entity.action.save">Salvar</span>
         </button>
     </div>
 </form>
