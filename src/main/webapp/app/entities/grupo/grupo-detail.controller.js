@@ -15,6 +15,5 @@
             vm.grupo = result;
         });
         $scope.$on('$destroy', unsubscribe);
-
     }
 })();

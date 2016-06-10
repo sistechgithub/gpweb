@@ -12,10 +12,12 @@
                 "stock": "Stock",
                 "payments": "Payments",
                 "grupo": "Group",
-                "subgrupo": "Subgrupo",
+                "subgrupo": "Subgroup",
                 "promocao": "Promocao",
                 "filial": "Filial",
                 "marca": "Marca",
+                "unidade": "Unidade",
+                "produto": "Produto",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
@@ -81,7 +83,8 @@
             }
         },
         "field": {
-            "id": "Code"
+            "id": "ID",
+            "actions": "Actions"
         },
         "ribbon": {
             "dev":"Development"
