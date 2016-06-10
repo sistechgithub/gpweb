@@ -1,6 +1,6 @@
 <div class="box">
     <div class="box-header with-border">
-        <h2 class="box-title" translate="gpwebApp.marca.home.title">Marcas</h2>
+        <h1 class="box-title" translate="gpwebApp.marca.home.title">Marcas</h1>
     </div><!-- /.box-header -->
     
     <jhi-alert></jhi-alert>
@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-xs-4 col-sm-5">
                 <button class="btn btn-success" ui-sref="marca.new" >
-                    <span class="hidden-xs"  translate="gpwebApp.marca.home.createLabel">
+                    <span translate="gpwebApp.marca.home.createLabel">
                         Adicionar
                     </span>
                 </button>
@@ -19,12 +19,12 @@
                     <div class="input-group pull-right" >
                         <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'gpwebApp.marca.home.search' | translate }}">
                         <span  class="input-group-btn width-min" >
-                            <button class="btn btn-sm btn-info" ng-click="vm.search(vm.searchQuery)">
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
                                 <span class="mdi mdi-magnify"></span>
                             </button>
                         </span>
                         <span class="input-group-btn width-min" ng-if="vm.currentSearch">
-                            <button class="btn btn-sm btn-danger" ng-click="vm.clear()">
+                            <button class="btn btn-danger" ng-click="vm.clear()">
                                 <span class="mdi mdi-delete"></span>
                             </button>
                         </span>
@@ -36,7 +36,7 @@
 
     <div class="box-body">
         <div class="table-responsive">
-            <table class="jh-table table table-bordered table-striped table-hover">
+            <table class="jh-table table table-bordered table-hover">
                 <thead>
                     <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
                         <th jh-sort-by="id" class="col-md-1 col-marca-codigo"><span translate="global.field.id">Código</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>
