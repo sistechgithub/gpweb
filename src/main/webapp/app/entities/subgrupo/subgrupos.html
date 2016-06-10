@@ -1,6 +1,6 @@
 <div class="box">
     <div class="box-header with-border">
-        <h2 class="box-title" translate="gpwebApp.subgrupo.home.title">Subgrupos</h2>
+        <h1 class="box-title" translate="gpwebApp.subgrupo.home.title">Subgrupos</h1>
     </div><!-- /.box-header -->
    
     <jhi-alert></jhi-alert>
@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-xs-4 col-sm-5">
                 <button class="btn btn-success" ui-sref="subgrupo.new" >
-                    <span class="hidden-xs"  translate="gpwebApp.subgrupo.home.createLabel">
+                    <span translate="gpwebApp.subgrupo.home.createLabel">
                         Adicionar
                     </span>
                 </button>
@@ -19,12 +19,12 @@
                     <div class="input-group pull-right" >
                         <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'gpwebApp.subgrupo.home.search' | translate }}">
                         <span  class="input-group-btn width-min" >
-                            <button class="btn btn-sm btn-info" ng-click="vm.search(vm.searchQuery)">
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
                                 <span class="mdi mdi-magnify"></span>
                             </button>
                         </span>
                         <span class="input-group-btn width-min" ng-if="vm.currentSearch">
-                            <button class="btn btn-sm btn-info" ng-click="vm.clear()">
+                            <button class="btn btn-info" ng-click="vm.clear()">
                                 <span class="mdi mdi-delete"></span>
                             </button>
                         </span>
