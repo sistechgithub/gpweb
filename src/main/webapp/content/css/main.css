@@ -663,6 +663,12 @@ Página de Visualização de Itens Cadastrados
 .btn-print{
     margin-top: 10px;
 }
+.box-detail{
+    padding: 20px;
+}
+.border-detail{
+    border-left: 5px solid #31b0d5;
+}
 /*
 ===========================================================================
 Página Clientes
