@@ -3,21 +3,21 @@
         "unidade" : {
             "home": {
                 "title": "Unidades",
-                "createLabel": "Criar novo Unidade",
+                "createLabel": "Adicionar",
                 "createOrEditLabel": "Criar ou editar Unidade",
-                "search": "Pesquisar por Unidade"
+                "search": "Pesquisar"
             },
-            "created": "Um novo Unidade é criado com o identificador {{ param }}",
-            "updated": "Um Unidade é atualizado com o identificador {{ param }}",
-            "deleted": "Um Unidade é deletado com o identificador {{ param }}",
+            "created": "Uma nova Unidade foi criada com o código {{ param }}",
+            "updated": "A Unidade {{ param }} foi atualizada com sucesso!",
+            "deleted": "A Unidade {{ param }} foi deletada com sucesso!",
             "delete": {
-                "question": "Tem certeza de que deseja excluir Unidade {{ id }}?"
+                "question": "Tem certeza de que deseja excluir a Unidade {{ id }}?"
             },
             "detail": {
                 "title": "Unidade"
             },
-            "dsUnidade": "Ds Unidade",
-            "sgUnidade": "Sg Unidade"
+            "dsUnidade": "Nome",
+            "sgUnidade": "Unidade"
         }
     }
 }

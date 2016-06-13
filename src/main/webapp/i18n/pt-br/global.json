@@ -110,7 +110,7 @@
             "title": "Confirme a exclusão"
         },
         "validation": {
-            "required": "O campo é obrigatório.",
+            "required": "Campo obrigatório.",
             "minlength": "Este campo deve ter ao menos {{min}} caracteres.",
             "maxlength": "Este campo não pode ter mais que {{max}} caracteres.",
             "min": "Este campo deve ser maior que {{min}}.",

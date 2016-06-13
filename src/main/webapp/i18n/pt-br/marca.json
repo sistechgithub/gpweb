@@ -8,8 +8,8 @@
                 "search": "Pesquisar"
             },
             "created": "Uma nova Marca foi criada com o código {{ param }}",
-            "updated": "A Marca de código {{ param }} foi atualizada",
-            "deleted": "A Marca de código {{ param }} foi deletada",
+            "updated": "A Marca {{ param }} foi atualizada com sucesso!",
+            "deleted": "A Marca {{ param }} foi deletada com sucesso!",
             "delete": {
                 "question": "Tem certeza de que deseja excluir a Marca {{ id }}?"
             },

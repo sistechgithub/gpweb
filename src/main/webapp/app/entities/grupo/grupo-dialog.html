@@ -21,7 +21,7 @@
                     <label class="control-label" translate="gpwebApp.grupo.name" for="field_nmGrupo">Nome</label>
                     <input type="text" class="form-control text-uppercase" name="nmGrupo" id="field_nmGrupo"
                             ng-model="vm.grupo.nmGrupo"
-                            required ng-minlength="1" ng-maxlength="35" />
+                            required ng-minlength="1" ng-maxlength="35" maxlength="35" />
                     <div ng-show="editForm.nmGrupo.$invalid">
                         <p class="help-block"
                             ng-show="editForm.nmGrupo.$error.required" translate="entity.validation.required">

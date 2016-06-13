@@ -663,6 +663,32 @@ Página de Visualização de Itens Cadastrados
 .btn-print{
     margin-top: 10px;
 }
+.box-detail{
+    padding: 20px;
+}
+.border-detail{
+    border-left: 5px solid #31b0d5;
+}
+/*
+===========================================================================
+Página Unidades
+=========================================================================== */
+.col-unidade-codigo{
+  min-width: 110px;
+  max-width: 110px;
+}
+.col-unidade-nome{
+  min-width: 352px;
+  max-width: 352px;
+}
+.col-unidade-unidade{
+  min-width: 110px;
+  max-width: 110px;
+}
+.col-unidade-acoes{
+  min-width: 155px;
+  max-width: 155px;
+}
 /*
 ===========================================================================
 Página Clientes

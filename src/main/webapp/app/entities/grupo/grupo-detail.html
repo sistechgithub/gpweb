@@ -4,46 +4,42 @@
             <a class=" btn btn-default btn-print pull-right hidden-xs" href="javascript:window.print();"><i class="mdi mdi-printer mdi-2x"></i></a>
         </div>    
         <div class="box-body">
-            <br>     
-            <div class="row">
-                <dl class="dl-horizontal jh-entity-details">
-                    <div class="col-xs-12 col-md-6 no-pad-right">
+            <br>
+            <div class="row border-detail box-detail">     
+                <div class="row">                
+                    <div class="col-xs-12 col-md-6">
                         <dt><span translate="gpwebApp.grupo.name">Nome</span>:</dt>
                         <dd>
                             <span class="text-uppercase">{{vm.grupo.nmGrupo}}</span>
                         </dd>
                         <hr>                   
                     </div>
-                    <div class="col-xs-12 col-md-6 no-pad-left">
+                    <div class="col-xs-12 col-md-6">
                         <dt><span translate="gpwebApp.grupo.commission">Comissão (%)</span>:</dt>
                         <dd>
                             <span>{{vm.grupo.vlComissao | currency:'':2}}</span>
                         </dd>
                         <hr>                     
-                    </div>
-                </dl>            
-            </div>          
-            <div class="row">
-                <dl class="dl-horizontal jh-entity-details">
-                    <div class="col-md-6 no-pad-right">
+                    </div>                            
+                </div>          
+                <div class="row">
+                    <div class="col-md-6">
                         <dt><span translate="gpwebApp.grupo.noDiscount">Sem Desconto</span>:</dt>
                         <dd>
                             <span class="text-uppercase">{{vm.grupo.flDesco ? 'Sim': 'Não'}}</span>
                         </dd>
                         <hr>
                     </div>
-                    <div class="col-md-6 no-pad-left">
+                    <div class="col-md-6">
                         <dt><span translate="gpwebApp.grupo.promotion">Promoção</span>:</dt>
                         <dd>	                        
                             <span class="text-uppercase">{{vm.grupo.flPromo ? 'Sim': 'Não'}}</span>                    
                         </dd>
                         <hr>
-                    </div>
-                </dl>    
-            </div>            
-            <div class="row">
-                <dl class="dl-horizontal">
-                    <div class="col-md-6 no-pad-right">                                        
+                    </div>   
+                </div>            
+                <div class="row">
+                    <div class="col-md-6">                                        
                         <!-- Filling in space when doesn't use promotion -->
                         <dt ng-show="!vm.grupo.flPromo"></dt>
 
@@ -72,7 +68,7 @@
                         </dd>       
                         <hr ng-show="vm.grupo.flPromo">
                     </div>
-                    <div class="col-md-6 no-pad-left">
+                    <div class="col-md-6">
                         <!-- Desconto -->
                         <dt ng-show="vm.grupo.flPromo">	                	
                             <span translate="gpwebApp.grupo.discount">Desconto (%)</span>:
@@ -81,8 +77,8 @@
                             <span class="form-control-static">{{vm.grupo.vlDesconto | currency:'':2}}</span>
                         </dd>
                         <hr ng-show="vm.grupo.flPromo">
-                    </div>    
-                </dl>    
+                    </div>      
+                </div>
             </div>          
         </div>
         <br>

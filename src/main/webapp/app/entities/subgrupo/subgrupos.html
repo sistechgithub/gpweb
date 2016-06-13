@@ -17,7 +17,7 @@
             <div class="col-xs-8 col-sm-7 search-pad-col">
                 <form name="searchForm" class="form-inline">
                     <div class="input-group pull-right" >
-                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'gpwebApp.subgrupo.home.search' | translate }}">
+                        <input type="text" class="form-control text-uppercase" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'gpwebApp.subgrupo.home.search' | translate }}">
                         <span  class="input-group-btn width-min" >
                             <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
                                 <span class="mdi mdi-magnify"></span>
@@ -40,15 +40,15 @@
                 <thead>
                     <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
                         <th jh-sort-by="id" class="col-md-1 col-subgrupo-codigo"><span translate="global.field.id">Código</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>
-                        <th jh-sort-by="nmSubgrupo" class="col-md-10 col-subgrupo-nome"><span translate="gpwebApp.subgrupo.nmSubgrupo">Nome</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>
+                        <th jh-sort-by="nmSubgrupo"><span translate="gpwebApp.subgrupo.nmSubgrupo">Nome</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>
                         <th class="col-md-1 col-subgrupo-acoes text-center"><span translate="global.field.actions">Ações</span></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="subgrupo in vm.subgrupos track by subgrupo.id">
                         <td><a ui-sref="subgrupo-detail({id:subgrupo.id})">{{subgrupo.id}}</a></td>
-                        <td>{{subgrupo.nmSubgrupo}}</td>
-                        <td class="text-right">
+                        <td class="text-uppercase">{{subgrupo.nmSubgrupo}}</td>
+                        <td class="text-center">
                             <div>
                                 <button type="submit"
                                         ui-sref="subgrupo-detail({id:subgrupo.id})"

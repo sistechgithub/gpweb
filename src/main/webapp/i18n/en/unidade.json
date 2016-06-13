@@ -2,22 +2,22 @@
     "gpwebApp": {
         "unidade" : {
             "home": {
-                "title": "Unidades",
-                "createLabel": "Create a new Unidade",
-                "createOrEditLabel": "Create or edit a Unidade",
-                "search": "Search for Unidade"
+                "title": "Units",
+                "createLabel": "New",
+                "createOrEditLabel": "Create or edit a Unit",
+                "search": "Search"
             },
-            "created": "A new Unidade is created with identifier {{ param }}",
-            "updated": "A Unidade is updated with identifier {{ param }}",
-            "deleted": "A Unidade is deleted with identifier {{ param }}",
+            "created": "A new Unit is created with identifier {{ param }}",
+            "updated": "The Unit {{ param }} has been updated successfully",
+            "deleted": "The Unit {{ param }} has been deleted successfully",
             "delete": {
-                "question": "Are you sure you want to delete Unidade {{ id }}?"
+                "question": "Are you sure you want to delete Unit {{ id }}?"
             },
             "detail": {
-                "title": "Unidade"
+                "title": "Unit"
             },
-            "dsUnidade": "Ds Unidade",
-            "sgUnidade": "Sg Unidade"
+            "dsUnidade": "Name",
+            "sgUnidade": "Unit"
         }
     }
 }

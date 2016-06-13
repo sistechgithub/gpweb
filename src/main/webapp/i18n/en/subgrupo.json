@@ -8,8 +8,8 @@
                 "search": "Search"
             },
             "created": "A new Subgroup is created with identifier {{ param }}",
-            "updated": "A Subgroup is updated with identifier {{ param }}",
-            "deleted": "A Subgroup is deleted with identifier {{ param }}",
+            "updated": "The Subgroup {{ param }} has been updated successfully",
+            "deleted": "The Subgroup {{ param }} has been deleted successfully",
             "delete": {
                 "question": "Are you sure you want to delete Subgroup {{ id }}?"
             },
