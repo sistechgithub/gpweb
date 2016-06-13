@@ -15,7 +15,7 @@
                 "subgrupo": "Subgroup",
                 "promocao": "Promocao",
                 "filial": "Filial",
-                "marca": "Marca",
+                "marca": "Brand",
                 "unidade": "Unidade",
                 "produto": "Produto",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
@@ -110,7 +110,7 @@
             "title": "Confirm delete operation"
         },
         "validation": {
-            "required": "This field is required.",
+            "required": "Field required.",
             "minlength": "This field is required to be at least {{ min }} characters.",
             "maxlength": "This field cannot be longer than {{ max }} characters.",
             "min": "This field should be more than {{ min }}.",

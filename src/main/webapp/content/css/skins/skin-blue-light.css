@@ -91,12 +91,12 @@
 .skin-blue-light .sidebar-menu > li:hover > a,
 .skin-blue-light .sidebar-menu > li:hover > span > a {
   background: #F0F8FF;
-  color: #0a6ebd;
+  color: #283593;
   font-weight: 600;
 }
 .skin-blue-light .sidebar-menu > li.active > a,
 .skin-blue-light .sidebar-menu > li.active > span > a {
-  color: #0a6ebd;
+  color: #283593;
 }
 .skin-blue-light .sidebar-menu > li.active {
   border-left-color: #3c8dbc;
@@ -121,12 +121,12 @@
 .skin-blue-light .treeview-menu > li > a:hover,
 .skin-blue-light .treeview-menu > li > span > a:hover {
   background: #F0F8FF;
-  color: #0a6ebd;
+  color: #283593;
   font-weight: 600;
 }
 .skin-blue-light .treeview-menu > li.active > a,
 .skin-blue-light .treeview-menu > li.active > span > a {
-  color: #0a6ebd;
+  color: #283593;
   font-weight: 600;
 }
 .skin-blue-light .sidebar-menu > li > a > .fa,
@@ -137,7 +137,7 @@
 .skin-blue-light .sidebar-menu > li > span > a > .glyphicon,
 .skin-blue-light .sidebar-menu > li > span > a > .ion,
 .skin-blue-light .sidebar-menu > li > span > a > .mdi {
-  color: #0a6ebd;
+  color: #283593;
   margin-right: 7px;
 }
 .skin-blue-light .sidebar-menu .treeview-menu > li > a > .fa,
@@ -148,7 +148,7 @@
 .skin-blue-light .sidebar-menu .treeview-menu > li > span > a > .glyphicon,
 .skin-blue-light .sidebar-menu .treeview-menu > li > span > a > .ion,
 .skin-blue-light .sidebar-menu .treeview-menu > li > span > a > .mdi {
-  color: #0a6ebd;
+  color: #283593;
   margin-right: 7px;
 }
 .skin-blue-light .sidebar-form {

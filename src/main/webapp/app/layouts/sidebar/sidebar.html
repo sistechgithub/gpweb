@@ -28,14 +28,14 @@
 					<span data-toggle="offcanvas">
 						<a ui-sref="home">
 							<i class="mdi mdi-home"></i> 
-							<span class="text-uppercase" translate="global.menu.home">Inicio</span>
+							<span translate="global.menu.home">Inicio</span>
 						</a>
 					</span>
 				</li>
 				<li class="treeview" ng-switch-when="true">
 					<a href="" id="entity-menu">
 						<i class="mdi mdi-file-document-box"></i> 
-						<span class="text-uppercase" translate="global.menu.entities.records">Cadastros</span> 
+						<span translate="global.menu.entities.records">Cadastros</span> 
 						<i class="mdi mdi-chevron-left pull-right"></i>
 					</a>
 					<ul class="treeview-menu">
@@ -139,7 +139,7 @@
 				<li ng-class="{active: vm.$state.includes('admin')}"  ng-switch-when="true" has-authority="ROLE_ADMIN">
 					<a href="" id="admin-menu">
 						<i class="mdi mdi-wan"></i> 
-						<span class="text-uppercase" translate="global.menu.admin.main">Administration</span>
+						<span translate="global.menu.admin.main">Administration</span>
 						<i class="mdi mdi-chevron-left pull-right"></i>
 					</a>
 					<ul class="treeview-menu">

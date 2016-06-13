@@ -5,7 +5,7 @@
                 "title": "Grupos",
                 "createLabel": "Adicionar",
                 "createOrEditLabel": "Criar ou editar Grupo",
-                "search": "Pesquisar por Grupo"
+                "search": "Pesquisar"
             },
             "created": "Um novo Grupo é criado com o identificador {{ param }}",
             "updated": "Um Grupo é atualizado com o identificador {{ param }}",

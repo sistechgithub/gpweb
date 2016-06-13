@@ -19,9 +19,9 @@
             <div class="col-xs-12 col-sm-10">
                 <div class="form-group">
                     <label class="control-label" translate="gpwebApp.marca.nmFabricante" for="field_nmFabricante">Razão Social</label>
-                    <input type="text" class="form-control" name="nmFabricante" id="field_nmFabricante"
+                    <input type="text" class="form-control text-uppercase" name="nmFabricante" id="field_nmFabricante"
                             ng-model="vm.marca.nmFabricante"
-                            required ng-minlength="1" ng-maxlength="35" />
+                            required ng-minlength="1" ng-maxlength="35" maxlength="35" />
                     <div ng-show="editForm.nmFabricante.$invalid">
                         <p class="help-block"
                             ng-show="editForm.nmFabricante.$error.required" translate="entity.validation.required">
@@ -43,9 +43,9 @@
             <div class="col-md-12">  
                 <div class="form-group">
                     <label class="control-label" translate="gpwebApp.marca.nmFantasia" for="field_nmFantasia">Nome Fantasia</label>
-                    <input type="text" class="form-control" name="nmFantasia" id="field_nmFantasia"
+                    <input type="text" class="form-control text-uppercase" name="nmFantasia" id="field_nmFantasia"
                             ng-model="vm.marca.nmFantasia"
-                            ng-maxlength="35" />
+                            ng-maxlength="35" maxlength="35" />
                     <div ng-show="editForm.nmFantasia.$invalid">
                         <p class="help-block"
                             ng-show="editForm.nmFantasia.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="35">
@@ -74,7 +74,7 @@
 			<div class="col-xs-12 col-sm-4">
                 <div class="form-group">
                     <label class="control-label" translate="gpwebApp.marca.cdCgf" for="field_cdCgf">Inscrição Estadual</label>
-                    <input type="text" class="form-control" name="cdCgf" id="field_cdCgf"
+                    <input type="text" class="form-control text-uppercase" name="cdCgf" id="field_cdCgf"
                             ng-model="vm.marca.cdCgf"
                             ng-maxlength="18" />
                     <div ng-show="editForm.cdCgf.$invalid">

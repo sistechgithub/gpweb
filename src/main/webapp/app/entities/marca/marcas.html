@@ -17,7 +17,7 @@
             <div class="col-xs-8 col-sm-7">
                 <form name="searchForm" class="form-inline">
                     <div class="input-group pull-right" >
-                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'gpwebApp.marca.home.search' | translate }}">
+                        <input type="text" class="form-control text-uppercase" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'gpwebApp.marca.home.search' | translate }}">
                         <span  class="input-group-btn width-min" >
                             <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
                                 <span class="mdi mdi-magnify"></span>
@@ -40,7 +40,7 @@
                 <thead>
                     <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
                         <th jh-sort-by="id" class="col-md-1 col-marca-codigo"><span translate="global.field.id">Código</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>
-                        <th jh-sort-by="nmFabricante" class="col-marca-nome"><span translate="gpwebApp.marca.nmFabricante2">Nome</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>
+                        <th jh-sort-by="nmFabricante"><span translate="gpwebApp.marca.nmFabricante2">Nome</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>
                         <th jh-sort-by="cdTel" class="col-md-1 col-marca-telefone"><span translate="gpwebApp.marca.cdTel">Telefone</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>
                         <th jh-sort-by="flInativo" class="col-md-1 col-marca-inativo"><span translate="gpwebApp.marca.flInativo">Inativo</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>                    
                         <th class="col-md-1 col-marca-acoes text-center" translate="global.field.actions">Ações</th>
@@ -49,10 +49,15 @@
                 <tbody>
                     <tr ng-repeat="marca in vm.marcas track by marca.id">
                         <td><a ui-sref="marca-detail({id:marca.id})">{{marca.id}}</a></td>
-                        <td>{{marca.nmFabricante}}</td>
+                        <td class="text-uppercase">{{marca.nmFabricante}}</td>
                         <td>{{marca.cdTel}}</td>
-                        <td>{{marca.flInativo}}</td>                   
-                        <td class="text-right">
+                        <td class="text-center">
+                            <i class="mdi"
+                                ng-class="{'mdi-check text-success': marca.flInativo,
+                                'mdi-close text-danger': !marca.flInativo}">
+                            </i>
+                        </td>                   
+                        <td class="text-center">
                             <div>
                                 <button type="submit"
                                         ui-sref="marca-detail({id:marca.id})"
