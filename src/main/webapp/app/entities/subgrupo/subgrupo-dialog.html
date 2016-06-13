@@ -19,9 +19,9 @@
             <div class="col-md-10">
                 <div class="form-group">
                     <label class="control-label" translate="gpwebApp.subgrupo.nmSubgrupo" for="field_nmSubgrupo">Nome</label>
-                    <input type="text" class="form-control" name="nmSubgrupo" id="field_nmSubgrupo"
+                    <input type="text" class="form-control text-uppercase" name="nmSubgrupo" id="field_nmSubgrupo"
                             ng-model="vm.subgrupo.nmSubgrupo"
-                            required ng-maxlength="35" />
+                            required ng-maxlength="35" maxlength="35" />
                     <div ng-show="editForm.nmSubgrupo.$invalid">
                         <p class="help-block"
                             ng-show="editForm.nmSubgrupo.$error.required" translate="entity.validation.required">

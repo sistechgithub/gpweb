@@ -86,24 +86,27 @@
 .skin-blue-light .sidebar-menu > li > a,
 .skin-blue-light .sidebar-menu > li > span > a {
   border-left: 3px solid transparent;
-  font-weight: 600;
+  font-weight: 400;
 }
 .skin-blue-light .sidebar-menu > li:hover > a,
+.skin-blue-light .sidebar-menu > li:hover > span > a {
+  background: #F0F8FF;
+  color: #283593;
+  font-weight: 600;
+}
 .skin-blue-light .sidebar-menu > li.active > a,
-.skin-blue-light .sidebar-menu > li:hover > span > a,
 .skin-blue-light .sidebar-menu > li.active > span > a {
-  color: #000000;
-  background: #f4f4f5;
+  color: #283593;
 }
 .skin-blue-light .sidebar-menu > li.active {
   border-left-color: #3c8dbc;
 }
 .skin-blue-light .sidebar-menu > li.active > a,
 .skin-blue-light .sidebar-menu > li.active > span > a {
-  font-weight: 600;
+  font-weight: 400;
 }
 .skin-blue-light .sidebar-menu > li > .treeview-menu {
-  background: #f4f4f5;
+  background: trans;
 }
 .skin-blue-light .sidebar a {
   color: #616161;
@@ -113,17 +116,40 @@
 }
 .skin-blue-light .treeview-menu > li > a,
 .skin-blue-light .treeview-menu > li > span > a {
-  color: #777777;
+  color: #616161;
 }
-.skin-blue-light .treeview-menu > li.active > a,
 .skin-blue-light .treeview-menu > li > a:hover,
-.skin-blue-light .treeview-menu > li.active > span > a,
 .skin-blue-light .treeview-menu > li > span > a:hover {
-  color: #000000;
+  background: #F0F8FF;
+  color: #283593;
+  font-weight: 600;
 }
 .skin-blue-light .treeview-menu > li.active > a,
 .skin-blue-light .treeview-menu > li.active > span > a {
+  color: #283593;
   font-weight: 600;
+}
+.skin-blue-light .sidebar-menu > li > a > .fa,
+.skin-blue-light .sidebar-menu > li > a > .glyphicon,
+.skin-blue-light .sidebar-menu > li > a > .ion,
+.skin-blue-light .sidebar-menu > li > a > .mdi,
+.skin-blue-light .sidebar-menu > li > span > a > .fa,
+.skin-blue-light .sidebar-menu > li > span > a > .glyphicon,
+.skin-blue-light .sidebar-menu > li > span > a > .ion,
+.skin-blue-light .sidebar-menu > li > span > a > .mdi {
+  color: #283593;
+  margin-right: 7px;
+}
+.skin-blue-light .sidebar-menu .treeview-menu > li > a > .fa,
+.skin-blue-light .sidebar-menu .treeview-menu > li > a > .glyphicon,
+.skin-blue-light .sidebar-menu .treeview-menu > li > a > .ion,
+.skin-blue-light .sidebar-menu .treeview-menu > li > a > .mdi,
+.skin-blue-light .sidebar-menu .treeview-menu > li > span > a > .fa,
+.skin-blue-light .sidebar-menu .treeview-menu > li > span > a > .glyphicon,
+.skin-blue-light .sidebar-menu .treeview-menu > li > span > a > .ion,
+.skin-blue-light .sidebar-menu .treeview-menu > li > span > a > .mdi {
+  color: #283593;
+  margin-right: 7px;
 }
 .skin-blue-light .sidebar-form {
   border-radius: 0px;
@@ -146,6 +172,16 @@
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0px;
+}
+.skin-blue-light .sidebar-form input[type="text"]:focus {
+  border-top: 1px solid #4285f4;
+  border-left: 1px solid #4285f4;
+  border-bottom: 1px solid #4285f4;
+}
+.skin-blue-light .sidebar-form input[type="text"]:focus + .input-group-btn .btn {
+  border-top: 1px solid #4285f4;
+  border-right: 1px solid #4285f4;
+  border-bottom: 1px solid #4285f4;
 }
 .skin-blue-light .sidebar-form input[type="text"]:focus,
 .skin-blue-light .sidebar-form input[type="text"]:focus + .input-group-btn .btn {
