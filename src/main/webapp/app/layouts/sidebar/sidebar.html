@@ -11,20 +11,23 @@
     				</a>
 				</li>
 			</ul>
-			<!-- search form (Optional) -->
+           
+            <!-- search form (Optional)
 			<form action="#" method="get" class="sidebar-form">
-				<div class="input-group">
-					<input type="text" name="q" class="form-control" placeholder="Pesquisar...">
-					<span class="input-group-btn">
-						<button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="mdi mdi-magnify"></i></button>
-					</span>
-				</div>
+			    <div class="input-group">
+			        <input type="text" name="q" class="form-control" placeholder="Pesquisar...">
+			        <span class="input-group-btn">
+			            <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="mdi mdi-magnify"></i></button>
+			        </span>
+			    </div>
 			</form>
-			<!-- /.search form -->
+			/.search form -->
+			
+			<img class="logo-sidebar logo-minisidebar-hidden center-block" src="content/images/logo.svg" alt="">
 
 			<!-- Sidebar Menu -->
 			<ul class="sidebar-menu" ng-switch="vm.isAuthenticated()">
-				<li ui-sref-active="active" class="active">
+				<li ui-sref-active="active" class="active ripple">
 					<span data-toggle="offcanvas">
 						<a ui-sref="home">
 							<i class="mdi mdi-home"></i> 
@@ -33,14 +36,14 @@
 					</span>
 				</li>
 				<li class="treeview" ng-switch-when="true">
-					<a href="" id="entity-menu">
+					<a href="" id="entity-menu" class="ripple">
 						<i class="mdi mdi-file-document-box"></i> 
 						<span translate="global.menu.entities.records">Cadastros</span> 
 						<i class="mdi mdi-chevron-left pull-right"></i>
 					</a>
 					<ul class="treeview-menu">
 						<li ui-sref-active="active">
-							<a href="">
+							<a href="" class="ripple">
 								<i class="mdi mdi-account"></i> 
 								<span translate="global.menu.entities.person">Pessoa</span> 
 								<i class="mdi mdi-chevron-left pull-right"></i>
@@ -62,7 +65,7 @@
 						</li>
 
 						<li ui-sref-active="active">
-							<a href="">
+							<a href="" class="ripple">
 								<i class="mdi mdi-package"></i> 
 								<span translate="global.menu.entities.stock">Estoque</span> 
 								<i class="mdi mdi-chevron-left pull-right"></i>
@@ -120,7 +123,7 @@
 							</ul>
 						</li>
 						<li ui-sref-active="active">
-							<a href="">
+							<a href="" class="ripple">
 								<i class="mdi mdi-cash-multiple"></i> 
 								<span translate="global.menu.entities.payments">Pagamentos</span> 
 								<i class="mdi mdi-chevron-left pull-right"></i>
@@ -137,7 +140,7 @@
 				</li>
 
 				<li ng-class="{active: vm.$state.includes('admin')}"  ng-switch-when="true" has-authority="ROLE_ADMIN">
-					<a href="" id="admin-menu">
+					<a href="" id="admin-menu" class="ripple">
 						<i class="mdi mdi-wan"></i> 
 						<span translate="global.menu.admin.main">Administration</span>
 						<i class="mdi mdi-chevron-left pull-right"></i>
@@ -200,7 +203,7 @@
 							</span>
 						</li>
 						<li ui-sref-active="active" ng-controller="JhiLanguageController as languageVm">
-                            <a href="" ng-if="languageVm.languages.length > 1">
+                            <a href="" ng-if="languageVm.languages.length > 1" class="ripple">
                                 <i class="mdi mdi-server"></i>
                                 <span class="mdi-icon-text" translate="global.menu.language">Language</span>
                                 <i class="mdi mdi-chevron-left pull-right"></i>

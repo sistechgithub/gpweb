@@ -8,7 +8,7 @@
     <div class="box-header">
         <div class="row">
             <div class="col-xs-4 col-sm-5">
-                <button class="btn btn-success" ui-sref="marca.new" >
+                <button class="btn btn-success ripple ripple-light" ui-sref="marca.new" >
                     <span translate="gpwebApp.marca.home.createLabel">
                         Adicionar
                     </span>
@@ -19,12 +19,12 @@
                     <div class="input-group pull-right" >
                         <input type="text" class="form-control text-uppercase" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'gpwebApp.marca.home.search' | translate }}">
                         <span  class="input-group-btn width-min" >
-                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                            <button class="btn btn-info ripple ripple-light" ng-click="vm.search(vm.searchQuery)">
                                 <span class="mdi mdi-magnify"></span>
                             </button>
                         </span>
                         <span class="input-group-btn width-min" ng-if="vm.currentSearch">
-                            <button class="btn btn-danger" ng-click="vm.clear()">
+                            <button class="btn btn-info ripple ripple-light" ng-click="vm.clear()">
                                 <span class="mdi mdi-delete"></span>
                             </button>
                         </span>
@@ -61,19 +61,19 @@
                             <div>
                                 <button type="submit"
                                         ui-sref="marca-detail({id:marca.id})"
-                                        class="btn btn-success btn-sm"
+                                        class="btn btn-success btn-sm ripple ripple-light"
                                         data-toggle="tooltip" data-placement="top" title="Visualizar">
                                     <span class="mdi mdi-eye"></span>
                                 </button>
                                 <button type="submit"
                                         ui-sref="marca.edit({id:marca.id})"
-                                        class="btn btn-primary btn-sm"
+                                        class="btn btn-primary btn-sm ripple ripple-light"
                                         data-toggle="tooltip" data-placement="top" title="Editar">
                                     <span class="mdi mdi-pencil"></span>
                                 </button>
                                 <button type="submit"
                                         ui-sref="marca.delete({id:marca.id})"
-                                        class="btn btn-danger btn-sm"
+                                        class="btn btn-danger btn-sm ripple ripple-light"
                                         data-toggle="tooltip" data-placement="top" title="Deletar">
                                     <span class="mdi mdi-delete"></span>
                                 </button>
