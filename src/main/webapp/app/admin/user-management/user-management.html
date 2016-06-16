@@ -1,6 +1,6 @@
 <div class="box">
     <div class="box-header with-border">
-        <h2 class="box-title" translate="userManagement.home.title">Users</h2>        
+        <h1 class="box-title" translate="userManagement.home.title">Users</h1>        
     </div>
     
     <jhi-alert></jhi-alert>
@@ -8,8 +8,8 @@
     <div class="box-header">
         <div class="row">
           <div class="col-md-4">
-              <button class="btn btn-success" ui-sref="user-management.new">
-                  <span class="mdi mdi-plus"></span> <span translate="userManagement.home.createLabel">Create a new User</span>
+              <button class="btn btn-success ripple ripple-light" ui-sref="user-management.new">
+                  <span translate="userManagement.home.createLabel">Adicionar</span>
               </button>
           </div>
         </div>
@@ -19,15 +19,15 @@
             <table class="table table-bordered table-striped table-hover">
                 <thead>
                 <tr>
-                    <th translate="global.field.id">ID</th>
+                    <th translate="global.field.id">Código</th>
                     <th translate="userManagement.login">Login</th>
-                    <th translate="userManagement.email">Email</th>
+                    <th translate="userManagement.email">E-mail</th>
                     <th></th>
-                    <th translate="userManagement.langKey">Lang Key</th>
-                    <th translate="userManagement.profiles">Profiles</th>
-                    <th translate="userManagement.createdDate">Created Date</th>
-                    <th translate="userManagement.lastModifiedBy">Last Modified By</th>
-                    <th translate="userManagement.lastModifiedDate">Last Modified Date</th>
+                    <th translate="userManagement.langKey">Idioma</th>
+                    <th translate="userManagement.profiles">Perfis</th>
+                    <th translate="userManagement.createdDate">Criado em</th>
+                    <th translate="userManagement.lastModifiedBy">Alterado por</th>
+                    <th translate="userManagement.lastModifiedDate">Alterado em</th>
                     <th></th>
                 </tr>
                 </thead>
@@ -55,19 +55,19 @@
                         <div>
                             <button type="submit"
                                     ui-sref="user-management-detail({login:user.login})"
-                                    class="btn btn-success btn-sm"
+                                    class="btn btn-success btn-sm ripple ripple-light"
                                     data-toggle="tooltip" data-placement="top" title="Visualizar">
                                 <span class="mdi mdi-eye"></span>
                             </button>
                             <button type="submit"
                                     ui-sref="user-management.edit({login:user.login})"
-                                    class="btn btn-primary btn-sm"
+                                    class="btn btn-primary btn-sm ripple ripple-light"
                                     data-toggle="tooltip" data-placement="top" title="Editar">
                                 <span class="mdi mdi-pencil"></span>
                             </button>
                             <button type="submit"
                                     ui-sref="user-management.delete({login:user.login})"
-                                    class="btn btn-danger btn-sm"
+                                    class="btn btn-danger btn-sm ripple ripple-light"
                                     data-toggle="tooltip" data-placement="top" title="Deletar">
                                 <span class="mdi mdi-delete"></span>
                             </button>

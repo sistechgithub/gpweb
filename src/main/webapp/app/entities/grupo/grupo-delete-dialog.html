@@ -2,18 +2,18 @@
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
                 ng-click="vm.clear()">&times;</button>
-        <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
+        <h4 class="modal-title" translate="entity.delete.title">Confirme a exclusão</h4>
     </div>
     <div class="modal-body">
         <jhi-alert-error></jhi-alert-error>
-        <p translate="gpwebApp.grupo.delete.question" translate-values="{id: '{{vm.grupo.id}}'}">Are you sure you want to delete this Grupo?</p>
+        <p translate="gpwebApp.grupo.delete.question" translate-values="{id: '{{vm.grupo.id}}'}">Tem certeza de que deseja excluir esse Grupo?</p>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
-            <span translate="entity.action.cancel">Cancel</span>
+        <button type="button" class="btn btn-default ripple" data-dismiss="modal" ng-click="vm.clear()">
+            <span translate="entity.action.cancel">Cancelar</span>
         </button>
-        <button type="submit" ng-disabled="deleteForm.$invalid" class="btn btn-danger">
-            <span translate="entity.action.delete">Delete</span>
+        <button type="submit" class="btn btn-danger ripple ripple-light" ng-disabled="deleteForm.$invalid">
+            <span translate="entity.action.delete">Deletar</span>
         </button>
     </div>
 </form>
