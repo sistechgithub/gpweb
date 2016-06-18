@@ -18,7 +18,9 @@
             // jhipster-needle-angularjs-add-module JHipster will add new module here
             'angular-loading-bar',
             'oc.lazyLoad',
-            'whimsicalRipple'
+            'whimsicalRipple',
+            'ui.utils.masks',
+            'idf.br-filters'
         ])
         .run(run);
 

@@ -50,7 +50,7 @@
                     <tr ng-repeat="marca in vm.marcas track by marca.id">
                         <td><a ui-sref="marca-detail({id:marca.id})">{{marca.id}}</a></td>
                         <td class="text-uppercase">{{marca.nmFabricante}}</td>
-                        <td>{{marca.cdTel}}</td>
+                        <td>{{marca.cdTel | brPhoneNumber}}</td>
                         <td class="text-center">
                             <i class="mdi"
                                 ng-class="{'mdi-check text-success': marca.flInativo,
