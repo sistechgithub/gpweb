@@ -62,7 +62,9 @@
                     <label class="control-label" translate="gpwebApp.marca.cdCgc" for="field_cdCgc">CNPJ</label>
                     <input type="text" class="form-control" name="cdCgc" id="field_cdCgc"
                             ng-model="vm.marca.cdCgc"
-                            ng-maxlength="18" />
+                            ng-maxlength="18" 
+                            ui-br-cnpj-mask
+                            placeholder="00.000.000/0000-00" />
                     <div ng-show="editForm.cdCgc.$invalid">
                         <p class="help-block"
                             ng-show="editForm.cdCgc.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="18">
@@ -90,11 +92,13 @@
                     <label class="control-label" translate="gpwebApp.marca.cdTel" for="field_cdTel">Telefone</label>
                     <input type="text" class="form-control" name="cdTel" id="field_cdTel"
                             ng-model="vm.marca.cdTel"
-                            ng-maxlength="13" />
+                            ng-maxlength="15"
+                            ui-br-phone-number
+                            placeholder="(00) 00000-0000" />
                     <div ng-show="editForm.cdTel.$invalid">
                         <p class="help-block"
-                            ng-show="editForm.cdTel.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="13">
-                            Este campo não pode ter mais que 13 caracteres.
+                            ng-show="editForm.cdTel.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="15">
+                            Este campo não pode ter mais que 15 caracteres.
                         </p>
                     </div>
                 </div> 
@@ -106,11 +110,13 @@
                     <label class="control-label" translate="gpwebApp.marca.cdFax" for="field_cdFax">Fax</label>
                     <input type="text" class="form-control" name="cdFax" id="field_cdFax"
                             ng-model="vm.marca.cdFax"
-                            ng-maxlength="13" />
+                            ng-maxlength="15"
+                            ui-br-phone-number
+                            placeholder="(00) 00000-0000" />
                     <div ng-show="editForm.cdFax.$invalid">
                         <p class="help-block"
-                            ng-show="editForm.cdFax.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="13">
-                            Este campo não pode ter mais que 13 caracteres.
+                            ng-show="editForm.cdFax.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="15">
+                            Este campo não pode ter mais que 15 caracteres.
                         </p>
                     </div>
                 </div>
