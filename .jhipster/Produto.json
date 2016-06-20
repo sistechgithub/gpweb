@@ -136,6 +136,11 @@
                 "maxlength"
             ],
             "fieldValidateRulesMaxlength": "200"
+        },
+        {
+            "fieldName": "blImagem",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
         }
     ],
     "changelogDate": "20160609181446",

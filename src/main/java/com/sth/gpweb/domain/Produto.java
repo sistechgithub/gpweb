@@ -84,6 +84,13 @@ public class Produto implements Serializable {
     @Column(name = "ds_informacoes", length = 200)
     private String dsInformacoes;
 
+    @Lob
+    @Column(name = "bl_imagem")
+    private byte[] blImagem;
+
+    @Column(name = "bl_imagem_content_type")
+    private String blImagemContentType;
+
     @OneToOne
     @JoinColumn(unique = true)
     private Grupo grupo;
@@ -240,6 +247,22 @@ public class Produto implements Serializable {
         this.dsInformacoes = dsInformacoes;
     }
 
+    public byte[] getBlImagem() {
+        return blImagem;
+    }
+
+    public void setBlImagem(byte[] blImagem) {
+        this.blImagem = blImagem;
+    }
+
+    public String getBlImagemContentType() {
+        return blImagemContentType;
+    }
+
+    public void setBlImagemContentType(String blImagemContentType) {
+        this.blImagemContentType = blImagemContentType;
+    }
+
     public Grupo getGrupo() {
         return grupo;
     }
@@ -305,6 +328,8 @@ public class Produto implements Serializable {
             ", vlReal='" + vlReal + "'" +
             ", vlEstoque='" + vlEstoque + "'" +
             ", dsInformacoes='" + dsInformacoes + "'" +
+            ", blImagem='" + blImagem + "'" +
+            ", blImagemContentType='" + blImagemContentType + "'" +
             '}';
     }
 }

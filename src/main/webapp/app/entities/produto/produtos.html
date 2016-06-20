@@ -53,6 +53,7 @@
                     <th jh-sort-by="vlReal"><span translate="gpwebApp.produto.vlReal">Vl Real</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="vlEstoque"><span translate="gpwebApp.produto.vlEstoque">Vl Estoque</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="dsInformacoes"><span translate="gpwebApp.produto.dsInformacoes">Ds Informacoes</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="blImagem"><span translate="gpwebApp.produto.blImagem">Bl Imagem</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="grupo.id"><span translate="gpwebApp.produto.grupo">Grupo</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="marca.id"><span translate="gpwebApp.produto.marca">Marca</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="unidade.id"><span translate="gpwebApp.produto.unidade">Unidade</span> <span class="glyphicon glyphicon-sort"></span></th>
@@ -79,6 +80,12 @@
                     <td>{{produto.vlReal}}</td>
                     <td>{{produto.vlEstoque}}</td>
                     <td>{{produto.dsInformacoes}}</td>
+                    <td>
+                        <a ng-if="produto.blImagem" ng-click="vm.openFile(produto.blImagemContentType, produto.blImagem)">
+                            <img data-ng-src="{{'data:' + produto.blImagemContentType + ';base64,' + produto.blImagem}}" style="max-height: 30px;"/>
+                        </a>
+                        <span ng-if="produto.blImagem">{{produto.blImagemContentType}}, {{vm.byteSize(produto.blImagem)}}</span>
+                    </td>
                     <td>
                         <a ui-sref="grupo-detail({id:produto.grupo.id})">{{produto.grupo.id}}</a>
                     </td>
@@ -115,7 +122,7 @@
         </table>
     </div>
     <div class="text-center">
-        <jhi-item-count page="vm.page" total="vm.queryCount"></jhi-item-count>
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
         <uib-pagination class="pagination-sm" total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
     </div>
 </div>

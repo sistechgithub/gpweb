@@ -71,7 +71,7 @@
                     return $translate.refresh();
                 }],
                 entity: ['$stateParams', 'Produto', function($stateParams, Produto) {
-                    return Produto.get({id : $stateParams.id});
+                    return Produto.get({id : $stateParams.id}).$promise;
                 }]
             }
         })
@@ -108,6 +108,8 @@
                                 vlReal: null,
                                 vlEstoque: null,
                                 dsInformacoes: null,
+                                blImagem: null,
+                                blImagemContentType: null,
                                 id: null
                             };
                         }
@@ -134,7 +136,7 @@
                     size: 'lg',
                     resolve: {
                         entity: ['Produto', function(Produto) {
-                            return Produto.get({id : $stateParams.id});
+                            return Produto.get({id : $stateParams.id}).$promise;
                         }]
                     }
                 }).result.then(function() {
@@ -158,7 +160,7 @@
                     size: 'md',
                     resolve: {
                         entity: ['Produto', function(Produto) {
-                            return Produto.get({id : $stateParams.id});
+                            return Produto.get({id : $stateParams.id}).$promise;
                         }]
                     }
                 }).result.then(function() {
