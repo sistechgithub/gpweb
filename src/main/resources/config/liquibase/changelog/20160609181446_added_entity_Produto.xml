@@ -88,6 +88,13 @@
             <column name="ds_informacoes" type="varchar(200)">
                 <constraints nullable="true" />
             </column>
+            
+            <column name="bl_imagem" type="blob">
+                <constraints nullable="true" />
+            </column>
+            <column name="bl_imagem_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
                         <column name="grupo_id" type="bigint">
                 <constraints unique="true" nullable="true" />
             </column>            <column name="marca_id" type="bigint">

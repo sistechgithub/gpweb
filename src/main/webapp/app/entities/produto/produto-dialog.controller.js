@@ -5,11 +5,16 @@
         .module('gpwebApp')
         .controller('ProdutoDialogController', ProdutoDialogController);
 
-    ProdutoDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', '$q', 'entity', 'Produto', 'Grupo', 'Marca', 'Unidade'];
+    ProdutoDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', '$q', 'DataUtils', 'entity', 'Produto', 'Grupo', 'Marca', 'Unidade'];
 
-    function ProdutoDialogController ($timeout, $scope, $stateParams, $uibModalInstance, $q, entity, Produto, Grupo, Marca, Unidade) {
+    function ProdutoDialogController ($timeout, $scope, $stateParams, $uibModalInstance, $q, DataUtils, entity, Produto, Grupo, Marca, Unidade) {
         var vm = this;
+
         vm.produto = entity;
+        vm.clear = clear;
+        vm.byteSize = DataUtils.byteSize;
+        vm.openFile = DataUtils.openFile;
+        vm.save = save;
         vm.grupos = Grupo.query({filter: 'produto-is-null'});
         $q.all([vm.produto.$promise, vm.grupos.$promise]).then(function() {
             if (!vm.produto.grupo || !vm.produto.grupo.id) {
@@ -42,27 +47,43 @@
             angular.element('.form-group:eq(1)>input').focus();
         });
 
-        var onSaveSuccess = function (result) {
-            $scope.$emit('gpwebApp:produtoUpdate', result);
-            $uibModalInstance.close(result);
-            vm.isSaving = false;
-        };
+        function clear () {
+            $uibModalInstance.dismiss('cancel');
+        }
 
-        var onSaveError = function () {
-            vm.isSaving = false;
-        };
-
-        vm.save = function () {
+        function save () {
             vm.isSaving = true;
             if (vm.produto.id !== null) {
                 Produto.update(vm.produto, onSaveSuccess, onSaveError);
             } else {
                 Produto.save(vm.produto, onSaveSuccess, onSaveError);
             }
+        }
+
+        function onSaveSuccess (result) {
+            $scope.$emit('gpwebApp:produtoUpdate', result);
+            $uibModalInstance.close(result);
+            vm.isSaving = false;
+        }
+
+        function onSaveError () {
+            vm.isSaving = false;
+        }
+
+
+        vm.setBlImagem = function ($file, produto) {
+            if ($file && $file.$error === 'pattern') {
+                return;
+            }
+            if ($file) {
+                DataUtils.toBase64($file, function(base64Data) {
+                    $scope.$apply(function() {
+                        produto.blImagem = base64Data;
+                        produto.blImagemContentType = $file.type;
+                    });
+                });
+            }
         };
 
-        vm.clear = function() {
-            $uibModalInstance.dismiss('cancel');
-        };
     }
 })();

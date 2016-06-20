@@ -22,6 +22,7 @@ import org.springframework.test.util.ReflectionTestUtils;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.Base64Utils;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
@@ -86,6 +87,11 @@ public class ProdutoResourceIntTest {
     private static final String DEFAULT_DS_INFORMACOES = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     private static final String UPDATED_DS_INFORMACOES = "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB";
 
+    private static final byte[] DEFAULT_BL_IMAGEM = TestUtil.createByteArray(1, "0");
+    private static final byte[] UPDATED_BL_IMAGEM = TestUtil.createByteArray(2, "1");
+    private static final String DEFAULT_BL_IMAGEM_CONTENT_TYPE = "image/jpg";
+    private static final String UPDATED_BL_IMAGEM_CONTENT_TYPE = "image/png";
+
     @Inject
     private ProdutoRepository produtoRepository;
 
@@ -136,6 +142,8 @@ public class ProdutoResourceIntTest {
         produto.setVlReal(DEFAULT_VL_REAL);
         produto.setVlEstoque(DEFAULT_VL_ESTOQUE);
         produto.setDsInformacoes(DEFAULT_DS_INFORMACOES);
+        produto.setBlImagem(DEFAULT_BL_IMAGEM);
+        produto.setBlImagemContentType(DEFAULT_BL_IMAGEM_CONTENT_TYPE);
     }
 
     @Test
@@ -171,6 +179,8 @@ public class ProdutoResourceIntTest {
         assertThat(testProduto.getVlReal()).isEqualTo(DEFAULT_VL_REAL);
         assertThat(testProduto.getVlEstoque()).isEqualTo(DEFAULT_VL_ESTOQUE);
         assertThat(testProduto.getDsInformacoes()).isEqualTo(DEFAULT_DS_INFORMACOES);
+        assertThat(testProduto.getBlImagem()).isEqualTo(DEFAULT_BL_IMAGEM);
+        assertThat(testProduto.getBlImagemContentType()).isEqualTo(DEFAULT_BL_IMAGEM_CONTENT_TYPE);
 
         // Validate the Produto in ElasticSearch
         Produto produtoEs = produtoSearchRepository.findOne(testProduto.getId());
@@ -222,7 +232,9 @@ public class ProdutoResourceIntTest {
                 .andExpect(jsonPath("$.[*].dsClassTerapeutica").value(hasItem(DEFAULT_DS_CLASS_TERAPEUTICA.toString())))
                 .andExpect(jsonPath("$.[*].vlReal").value(hasItem(DEFAULT_VL_REAL.intValue())))
                 .andExpect(jsonPath("$.[*].vlEstoque").value(hasItem(DEFAULT_VL_ESTOQUE.intValue())))
-                .andExpect(jsonPath("$.[*].dsInformacoes").value(hasItem(DEFAULT_DS_INFORMACOES.toString())));
+                .andExpect(jsonPath("$.[*].dsInformacoes").value(hasItem(DEFAULT_DS_INFORMACOES.toString())))
+                .andExpect(jsonPath("$.[*].blImagemContentType").value(hasItem(DEFAULT_BL_IMAGEM_CONTENT_TYPE)))
+                .andExpect(jsonPath("$.[*].blImagem").value(hasItem(Base64Utils.encodeToString(DEFAULT_BL_IMAGEM))));
     }
 
     @Test
@@ -252,7 +264,9 @@ public class ProdutoResourceIntTest {
             .andExpect(jsonPath("$.dsClassTerapeutica").value(DEFAULT_DS_CLASS_TERAPEUTICA.toString()))
             .andExpect(jsonPath("$.vlReal").value(DEFAULT_VL_REAL.intValue()))
             .andExpect(jsonPath("$.vlEstoque").value(DEFAULT_VL_ESTOQUE.intValue()))
-            .andExpect(jsonPath("$.dsInformacoes").value(DEFAULT_DS_INFORMACOES.toString()));
+            .andExpect(jsonPath("$.dsInformacoes").value(DEFAULT_DS_INFORMACOES.toString()))
+            .andExpect(jsonPath("$.blImagemContentType").value(DEFAULT_BL_IMAGEM_CONTENT_TYPE))
+            .andExpect(jsonPath("$.blImagem").value(Base64Utils.encodeToString(DEFAULT_BL_IMAGEM)));
     }
 
     @Test
@@ -291,6 +305,8 @@ public class ProdutoResourceIntTest {
         updatedProduto.setVlReal(UPDATED_VL_REAL);
         updatedProduto.setVlEstoque(UPDATED_VL_ESTOQUE);
         updatedProduto.setDsInformacoes(UPDATED_DS_INFORMACOES);
+        updatedProduto.setBlImagem(UPDATED_BL_IMAGEM);
+        updatedProduto.setBlImagemContentType(UPDATED_BL_IMAGEM_CONTENT_TYPE);
 
         restProdutoMockMvc.perform(put("/api/produtos")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -318,6 +334,8 @@ public class ProdutoResourceIntTest {
         assertThat(testProduto.getVlReal()).isEqualTo(UPDATED_VL_REAL);
         assertThat(testProduto.getVlEstoque()).isEqualTo(UPDATED_VL_ESTOQUE);
         assertThat(testProduto.getDsInformacoes()).isEqualTo(UPDATED_DS_INFORMACOES);
+        assertThat(testProduto.getBlImagem()).isEqualTo(UPDATED_BL_IMAGEM);
+        assertThat(testProduto.getBlImagemContentType()).isEqualTo(UPDATED_BL_IMAGEM_CONTENT_TYPE);
 
         // Validate the Produto in ElasticSearch
         Produto produtoEs = produtoSearchRepository.findOne(testProduto.getId());
@@ -373,6 +391,8 @@ public class ProdutoResourceIntTest {
             .andExpect(jsonPath("$.[*].dsClassTerapeutica").value(hasItem(DEFAULT_DS_CLASS_TERAPEUTICA.toString())))
             .andExpect(jsonPath("$.[*].vlReal").value(hasItem(DEFAULT_VL_REAL.intValue())))
             .andExpect(jsonPath("$.[*].vlEstoque").value(hasItem(DEFAULT_VL_ESTOQUE.intValue())))
-            .andExpect(jsonPath("$.[*].dsInformacoes").value(hasItem(DEFAULT_DS_INFORMACOES.toString())));
+            .andExpect(jsonPath("$.[*].dsInformacoes").value(hasItem(DEFAULT_DS_INFORMACOES.toString())))
+            .andExpect(jsonPath("$.[*].blImagemContentType").value(hasItem(DEFAULT_BL_IMAGEM_CONTENT_TYPE)))
+            .andExpect(jsonPath("$.[*].blImagem").value(hasItem(Base64Utils.encodeToString(DEFAULT_BL_IMAGEM))));
     }
 }

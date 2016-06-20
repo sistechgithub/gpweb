@@ -2,6 +2,7 @@
 <div>
     <h2><span translate="gpwebApp.produto.detail.title">Produto</span> {{vm.produto.id}}</h2>
     <hr>
+    <jhi-alert-error></jhi-alert-error>
     <dl class="dl-horizontal jh-entity-details">
         <dt><span translate="gpwebApp.produto.cdProduto">Cd Produto</span></dt>
         <dd>
@@ -70,6 +71,15 @@
         <dt><span translate="gpwebApp.produto.dsInformacoes">Ds Informacoes</span></dt>
         <dd>
             <span>{{vm.produto.dsInformacoes}}</span>
+        </dd>
+        <dt><span translate="gpwebApp.produto.blImagem">Bl Imagem</span></dt>
+        <dd>
+            <div ng-if="vm.produto.blImagem">
+                <a ng-click="vm.openFile(vm.produto.blImagemContentType, vm.produto.blImagem)">
+                    <img data-ng-src="{{'data:' + vm.produto.blImagemContentType + ';base64,' + vm.produto.blImagem}}" style="max-width: 100%;"/>
+                </a>
+                {{vm.produto.blImagemContentType}}, {{vm.byteSize(vm.produto.blImagem)}}
+            </div>
         </dd>
         <dt><span translate="gpwebApp.produto.grupo">Grupo</span></dt>
         <dd>
