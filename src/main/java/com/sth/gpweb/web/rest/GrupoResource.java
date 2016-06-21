@@ -21,6 +21,7 @@ import javax.inject.Inject;
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -60,7 +61,9 @@ public class GrupoResource {
         
         if (grupoService.findNmGrupoExists(grupo.getNmGrupo()) != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("grupo", "nmexists", "A new grupo cannot already have an ID")).body(null);
-        }        
+        }    
+        
+        grupo.setDtOperacao(LocalDate.now()); //Always use the operation date from server
         
         Grupo result = grupoService.save(grupo);
         return ResponseEntity.created(new URI("/api/grupos/" + result.getId()))
@@ -86,6 +89,9 @@ public class GrupoResource {
         if (grupo.getId() == null) {
             return createGrupo(grupo);
         }
+        
+        grupo.setDtOperacao(LocalDate.now()); //Always use the operation date from server
+        
         Grupo result = grupoService.save(grupo);
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert("grupo", grupo.getId().toString()))
