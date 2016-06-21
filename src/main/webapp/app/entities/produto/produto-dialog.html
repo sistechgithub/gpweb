@@ -206,12 +206,25 @@
                     ng-model="vm.produto.blImagemContentType" />
         </div>
 
-        <div class="form-group">
-            <label translate="gpwebApp.produto.grupo" for="field_grupo">Grupo</label>
-            <select class="form-control" id="field_grupo" name="grupo" ng-model="vm.produto.grupo" ng-options="grupo as grupo.id for grupo in vm.grupos | orderBy:'id' track by grupo.id">
-                <option value=""></option>
-            </select>
-        </div>
+		 <!-- Diretiva Grupo-->
+		<div class="form-group">
+			<ourselect id-select="field_entidade1" ng-model="vm.produto.grupo" entity-field-name="nmGrupo" entity-url="grupos"></ourselect>
+			<div class="panel panel-default">
+				<button type="button" class="btn btn-default btn-sm pull-right"	ng-click="vm.produto.grupo = null"
+					style="margin-top: 5px; margin-right: 5px">
+					<span class="glyphicon glyphicon-ban-circle"></span>&nbsp;
+				</button>
+				<div class="panel-heading">
+					<b>Grupo</b>: {{vm.produto.grupo.id}} {{vm.produto.grupo.nmGrupo}}
+				</div>
+				<div class="panel-body">
+					<select class="js-data-example-ajax" id="field_entidade1" style="width: 100%">
+						<option value="" selected="selected"></option>
+					</select>
+				</div>
+			</div>
+		</div>       
+
         <div class="form-group">
             <label translate="gpwebApp.produto.marca" for="field_marca">Marca</label>
             <select class="form-control" id="field_marca" name="marca" ng-model="vm.produto.marca" ng-options="marca as marca.id for marca in vm.marcas | orderBy:'id' track by marca.id">

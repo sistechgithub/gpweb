@@ -60,6 +60,7 @@ public interface GrupoService {
     
     /**
      * Search for the produto corresponding to the query name.
+     * Used on product page
      * 
      *  @param description query for the name
      *  @return the list of entities
