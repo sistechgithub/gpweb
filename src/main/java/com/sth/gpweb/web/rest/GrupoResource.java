@@ -192,6 +192,7 @@ public class GrupoResource {
 	    	HttpHeaders headers = new HttpHeaders();
 	    	headers = PaginationUtil.generateSearchPaginationHttpHeaders(query, page, "/api/_search/grupos/select");
 	    	
+	    	//Json modified to supply select component on frontend
 	        Selection sel = new Selection(page);	        
 	        
 	        return new ResponseEntity<Selection>(sel, headers, HttpStatus.OK);
