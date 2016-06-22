@@ -57,6 +57,7 @@
                     <th jh-sort-by="grupo.id"><span translate="gpwebApp.produto.grupo">Grupo</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="marca.id"><span translate="gpwebApp.produto.marca">Marca</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="unidade.id"><span translate="gpwebApp.produto.unidade">Unidade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="classProduto.id"><span translate="gpwebApp.produto.classProduto">Class Produto</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -94,6 +95,9 @@
                     </td>
                     <td>
                         <a ui-sref="unidade-detail({id:produto.unidade.id})">{{produto.unidade.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="class-produto-detail({id:produto.classProduto.id})">{{produto.classProduto.id}}</a>
                     </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">

@@ -103,6 +103,9 @@ public class Produto implements Serializable {
     @JoinColumn(unique = true)
     private Unidade unidade;
 
+    @ManyToOne
+    private ClassProduto classProduto;
+
     public Long getId() {
         return id;
     }
@@ -285,6 +288,14 @@ public class Produto implements Serializable {
 
     public void setUnidade(Unidade unidade) {
         this.unidade = unidade;
+    }
+
+    public ClassProduto getClassProduto() {
+        return classProduto;
+    }
+
+    public void setClassProduto(ClassProduto classProduto) {
+        this.classProduto = classProduto;
     }
 
     @Override
