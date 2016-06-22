@@ -49,4 +49,12 @@ public interface MarcaService {
      *  @return the list of entities
      */
     Page<Marca> search(String query, Pageable pageable);
+    
+    /**
+     * Search for the marca corresponding to the query name.
+     * 
+     *  @param description query for the name
+     *  @return the list of entities
+     */
+     Page<Marca> findByNmFabricanteStartingWithOrderByNmFabricanteAsc(String descricao, Pageable pageable);
 }
