@@ -5,9 +5,9 @@
         .module('gpwebApp')
         .controller('ProdutoDialogController', ProdutoDialogController);
 
-    ProdutoDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', '$q', 'DataUtils', 'entity', 'Produto', 'Grupo', 'Marca', 'Unidade'];
+    ProdutoDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', '$q', 'DataUtils', 'entity', 'Produto', 'Grupo', 'Marca', 'Unidade', 'ClassProduto'];
 
-    function ProdutoDialogController ($timeout, $scope, $stateParams, $uibModalInstance, $q, DataUtils, entity, Produto, Grupo, Marca, Unidade) {
+    function ProdutoDialogController ($timeout, $scope, $stateParams, $uibModalInstance, $q, DataUtils, entity, Produto, Grupo, Marca, Unidade, ClassProduto) {
         var vm = this;
 
         vm.produto = entity;
@@ -42,6 +42,7 @@
         }).then(function(unidade) {
             vm.unidades.push(unidade);
         });
+        vm.classprodutos = ClassProduto.query();
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();

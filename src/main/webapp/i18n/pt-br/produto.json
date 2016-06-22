@@ -36,7 +36,8 @@
             "blImagem": "Bl Imagem",
             "grupo": "Grupo",
             "marca": "Marca",
-            "unidade": "Unidade"
+            "unidade": "Unidade",
+            "classProduto": "Class Produto"
         }
     }
 }
