@@ -31,6 +31,13 @@
             
             <!-- jhipster-needle-liquibase-add-column - Jhipster will add columns here, do not remove-->
         </createTable>
+     </changeSet>
+        
+     <changeSet id="20160622165918-1" author="jhipster">   
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/classificacao_produto.csv"
+                  separator=";"
+                  tableName="class_produto"/>
         
     </changeSet>
 </databaseChangeLog>
