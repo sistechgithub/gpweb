@@ -94,4 +94,16 @@ public class ClassProdutoServiceImpl implements ClassProdutoService{
         log.debug("Request to search for a page of ClassProdutos for query {}", query);
         return classProdutoSearchRepository.search(queryStringQuery(query), pageable);
     }
+    
+    /**
+     * Search for the dsUnidade
+     *
+     *  @param query the nmFabricante
+     *  @return the list of entities
+     */
+    @Transactional(readOnly = true)
+    public Page<ClassProduto> findByDsClassProdutoStartingWithOrderByDsClassProdutoAsc(String descricao, Pageable pageable){
+	    log.debug("Request to...", descricao);
+	    return classProdutoRepository.findByDsClassProdutoStartingWithOrderByDsClassProdutoAsc(descricao, pageable);
+    }
 }

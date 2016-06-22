@@ -263,12 +263,25 @@
 			</div>
 		</div>        
        
-        <div class="form-group">
-            <label translate="gpwebApp.produto.classProduto" for="field_classProduto">Class Produto</label>
-            <select class="form-control" id="field_classProduto" name="classProduto" ng-model="vm.produto.classProduto" ng-options="classProduto as classProduto.id for classProduto in vm.classprodutos track by classProduto.id">
-                <option value=""></option>
-            </select>
-        </div>
+        <!-- Diretiva ClassProduto-->
+		<div class="form-group">
+			<ourselect id-select="field_entidade4" ng-model="vm.produto.classProduto" entity-field-name="dsClassProduto" entity-url="class-produtos"></ourselect>
+			<div class="panel panel-default">
+				<button type="button" class="btn btn-default btn-sm pull-right"	ng-click="vm.produto.classProduto = null"
+					style="margin-top: 5px; margin-right: 5px">
+					<span class="glyphicon glyphicon-ban-circle"></span>&nbsp;
+				</button>
+				<div class="panel-heading">
+					<b>Classificação</b>: {{vm.produto.classProduto.id}} {{vm.produto.classProduto.dsClassProduto}}
+				</div>
+				<div class="panel-body">
+					<select class="js-data-example-ajax" id="field_entidade4" style="width: 100%">
+						<option value="" selected="selected"></option>
+					</select>
+				</div>
+			</div>
+		</div>
+        
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">

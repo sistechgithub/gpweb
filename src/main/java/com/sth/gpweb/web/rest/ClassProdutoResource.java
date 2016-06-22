@@ -5,6 +5,8 @@ import com.sth.gpweb.domain.ClassProduto;
 import com.sth.gpweb.service.ClassProdutoService;
 import com.sth.gpweb.web.rest.util.HeaderUtil;
 import com.sth.gpweb.web.rest.util.PaginationUtil;
+import com.sth.gpweb.web.rest.util.Selection;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -156,6 +158,38 @@ public class ClassProdutoResource {
         Page<ClassProduto> page = classProdutoService.search(query, pageable);
         HttpHeaders headers = PaginationUtil.generateSearchPaginationHttpHeaders(query, page, "/api/_search/class-produtos");
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
+    }
+    
+    /**
+     * SEARCH  /_search/class-produtos/select?query=:query : search for the classproduto corresponding
+     * to the query.
+     *
+     * @param query the query of the classproduto search
+     * @return the result of the search
+     */
+    @RequestMapping(value = "/_search/class-produtos/select",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public ResponseEntity<Selection> searchClassProdutosNew(@RequestParam String query, Pageable pageable)
+        throws URISyntaxException {
+    	
+    	try{
+    		Page<ClassProduto> page = classProdutoService.findByDsClassProdutoStartingWithOrderByDsClassProdutoAsc(query, pageable);	    	
+	    	
+	    	HttpHeaders headers = new HttpHeaders();
+	    	headers = PaginationUtil.generateSearchPaginationHttpHeaders(query, page, "/api/_search/class-produtos/select");
+	    	
+	        Selection sel = new Selection(page);	        
+	        
+	        return new ResponseEntity<Selection>(sel, headers, HttpStatus.OK);
+	        
+    	}catch(Exception e){
+    		log.error(e.getMessage());
+    		
+    		return ResponseEntity.badRequest().header("Falha", e.getMessage()).body(null);
+    	}
+		
     }
 
 
