@@ -49,4 +49,12 @@ public interface ClassProdutoService {
      *  @return the list of entities
      */
     Page<ClassProduto> search(String query, Pageable pageable);
+    
+    /**
+     * Search for the classproduto corresponding to the query name.
+     * 
+     *  @param description query for the name
+     *  @return the list of entities
+     */
+     Page<ClassProduto> findByDsClassProdutoStartingWithOrderByDsClassProdutoAsc(String descricao, Pageable pageable);  
 }
