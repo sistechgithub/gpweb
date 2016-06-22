@@ -2,6 +2,7 @@
 <div>
     <h2><span translate="gpwebApp.produto.detail.title">Produto</span> {{vm.produto.id}}</h2>
     <hr>
+    <jhi-alert-error></jhi-alert-error>
     <dl class="dl-horizontal jh-entity-details">
         <dt><span translate="gpwebApp.produto.cdProduto">Cd Produto</span></dt>
         <dd>
@@ -71,6 +72,15 @@
         <dd>
             <span>{{vm.produto.dsInformacoes}}</span>
         </dd>
+        <dt><span translate="gpwebApp.produto.blImagem">Bl Imagem</span></dt>
+        <dd>
+            <div ng-if="vm.produto.blImagem">
+                <a ng-click="vm.openFile(vm.produto.blImagemContentType, vm.produto.blImagem)">
+                    <img data-ng-src="{{'data:' + vm.produto.blImagemContentType + ';base64,' + vm.produto.blImagem}}" style="max-width: 100%;"/>
+                </a>
+                {{vm.produto.blImagemContentType}}, {{vm.byteSize(vm.produto.blImagem)}}
+            </div>
+        </dd>
         <dt><span translate="gpwebApp.produto.grupo">Grupo</span></dt>
         <dd>
             <a ui-sref="grupo-detail({id:vm.produto.grupo.id})">{{vm.produto.grupo.id}}</a>
@@ -82,6 +92,10 @@
         <dt><span translate="gpwebApp.produto.unidade">Unidade</span></dt>
         <dd>
             <a ui-sref="unidade-detail({id:vm.produto.unidade.id})">{{vm.produto.unidade.id}}</a>
+        </dd>
+        <dt><span translate="gpwebApp.produto.classProduto">Class Produto</span></dt>
+        <dd>
+            <a ui-sref="class-produto-detail({id:vm.produto.classProduto.id})">{{vm.produto.classProduto.id}}</a>
         </dd>
     </dl>
 

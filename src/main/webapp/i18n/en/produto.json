@@ -33,9 +33,11 @@
             "vlReal": "Vl Real",
             "vlEstoque": "Vl Estoque",
             "dsInformacoes": "Ds Informacoes",
+            "blImagem": "Bl Imagem",
             "grupo": "Grupo",
             "marca": "Marca",
-            "unidade": "Unidade"
+            "unidade": "Unidade",
+            "classProduto": "Class Produto"
         }
     }
 }

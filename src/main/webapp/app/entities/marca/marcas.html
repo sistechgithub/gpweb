@@ -1,6 +1,6 @@
 <div class="box">
     <div class="box-header with-border">
-        <h2 class="box-title" translate="gpwebApp.marca.home.title">Marcas</h2>
+        <h1 class="box-title" translate="gpwebApp.marca.home.title">Marcas</h1>
     </div><!-- /.box-header -->
     
     <jhi-alert></jhi-alert>
@@ -8,8 +8,8 @@
     <div class="box-header">
         <div class="row">
             <div class="col-xs-4 col-sm-5">
-                <button class="btn btn-success" ui-sref="marca.new" >
-                    <span class="hidden-xs"  translate="gpwebApp.marca.home.createLabel">
+                <button class="btn btn-success ripple ripple-light" ui-sref="marca.new" >
+                    <span translate="gpwebApp.marca.home.createLabel">
                         Adicionar
                     </span>
                 </button>
@@ -17,14 +17,14 @@
             <div class="col-xs-8 col-sm-7">
                 <form name="searchForm" class="form-inline">
                     <div class="input-group pull-right" >
-                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'gpwebApp.marca.home.search' | translate }}">
+                        <input type="text" class="form-control text-uppercase" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'gpwebApp.marca.home.search' | translate }}">
                         <span  class="input-group-btn width-min" >
-                            <button class="btn btn-sm btn-info" ng-click="vm.search(vm.searchQuery)">
+                            <button class="btn btn-info ripple ripple-light" ng-click="vm.search(vm.searchQuery)">
                                 <span class="mdi mdi-magnify"></span>
                             </button>
                         </span>
                         <span class="input-group-btn width-min" ng-if="vm.currentSearch">
-                            <button class="btn btn-sm btn-danger" ng-click="vm.clear()">
+                            <button class="btn btn-info ripple ripple-light" ng-click="vm.clear()">
                                 <span class="mdi mdi-delete"></span>
                             </button>
                         </span>
@@ -36,11 +36,11 @@
 
     <div class="box-body">
         <div class="table-responsive">
-            <table class="jh-table table table-bordered table-striped table-hover">
+            <table class="jh-table table table-bordered table-hover">
                 <thead>
                     <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
                         <th jh-sort-by="id" class="col-md-1 col-marca-codigo"><span translate="global.field.id">Código</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>
-                        <th jh-sort-by="nmFabricante" class="col-marca-nome"><span translate="gpwebApp.marca.nmFabricante2">Nome</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>
+                        <th jh-sort-by="nmFabricante"><span translate="gpwebApp.marca.nmFabricante2">Nome</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>
                         <th jh-sort-by="cdTel" class="col-md-1 col-marca-telefone"><span translate="gpwebApp.marca.cdTel">Telefone</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>
                         <th jh-sort-by="flInativo" class="col-md-1 col-marca-inativo"><span translate="gpwebApp.marca.flInativo">Inativo</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>                    
                         <th class="col-md-1 col-marca-acoes text-center" translate="global.field.actions">Ações</th>
@@ -49,26 +49,31 @@
                 <tbody>
                     <tr ng-repeat="marca in vm.marcas track by marca.id">
                         <td><a ui-sref="marca-detail({id:marca.id})">{{marca.id}}</a></td>
-                        <td>{{marca.nmFabricante}}</td>
-                        <td>{{marca.cdTel}}</td>
-                        <td>{{marca.flInativo}}</td>                   
-                        <td class="text-right">
+                        <td class="text-uppercase">{{marca.nmFabricante}}</td>
+                        <td>{{marca.cdTel | brPhoneNumber}}</td>
+                        <td class="text-center">
+                            <i class="mdi"
+                                ng-class="{'mdi-check text-success': marca.flInativo,
+                                'mdi-close text-danger': !marca.flInativo}">
+                            </i>
+                        </td>                   
+                        <td class="text-center">
                             <div>
                                 <button type="submit"
                                         ui-sref="marca-detail({id:marca.id})"
-                                        class="btn btn-success btn-sm"
+                                        class="btn btn-success btn-sm ripple ripple-light"
                                         data-toggle="tooltip" data-placement="top" title="Visualizar">
                                     <span class="mdi mdi-eye"></span>
                                 </button>
                                 <button type="submit"
                                         ui-sref="marca.edit({id:marca.id})"
-                                        class="btn btn-primary btn-sm"
+                                        class="btn btn-primary btn-sm ripple ripple-light"
                                         data-toggle="tooltip" data-placement="top" title="Editar">
                                     <span class="mdi mdi-pencil"></span>
                                 </button>
                                 <button type="submit"
                                         ui-sref="marca.delete({id:marca.id})"
-                                        class="btn btn-danger btn-sm"
+                                        class="btn btn-danger btn-sm ripple ripple-light"
                                         data-toggle="tooltip" data-placement="top" title="Deletar">
                                     <span class="mdi mdi-delete"></span>
                                 </button>

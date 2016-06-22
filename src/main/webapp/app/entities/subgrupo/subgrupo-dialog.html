@@ -19,9 +19,9 @@
             <div class="col-md-10">
                 <div class="form-group">
                     <label class="control-label" translate="gpwebApp.subgrupo.nmSubgrupo" for="field_nmSubgrupo">Nome</label>
-                    <input type="text" class="form-control" name="nmSubgrupo" id="field_nmSubgrupo"
+                    <input type="text" class="form-control text-uppercase" name="nmSubgrupo" id="field_nmSubgrupo"
                             ng-model="vm.subgrupo.nmSubgrupo"
-                            required ng-maxlength="35" />
+                            required ng-maxlength="35" maxlength="35" />
                     <div ng-show="editForm.nmSubgrupo.$invalid">
                         <p class="help-block"
                             ng-show="editForm.nmSubgrupo.$error.required" translate="entity.validation.required">
@@ -55,10 +55,10 @@
         </div>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+        <button type="button" class="btn btn-default ripple" data-dismiss="modal" ng-click="vm.clear()">
             <span translate="entity.action.cancel">Cancelar</span>
         </button>
-        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-success">
+        <button type="submit" class="btn btn-success ripple ripple-light" ng-disabled="editForm.$invalid || isSaving">
             <span translate="entity.action.save">Salvar</span>
         </button>
     </div>

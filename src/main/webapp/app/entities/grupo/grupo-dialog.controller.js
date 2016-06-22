@@ -24,9 +24,16 @@
         var onSaveError = function () {
             vm.isSaving = false;
         };
+        
+        var onBeforeSaveOrUpdate = function(){       	        	
+        	vm.grupo.nmGrupo = angular.uppercase(vm.grupo.nmGrupo); //Setting to uppercase
+        };   
 
         vm.save = function () {
             vm.isSaving = true;
+            
+            onBeforeSaveOrUpdate(); //validations rules
+            
             if (vm.grupo.id !== null) {
                 Grupo.update(vm.grupo, onSaveSuccess, onSaveError);
             } else {

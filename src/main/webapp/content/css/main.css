@@ -215,6 +215,7 @@ Custom alerts for notification
 .alerts .toast {
     position: fixed;
     width: 100%;
+    z-index: 998;
 }
 
 .alerts .toast.left {
@@ -458,7 +459,26 @@ legend {
  * Configurações de Cada Página do Sistema
  * ---------------------------------------------------------------------------
  */
-
+ /* ==========================================================================
+Navbar
+=========================================================================== */
+.offcanvas-margin-left{
+ margin-left: 50px;
+}
+@media (max-width: 767px) {
+    .offcanvas-margin-left{
+     margin-left: 0px;
+    }
+}
+ /* ==========================================================================
+Sidebar
+=========================================================================== */
+.sidebar-mini.sidebar-collapse .logo-minisidebar-hidden {
+  display: none;
+}
+.logo-sidebar{
+  padding: 5px 2px 20px 0px
+}
  /* ==========================================================================
 Login Dashboard
 =========================================================================== */
@@ -466,7 +486,6 @@ Login Dashboard
   width: 95%;
   padding-right: 10px;
 }
-
 /* ===========================================================================
 Menu Dashboard
 =========================================================================== */
@@ -622,7 +641,7 @@ Menu Dashboard
 Componente Busca
 ========================================================================== */
 .search-pad-col{
-    padding-top: 3px;
+    padding-top: 0px;
 }
 .search-pad-col-left{
     padding: 0px 7px 0px 0px !important;
@@ -662,6 +681,32 @@ Página de Visualização de Itens Cadastrados
 }
 .btn-print{
     margin-top: 10px;
+}
+.box-detail{
+    padding: 20px;
+}
+.border-detail{
+    border-left: 5px solid #31b0d5;
+}
+/*
+===========================================================================
+Página Unidades
+=========================================================================== */
+.col-unidade-codigo{
+  min-width: 110px;
+  max-width: 110px;
+}
+.col-unidade-nome{
+  min-width: 352px;
+  max-width: 352px;
+}
+.col-unidade-unidade{
+  min-width: 110px;
+  max-width: 110px;
+}
+.col-unidade-acoes{
+  min-width: 155px;
+  max-width: 155px;
 }
 /*
 ===========================================================================

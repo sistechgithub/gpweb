@@ -2,18 +2,18 @@
 <header class="main-header">
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top" role="navigation">
-        <!-- Logo -->
+        <!-- Logo
         <a href="" class="logo">
-            <!-- mini logo for sidebar mini 50x50 pixels -->
+            mini logo for sidebar mini 50x50 pixels
             <span class="logo-mini"><b>S</b>TH</span>
-            <!-- logo for regular state and mobile devices -->
+            logo for regular state and mobile devices
             <span class="logo-lg"><b class="text-aqua">STH</b>WEB</span>
-        </a>
+        </a> -->
         <!-- sidebar toggle button-->
         <div class="navbar-custom-menu pull-left">
             <ul class="nav navbar-nav">
                 <li>
-    				<a data-toggle="offcanvas" role="button">
+    				<a class="offcanvas-margin-left" data-toggle="offcanvas" role="button">
     					<i class="mdi mdi-menu"></i>
     					<span class="mdi-icon-text"></span>
     				</a>
@@ -24,22 +24,22 @@
         <div class="navbar-custom-menu" ng-switch="vm.isAuthenticated()">
             <ul class="nav navbar-nav">
                 <li ui-sref-active="active">
-                    <a ui-sref="home">
+                    <a ui-sref="home" class="ripple ripple-light">
                         <i class="mdi mdi-home"></i>
-                        <span class="hidden-sm" translate="global.menu.home">Home</span>
+                        <span class="hidden-xs hidden-sm" translate="global.menu.home">Home</span>
                     </a>
                 </li>
                 <!-- fullscreen -->
                 <li>
-                    <a href="" class="toggle-fullscreen" id="javascript:void(0);">
+                    <a href="" class="toggle-fullscreen ripple ripple-light" id="javascript:void(0);">
                     	<span>
                         	<i class="mdi mdi-fullscreen"></i>
-                        	<span class="hidden-sm" translate="global.menu.fullscreen"> Tela Cheia</span>
+                        	<span class="hidden-xs hidden-sm" translate="global.menu.fullscreen"> Tela Cheia</span>
                     	</span>
                     </a>
                 </li>
                 <li ng-class="{active: vm.$state.includes('account')}" uib-dropdown class="dropdown pointer">
-                    <a class="dropdown-toggle" uib-dropdown-toggle href="" id="account-menu">
+                    <a class="dropdown-toggle ripple ripple-light" uib-dropdown-toggle href="" id="account-menu">
                         <i class="mdi mdi-account-box"></i>
                         <span class="hidden-sm"translate="global.menu.account.main">
                             Account
@@ -132,7 +132,7 @@
                                 <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
                                 <span translate="global.menu.entities.produto">Produto</span>
                             </a>
-                        </li>
+                        </li>                        
                         <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here --
                     </ul>
                 </li>

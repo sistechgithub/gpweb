@@ -1,0 +1,28 @@
+{
+  "name": "angular-whimsical-ripple",
+  "version": "1.0.0",
+  "authors": [
+    "Gilles Piou <gilles.piou@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "material",
+    "ripple"
+  ],
+  "main": "whimsicalRipple.js",
+  "dependencies": {
+    "angular": ">1.0.0"
+  },
+  "homepage": "https://github.com/pioug/angular-whimsical-ripple",
+  "_release": "1.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.0",
+    "commit": "3971e23818c503ccae782433c5a5107416b10353"
+  },
+  "_source": "https://github.com/pioug/angular-whimsical-ripple.git",
+  "_target": "^1.0.0",
+  "_originalSource": "angular-whimsical-ripple",
+  "_direct": true
+}

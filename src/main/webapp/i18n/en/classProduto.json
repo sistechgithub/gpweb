@@ -1,0 +1,23 @@
+{
+    "gpwebApp": {
+        "classProduto" : {
+            "home": {
+                "title": "Class Produtos",
+                "createLabel": "Create a new Class Produto",
+                "createOrEditLabel": "Create or edit a Class Produto",
+                "search": "Search for Class Produto"
+            },
+            "created": "A new Class Produto is created with identifier {{ param }}",
+            "updated": "A Class Produto is updated with identifier {{ param }}",
+            "deleted": "A Class Produto is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Class Produto {{ id }}?"
+            },
+            "detail": {
+                "title": "Class Produto"
+            },
+            "cdClassProduto": "Cd Class Produto",
+            "dsClassProduto": "Ds Class Produto"
+        }
+    }
+}

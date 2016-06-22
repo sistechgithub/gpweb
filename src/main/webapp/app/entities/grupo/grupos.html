@@ -1,6 +1,6 @@
 <div class="box">
     <div class="box-header with-border">
-        <h2 class="box-title" translate="gpwebApp.grupo.home.title">Grupos</h2>
+        <h1 class="box-title" translate="gpwebApp.grupo.home.title">Grupos</h1>
     </div><!-- /.box-header -->
     
     <jhi-alert></jhi-alert>
@@ -8,7 +8,7 @@
     <div class="box-header">
         <div class="row">
             <div class="col-xs-4 col-sm-5">
-                <button class="btn btn-success" ui-sref="grupo.new" >
+                <button class="btn btn-success ripple ripple-light" ui-sref="grupo.new" >
                     <span translate="gpwebApp.grupo.home.createLabel">
                         Adicionar
                     </span>
@@ -17,15 +17,14 @@
             <div class="col-xs-8 col-sm-7 search-pad-col">
                 <form name="searchForm" class="form-inline">
                     <div class="input-group pull-right" >
-                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'gpwebApp.grupo.home.search' | translate }}">
+                        <input type="text" class="form-control text-uppercase" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'gpwebApp.grupo.home.search' | translate }}">
                         <span  class="input-group-btn width-min" >
-                            <button class="btn btn-sm btn-info" ng-click="vm.search(vm.searchQuery)">
+                            <button class="btn btn-info ripple ripple-light" ng-click="vm.search(vm.searchQuery)">
                                 <span class="mdi mdi-magnify"></span>
                             </button>
                         </span>
                         <span class="input-group-btn width-min" ng-if="vm.currentSearch">
-                            <button class="btn btn-sm btn-danger" ng-click="vm.clear()" 
-                                    data-toggle="tooltip" data-placement="top" title="Limpar Busca">
+                            <button class="btn btn-info ripple ripple-light" ng-click="vm.clear()">
                                 <span class="mdi mdi-delete"></span>
                             </button>
                         </span>
@@ -41,7 +40,7 @@
                 <thead>
                     <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
                         <th class="col-md-1 col-grupo-codigo" jh-sort-by="id"><span translate="global.field.id">Código</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>
-                        <th class="col-md-7 col-grupo-nome" jh-sort-by="nmGrupo"><span translate="gpwebApp.grupo.name">Nome</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>
+                        <th class="col-md-7" jh-sort-by="nmGrupo"><span translate="gpwebApp.grupo.name">Nome</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>
                         <th class="col-md-1 col-grupo-comissao" jh-sort-by="vlComissao"><span translate="gpwebApp.grupo.commission">Comissão (%)</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>
                         <th class="col-md-1 col-grupo-promocao" jh-sort-by="flPromo"><span translate="gpwebApp.grupo.promotion">Promoção</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>
                         <th class="col-md-1 col-grupo-semdesconto" jh-sort-by="flDesco"><span translate="gpwebApp.grupo.noDiscount">Sem Desconto</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>
@@ -65,23 +64,23 @@
                                 'mdi-close text-danger': !grupo.flDesco}">
                             </i>
                         </td>
-                        <td class="text-right">
+                        <td class="text-center">
                             <div>
                                 <button type="submit"
                                         ui-sref="grupo-detail({id:grupo.id})"
-                                        class="btn btn-success btn-sm"
+                                        class="btn btn-success btn-sm ripple ripple-light"
                                         data-toggle="tooltip" data-placement="top" title="Visualizar">
                                     <span class="mdi mdi-eye"></span>
                                 </button>
                                 <button type="submit"
                                         ui-sref="grupo.edit({id:grupo.id})"
-                                        class="btn btn-primary btn-sm"
+                                        class="btn btn-primary btn-sm ripple ripple-light"
                                         data-toggle="tooltip" data-placement="top" title="Editar">
                                     <span class="mdi mdi-pencil"></span>
                                 </button>
                                 <button type="submit"
                                         ui-sref="grupo.delete({id:grupo.id})"
-                                        class="btn btn-danger btn-sm"
+                                        class="btn btn-danger btn-sm ripple ripple-light"
                                         data-toggle="tooltip" data-placement="top" title="Deletar">
                                     <span class="mdi mdi-delete"></span>
                                 </button>

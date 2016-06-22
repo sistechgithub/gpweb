@@ -23,6 +23,12 @@
             "otherEntityField": "id",
             "ownerSide": true,
             "otherEntityRelationshipName": "produto"
+        },
+        {
+            "relationshipName": "classProduto",
+            "otherEntityName": "classProduto",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
         }
     ],
     "fields": [
@@ -136,6 +142,11 @@
                 "maxlength"
             ],
             "fieldValidateRulesMaxlength": "200"
+        },
+        {
+            "fieldName": "blImagem",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
         }
     ],
     "changelogDate": "20160609181446",

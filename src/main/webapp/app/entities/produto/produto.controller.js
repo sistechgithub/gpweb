@@ -5,33 +5,38 @@
         .module('gpwebApp')
         .controller('ProdutoController', ProdutoController);
 
-    ProdutoController.$inject = ['$scope', '$state', 'Produto', 'ProdutoSearch', 'ParseLinks', 'AlertService', 'pagingParams', 'paginationConstants'];
+    ProdutoController.$inject = ['$scope', '$state', 'DataUtils', 'Produto', 'ProdutoSearch', 'ParseLinks', 'AlertService', 'pagingParams', 'paginationConstants'];
 
-    function ProdutoController ($scope, $state, Produto, ProdutoSearch, ParseLinks, AlertService, pagingParams, paginationConstants) {
+    function ProdutoController ($scope, $state, DataUtils, Produto, ProdutoSearch, ParseLinks, AlertService, pagingParams, paginationConstants) {
         var vm = this;
-        vm.loadAll = loadAll;
+        
         vm.loadPage = loadPage;
         vm.predicate = pagingParams.predicate;
         vm.reverse = pagingParams.ascending;
         vm.transition = transition;
+        vm.itemsPerPage = paginationConstants.itemsPerPage;
         vm.clear = clear;
         vm.search = search;
+        vm.loadAll = loadAll;
         vm.searchQuery = pagingParams.search;
         vm.currentSearch = pagingParams.search;
-        vm.loadAll();
+        vm.openFile = DataUtils.openFile;
+        vm.byteSize = DataUtils.byteSize;
+
+        loadAll();
 
         function loadAll () {
             if (pagingParams.search) {
                 ProdutoSearch.query({
                     query: pagingParams.search,
                     page: pagingParams.page - 1,
-                    size: paginationConstants.itemsPerPage,
+                    size: vm.itemsPerPage,
                     sort: sort()
                 }, onSuccess, onError);
             } else {
                 Produto.query({
                     page: pagingParams.page - 1,
-                    size: paginationConstants.itemsPerPage,
+                    size: vm.itemsPerPage,
                     sort: sort()
                 }, onSuccess, onError);
             }
@@ -87,6 +92,5 @@
             vm.currentSearch = null;
             vm.transition();
         }
-
     }
 })();

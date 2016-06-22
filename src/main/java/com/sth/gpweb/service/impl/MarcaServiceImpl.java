@@ -94,4 +94,16 @@ public class MarcaServiceImpl implements MarcaService{
         log.debug("Request to search for a page of Marcas for query {}", query);
         return marcaSearchRepository.search(queryStringQuery(query), pageable);
     }
+    
+    /**
+     * Search for the nmFabricante
+     *
+     *  @param query the nmFabricante
+     *  @return the list of entities
+     */
+     @Transactional(readOnly = true)
+     public Page<Marca> findByNmFabricanteStartingWithOrderByNmFabricanteAsc(String descricao, Pageable pageable){
+    	log.debug("Request to...", descricao);
+        return marcaRepository.findByNmFabricanteStartingWithOrderByNmFabricanteAsc(descricao, pageable);
+     }
 }
