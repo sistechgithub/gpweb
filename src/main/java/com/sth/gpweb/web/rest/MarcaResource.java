@@ -171,7 +171,7 @@ public class MarcaResource {
         method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public ResponseEntity<Selection> searchGrupoNew(@RequestParam String query, Pageable pageable)
+    public ResponseEntity<Selection> searchMarcaNew(@RequestParam String query, Pageable pageable)
         throws URISyntaxException {
     	
     	try{
