@@ -19,6 +19,6 @@ public interface GrupoRepository extends JpaRepository<Grupo,Long> {
 	@Query("SELECT g.nmGrupo FROM Grupo g where g.nmGrupo = :nmGrupo") 
 	String findNmGrupoExists(@Param("nmGrupo") String nmGrupo);
 
-	//Find by name, used by select2 on product
+	//Find by name, used by select2 on product at frontend page
 	Page<Grupo> findByNmGrupoStartingWithOrderByNmGrupoAsc(String descricao, Pageable pageable);
 }

@@ -2,12 +2,12 @@
     'use strict';
     angular
         .module('gpwebApp')
-        .factory('Produto', Produto);
+        .factory('ClassProduto', ClassProduto);
 
-    Produto.$inject = ['$resource'];
+    ClassProduto.$inject = ['$resource'];
 
-    function Produto ($resource) {
-        var resourceUrl =  'api/produtos/:id';
+    function ClassProduto ($resource) {
+        var resourceUrl =  'api/class-produtos/:id';
 
         return $resource(resourceUrl, {}, {
             'query': { method: 'GET', isArray: true},

@@ -109,6 +109,7 @@ public class GrupoServiceImpl implements GrupoService{
     
     /**
      * Search for the nmGrupo
+     * Used on product page
      *
      *  @param query the nmGrupo
      *  @return the list of entities

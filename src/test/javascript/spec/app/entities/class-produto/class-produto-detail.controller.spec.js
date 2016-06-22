@@ -2,19 +2,15 @@
 
 describe('Controller Tests', function() {
 
-    describe('Produto Management Detail Controller', function() {
+    describe('ClassProduto Management Detail Controller', function() {
         var $scope, $rootScope;
-        var MockEntity, MockProduto, MockGrupo, MockMarca, MockUnidade, MockClassProduto;
+        var MockEntity, MockClassProduto;
         var createController;
 
         beforeEach(inject(function($injector) {
             $rootScope = $injector.get('$rootScope');
             $scope = $rootScope.$new();
             MockEntity = jasmine.createSpy('MockEntity');
-            MockProduto = jasmine.createSpy('MockProduto');
-            MockGrupo = jasmine.createSpy('MockGrupo');
-            MockMarca = jasmine.createSpy('MockMarca');
-            MockUnidade = jasmine.createSpy('MockUnidade');
             MockClassProduto = jasmine.createSpy('MockClassProduto');
             
 
@@ -22,21 +18,17 @@ describe('Controller Tests', function() {
                 '$scope': $scope,
                 '$rootScope': $rootScope,
                 'entity': MockEntity ,
-                'Produto': MockProduto,
-                'Grupo': MockGrupo,
-                'Marca': MockMarca,
-                'Unidade': MockUnidade,
                 'ClassProduto': MockClassProduto
             };
             createController = function() {
-                $injector.get('$controller')("ProdutoDetailController", locals);
+                $injector.get('$controller')("ClassProdutoDetailController", locals);
             };
         }));
 
 
         describe('Root Scope Listening', function() {
             it('Unregisters root scope listener upon scope destruction', function() {
-                var eventType = 'gpwebApp:produtoUpdate';
+                var eventType = 'gpwebApp:classProdutoUpdate';
 
                 createController();
                 expect($rootScope.$$listenerCount[eventType]).toEqual(1);

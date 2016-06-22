@@ -3,14 +3,14 @@
 
     angular
         .module('gpwebApp')
-        .controller('ProdutoDeleteController',ProdutoDeleteController);
+        .controller('ClassProdutoDeleteController',ClassProdutoDeleteController);
 
-    ProdutoDeleteController.$inject = ['$uibModalInstance', 'entity', 'Produto'];
+    ClassProdutoDeleteController.$inject = ['$uibModalInstance', 'entity', 'ClassProduto'];
 
-    function ProdutoDeleteController($uibModalInstance, entity, Produto) {
+    function ClassProdutoDeleteController($uibModalInstance, entity, ClassProduto) {
         var vm = this;
 
-        vm.produto = entity;
+        vm.classProduto = entity;
         vm.clear = clear;
         vm.confirmDelete = confirmDelete;
         
@@ -19,7 +19,7 @@
         }
 
         function confirmDelete (id) {
-            Produto.delete({id: id},
+            ClassProduto.delete({id: id},
                 function () {
                     $uibModalInstance.close(true);
                 });

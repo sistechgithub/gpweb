@@ -5,6 +5,8 @@ import com.sth.gpweb.domain.Marca;
 import com.sth.gpweb.service.MarcaService;
 import com.sth.gpweb.web.rest.util.HeaderUtil;
 import com.sth.gpweb.web.rest.util.PaginationUtil;
+import com.sth.gpweb.web.rest.util.Selection;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -156,6 +158,38 @@ public class MarcaResource {
         Page<Marca> page = marcaService.search(query, pageable);
         HttpHeaders headers = PaginationUtil.generateSearchPaginationHttpHeaders(query, page, "/api/_search/marcas");
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
+    }
+    
+    /**
+     * SEARCH  /_search/marcas/select?query=:query : search for the marca corresponding
+     * to the query.
+     *
+     * @param query the query of the marca search
+     * @return the result of the search
+     */
+    @RequestMapping(value = "/_search/marcas/select",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public ResponseEntity<Selection> searchGrupoNew(@RequestParam String query, Pageable pageable)
+        throws URISyntaxException {
+    	
+    	try{
+    		Page<Marca> page = marcaService.findByNmFabricanteStartingWithOrderByNmFabricanteAsc(query, pageable);	    	
+	    	
+	    	HttpHeaders headers = new HttpHeaders();
+	    	headers = PaginationUtil.generateSearchPaginationHttpHeaders(query, page, "/api/_search/marcas/select");
+	    	
+	        Selection sel = new Selection(page);	        
+	        
+	        return new ResponseEntity<Selection>(sel, headers, HttpStatus.OK);
+	        
+    	}catch(Exception e){
+    		log.error(e.getMessage());
+    		
+    		return ResponseEntity.badRequest().header("Falha", e.getMessage()).body(null);
+    	}
+		
     }
 
 }

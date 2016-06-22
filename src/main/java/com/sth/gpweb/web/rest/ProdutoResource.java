@@ -158,4 +158,5 @@ public class ProdutoResource {
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
 
+
 }

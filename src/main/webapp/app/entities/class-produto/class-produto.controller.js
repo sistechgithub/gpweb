@@ -3,11 +3,11 @@
 
     angular
         .module('gpwebApp')
-        .controller('ProdutoController', ProdutoController);
+        .controller('ClassProdutoController', ClassProdutoController);
 
-    ProdutoController.$inject = ['$scope', '$state', 'DataUtils', 'Produto', 'ProdutoSearch', 'ParseLinks', 'AlertService', 'pagingParams', 'paginationConstants'];
+    ClassProdutoController.$inject = ['$scope', '$state', 'ClassProduto', 'ClassProdutoSearch', 'ParseLinks', 'AlertService', 'pagingParams', 'paginationConstants'];
 
-    function ProdutoController ($scope, $state, DataUtils, Produto, ProdutoSearch, ParseLinks, AlertService, pagingParams, paginationConstants) {
+    function ClassProdutoController ($scope, $state, ClassProduto, ClassProdutoSearch, ParseLinks, AlertService, pagingParams, paginationConstants) {
         var vm = this;
         
         vm.loadPage = loadPage;
@@ -20,21 +20,19 @@
         vm.loadAll = loadAll;
         vm.searchQuery = pagingParams.search;
         vm.currentSearch = pagingParams.search;
-        vm.openFile = DataUtils.openFile;
-        vm.byteSize = DataUtils.byteSize;
 
         loadAll();
 
         function loadAll () {
             if (pagingParams.search) {
-                ProdutoSearch.query({
+                ClassProdutoSearch.query({
                     query: pagingParams.search,
                     page: pagingParams.page - 1,
                     size: vm.itemsPerPage,
                     sort: sort()
                 }, onSuccess, onError);
             } else {
-                Produto.query({
+                ClassProduto.query({
                     page: pagingParams.page - 1,
                     size: vm.itemsPerPage,
                     sort: sort()
@@ -51,7 +49,7 @@
                 vm.links = ParseLinks.parse(headers('link'));
                 vm.totalItems = headers('X-Total-Count');
                 vm.queryCount = vm.totalItems;
-                vm.produtos = data;
+                vm.classProdutos = data;
                 vm.page = pagingParams.page;
             }
             function onError(error) {

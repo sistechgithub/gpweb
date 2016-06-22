@@ -9,17 +9,17 @@
 
     function stateConfig($stateProvider) {
         $stateProvider
-        .state('produto', {
+        .state('class-produto', {
             parent: 'entity',
-            url: '/produto?page&sort&search',
+            url: '/class-produto?page&sort&search',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'gpwebApp.produto.home.title'
+                pageTitle: 'gpwebApp.classProduto.home.title'
             },
             views: {
                 'content@': {
-                    templateUrl: 'app/entities/produto/produtos.html',
-                    controller: 'ProdutoController',
+                    templateUrl: 'app/entities/class-produto/class-produtos.html',
+                    controller: 'ClassProdutoController',
                     controllerAs: 'vm'
                 }
             },
@@ -45,126 +45,109 @@
                     };
                 }],
                 translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
-                    $translatePartialLoader.addPart('produto');
+                    $translatePartialLoader.addPart('classProduto');
                     $translatePartialLoader.addPart('global');
                     return $translate.refresh();
                 }]
             }
         })
-        .state('produto-detail', {
+        .state('class-produto-detail', {
             parent: 'entity',
-            url: '/produto/{id}',
+            url: '/class-produto/{id}',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'gpwebApp.produto.detail.title'
+                pageTitle: 'gpwebApp.classProduto.detail.title'
             },
             views: {
                 'content@': {
-                    templateUrl: 'app/entities/produto/produto-detail.html',
-                    controller: 'ProdutoDetailController',
+                    templateUrl: 'app/entities/class-produto/class-produto-detail.html',
+                    controller: 'ClassProdutoDetailController',
                     controllerAs: 'vm'
                 }
             },
             resolve: {
                 translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
-                    $translatePartialLoader.addPart('produto');
+                    $translatePartialLoader.addPart('classProduto');
                     return $translate.refresh();
                 }],
-                entity: ['$stateParams', 'Produto', function($stateParams, Produto) {
-                    return Produto.get({id : $stateParams.id}).$promise;
+                entity: ['$stateParams', 'ClassProduto', function($stateParams, ClassProduto) {
+                    return ClassProduto.get({id : $stateParams.id}).$promise;
                 }]
             }
         })
-        .state('produto.new', {
-            parent: 'produto',
+        .state('class-produto.new', {
+            parent: 'class-produto',
             url: '/new',
             data: {
                 authorities: ['ROLE_USER']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
-                    templateUrl: 'app/entities/produto/produto-dialog.html',
-                    controller: 'ProdutoDialogController',
+                    templateUrl: 'app/entities/class-produto/class-produto-dialog.html',
+                    controller: 'ClassProdutoDialogController',
                     controllerAs: 'vm',
                     backdrop: 'static',
                     size: 'lg',
                     resolve: {
                         entity: function () {
                             return {
-                                cdProduto: null,
-                                cdBarras: null,
-                                nmProduto: null,
-                                cdNcm: null,
-                                cdEan: null,
-                                cdAnp: null,
-                                dsAnp: null,
-                                cdContaContabil: null,
-                                materiaPrima: null,
-                                flBalanca: null,
-                                flInativo: null,
-                                flSngpc: null,
-                                flMedProlonga: null,
-                                dsClassTerapeutica: null,
-                                vlReal: null,
-                                vlEstoque: null,
-                                dsInformacoes: null,
-                                blImagem: null,
-                                blImagemContentType: null,
+                                cdClassProduto: null,
+                                dsClassProduto: null,
                                 id: null
                             };
                         }
                     }
                 }).result.then(function() {
-                    $state.go('produto', null, { reload: true });
+                    $state.go('class-produto', null, { reload: true });
                 }, function() {
-                    $state.go('produto');
+                    $state.go('class-produto');
                 });
             }]
         })
-        .state('produto.edit', {
-            parent: 'produto',
+        .state('class-produto.edit', {
+            parent: 'class-produto',
             url: '/{id}/edit',
             data: {
                 authorities: ['ROLE_USER']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
-                    templateUrl: 'app/entities/produto/produto-dialog.html',
-                    controller: 'ProdutoDialogController',
+                    templateUrl: 'app/entities/class-produto/class-produto-dialog.html',
+                    controller: 'ClassProdutoDialogController',
                     controllerAs: 'vm',
                     backdrop: 'static',
                     size: 'lg',
                     resolve: {
-                        entity: ['Produto', function(Produto) {
-                            return Produto.get({id : $stateParams.id}).$promise;
+                        entity: ['ClassProduto', function(ClassProduto) {
+                            return ClassProduto.get({id : $stateParams.id}).$promise;
                         }]
                     }
                 }).result.then(function() {
-                    $state.go('produto', null, { reload: true });
+                    $state.go('class-produto', null, { reload: true });
                 }, function() {
                     $state.go('^');
                 });
             }]
         })
-        .state('produto.delete', {
-            parent: 'produto',
+        .state('class-produto.delete', {
+            parent: 'class-produto',
             url: '/{id}/delete',
             data: {
                 authorities: ['ROLE_USER']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
-                    templateUrl: 'app/entities/produto/produto-delete-dialog.html',
-                    controller: 'ProdutoDeleteController',
+                    templateUrl: 'app/entities/class-produto/class-produto-delete-dialog.html',
+                    controller: 'ClassProdutoDeleteController',
                     controllerAs: 'vm',
                     size: 'md',
                     resolve: {
-                        entity: ['Produto', function(Produto) {
-                            return Produto.get({id : $stateParams.id}).$promise;
+                        entity: ['ClassProduto', function(ClassProduto) {
+                            return ClassProduto.get({id : $stateParams.id}).$promise;
                         }]
                     }
                 }).result.then(function() {
-                    $state.go('produto', null, { reload: true });
+                    $state.go('class-produto', null, { reload: true });
                 }, function() {
                     $state.go('^');
                 });

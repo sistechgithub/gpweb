@@ -1,0 +1,22 @@
+
+<div>
+    <h2><span translate="gpwebApp.classProduto.detail.title">Class Produto</span> {{vm.classProduto.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="gpwebApp.classProduto.cdClassProduto">Cd Class Produto</span></dt>
+        <dd>
+            <span>{{vm.classProduto.cdClassProduto}}</span>
+        </dd>
+        <dt><span translate="gpwebApp.classProduto.dsClassProduto">Ds Class Produto</span></dt>
+        <dd>
+            <span>{{vm.classProduto.dsClassProduto}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

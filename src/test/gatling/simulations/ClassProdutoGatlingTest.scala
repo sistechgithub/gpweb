@@ -7,9 +7,9 @@ import org.slf4j.LoggerFactory
 import scala.concurrent.duration._
 
 /**
- * Performance test for the Produto entity.
+ * Performance test for the ClassProduto entity.
  */
-class ProdutoGatlingTest extends Simulation {
+class ClassProdutoGatlingTest extends Simulation {
 
     val context: LoggerContext = LoggerFactory.getILoggerFactory.asInstanceOf[LoggerContext]
     // Log all HTTP requests
@@ -37,7 +37,7 @@ class ProdutoGatlingTest extends Simulation {
         "X-CSRF-TOKEN" -> "${csrf_token}"
     )
 
-    val scn = scenario("Test the Produto entity")
+    val scn = scenario("Test the ClassProduto entity")
         .exec(http("First unauthenticated request")
         .get("/api/account")
         .headers(headers_http)
@@ -59,26 +59,26 @@ class ProdutoGatlingTest extends Simulation {
         .check(headerRegex("Set-Cookie", "CSRF-TOKEN=(.*); [P,p]ath=/").saveAs("csrf_token")))
         .pause(10)
         .repeat(2) {
-            exec(http("Get all produtos")
-            .get("/api/produtos")
+            exec(http("Get all classProdutos")
+            .get("/api/class-produtos")
             .headers(headers_http_authenticated)
             .check(status.is(200)))
             .pause(10 seconds, 20 seconds)
-            .exec(http("Create new produto")
-            .post("/api/produtos")
+            .exec(http("Create new classProduto")
+            .post("/api/class-produtos")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "cdProduto":null, "cdBarras":"SAMPLE_TEXT", "nmProduto":"SAMPLE_TEXT", "cdNcm":"SAMPLE_TEXT", "cdEan":"SAMPLE_TEXT", "cdAnp":"SAMPLE_TEXT", "dsAnp":"SAMPLE_TEXT", "cdContaContabil":"SAMPLE_TEXT", "materiaPrima":"SAMPLE_TEXT", "flBalanca":null, "flInativo":null, "flSngpc":null, "flMedProlonga":null, "dsClassTerapeutica":"SAMPLE_TEXT", "vlReal":null, "vlEstoque":null, "dsInformacoes":"SAMPLE_TEXT", "blImagem":null}""")).asJSON
+            .body(StringBody("""{"id":null, "cdClassProduto":"SAMPLE_TEXT", "dsClassProduto":"SAMPLE_TEXT"}""")).asJSON
             .check(status.is(201))
-            .check(headerRegex("Location", "(.*)").saveAs("new_produto_url"))).exitHereIfFailed
+            .check(headerRegex("Location", "(.*)").saveAs("new_classProduto_url"))).exitHereIfFailed
             .pause(10)
             .repeat(5) {
-                exec(http("Get created produto")
-                .get("${new_produto_url}")
+                exec(http("Get created classProduto")
+                .get("${new_classProduto_url}")
                 .headers(headers_http_authenticated))
                 .pause(10)
             }
-            .exec(http("Delete created produto")
-            .delete("${new_produto_url}")
+            .exec(http("Delete created classProduto")
+            .delete("${new_classProduto_url}")
             .headers(headers_http_authenticated))
             .pause(10)
         }
