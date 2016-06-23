@@ -9,7 +9,6 @@ import com.sth.gpweb.domain.Marca;
 /**
  * Spring Data JPA repository for the Marca entity.
  */
-@SuppressWarnings("unused")
 public interface MarcaRepository extends JpaRepository<Marca,Long> {
 
 	//Find by name, used by select2 on product

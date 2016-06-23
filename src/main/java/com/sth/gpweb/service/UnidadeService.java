@@ -1,10 +1,9 @@
 package com.sth.gpweb.service;
 
-import com.sth.gpweb.domain.Unidade;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import java.util.List;
+import com.sth.gpweb.domain.Unidade;
 
 /**
  * Service Interface for managing Unidade.
@@ -49,4 +48,13 @@ public interface UnidadeService {
      *  @return the list of entities
      */
     Page<Unidade> search(String query, Pageable pageable);
+    
+    /**
+     * Search for the unidade corresponding to the query name.
+     * 
+     *  @param description query for the name
+     *  @return the list of entities
+     */
+     Page<Unidade> findByDsUnidadeStartingWithOrderByDsUnidadeAsc(String descricao, Pageable pageable);   
+     
 }

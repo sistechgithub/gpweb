@@ -10,6 +10,7 @@
             restrict: 'E',            
             require: '?ngModel',  
             scope: {
+            	entityFieldId: '@',   //name of field id for each entity: id, cdClassProduto...
             	entityFieldName: '@', //name of field name for each entity: nmGrupo, nmFabricante...
                 idSelect: '@',        //id of the select component that need to be initialized
                 entityUrl: '@'        //url will be used for each component
@@ -26,15 +27,19 @@
         		//Return the string representation for the entity searched
         		function ret(){                 	
                 	if(ngModel.$modelValue){                 		
-                		return ngModel.$modelValue.id + ' - ' + ngModel.$modelValue[scope.entityFieldName];
+                		return ngModel.$modelValue[scope.entityFieldId] + ' - ' + ngModel.$modelValue[scope.entityFieldName];
                 	}
                 }
         		
         		//Setting the result of the select on scope
         		var settingValueToScope = function(valueRepo){        		
-             		if(valueRepo.id && valueRepo[scope.entityFieldName]){
-             			var obj = {id: valueRepo.id};
-             			obj[scope.entityFieldName] = valueRepo[scope.entityFieldName];
+             		if(valueRepo[scope.entityFieldId] && valueRepo[scope.entityFieldName]){
+             			
+             			var obj = {};             			             			
+             			obj.id = valueRepo.id; //This line is necessary when we use another field id to show for the users             			
+             			obj[scope.entityFieldId] = valueRepo[scope.entityFieldId];     //Ex: id, cdClassProduto, cdProduto...
+             			obj[scope.entityFieldName] = valueRepo[scope.entityFieldName]; //Ex: dsProduto, nmProduto...             			
+             			
              			ngModel.$setViewValue(obj);            			
              		}
              	}
@@ -44,7 +49,7 @@
                     if (repo.loading) return repo.text;
                 	var markup = "<div class='select2-result-repository clearfix'>" +
                 				 "<div class='select2-result-repository__statistics'>" +
-    	            			 "<div class='select2-result-repository__forks'><i class='fa fa-flash'></i> " + repo.id + " - " + repo[scope.entityFieldName] + "</div>" +
+    	            			 "<div class='select2-result-repository__forks'><i class='fa fa-flash'></i> " + repo[scope.entityFieldId] + " - " + repo[scope.entityFieldName] + "</div>" +
     	                  		 "</div>";
                 				 "</div>";
                     return markup;
@@ -54,8 +59,8 @@
                 function formatRepoSelection (repo) {
                 	settingValueToScope(repo); //applying the result on model                 	
                 	if(repo){            	
-    	            	if(repo.id && repo[scope.entityFieldName]){	            
-    	            		return repo.id + ' - ' + repo[scope.entityFieldName];    	            
+    	            	if(repo[scope.entityFieldId] && repo[scope.entityFieldName]){	            
+    	            		return repo[scope.entityFieldId] + ' - ' + repo[scope.entityFieldName];    	            
     	            	}
                 	}
                 }
