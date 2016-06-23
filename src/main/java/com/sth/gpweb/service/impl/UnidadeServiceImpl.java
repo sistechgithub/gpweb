@@ -1,22 +1,20 @@
 package com.sth.gpweb.service.impl;
 
-import com.sth.gpweb.service.UnidadeService;
-import com.sth.gpweb.domain.Unidade;
-import com.sth.gpweb.repository.UnidadeRepository;
-import com.sth.gpweb.repository.search.UnidadeSearchRepository;
+import static org.elasticsearch.index.query.QueryBuilders.queryStringQuery;
+
+import javax.inject.Inject;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.inject.Inject;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
-
-import static org.elasticsearch.index.query.QueryBuilders.*;
+import com.sth.gpweb.domain.Unidade;
+import com.sth.gpweb.repository.UnidadeRepository;
+import com.sth.gpweb.repository.search.UnidadeSearchRepository;
+import com.sth.gpweb.service.UnidadeService;
 
 /**
  * Service Implementation for managing Unidade.
@@ -93,5 +91,17 @@ public class UnidadeServiceImpl implements UnidadeService{
     public Page<Unidade> search(String query, Pageable pageable) {
         log.debug("Request to search for a page of Unidades for query {}", query);
         return unidadeSearchRepository.search(queryStringQuery(query), pageable);
+    }
+    
+    /**
+     * Search for the dsUnidade
+     *
+     *  @param query the nmFabricante
+     *  @return the list of entities
+     */
+    @Transactional(readOnly = true)
+    public Page<Unidade> findByDsUnidadeStartingWithOrderByDsUnidadeAsc(String descricao, Pageable pageable){
+	    log.debug("Request to...", descricao);
+	    return unidadeRepository.findByDsUnidadeStartingWithOrderByDsUnidadeAsc(descricao, pageable);
     }
 }

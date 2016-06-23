@@ -1,6 +1,7 @@
 package com.sth.gpweb.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import com.sth.gpweb.domain.Grupo;
 import com.sth.gpweb.domain.Marca;
 import com.sth.gpweb.service.MarcaService;
 import com.sth.gpweb.web.rest.util.HeaderUtil;
@@ -171,11 +172,18 @@ public class MarcaResource {
         method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public ResponseEntity<Selection> searchGrupoNew(@RequestParam String query, Pageable pageable)
+    public ResponseEntity<Selection> searchMarcaNew(@RequestParam String query, Pageable pageable)
         throws URISyntaxException {
     	
     	try{
-    		Page<Marca> page = marcaService.findByNmFabricanteStartingWithOrderByNmFabricanteAsc(query, pageable);	    	
+    		
+    		Page<Marca> page;
+    		
+    		if(query.trim().equalsIgnoreCase("*")){
+    			page = marcaService.findAll(pageable);
+    		}else{
+    			page = marcaService.findByNmFabricanteStartingWithOrderByNmFabricanteAsc(query, pageable);    			
+    		};    	
 	    	
 	    	HttpHeaders headers = new HttpHeaders();
 	    	headers = PaginationUtil.generateSearchPaginationHttpHeaders(query, page, "/api/_search/marcas/select");
