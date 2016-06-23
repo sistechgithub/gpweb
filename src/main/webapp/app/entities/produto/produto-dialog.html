@@ -208,7 +208,8 @@
 
         <!-- Diretiva Grupo-->
 		<div class="form-group">
-			<ourselect id-select="field_entidade1" ng-model="vm.produto.grupo" entity-field-name="nmGrupo" entity-url="grupos"></ourselect>
+			<ourselect id-select="field_entidade1" ng-model="vm.produto.grupo" 
+				entity-field-name="nmGrupo" entity-field-id="id" entity-url="grupos"></ourselect>
 			<div class="panel panel-default">
 				<button type="button" class="btn btn-default btn-sm pull-right"	ng-click="vm.produto.grupo = null"
 					style="margin-top: 5px; margin-right: 5px">
@@ -227,7 +228,8 @@
 		
 		<!-- Diretiva Marca-->
 		<div class="form-group">
-			<ourselect id-select="field_entidade2" ng-model="vm.produto.marca" entity-field-name="nmFabricante" entity-url="marcas"></ourselect>
+			<ourselect id-select="field_entidade2" ng-model="vm.produto.marca" 
+				entity-field-name="nmFabricante" entity-field-id="id" entity-url="marcas"></ourselect>
 			<div class="panel panel-default">
 				<button type="button" class="btn btn-default btn-sm pull-right"	ng-click="vm.produto.marca = null"
 					style="margin-top: 5px; margin-right: 5px">
@@ -246,7 +248,8 @@
 		
 		<!-- Diretiva Unidade-->
 		<div class="form-group">
-			<ourselect id-select="field_entidade3" ng-model="vm.produto.unidade" entity-field-name="dsUnidade" entity-url="unidades"></ourselect>
+			<ourselect id-select="field_entidade3" ng-model="vm.produto.unidade" 
+				entity-field-name="dsUnidade" entity-field-id="id" entity-url="unidades"></ourselect>
 			<div class="panel panel-default">
 				<button type="button" class="btn btn-default btn-sm pull-right"	ng-click="vm.produto.unidade = null"
 					style="margin-top: 5px; margin-right: 5px">
@@ -265,14 +268,15 @@
        
         <!-- Diretiva ClassProduto-->
 		<div class="form-group">
-			<ourselect id-select="field_entidade4" ng-model="vm.produto.classProduto" entity-field-name="dsClassProduto" entity-url="class-produtos"></ourselect>
+			<ourselect id-select="field_entidade4" ng-model="vm.produto.classProduto" 
+				entity-field-name="dsClassProduto" entity-field-id="cdClassProduto" entity-url="class-produtos"></ourselect>
 			<div class="panel panel-default">
 				<button type="button" class="btn btn-default btn-sm pull-right"	ng-click="vm.produto.classProduto = null"
 					style="margin-top: 5px; margin-right: 5px">
 					<span class="glyphicon glyphicon-ban-circle"></span>&nbsp;
 				</button>
 				<div class="panel-heading">
-					<b>Classificação</b>: {{vm.produto.classProduto.id}} {{vm.produto.classProduto.dsClassProduto}}
+					<b>Classificação</b>: {{vm.produto.classProduto.cdClassProduto}} {{vm.produto.classProduto.dsClassProduto}}
 				</div>
 				<div class="panel-body">
 					<select class="js-data-example-ajax" id="field_entidade4" style="width: 100%">
