@@ -2,6 +2,7 @@ package com.sth.gpweb.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 import com.sth.gpweb.domain.ClassProduto;
+import com.sth.gpweb.domain.Unidade;
 import com.sth.gpweb.service.ClassProdutoService;
 import com.sth.gpweb.web.rest.util.HeaderUtil;
 import com.sth.gpweb.web.rest.util.PaginationUtil;
@@ -175,7 +176,13 @@ public class ClassProdutoResource {
         throws URISyntaxException {
     	
     	try{
-    		Page<ClassProduto> page = classProdutoService.findByDsClassProdutoStartingWithOrderByDsClassProdutoAsc(query, pageable);	    	
+    		Page<ClassProduto> page;
+    		
+    		if(query.trim().equalsIgnoreCase("*")){
+    			page = classProdutoService.findAll(pageable);
+    		}else{
+    			page = classProdutoService.findByDsClassProdutoStartingWithOrderByDsClassProdutoAsc(query, pageable);    			
+    		}; 	    	
 	    	
 	    	HttpHeaders headers = new HttpHeaders();
 	    	headers = PaginationUtil.generateSearchPaginationHttpHeaders(query, page, "/api/_search/class-produtos/select");

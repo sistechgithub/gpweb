@@ -1,6 +1,7 @@
 package com.sth.gpweb.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import com.sth.gpweb.domain.Marca;
 import com.sth.gpweb.domain.Unidade;
 import com.sth.gpweb.service.UnidadeService;
 import com.sth.gpweb.web.rest.util.HeaderUtil;
@@ -175,7 +176,13 @@ public class UnidadeResource {
         throws URISyntaxException {
     	
     	try{
-    		Page<Unidade> page = unidadeService.findByDsUnidadeStartingWithOrderByDsUnidadeAsc(query, pageable);	    	
+    		Page<Unidade> page;
+    		
+    		if(query.trim().equalsIgnoreCase("*")){
+    			page = unidadeService.findAll(pageable);
+    		}else{
+    			page = unidadeService.findByDsUnidadeStartingWithOrderByDsUnidadeAsc(query, pageable);    			
+    		};	    	
 	    	
 	    	HttpHeaders headers = new HttpHeaders();
 	    	headers = PaginationUtil.generateSearchPaginationHttpHeaders(query, page, "/api/_search/unidades/select");

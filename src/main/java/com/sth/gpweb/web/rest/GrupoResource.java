@@ -187,8 +187,14 @@ public class GrupoResource {
         throws URISyntaxException {
     	
     	try{
-    		Page<Grupo> page = grupoService.findByNomeStartingWithOrderByNomeAsc(query, pageable);	    	
-	    	
+    		Page<Grupo> page;
+    		
+    		if(query.trim().equalsIgnoreCase("*")){
+    			page = grupoService.findAll(pageable);
+    		}else{
+    			page = grupoService.findByNomeStartingWithOrderByNomeAsc(query, pageable);    			
+    		};
+    		
 	    	HttpHeaders headers = new HttpHeaders();
 	    	headers = PaginationUtil.generateSearchPaginationHttpHeaders(query, page, "/api/_search/grupos/select");
 	    	
