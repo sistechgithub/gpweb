@@ -5,7 +5,7 @@
         .module('gpwebApp')
         .controller('ProdutoDetailController', ProdutoDetailController);
 
-    ProdutoDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'DataUtils', 'entity', 'Produto', 'Grupo', 'Marca', 'Unidade', 'ClassProduto', , 'Subgrupo'];
+    ProdutoDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'DataUtils', 'entity', 'Produto', 'Grupo', 'Marca', 'Unidade', 'ClassProduto', 'Subgrupo'];
 
     function ProdutoDetailController($scope, $rootScope, $stateParams, DataUtils, entity, Produto, Grupo, Marca, Unidade, ClassProduto, Subgrupo) {
         var vm = this;
