@@ -5,9 +5,9 @@
         .module('gpwebApp')
         .controller('ProdutoDialogController', ProdutoDialogController);
 
-    ProdutoDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', '$q', 'DataUtils', 'entity', 'Produto', 'Grupo', 'Marca', 'Unidade', 'ClassProduto'];
+    ProdutoDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', '$q', 'DataUtils', 'entity', 'Produto', 'Grupo', 'Marca', 'Unidade', 'ClassProduto', 'Subgrupo'];
 
-    function ProdutoDialogController ($timeout, $scope, $stateParams, $uibModalInstance, $q, DataUtils, entity, Produto, Grupo, Marca, Unidade, ClassProduto) {
+    function ProdutoDialogController ($timeout, $scope, $stateParams, $uibModalInstance, $q, DataUtils, entity, Produto, Grupo, Marca, Unidade, ClassProduto, Subgrupo) {
         var vm = this;
 
         vm.produto = entity;
@@ -41,6 +41,15 @@
             return Unidade.get({id : vm.produto.unidade.id}).$promise;
         }).then(function(unidade) {
             vm.unidades.push(unidade);
+        });
+        vm.subgrupos = Subgrupo.query({filter: 'produto-is-null'});
+        $q.all([vm.produto.$promise, vm.subgrupos.$promise]).then(function() {
+            if (!vm.produto.subgrupo || !vm.produto.subgrupo.id) {
+                return $q.reject();
+            }
+            return Subgrupo.get({id : vm.produto.subgrupo.id}).$promise;
+        }).then(function(subgrupo) {
+            vm.subgrupos.push(subgrupo);
         });
         vm.classprodutos = ClassProduto.query();
 
