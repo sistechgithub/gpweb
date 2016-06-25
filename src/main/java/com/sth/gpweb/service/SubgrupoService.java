@@ -1,10 +1,9 @@
 package com.sth.gpweb.service;
 
-import com.sth.gpweb.domain.Subgrupo;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import java.util.List;
+import com.sth.gpweb.domain.Subgrupo;
 
 /**
  * Service Interface for managing Subgrupo.
@@ -49,4 +48,12 @@ public interface SubgrupoService {
      *  @return the list of entities
      */
     Page<Subgrupo> search(String query, Pageable pageable);
+    
+    /**
+     * Search for the subgrupo corresponding to the query name.
+     * 
+     *  @param description query for the name
+     *  @return the list of entities
+     */
+     Page<Subgrupo> findByNmSubgrupoStartingWithOrderByNmSubgrupoAsc(String descricao, Pageable pageable); 
 }

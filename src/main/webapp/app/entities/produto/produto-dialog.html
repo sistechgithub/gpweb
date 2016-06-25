@@ -226,9 +226,29 @@
 			</div>
 		</div> 
 		
+		<!-- Diretiva SubGrupo-->		
+		<div class="form-group">
+			<ourselect id-select="field_entidade2" ng-model="vm.produto.subgrupo" 
+				entity-field-name="nmSubgrupo" entity-field-id="id" entity-url="subgrupos"></ourselect>
+			<div class="panel panel-default">
+				<button type="button" class="btn btn-default btn-sm pull-right"	ng-click="vm.produto.subgrupo = null"
+					style="margin-top: 5px; margin-right: 5px">
+					<span class="glyphicon glyphicon-ban-circle"></span>&nbsp;
+				</button>
+				<div class="panel-heading">
+					<b>Subgrupo</b>: {{vm.produto.subgrupo.id}} {{vm.produto.subgrupo.nmSubgrupo}}
+				</div>
+				<div class="panel-body">
+					<select class="js-data-example-ajax" id="field_entidade2" style="width: 100%">
+						<option value="" selected="selected"></option>
+					</select>
+				</div>
+			</div>
+		</div> 
+		
 		<!-- Diretiva Marca-->
 		<div class="form-group">
-			<ourselect id-select="field_entidade2" ng-model="vm.produto.marca" 
+			<ourselect id-select="field_entidade3" ng-model="vm.produto.marca" 
 				entity-field-name="nmFabricante" entity-field-id="id" entity-url="marcas"></ourselect>
 			<div class="panel panel-default">
 				<button type="button" class="btn btn-default btn-sm pull-right"	ng-click="vm.produto.marca = null"
@@ -239,7 +259,7 @@
 					<b>Marca</b>: {{vm.produto.marca.id}} {{vm.produto.marca.nmFabricante}}
 				</div>
 				<div class="panel-body">
-					<select class="js-data-example-ajax" id="field_entidade2" style="width: 100%">
+					<select class="js-data-example-ajax" id="field_entidade3" style="width: 100%">
 						<option value="" selected="selected"></option>
 					</select>
 				</div>
@@ -248,7 +268,7 @@
 		
 		<!-- Diretiva Unidade-->
 		<div class="form-group">
-			<ourselect id-select="field_entidade3" ng-model="vm.produto.unidade" 
+			<ourselect id-select="field_entidade4" ng-model="vm.produto.unidade" 
 				entity-field-name="dsUnidade" entity-field-id="id" entity-url="unidades"></ourselect>
 			<div class="panel panel-default">
 				<button type="button" class="btn btn-default btn-sm pull-right"	ng-click="vm.produto.unidade = null"
@@ -259,7 +279,7 @@
 					<b>Unidade</b>: {{vm.produto.unidade.id}} {{vm.produto.unidade.dsUnidade}}
 				</div>
 				<div class="panel-body">
-					<select class="js-data-example-ajax" id="field_entidade3" style="width: 100%">
+					<select class="js-data-example-ajax" id="field_entidade4" style="width: 100%">
 						<option value="" selected="selected"></option>
 					</select>
 				</div>
@@ -268,7 +288,7 @@
        
         <!-- Diretiva ClassProduto-->
 		<div class="form-group">
-			<ourselect id-select="field_entidade4" ng-model="vm.produto.classProduto" 
+			<ourselect id-select="field_entidade5" ng-model="vm.produto.classProduto" 
 				entity-field-name="dsClassProduto" entity-field-id="cdClassProduto" entity-url="class-produtos"></ourselect>
 			<div class="panel panel-default">
 				<button type="button" class="btn btn-default btn-sm pull-right"	ng-click="vm.produto.classProduto = null"
@@ -279,7 +299,7 @@
 					<b>Classificação</b>: {{vm.produto.classProduto.cdClassProduto}} {{vm.produto.classProduto.dsClassProduto}}
 				</div>
 				<div class="panel-body">
-					<select class="js-data-example-ajax" id="field_entidade4" style="width: 100%">
+					<select class="js-data-example-ajax" id="field_entidade5" style="width: 100%">
 						<option value="" selected="selected"></option>
 					</select>
 				</div>

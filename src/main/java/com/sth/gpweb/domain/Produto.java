@@ -105,6 +105,9 @@ public class Produto implements Serializable {
 
     @ManyToOne
     private ClassProduto classProduto;
+    
+    @ManyToOne
+    private Subgrupo subgrupo;
 
     public Long getId() {
         return id;
@@ -297,6 +300,14 @@ public class Produto implements Serializable {
     public void setClassProduto(ClassProduto classProduto) {
         this.classProduto = classProduto;
     }
+    
+    public Subgrupo getSubgrupo() {
+        return subgrupo;
+    }
+
+    public void setSubgrupo(Subgrupo subgrupo) {
+        this.subgrupo = subgrupo;
+    }    
 
     @Override
     public boolean equals(Object o) {

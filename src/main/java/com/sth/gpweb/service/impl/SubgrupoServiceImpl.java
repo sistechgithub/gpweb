@@ -1,22 +1,20 @@
 package com.sth.gpweb.service.impl;
 
-import com.sth.gpweb.service.SubgrupoService;
-import com.sth.gpweb.domain.Subgrupo;
-import com.sth.gpweb.repository.SubgrupoRepository;
-import com.sth.gpweb.repository.search.SubgrupoSearchRepository;
+import static org.elasticsearch.index.query.QueryBuilders.queryStringQuery;
+
+import javax.inject.Inject;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.inject.Inject;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
-
-import static org.elasticsearch.index.query.QueryBuilders.*;
+import com.sth.gpweb.domain.Subgrupo;
+import com.sth.gpweb.repository.SubgrupoRepository;
+import com.sth.gpweb.repository.search.SubgrupoSearchRepository;
+import com.sth.gpweb.service.SubgrupoService;
 
 /**
  * Service Implementation for managing Subgrupo.
@@ -93,5 +91,17 @@ public class SubgrupoServiceImpl implements SubgrupoService{
     public Page<Subgrupo> search(String query, Pageable pageable) {
         log.debug("Request to search for a page of Subgrupos for query {}", query);
         return subgrupoSearchRepository.search(queryStringQuery(query), pageable);
+    }
+    
+    /**
+     * Search for the NmSubgrupo
+     *
+     *  @param query the NmSubgrupo
+     *  @return the list of entities
+     */
+    @Transactional(readOnly = true)
+    public Page<Subgrupo> findByNmSubgrupoStartingWithOrderByNmSubgrupoAsc(String descricao, Pageable pageable){
+	    log.debug("Request to...", descricao);
+	    return subgrupoRepository.findByNmSubgrupoStartingWithOrderByNmSubgrupoAsc(descricao, pageable);
     }
 }

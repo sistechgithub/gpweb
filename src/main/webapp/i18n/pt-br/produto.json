@@ -37,7 +37,8 @@
             "grupo": "Grupo",
             "marca": "Marca",
             "unidade": "Unidade",
-            "classProduto": "Class Produto"
+            "classProduto": "Class Produto",
+            "subgrupo": "Subgrupo"
         }
     }
 }
