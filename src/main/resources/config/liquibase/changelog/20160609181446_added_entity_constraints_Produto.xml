@@ -31,6 +31,12 @@
                                  constraintName="fk_produto_classproduto_id"
                                  referencedColumnNames="id"
                                  referencedTableName="class_produto"/>
+                                 
+        <addForeignKeyConstraint baseColumnNames="subgrupo_id"
+                                 baseTableName="produto"
+                                 constraintName="fk_produto_subgrupo_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="subgrupo"/>                         
 
     </changeSet>
 </databaseChangeLog>
