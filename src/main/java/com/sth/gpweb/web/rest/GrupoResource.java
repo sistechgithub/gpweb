@@ -60,7 +60,7 @@ public class GrupoResource {
         }
         
         if (grupoService.findNmGrupoExists(grupo.getNmGrupo()) != null) {
-            return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("grupo", "nmexists", "A new grupo cannot already have an ID")).body(null);
+            return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("grupo", "nmexists", "A new grupo already used!")).body(null);
         }    
         
         grupo.setDtOperacao(LocalDate.now()); //Always use the operation date from server

@@ -1,22 +1,20 @@
 package com.sth.gpweb.service.impl;
 
-import com.sth.gpweb.service.ProdutoService;
-import com.sth.gpweb.domain.Produto;
-import com.sth.gpweb.repository.ProdutoRepository;
-import com.sth.gpweb.repository.search.ProdutoSearchRepository;
+import static org.elasticsearch.index.query.QueryBuilders.queryStringQuery;
+
+import javax.inject.Inject;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.inject.Inject;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
-
-import static org.elasticsearch.index.query.QueryBuilders.*;
+import com.sth.gpweb.domain.Produto;
+import com.sth.gpweb.repository.ProdutoRepository;
+import com.sth.gpweb.repository.search.ProdutoSearchRepository;
+import com.sth.gpweb.service.ProdutoService;
 
 /**
  * Service Implementation for managing Produto.
@@ -93,5 +91,17 @@ public class ProdutoServiceImpl implements ProdutoService{
     public Page<Produto> search(String query, Pageable pageable) {
         log.debug("Request to search for a page of Produtos for query {}", query);
         return produtoSearchRepository.search(queryStringQuery(query), pageable);
+    }
+    
+    /**
+     * Search for the nmProduto already exists.
+     *
+     *  @param query the nmProduto
+     *  @return the list of entities
+     */
+    @Transactional(readOnly = true)    
+    public String findNmProdutoExists(String nmProduto){
+    	log.debug("Request to search if the nmProduto: {} already exists", nmProduto);
+        return produtoRepository.findNmProdutoExists(nmProduto);
     }
 }
