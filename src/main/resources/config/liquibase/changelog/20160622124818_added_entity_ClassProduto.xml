@@ -37,7 +37,13 @@
         <loadData encoding="UTF-8"
                   file="config/liquibase/classificacao_produto.csv"
                   separator=";"
-                  tableName="class_produto"/>
-        
-    </changeSet>
+                  tableName="class_produto"/>        
+ 
+	    <sql dbms="postgresql"
+	            splitStatements="true"
+	            stripComments="true">SELECT setval('class_produto_id_seq', (select max(id) from class_produto), true);
+	        <comment>atualizando sequence de class_produto</comment>
+		</sql>
+	</changeSet>
+    
 </databaseChangeLog>
