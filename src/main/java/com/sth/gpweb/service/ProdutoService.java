@@ -1,10 +1,9 @@
 package com.sth.gpweb.service;
 
-import com.sth.gpweb.domain.Produto;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import java.util.List;
+import com.sth.gpweb.domain.Produto;
 
 /**
  * Service Interface for managing Produto.
@@ -41,6 +40,14 @@ public interface ProdutoService {
      *  @param id the id of the entity
      */
     void delete(Long id);
+    
+    /**
+     * Search for the nmProduto already exists.
+     * 
+     *  @param query the nmProduto
+     *  @return the list of entities
+     */
+    String findNmProdutoExists(String nmProduto);
 
     /**
      * Search for the produto corresponding to the query.

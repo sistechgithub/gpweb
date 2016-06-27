@@ -30,7 +30,7 @@
             </column>
             
             <column name="nm_produto" type="varchar(50)">
-                <constraints nullable="false" />
+                <constraints unique="true" nullable="false" />
             </column>
             
             <column name="cd_ncm" type="varchar(8)">

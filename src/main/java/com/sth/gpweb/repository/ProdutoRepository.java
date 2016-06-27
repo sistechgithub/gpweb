@@ -1,15 +1,18 @@
 package com.sth.gpweb.repository;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
 import com.sth.gpweb.domain.Produto;
-
-import org.springframework.data.jpa.repository.*;
-
-import java.util.List;
 
 /**
  * Spring Data JPA repository for the Produto entity.
  */
-@SuppressWarnings("unused")
 public interface ProdutoRepository extends JpaRepository<Produto,Long> {
+	
+	//Verify if nmProduto already exists on database before insert	
+	@Query("SELECT g.nmProduto FROM Produto g where g.nmProduto = :nmProduto") 
+	String findNmProdutoExists(@Param("nmProduto") String nmProduto);
 
 }
