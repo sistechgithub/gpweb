@@ -1,10 +1,13 @@
 package com.sth.gpweb.web.rest;
 
-import com.codahale.metrics.annotation.Timed;
-import com.sth.gpweb.domain.Subgrupo;
-import com.sth.gpweb.service.SubgrupoService;
-import com.sth.gpweb.web.rest.util.HeaderUtil;
-import com.sth.gpweb.web.rest.util.PaginationUtil;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.List;
+import java.util.Optional;
+
+import javax.inject.Inject;
+import javax.validation.Valid;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -13,18 +16,19 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
-import javax.inject.Inject;
-import javax.validation.Valid;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
-
-import static org.elasticsearch.index.query.QueryBuilders.*;
+import com.codahale.metrics.annotation.Timed;
+import com.sth.gpweb.domain.Subgrupo;
+import com.sth.gpweb.service.SubgrupoService;
+import com.sth.gpweb.web.rest.util.HeaderUtil;
+import com.sth.gpweb.web.rest.util.PaginationUtil;
+import com.sth.gpweb.web.rest.util.Selection;
 
 /**
  * REST controller for managing Subgrupo.
@@ -158,4 +162,42 @@ public class SubgrupoResource {
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
 
+    /**
+     * SEARCH  /_search/subgrupos/select?query=:query : search for the subgrupo corresponding
+     * to the query.
+     *
+     * @param query the query of the subgrupo search
+     * @return the result of the search
+     */
+    @RequestMapping(value = "/_search/subgrupos/select",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public ResponseEntity<Selection> searchSubgrupoNew(@RequestParam String query, Pageable pageable)
+        throws URISyntaxException {
+    	
+    	try{
+    		Page<Subgrupo> page;
+    		
+    		if(query.trim().equalsIgnoreCase("*")){
+    			page = subgrupoService.findAll(pageable);
+    		}else{
+    			page = subgrupoService.findByNmSubgrupoStartingWithOrderByNmSubgrupoAsc(query, pageable);    			
+    		};	    	
+	    	
+	    	HttpHeaders headers = new HttpHeaders();
+	    	headers = PaginationUtil.generateSearchPaginationHttpHeaders(query, page, "/api/_search/subgrupos/select");
+	    	
+	        Selection sel = new Selection(page);	        
+	        
+	        return new ResponseEntity<Selection>(sel, headers, HttpStatus.OK);
+	        
+    	}catch(Exception e){
+    		log.error(e.getMessage());
+    		
+    		return ResponseEntity.badRequest().header("Falha", e.getMessage()).body(null);
+    	}
+		
+    }
+    
 }

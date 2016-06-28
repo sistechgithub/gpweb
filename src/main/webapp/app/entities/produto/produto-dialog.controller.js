@@ -5,9 +5,9 @@
         .module('gpwebApp')
         .controller('ProdutoDialogController', ProdutoDialogController);
 
-    ProdutoDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', '$q', 'DataUtils', 'entity', 'Produto', 'Grupo', 'Marca', 'Unidade', 'ClassProduto'];
+    ProdutoDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', '$q', 'DataUtils', 'entity', 'Produto', 'Grupo', 'Marca', 'Unidade', 'ClassProduto', 'Subgrupo'];
 
-    function ProdutoDialogController ($timeout, $scope, $stateParams, $uibModalInstance, $q, DataUtils, entity, Produto, Grupo, Marca, Unidade, ClassProduto) {
+    function ProdutoDialogController ($timeout, $scope, $stateParams, $uibModalInstance, $q, DataUtils, entity, Produto, Grupo, Marca, Unidade, ClassProduto, Subgrupo) {
         var vm = this;
 
         vm.produto = entity;
@@ -42,6 +42,15 @@
         }).then(function(unidade) {
             vm.unidades.push(unidade);
         });
+        vm.subgrupos = Subgrupo.query({filter: 'produto-is-null'});
+        $q.all([vm.produto.$promise, vm.subgrupos.$promise]).then(function() {
+            if (!vm.produto.subgrupo || !vm.produto.subgrupo.id) {
+                return $q.reject();
+            }
+            return Subgrupo.get({id : vm.produto.subgrupo.id}).$promise;
+        }).then(function(subgrupo) {
+            vm.subgrupos.push(subgrupo);
+        });
         vm.classprodutos = ClassProduto.query();
 
         $timeout(function (){
@@ -51,9 +60,27 @@
         function clear () {
             $uibModalInstance.dismiss('cancel');
         }
+        
+        var onBeforeSaveOrUpdate = function(){       	        	
+        	
+        	//Setting to uppercase
+        	vm.produto.nmProduto = angular.uppercase(vm.produto.nmProduto);
+        	vm.produto.cdBarras  = angular.uppercase(vm.produto.cdBarras);
+        	vm.produto.cdNcm     = angular.uppercase(vm.produto.cdNcm);
+        	vm.produto.cdEan     = angular.uppercase(vm.produto.cdEan);
+        	vm.produto.cdAnp     = angular.uppercase(vm.produto.cdAnp);
+        	vm.produto.dsAnp     = angular.uppercase(vm.produto.dsAnp);
+        	vm.produto.cdContaContabil = angular.uppercase(vm.produto.cdContaContabil);
+        	vm.produto.materiaPrima = angular.uppercase(vm.produto.materiaPrima);
+        	vm.produto.dsClassTerapeutica = angular.uppercase(vm.produto.dsClassTerapeutica);
+        	vm.produto.dsInformacoes = angular.uppercase(vm.produto.dsInformacoes);        	
+        };
 
         function save () {
             vm.isSaving = true;
+            
+            onBeforeSaveOrUpdate(); //validations rules
+            
             if (vm.produto.id !== null) {
                 Produto.update(vm.produto, onSaveSuccess, onSaveError);
             } else {

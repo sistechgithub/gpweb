@@ -4,63 +4,70 @@
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
                 ng-click="vm.clear()">&times;</button>
-        <h4 class="modal-title" id="myClassProdutoLabel" translate="gpwebApp.classProduto.home.createOrEditLabel">Create or edit a Class Produto</h4>
+        <h4 class="modal-title" id="myClassProdutoLabel" translate="gpwebApp.classProduto.home.createOrEditLabel">Criar ou editar uma Classificação do produto</h4>
     </div>
     <div class="modal-body">
         <jhi-alert-error></jhi-alert-error>
-        <div class="form-group" ng-show="vm.classProduto.id">
-            <label for="id" translate="global.field.id">ID</label>
-            <input type="text" class="form-control" id="id" name="id"
-                    ng-model="vm.classProduto.id" readonly />
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gpwebApp.classProduto.cdClassProduto" for="field_cdClassProduto">Cd Class Produto</label>
-            <input type="text" class="form-control" name="cdClassProduto" id="field_cdClassProduto"
-                    ng-model="vm.classProduto.cdClassProduto"
-                    required ng-minlength="2" ng-maxlength="2" />
-            <div ng-show="editForm.cdClassProduto.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.cdClassProduto.$error.required" translate="entity.validation.required">
-                    This field is required.
-                </p>
-                <p class="help-block"
-                    ng-show="editForm.cdClassProduto.$error.minlength" translate="entity.validation.minlength" translate-value-min="2">
-                    This field is required to be at least 2 characters.
-                </p>
-                <p class="help-block"
-                    ng-show="editForm.cdClassProduto.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="2">
-                    This field cannot be longer than 2 characters.
-                </p>
+        <div class="row">
+            <div class="col-xs-12 col-md-2">
+                <div class="form-group">
+                    <label for="id" translate="global.field.id">Código</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                            ng-model="vm.classProduto.id" readonly />
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-3">
+                <div class="form-group">
+                    <label class="control-label" translate="gpwebApp.classProduto.cdClassProduto" for="field_cdClassProduto">Código Classificação</label>
+                    <input type="text" class="form-control text-uppercase" name="cdClassProduto" id="field_cdClassProduto"
+                            ng-model="vm.classProduto.cdClassProduto"
+                            required ng-minlength="2" ng-maxlength="2" maxlength="2" />
+                    <div ng-show="editForm.cdClassProduto.$invalid">
+                        <p class="help-block"
+                            ng-show="editForm.cdClassProduto.$error.required" translate="entity.validation.required">
+                            Campo obrigatório.
+                        </p>
+                        <p class="help-block"
+                            ng-show="editForm.cdClassProduto.$error.minlength" translate="entity.validation.minlength" translate-value-min="2">
+                            Este campo deve ter pelo menos 2 caracteres.
+                        </p>
+                        <p class="help-block"
+                            ng-show="editForm.cdClassProduto.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="2">
+                            Este campo não pode ter mais que 2 caracteres.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-7">
+                <div class="form-group">
+                    <label class="control-label" translate="gpwebApp.classProduto.dsClassProduto" for="field_dsClassProduto">Nome</label>
+                    <input type="text" class="form-control text-uppercase" name="dsClassProduto" id="field_dsClassProduto"
+                            ng-model="vm.classProduto.dsClassProduto"
+                            required ng-minlength="1" ng-maxlength="80" maxlength="80" />
+                    <div ng-show="editForm.dsClassProduto.$invalid">
+                        <p class="help-block"
+                            ng-show="editForm.dsClassProduto.$error.required" translate="entity.validation.required">
+                            Campo obrigatório.
+                        </p>
+                        <p class="help-block"
+                            ng-show="editForm.dsClassProduto.$error.minlength" translate="entity.validation.minlength" translate-value-min="1">
+                            Este campo deve ter pelo menos 1 caractere.
+                        </p>
+                        <p class="help-block"
+                            ng-show="editForm.dsClassProduto.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="80">
+                            Este campo não pode ter mais que 80 caracteres.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="form-group">
-            <label class="control-label" translate="gpwebApp.classProduto.dsClassProduto" for="field_dsClassProduto">Ds Class Produto</label>
-            <input type="text" class="form-control" name="dsClassProduto" id="field_dsClassProduto"
-                    ng-model="vm.classProduto.dsClassProduto"
-                    required ng-minlength="1" ng-maxlength="80" />
-            <div ng-show="editForm.dsClassProduto.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.dsClassProduto.$error.required" translate="entity.validation.required">
-                    This field is required.
-                </p>
-                <p class="help-block"
-                    ng-show="editForm.dsClassProduto.$error.minlength" translate="entity.validation.minlength" translate-value-min="1">
-                    This field is required to be at least 1 characters.
-                </p>
-                <p class="help-block"
-                    ng-show="editForm.dsClassProduto.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="80">
-                    This field cannot be longer than 80 characters.
-                </p>
-            </div>
-        </div>
-
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
-            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        <button type="button" class="btn btn-default ripple" data-dismiss="modal" ng-click="vm.clear()">
+            <span translate="entity.action.cancel">Cancelar</span>
         </button>
-        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
-            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-success ripple ripple-light">
+            <span translate="entity.action.save">Salvar</span>
         </button>
     </div>
 </form>

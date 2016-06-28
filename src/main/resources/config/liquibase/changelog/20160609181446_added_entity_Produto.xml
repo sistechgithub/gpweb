@@ -30,7 +30,7 @@
             </column>
             
             <column name="nm_produto" type="varchar(50)">
-                <constraints nullable="false" />
+                <constraints unique="true" nullable="false" />
             </column>
             
             <column name="cd_ncm" type="varchar(8)">
@@ -95,15 +95,20 @@
             <column name="bl_imagem_content_type" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-                        <column name="grupo_id" type="bigint">
+            <column name="grupo_id" type="bigint">
                 <constraints unique="true" nullable="true" />
-            </column>            <column name="marca_id" type="bigint">
+            </column>            
+            <column name="marca_id" type="bigint">
                 <constraints unique="true" nullable="true" />
-            </column>            <column name="unidade_id" type="bigint">
+            </column>            
+            <column name="unidade_id" type="bigint">
                 <constraints unique="true" nullable="true" />
             </column>
             <column name="class_produto_id" type="bigint">
                 <constraints nullable="true" />
+            </column>
+            <column name="subgrupo_id" type="bigint">
+                <constraints unique="true" nullable="true" />
             </column>
 
             <!-- jhipster-needle-liquibase-add-column - Jhipster will add columns here, do not remove-->

@@ -2,22 +2,22 @@
     "gpwebApp": {
         "classProduto" : {
             "home": {
-                "title": "Class Produtos",
-                "createLabel": "Criar novo Class Produto",
-                "createOrEditLabel": "Criar ou editar Class Produto",
-                "search": "Pesquisar por Class Produto"
+                "title": "Classificação de Produtos",
+                "createLabel": "Adicionar",
+                "createOrEditLabel": "Criar ou editar Classificação do Produto",
+                "search": "Pesquisar"
             },
-            "created": "Um novo Class Produto é criado com o identificador {{ param }}",
-            "updated": "Um Class Produto é atualizado com o identificador {{ param }}",
-            "deleted": "Um Class Produto é deletado com o identificador {{ param }}",
+            "created": "Uma nova Classificação foi criada com o código {{ param }} ",
+            "updated": "A Classificação {{ param }} foi atualizada com sucesso!",
+            "deleted": "A Classificação {{ param }} foi deletada com sucesso!",
             "delete": {
-                "question": "Tem certeza de que deseja excluir Class Produto {{ id }}?"
+                "question": "Tem certeza de que deseja excluir a Classificação {{ id }}?"
             },
             "detail": {
-                "title": "Class Produto"
+                "title": "Classificação do Produto"
             },
-            "cdClassProduto": "Cd Class Produto",
-            "dsClassProduto": "Ds Class Produto"
+            "cdClassProduto": "Código Classificação",
+            "dsClassProduto": "Nome"
         }
     }
 }
