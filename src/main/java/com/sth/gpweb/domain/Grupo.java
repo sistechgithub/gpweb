@@ -57,14 +57,14 @@ public class Grupo implements Serializable {
     @Column(name = "nn_novo")
     private Integer nnNovo;
 
-    @Column(name = "nn_day")
-    private Integer nnDay;
+    @Column(name = "nn_dia")
+    private Integer nnDia;
 
-    @Column(name = "nn_day_week")
-    private String nnDayWeek;
+    @Column(name = "nn_dia_semana")
+    private String nnDiaSemana;
 
-    @Column(name = "nn_type")
-    private Integer nnType;
+    @Column(name = "nn_tipo")
+    private Integer nnTipo;
 
     public Long getId() {
         return id;
@@ -154,28 +154,28 @@ public class Grupo implements Serializable {
         this.nnNovo = nnNovo;
     }
 
-    public Integer getNnDay() {
-        return nnDay;
+    public Integer getNnDia() {
+        return nnDia;
     }
 
-    public void setNnDay(Integer nnDay) {
-        this.nnDay = nnDay;
+    public void setNnDia(Integer nnDia) {
+        this.nnDia = nnDia;
     }
 
-    public String getNnDayWeek() {
-        return nnDayWeek;
+    public String getNnDiaSemana() {
+        return nnDiaSemana;
     }
 
-    public void setNnDayWeek(String nnDayWeek) {
-        this.nnDayWeek = nnDayWeek;
+    public void setNnDiaSemana(String nnDiaSemana) {
+        this.nnDiaSemana = nnDiaSemana;
     }
 
-    public Integer getNnType() {
-        return nnType;
+    public Integer getNnTipo() {
+        return nnTipo;
     }
 
-    public void setNnType(Integer nnType) {
-        this.nnType = nnType;
+    public void setNnTipo(Integer nnTipo) {
+        this.nnTipo = nnTipo;
     }
 
     @Override
@@ -212,9 +212,9 @@ public class Grupo implements Serializable {
             ", flSemContagem='" + flSemContagem + "'" +
             ", flEnvio='" + flEnvio + "'" +
             ", nnNovo='" + nnNovo + "'" +
-            ", nnDay='" + nnDay + "'" +
-            ", nnDayWeek='" + nnDayWeek + "'" +
-            ", nnType='" + nnType + "'" +
+            ", nnDia='" + nnDia + "'" +
+            ", nnDiaSemana='" + nnDiaSemana + "'" +
+            ", nnTipo='" + nnTipo + "'" +
             '}';
     }
 }
