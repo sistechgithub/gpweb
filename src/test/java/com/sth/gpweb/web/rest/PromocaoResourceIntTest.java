@@ -27,7 +27,7 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import java.time.LocalDate;
 import java.time.ZoneId;
-import java.math.BigDecimal;
+import java.math.BigDecimal;;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -66,6 +66,9 @@ public class PromocaoResourceIntTest {
 
     private static final Integer DEFAULT_NN_PONTOS = 1;
     private static final Integer UPDATED_NN_PONTOS = 2;
+
+    private static final Integer DEFAULT_NN_TIPO = 1;
+    private static final Integer UPDATED_NN_TIPO = 2;
 
     @Inject
     private PromocaoRepository promocaoRepository;
@@ -107,6 +110,7 @@ public class PromocaoResourceIntTest {
         promocao.setFlInativo(DEFAULT_FL_INATIVO);
         promocao.setVlPromocao(DEFAULT_VL_PROMOCAO);
         promocao.setNnPontos(DEFAULT_NN_PONTOS);
+        promocao.setNnTipo(DEFAULT_NN_TIPO);
     }
 
     @Test
@@ -132,6 +136,7 @@ public class PromocaoResourceIntTest {
         assertThat(testPromocao.isFlInativo()).isEqualTo(DEFAULT_FL_INATIVO);
         assertThat(testPromocao.getVlPromocao()).isEqualTo(DEFAULT_VL_PROMOCAO);
         assertThat(testPromocao.getNnPontos()).isEqualTo(DEFAULT_NN_PONTOS);
+        assertThat(testPromocao.getNnTipo()).isEqualTo(DEFAULT_NN_TIPO);
 
         // Validate the Promocao in ElasticSearch
         Promocao promocaoEs = promocaoSearchRepository.findOne(testPromocao.getId());
@@ -173,7 +178,8 @@ public class PromocaoResourceIntTest {
                 .andExpect(jsonPath("$.[*].nnDiaSemana").value(hasItem(DEFAULT_NN_DIA_SEMANA)))
                 .andExpect(jsonPath("$.[*].flInativo").value(hasItem(DEFAULT_FL_INATIVO.booleanValue())))
                 .andExpect(jsonPath("$.[*].vlPromocao").value(hasItem(DEFAULT_VL_PROMOCAO.intValue())))
-                .andExpect(jsonPath("$.[*].nnPontos").value(hasItem(DEFAULT_NN_PONTOS)));
+                .andExpect(jsonPath("$.[*].nnPontos").value(hasItem(DEFAULT_NN_PONTOS)))
+                .andExpect(jsonPath("$.[*].nnTipo").value(hasItem(DEFAULT_NN_TIPO)));
     }
 
     @Test
@@ -193,7 +199,8 @@ public class PromocaoResourceIntTest {
             .andExpect(jsonPath("$.nnDiaSemana").value(DEFAULT_NN_DIA_SEMANA))
             .andExpect(jsonPath("$.flInativo").value(DEFAULT_FL_INATIVO.booleanValue()))
             .andExpect(jsonPath("$.vlPromocao").value(DEFAULT_VL_PROMOCAO.intValue()))
-            .andExpect(jsonPath("$.nnPontos").value(DEFAULT_NN_PONTOS));
+            .andExpect(jsonPath("$.nnPontos").value(DEFAULT_NN_PONTOS))
+            .andExpect(jsonPath("$.nnTipo").value(DEFAULT_NN_TIPO));
     }
 
     @Test
@@ -222,6 +229,7 @@ public class PromocaoResourceIntTest {
         updatedPromocao.setFlInativo(UPDATED_FL_INATIVO);
         updatedPromocao.setVlPromocao(UPDATED_VL_PROMOCAO);
         updatedPromocao.setNnPontos(UPDATED_NN_PONTOS);
+        updatedPromocao.setNnTipo(UPDATED_NN_TIPO);
 
         restPromocaoMockMvc.perform(put("/api/promocaos")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -239,6 +247,7 @@ public class PromocaoResourceIntTest {
         assertThat(testPromocao.isFlInativo()).isEqualTo(UPDATED_FL_INATIVO);
         assertThat(testPromocao.getVlPromocao()).isEqualTo(UPDATED_VL_PROMOCAO);
         assertThat(testPromocao.getNnPontos()).isEqualTo(UPDATED_NN_PONTOS);
+        assertThat(testPromocao.getNnTipo()).isEqualTo(UPDATED_NN_TIPO);
 
         // Validate the Promocao in ElasticSearch
         Promocao promocaoEs = promocaoSearchRepository.findOne(testPromocao.getId());
@@ -284,6 +293,7 @@ public class PromocaoResourceIntTest {
             .andExpect(jsonPath("$.[*].nnDiaSemana").value(hasItem(DEFAULT_NN_DIA_SEMANA)))
             .andExpect(jsonPath("$.[*].flInativo").value(hasItem(DEFAULT_FL_INATIVO.booleanValue())))
             .andExpect(jsonPath("$.[*].vlPromocao").value(hasItem(DEFAULT_VL_PROMOCAO.intValue())))
-            .andExpect(jsonPath("$.[*].nnPontos").value(hasItem(DEFAULT_NN_PONTOS)));
+            .andExpect(jsonPath("$.[*].nnPontos").value(hasItem(DEFAULT_NN_PONTOS)))
+            .andExpect(jsonPath("$.[*].nnTipo").value(hasItem(DEFAULT_NN_TIPO)));
     }
 }

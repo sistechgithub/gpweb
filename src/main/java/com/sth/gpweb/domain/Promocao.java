@@ -20,7 +20,7 @@ public class Promocao implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @NotNull
@@ -45,6 +45,9 @@ public class Promocao implements Serializable {
 
     @Column(name = "nn_pontos")
     private Integer nnPontos;
+
+    @Column(name = "nn_tipo")
+    private Integer nnTipo;
 
     public Long getId() {
         return id;
@@ -110,6 +113,14 @@ public class Promocao implements Serializable {
         this.nnPontos = nnPontos;
     }
 
+    public Integer getNnTipo() {
+        return nnTipo;
+    }
+
+    public void setNnTipo(Integer nnTipo) {
+        this.nnTipo = nnTipo;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -141,6 +152,7 @@ public class Promocao implements Serializable {
             ", flInativo='" + flInativo + "'" +
             ", vlPromocao='" + vlPromocao + "'" +
             ", nnPontos='" + nnPontos + "'" +
+            ", nnTipo='" + nnTipo + "'" +
             '}';
     }
 }

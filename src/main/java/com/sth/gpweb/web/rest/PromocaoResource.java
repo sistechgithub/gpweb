@@ -158,4 +158,5 @@ public class PromocaoResource {
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
 
+
 }
