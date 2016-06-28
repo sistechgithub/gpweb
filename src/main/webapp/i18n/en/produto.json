@@ -2,23 +2,23 @@
     "gpwebApp": {
         "produto" : {
             "home": {
-                "title": "Produtos",
-                "createLabel": "Create a new Produto",
-                "createOrEditLabel": "Create or edit a Produto",
-                "search": "Search for Produto"
+                "title": "Catalogs",
+                "createLabel": "Create a new Catalog",
+                "createOrEditLabel": "Create or edit a Catalog",
+                "search": "Search for Catalog"
             },
-            "created": "A new Produto is created with identifier {{ param }}",
-            "updated": "A Produto is updated with identifier {{ param }}",
-            "deleted": "A Produto is deleted with identifier {{ param }}",
+            "created": "A new Catalog is created with identifier {{ param }}",
+            "updated": "A Catalog is updated with identifier {{ param }}",
+            "deleted": "A Catalog is deleted with identifier {{ param }}",
             "delete": {
-                "question": "Are you sure you want to delete Produto {{ id }}?"
+                "question": "Are you sure you want to delete Catalog {{ id }}?"
             },
             "detail": {
-                "title": "Produto"
+                "title": "Catalog"
             },
-            "cdProduto": "Cd Produto",
+            "cdProduto": "Cd Catalog",
             "cdBarras": "Cd Barras",
-            "nmProduto": "Nm Produto",
+            "nmProduto": "Nm Catalog",
             "cdNcm": "Cd Ncm",
             "cdEan": "Cd Ean",
             "cdAnp": "Cd Anp",
@@ -37,7 +37,8 @@
             "grupo": "Grupo",
             "marca": "Marca",
             "unidade": "Unidade",
-            "classProduto": "Class Produto"
+            "classProduto": "Classification",
+            "subgrupo": "Subgroup"
         }
     }
 }
