@@ -45,10 +45,6 @@
                 <constraints nullable="true" />
             </column>
             
-            <column name="nn_pontos" type="integer">
-                <constraints nullable="true" />
-            </column>
-            
             <column name="nn_tipo" type="integer">
                 <constraints nullable="true" />
             </column>

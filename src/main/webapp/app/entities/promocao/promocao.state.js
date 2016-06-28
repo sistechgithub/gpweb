@@ -96,8 +96,7 @@
                                 nnDiaData: null,
                                 nnDiaSemana: null,
                                 flInativo: null,
-                                vlPromocao: null,
-                                nnPontos: null,
+                                vlPromocao: null,                                
                                 nnTipo: null,
                                 id: null
                             };

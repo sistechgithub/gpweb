@@ -1,21 +1,32 @@
 package com.sth.gpweb.web.rest;
 
-import com.sth.gpweb.GpwebApp;
-import com.sth.gpweb.domain.Promocao;
-import com.sth.gpweb.repository.PromocaoRepository;
-import com.sth.gpweb.service.PromocaoService;
-import com.sth.gpweb.repository.search.PromocaoSearchRepository;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.hamcrest.Matchers.hasItem;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.List;
+
+import javax.annotation.PostConstruct;
+import javax.inject.Inject;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import static org.hamcrest.Matchers.hasItem;
 import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.IntegrationTest;
 import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
-import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.util.ReflectionTestUtils;
@@ -23,16 +34,11 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.annotation.PostConstruct;
-import javax.inject.Inject;
-import java.time.LocalDate;
-import java.time.ZoneId;
-import java.math.BigDecimal;;
-import java.util.List;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import com.sth.gpweb.GpwebApp;
+import com.sth.gpweb.domain.Promocao;
+import com.sth.gpweb.repository.PromocaoRepository;
+import com.sth.gpweb.repository.search.PromocaoSearchRepository;
+import com.sth.gpweb.service.PromocaoService;
 
 
 /**
@@ -63,9 +69,6 @@ public class PromocaoResourceIntTest {
 
     private static final BigDecimal DEFAULT_VL_PROMOCAO = new BigDecimal(1);
     private static final BigDecimal UPDATED_VL_PROMOCAO = new BigDecimal(2);
-
-    private static final Integer DEFAULT_NN_PONTOS = 1;
-    private static final Integer UPDATED_NN_PONTOS = 2;
 
     private static final Integer DEFAULT_NN_TIPO = 1;
     private static final Integer UPDATED_NN_TIPO = 2;
@@ -108,8 +111,7 @@ public class PromocaoResourceIntTest {
         promocao.setNnDiaData(DEFAULT_NN_DIA_DATA);
         promocao.setNnDiaSemana(DEFAULT_NN_DIA_SEMANA);
         promocao.setFlInativo(DEFAULT_FL_INATIVO);
-        promocao.setVlPromocao(DEFAULT_VL_PROMOCAO);
-        promocao.setNnPontos(DEFAULT_NN_PONTOS);
+        promocao.setVlPromocao(DEFAULT_VL_PROMOCAO);        
         promocao.setNnTipo(DEFAULT_NN_TIPO);
     }
 
@@ -134,8 +136,7 @@ public class PromocaoResourceIntTest {
         assertThat(testPromocao.getNnDiaData()).isEqualTo(DEFAULT_NN_DIA_DATA);
         assertThat(testPromocao.getNnDiaSemana()).isEqualTo(DEFAULT_NN_DIA_SEMANA);
         assertThat(testPromocao.isFlInativo()).isEqualTo(DEFAULT_FL_INATIVO);
-        assertThat(testPromocao.getVlPromocao()).isEqualTo(DEFAULT_VL_PROMOCAO);
-        assertThat(testPromocao.getNnPontos()).isEqualTo(DEFAULT_NN_PONTOS);
+        assertThat(testPromocao.getVlPromocao()).isEqualTo(DEFAULT_VL_PROMOCAO);        
         assertThat(testPromocao.getNnTipo()).isEqualTo(DEFAULT_NN_TIPO);
 
         // Validate the Promocao in ElasticSearch
@@ -177,8 +178,7 @@ public class PromocaoResourceIntTest {
                 .andExpect(jsonPath("$.[*].nnDiaData").value(hasItem(DEFAULT_NN_DIA_DATA)))
                 .andExpect(jsonPath("$.[*].nnDiaSemana").value(hasItem(DEFAULT_NN_DIA_SEMANA)))
                 .andExpect(jsonPath("$.[*].flInativo").value(hasItem(DEFAULT_FL_INATIVO.booleanValue())))
-                .andExpect(jsonPath("$.[*].vlPromocao").value(hasItem(DEFAULT_VL_PROMOCAO.intValue())))
-                .andExpect(jsonPath("$.[*].nnPontos").value(hasItem(DEFAULT_NN_PONTOS)))
+                .andExpect(jsonPath("$.[*].vlPromocao").value(hasItem(DEFAULT_VL_PROMOCAO.intValue())))                
                 .andExpect(jsonPath("$.[*].nnTipo").value(hasItem(DEFAULT_NN_TIPO)));
     }
 
@@ -199,7 +199,6 @@ public class PromocaoResourceIntTest {
             .andExpect(jsonPath("$.nnDiaSemana").value(DEFAULT_NN_DIA_SEMANA))
             .andExpect(jsonPath("$.flInativo").value(DEFAULT_FL_INATIVO.booleanValue()))
             .andExpect(jsonPath("$.vlPromocao").value(DEFAULT_VL_PROMOCAO.intValue()))
-            .andExpect(jsonPath("$.nnPontos").value(DEFAULT_NN_PONTOS))
             .andExpect(jsonPath("$.nnTipo").value(DEFAULT_NN_TIPO));
     }
 
@@ -227,8 +226,7 @@ public class PromocaoResourceIntTest {
         updatedPromocao.setNnDiaData(UPDATED_NN_DIA_DATA);
         updatedPromocao.setNnDiaSemana(UPDATED_NN_DIA_SEMANA);
         updatedPromocao.setFlInativo(UPDATED_FL_INATIVO);
-        updatedPromocao.setVlPromocao(UPDATED_VL_PROMOCAO);
-        updatedPromocao.setNnPontos(UPDATED_NN_PONTOS);
+        updatedPromocao.setVlPromocao(UPDATED_VL_PROMOCAO);        
         updatedPromocao.setNnTipo(UPDATED_NN_TIPO);
 
         restPromocaoMockMvc.perform(put("/api/promocaos")
@@ -245,8 +243,7 @@ public class PromocaoResourceIntTest {
         assertThat(testPromocao.getNnDiaData()).isEqualTo(UPDATED_NN_DIA_DATA);
         assertThat(testPromocao.getNnDiaSemana()).isEqualTo(UPDATED_NN_DIA_SEMANA);
         assertThat(testPromocao.isFlInativo()).isEqualTo(UPDATED_FL_INATIVO);
-        assertThat(testPromocao.getVlPromocao()).isEqualTo(UPDATED_VL_PROMOCAO);
-        assertThat(testPromocao.getNnPontos()).isEqualTo(UPDATED_NN_PONTOS);
+        assertThat(testPromocao.getVlPromocao()).isEqualTo(UPDATED_VL_PROMOCAO);        
         assertThat(testPromocao.getNnTipo()).isEqualTo(UPDATED_NN_TIPO);
 
         // Validate the Promocao in ElasticSearch
@@ -292,8 +289,7 @@ public class PromocaoResourceIntTest {
             .andExpect(jsonPath("$.[*].nnDiaData").value(hasItem(DEFAULT_NN_DIA_DATA)))
             .andExpect(jsonPath("$.[*].nnDiaSemana").value(hasItem(DEFAULT_NN_DIA_SEMANA)))
             .andExpect(jsonPath("$.[*].flInativo").value(hasItem(DEFAULT_FL_INATIVO.booleanValue())))
-            .andExpect(jsonPath("$.[*].vlPromocao").value(hasItem(DEFAULT_VL_PROMOCAO.intValue())))
-            .andExpect(jsonPath("$.[*].nnPontos").value(hasItem(DEFAULT_NN_PONTOS)))
+            .andExpect(jsonPath("$.[*].vlPromocao").value(hasItem(DEFAULT_VL_PROMOCAO.intValue())))            
             .andExpect(jsonPath("$.[*].nnTipo").value(hasItem(DEFAULT_NN_TIPO)));
     }
 }
