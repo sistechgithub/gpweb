@@ -880,3 +880,23 @@ Página Prazos
   min-width: 155px;
   max-width: 155px;
 }
+
+/* ===========================================================================
+Página Classificação do Produto
+=========================================================================== */
+.col-classificacao-codigo{
+  min-width: 110px;
+  max-width: 110px;
+}
+.col-classificacao-codigoClassificacao{
+  min-width: 200px;
+  max-width: 200px;
+}
+.col-classificacao-nome{
+  min-width: 736px;
+  max-width: 736px;
+}
+.col-classificacao-acoes{
+  min-width: 152px;
+  max-width: 152px;
+}
