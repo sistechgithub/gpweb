@@ -34,7 +34,7 @@
             "dtOperacao": "Date operation",
             "flSemContagem": "No count",
             "flEnvio": "Send",
-            "nnType": "Type",
+            "nnTipo": "Type",
             "nnNovo": "New"
         }
     }

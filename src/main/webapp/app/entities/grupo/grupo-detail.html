@@ -44,27 +44,27 @@
                         <dt ng-show="!vm.grupo.flPromo"></dt>
 
                         <!-- 1 - Setting promotion option by date -->
-                        <dt ng-show="vm.grupo.flPromo && (vm.grupo.nnType == 1)">
+                        <dt ng-show="vm.grupo.flPromo && (vm.grupo.nnTipo == 1)">
                             <span translate="gpwebApp.grupo.byPeriodDetail">Válida até:</span>
                         </dt>
-                        <dd ng-show="vm.grupo.flPromo && (vm.grupo.nnType == 1)">	                    	
+                        <dd ng-show="vm.grupo.flPromo && (vm.grupo.nnTipo == 1)">	                    	
                             <span class="form-control-static">{{vm.grupo.dtPromo | date:'dd/MM/yyyy'}}</span>
                         </dd>
 
                         <!-- 2 - Setting promotion option by day -->
-                        <dt ng-show="vm.grupo.flPromo && (vm.grupo.nnType == 2)">
+                        <dt ng-show="vm.grupo.flPromo && (vm.grupo.nnTipo == 2)">
                             <span translate="gpwebApp.grupo.perDayDetail">Válida para todo dia:</span>
                         </dt>
-                        <dd ng-show="vm.grupo.flPromo && (vm.grupo.nnType == 2)">
-                            <span class="form-control-static">{{vm.grupo.nnDay}}</span>
+                        <dd ng-show="vm.grupo.flPromo && (vm.grupo.nnTipo == 2)">
+                            <span class="form-control-static">{{vm.grupo.nnDia}}</span>
                         </dd>
 
                         <!-- 3 - Setting promotion option by week day -->
-                        <dt ng-show="vm.grupo.flPromo && (vm.grupo.nnType == 3)">
+                        <dt ng-show="vm.grupo.flPromo && (vm.grupo.nnTipo == 3)">
                             <span translate="gpwebApp.grupo.perWeekDetail">Válida apenas nas(os):</span>
                         </dt>
-                        <dd ng-show="vm.grupo.flPromo && (vm.grupo.nnType == 3)">
-                            <span class="form-control-static">{{vm.grupo.nnDayWeek}}</span>
+                        <dd ng-show="vm.grupo.flPromo && (vm.grupo.nnTipo == 3)">
+                            <span class="form-control-static">{{vm.grupo.nnDiaSemana}}</span>
                         </dd>       
                         <hr ng-show="vm.grupo.flPromo">
                     </div>

@@ -41,10 +41,10 @@ public class Promocao implements Serializable {
     private Boolean flInativo;
 
     @Column(name = "vl_promocao", precision=10, scale=2)
-    private BigDecimal vlPromocao;
+    private BigDecimal vlPromocao;    
 
-    @Column(name = "nn_pontos")
-    private Integer nnPontos;
+    @Column(name = "nn_tipo")
+    private Integer nnTipo;
 
     public Long getId() {
         return id;
@@ -101,13 +101,13 @@ public class Promocao implements Serializable {
     public void setVlPromocao(BigDecimal vlPromocao) {
         this.vlPromocao = vlPromocao;
     }
-
-    public Integer getNnPontos() {
-        return nnPontos;
+    
+    public Integer getNnTipo() {
+        return nnTipo;
     }
 
-    public void setNnPontos(Integer nnPontos) {
-        this.nnPontos = nnPontos;
+    public void setNnTipo(Integer nnTipo) {
+        this.nnTipo = nnTipo;
     }
 
     @Override
@@ -139,8 +139,8 @@ public class Promocao implements Serializable {
             ", nnDiaData='" + nnDiaData + "'" +
             ", nnDiaSemana='" + nnDiaSemana + "'" +
             ", flInativo='" + flInativo + "'" +
-            ", vlPromocao='" + vlPromocao + "'" +
-            ", nnPontos='" + nnPontos + "'" +
+            ", vlPromocao='" + vlPromocao + "'" +     
+            ", nnTipo='" + nnTipo + "'" +
             '}';
     }
 }

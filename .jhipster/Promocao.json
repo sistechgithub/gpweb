@@ -35,6 +35,10 @@
         {
             "fieldName": "nnPontos",
             "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nnTipo",
+            "fieldType": "Integer"
         }
     ],
     "changelogDate": "20160606140409",
