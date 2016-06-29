@@ -61,15 +61,15 @@
                 <constraints nullable="true" />
             </column>
             
-            <column name="nn_day" type="integer">
+            <column name="nn_dia" type="integer">
                 <constraints nullable="true" />
             </column>
             
-            <column name="nn_day_week" type="varchar(255)">
+            <column name="nn_dia_semana" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             
-            <column name="nn_type" type="integer">
+            <column name="nn_tipo" type="integer">
                 <constraints nullable="true" />
             </column>
             
