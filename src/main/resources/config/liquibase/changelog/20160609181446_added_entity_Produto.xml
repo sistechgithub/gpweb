@@ -96,19 +96,19 @@
                 <constraints nullable="true" />
             </column>
             <column name="grupo_id" type="bigint">
-                <constraints unique="true" nullable="true" />
+                <constraints nullable="true" />
             </column>            
             <column name="marca_id" type="bigint">
-                <constraints unique="true" nullable="true" />
+                <constraints nullable="true" />
             </column>            
             <column name="unidade_id" type="bigint">
-                <constraints unique="true" nullable="true" />
+                <constraints nullable="true" />
             </column>
             <column name="class_produto_id" type="bigint">
                 <constraints nullable="true" />
             </column>
             <column name="subgrupo_id" type="bigint">
-                <constraints unique="true" nullable="true" />
+                <constraints nullable="true" />
             </column>
 
             <!-- jhipster-needle-liquibase-add-column - Jhipster will add columns here, do not remove-->
