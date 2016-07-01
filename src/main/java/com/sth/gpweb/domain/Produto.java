@@ -91,16 +91,13 @@ public class Produto implements Serializable {
     @Column(name = "bl_imagem_content_type")
     private String blImagemContentType;
 
-    @OneToOne
-    @JoinColumn(unique = true)
+    @ManyToOne
     private Grupo grupo;
 
-    @OneToOne
-    @JoinColumn(unique = true)
+    @ManyToOne
     private Marca marca;
 
-    @OneToOne
-    @JoinColumn(unique = true)
+    @ManyToOne
     private Unidade unidade;
 
     @ManyToOne
