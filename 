@@ -1,0 +1,52 @@
+[1mdiff --git a/src/main/java/com/sth/gpweb/domain/Produto.java b/src/main/java/com/sth/gpweb/domain/Produto.java[m
+[1mindex 959142b..1b23e9f 100644[m
+[1m--- a/src/main/java/com/sth/gpweb/domain/Produto.java[m
+[1m+++ b/src/main/java/com/sth/gpweb/domain/Produto.java[m
+[36m@@ -91,16 +91,13 @@[m [mpublic class Produto implements Serializable {[m
+     @Column(name = "bl_imagem_content_type")[m
+     private String blImagemContentType;[m
+ [m
+[31m-    @OneToOne[m
+[31m-    @JoinColumn(unique = true)[m
+[32m+[m[32m    @ManyToOne[m
+     private Grupo grupo;[m
+ [m
+[31m-    @OneToOne[m
+[31m-    @JoinColumn(unique = true)[m
+[32m+[m[32m    @ManyToOne[m
+     private Marca marca;[m
+ [m
+[31m-    @OneToOne[m
+[31m-    @JoinColumn(unique = true)[m
+[32m+[m[32m    @ManyToOne[m
+     private Unidade unidade;[m
+ [m
+     @ManyToOne[m
+[1mdiff --git a/src/main/resources/config/liquibase/changelog/20160609181446_added_entity_Produto.xml b/src/main/resources/config/liquibase/changelog/20160609181446_added_entity_Produto.xml[m
+[1mindex 3ac9a12..5b09d2e 100644[m
+[1m--- a/src/main/resources/config/liquibase/changelog/20160609181446_added_entity_Produto.xml[m
+[1m+++ b/src/main/resources/config/liquibase/changelog/20160609181446_added_entity_Produto.xml[m
+[36m@@ -96,19 +96,19 @@[m
+                 <constraints nullable="true" />[m
+             </column>[m
+             <column name="grupo_id" type="bigint">[m
+[31m-                <constraints unique="true" nullable="true" />[m
+[32m+[m[32m                <constraints nullable="true" />[m
+             </column>            [m
+             <column name="marca_id" type="bigint">[m
+[31m-                <constraints unique="true" nullable="true" />[m
+[32m+[m[32m                <constraints nullable="true" />[m
+             </column>            [m
+             <column name="unidade_id" type="bigint">[m
+[31m-                <constraints unique="true" nullable="true" />[m
+[32m+[m[32m                <constraints nullable="true" />[m
+             </column>[m
+             <column name="class_produto_id" type="bigint">[m
+                 <constraints nullable="true" />[m
+             </column>[m
+             <column name="subgrupo_id" type="bigint">[m
+[31m-                <constraints unique="true" nullable="true" />[m
+[32m+[m[32m                <constraints nullable="true" />[m
+             </column>[m
+ [m
+             <!-- jhipster-needle-liquibase-add-column - Jhipster will add columns here, do not remove-->[m
