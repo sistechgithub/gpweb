@@ -3,42 +3,42 @@
         "produto" : {
             "home": {
                 "title": "Catalogs",
-                "createLabel": "Create a new Catalog",
+                "createLabel": "New",
                 "createOrEditLabel": "Create or edit a Catalog",
-                "search": "Search for Catalog"
+                "search": "Search"
             },
-            "created": "A new Catalog is created with identifier {{ param }}",
-            "updated": "A Catalog is updated with identifier {{ param }}",
-            "deleted": "A Catalog is deleted with identifier {{ param }}",
+            "created": "A new Product is created with identifier {{ param }}",
+            "updated": "The Product {{ param }} has been updated successfully",
+            "deleted": "The Product {{ param }} has been deleted successfully",
             "delete": {
-                "question": "Are you sure you want to delete Catalog {{ id }}?"
+                "question": "Are you sure you want to delete Product {{ id }}?"
             },
             "detail": {
                 "title": "Catalog"
             },
-            "cdProduto": "Cd Catalog",
-            "cdBarras": "Cd Barras",
-            "nmProduto": "Nm Catalog",
-            "cdNcm": "Cd Ncm",
-            "cdEan": "Cd Ean",
-            "cdAnp": "Cd Anp",
-            "dsAnp": "Ds Anp",
-            "cdContaContabil": "Cd Conta Contabil",
-            "materiaPrima": "Materia Prima",
-            "flBalanca": "Fl Balanca",
-            "flInativo": "Fl Inativo",
-            "flSngpc": "Fl Sngpc",
-            "flMedProlonga": "Fl Med Prolonga",
-            "dsClassTerapeutica": "Ds Class Terapeutica",
-            "vlReal": "Vl Real",
-            "vlEstoque": "Vl Estoque",
-            "dsInformacoes": "Ds Informacoes",
-            "blImagem": "Bl Imagem",
-            "grupo": "Grupo",
-            "marca": "Marca",
-            "unidade": "Unidade",
+            "blImagem": "Image",
+            "nmProduto": "Name",
+            "cdProduto": "Product Code",
+            "cdNcm": "NCM Code",
+            "cdBarras": "Bar Code",
+            "cdEan": "EAN Code",
+            "cdAnp": "ANP Code",
+            "dsAnp": "ANP Description",
+            "cdContaContabil": "Accounting Account",
+            "materiaPrima": "Feedstock",
+            "vlReal": "Real Value",
+            "vlEstoque": "Stock Value",
+            "dsInformacoes": "Information",
+            "grupo": "Group",
+            "subgrupo": "Subgroup",
+            "marca": "Brand",
+            "unidade": "Unit",
             "classProduto": "Classification",
-            "subgrupo": "Subgroup"
+            "flBalanca": "Balance",
+            "flSngpc": "SNGPC",
+            "flMedProlonga": "Prolonged Use",
+            "dsClassTerapeutica": "Therapeutic Class",
+            "flInativo": "Inactive"
         }
     }
 }

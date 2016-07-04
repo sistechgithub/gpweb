@@ -4,315 +4,380 @@
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
                 ng-click="vm.clear()">&times;</button>
-        <h4 class="modal-title" id="myProdutoLabel" translate="gpwebApp.produto.home.createOrEditLabel">Create or edit a Produto</h4>
+        <h4 class="modal-title" id="myProdutoLabel" translate="gpwebApp.produto.home.createOrEditLabel">Criar ou editar	um Produto</h4>
     </div>
     <div class="modal-body">
-        <jhi-alert-error></jhi-alert-error>
-        <div class="form-group" ng-show="vm.produto.id">
-            <label for="id" translate="global.field.id">ID</label>
-            <input type="text" class="form-control" id="id" name="id"
-                    ng-model="vm.produto.id" readonly />
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gpwebApp.produto.cdProduto" for="field_cdProduto">Cd Produto</label>
-            <input type="number" class="form-control" name="cdProduto" id="field_cdProduto"
-                    ng-model="vm.produto.cdProduto"
-                     />
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gpwebApp.produto.cdBarras" for="field_cdBarras">Cd Barras</label>
-            <input type="text" class="form-control" name="cdBarras" id="field_cdBarras"
-                    ng-model="vm.produto.cdBarras"
-                    ng-maxlength="25" />
-            <div ng-show="editForm.cdBarras.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.cdBarras.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="25">
-                    This field cannot be longer than 25 characters.
-                </p>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gpwebApp.produto.nmProduto" for="field_nmProduto">Nm Produto</label>
-            <input type="text" class="form-control" name="nmProduto" id="field_nmProduto"
-                    ng-model="vm.produto.nmProduto"
-                    required ng-minlength="1" ng-maxlength="50" />
-            <div ng-show="editForm.nmProduto.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.nmProduto.$error.required" translate="entity.validation.required">
-                    This field is required.
-                </p>
-                <p class="help-block"
-                    ng-show="editForm.nmProduto.$error.minlength" translate="entity.validation.minlength" translate-value-min="1">
-                    This field is required to be at least 1 characters.
-                </p>
-                <p class="help-block"
-                    ng-show="editForm.nmProduto.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="50">
-                    This field cannot be longer than 50 characters.
-                </p>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gpwebApp.produto.cdNcm" for="field_cdNcm">Cd Ncm</label>
-            <input type="text" class="form-control" name="cdNcm" id="field_cdNcm"
-                    ng-model="vm.produto.cdNcm"
-                    ng-maxlength="8" />
-            <div ng-show="editForm.cdNcm.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.cdNcm.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="8">
-                    This field cannot be longer than 8 characters.
-                </p>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gpwebApp.produto.cdEan" for="field_cdEan">Cd Ean</label>
-            <input type="text" class="form-control" name="cdEan" id="field_cdEan"
-                    ng-model="vm.produto.cdEan"
-                    ng-maxlength="20" />
-            <div ng-show="editForm.cdEan.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.cdEan.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="20">
-                    This field cannot be longer than 20 characters.
-                </p>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gpwebApp.produto.cdAnp" for="field_cdAnp">Cd Anp</label>
-            <input type="text" class="form-control" name="cdAnp" id="field_cdAnp"
-                    ng-model="vm.produto.cdAnp"
-                    ng-maxlength="9" />
-            <div ng-show="editForm.cdAnp.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.cdAnp.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="9">
-                    This field cannot be longer than 9 characters.
-                </p>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gpwebApp.produto.dsAnp" for="field_dsAnp">Ds Anp</label>
-            <input type="text" class="form-control" name="dsAnp" id="field_dsAnp"
-                    ng-model="vm.produto.dsAnp"
-                    ng-maxlength="30" />
-            <div ng-show="editForm.dsAnp.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.dsAnp.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="30">
-                    This field cannot be longer than 30 characters.
-                </p>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gpwebApp.produto.cdContaContabil" for="field_cdContaContabil">Cd Conta Contabil</label>
-            <input type="text" class="form-control" name="cdContaContabil" id="field_cdContaContabil"
-                    ng-model="vm.produto.cdContaContabil"
-                    ng-maxlength="25" />
-            <div ng-show="editForm.cdContaContabil.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.cdContaContabil.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="25">
-                    This field cannot be longer than 25 characters.
-                </p>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gpwebApp.produto.materiaPrima" for="field_materiaPrima">Materia Prima</label>
-            <input type="text" class="form-control" name="materiaPrima" id="field_materiaPrima"
-                    ng-model="vm.produto.materiaPrima"
-                    ng-maxlength="1" />
-            <div ng-show="editForm.materiaPrima.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.materiaPrima.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="1">
-                    This field cannot be longer than 1 characters.
-                </p>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gpwebApp.produto.flBalanca" for="field_flBalanca">Fl Balanca</label>
-            <input type="checkbox" class="form-control" name="flBalanca" id="field_flBalanca"
-                    ng-model="vm.produto.flBalanca"
-                     />
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gpwebApp.produto.flInativo" for="field_flInativo">Fl Inativo</label>
-            <input type="checkbox" class="form-control" name="flInativo" id="field_flInativo"
-                    ng-model="vm.produto.flInativo"
-                     />
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gpwebApp.produto.flSngpc" for="field_flSngpc">Fl Sngpc</label>
-            <input type="checkbox" class="form-control" name="flSngpc" id="field_flSngpc"
-                    ng-model="vm.produto.flSngpc"
-                     />
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gpwebApp.produto.flMedProlonga" for="field_flMedProlonga">Fl Med Prolonga</label>
-            <input type="checkbox" class="form-control" name="flMedProlonga" id="field_flMedProlonga"
-                    ng-model="vm.produto.flMedProlonga"
-                     />
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gpwebApp.produto.dsClassTerapeutica" for="field_dsClassTerapeutica">Ds Class Terapeutica</label>
-            <input type="text" class="form-control" name="dsClassTerapeutica" id="field_dsClassTerapeutica"
-                    ng-model="vm.produto.dsClassTerapeutica"
-                    ng-maxlength="30" />
-            <div ng-show="editForm.dsClassTerapeutica.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.dsClassTerapeutica.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="30">
-                    This field cannot be longer than 30 characters.
-                </p>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gpwebApp.produto.vlReal" for="field_vlReal">Vl Real</label>
-            <input type="number" class="form-control" name="vlReal" id="field_vlReal"
-                    ng-model="vm.produto.vlReal"
-                     />
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gpwebApp.produto.vlEstoque" for="field_vlEstoque">Vl Estoque</label>
-            <input type="number" class="form-control" name="vlEstoque" id="field_vlEstoque"
-                    ng-model="vm.produto.vlEstoque"
-                     />
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gpwebApp.produto.dsInformacoes" for="field_dsInformacoes">Ds Informacoes</label>
-            <input type="text" class="form-control" name="dsInformacoes" id="field_dsInformacoes"
-                    ng-model="vm.produto.dsInformacoes"
-                    ng-maxlength="200" />
-            <div ng-show="editForm.dsInformacoes.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.dsInformacoes.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="200">
-                    This field cannot be longer than 200 characters.
-                </p>
-            </div>
-        </div>
-        <div class="form-group" ngf-drop ngf-change="vm.setBlImagem($file, vm.produto)" ngf-pattern="'image/*'">
-            <label class="control-label" translate="gpwebApp.produto.blImagem" for="field_blImagem">Bl Imagem</label>
-            <div>
-                <img data-ng-src="{{'data:' + vm.produto.blImagemContentType + ';base64,' + vm.produto.blImagem}}" style="max-height: 100px;" ng-if="vm.produto.blImagem"/>
-                <div ng-if="vm.produto.blImagem" class="help-block clearfix">
-                    <span class="pull-left">{{vm.produto.blImagemContentType}}, {{vm.byteSize(vm.produto.blImagem)}}</span>
-                    <button ng-click="vm.produto.blImagem=null;vm.produto.blImagemContentType=null;"
-                            class="btn btn-default btn-xs pull-right">
-                        <span class="glyphicon glyphicon-remove"></span>
-                    </button>
-                </div>
-                <button type="file" ngf-select class="btn btn-default btn-block"
-                        ngf-change="vm.setBlImagem($file, vm.produto)" accept="image/*" translate="entity.action.addimage">
-                    Add image
-                </button>
-            </div>
-            <input type="hidden" class="form-control" name="blImagem" id="field_blImagem"
-                    ng-model="vm.produto.blImagem"
-                     />
-            <input type="hidden" class="form-control" name="blImagemContentType" id="field_blImagemContentType"
-                    ng-model="vm.produto.blImagemContentType" />
-        </div>
-
-        <!-- Diretiva Grupo-->
-		<div class="form-group">
-			<ourselect id-select="field_entidade1" ng-model="vm.produto.grupo" 
-				entity-field-name="nmGrupo" entity-field-id="id" entity-url="grupos"></ourselect>
-			<div class="panel panel-default">
-				<button type="button" class="btn btn-default btn-sm pull-right"	ng-click="vm.produto.grupo = null"
-					style="margin-top: 5px; margin-right: 5px">
-					<span class="glyphicon glyphicon-ban-circle"></span>&nbsp;
-				</button>
-				<div class="panel-heading">
-					<b>Grupo</b>: {{vm.produto.grupo.id}} {{vm.produto.grupo.nmGrupo}}
-				</div>
-				<div class="panel-body">
-					<select class="js-data-example-ajax" id="field_entidade1" style="width: 100%">
-						<option value="" selected="selected"></option>
-					</select>
-				</div>
-			</div>
-		</div> 
-		
-		<!-- Diretiva SubGrupo-->		
-		<div class="form-group">
-			<ourselect id-select="field_entidade2" ng-model="vm.produto.subgrupo" 
-				entity-field-name="nmSubgrupo" entity-field-id="id" entity-url="subgrupos"></ourselect>
-			<div class="panel panel-default">
-				<button type="button" class="btn btn-default btn-sm pull-right"	ng-click="vm.produto.subgrupo = null"
-					style="margin-top: 5px; margin-right: 5px">
-					<span class="glyphicon glyphicon-ban-circle"></span>&nbsp;
-				</button>
-				<div class="panel-heading">
-					<b>Subgrupo</b>: {{vm.produto.subgrupo.id}} {{vm.produto.subgrupo.nmSubgrupo}}
-				</div>
-				<div class="panel-body">
-					<select class="js-data-example-ajax" id="field_entidade2" style="width: 100%">
-						<option value="" selected="selected"></option>
-					</select>
-				</div>
-			</div>
-		</div> 
-		
-		<!-- Diretiva Marca-->
-		<div class="form-group">
-			<ourselect id-select="field_entidade3" ng-model="vm.produto.marca" 
-				entity-field-name="nmFabricante" entity-field-id="id" entity-url="marcas"></ourselect>
-			<div class="panel panel-default">
-				<button type="button" class="btn btn-default btn-sm pull-right"	ng-click="vm.produto.marca = null"
-					style="margin-top: 5px; margin-right: 5px">
-					<span class="glyphicon glyphicon-ban-circle"></span>&nbsp;
-				</button>
-				<div class="panel-heading">
-					<b>Marca</b>: {{vm.produto.marca.id}} {{vm.produto.marca.nmFabricante}}
-				</div>
-				<div class="panel-body">
-					<select class="js-data-example-ajax" id="field_entidade3" style="width: 100%">
-						<option value="" selected="selected"></option>
-					</select>
-				</div>
-			</div>
-		</div>
-		
-		<!-- Diretiva Unidade-->
-		<div class="form-group">
-			<ourselect id-select="field_entidade4" ng-model="vm.produto.unidade" 
-				entity-field-name="dsUnidade" entity-field-id="id" entity-url="unidades"></ourselect>
-			<div class="panel panel-default">
-				<button type="button" class="btn btn-default btn-sm pull-right"	ng-click="vm.produto.unidade = null"
-					style="margin-top: 5px; margin-right: 5px">
-					<span class="glyphicon glyphicon-ban-circle"></span>&nbsp;
-				</button>
-				<div class="panel-heading">
-					<b>Unidade</b>: {{vm.produto.unidade.id}} {{vm.produto.unidade.dsUnidade}}
-				</div>
-				<div class="panel-body">
-					<select class="js-data-example-ajax" id="field_entidade4" style="width: 100%">
-						<option value="" selected="selected"></option>
-					</select>
-				</div>
-			</div>
-		</div>        
        
-        <!-- Diretiva ClassProduto-->
-		<div class="form-group">
-			<ourselect id-select="field_entidade5" ng-model="vm.produto.classProduto" 
-				entity-field-name="dsClassProduto" entity-field-id="cdClassProduto" entity-url="class-produtos"></ourselect>
-			<div class="panel panel-default">
-				<button type="button" class="btn btn-default btn-sm pull-right"	ng-click="vm.produto.classProduto = null"
-					style="margin-top: 5px; margin-right: 5px">
-					<span class="glyphicon glyphicon-ban-circle"></span>&nbsp;
-				</button>
-				<div class="panel-heading">
-					<b>Classificação</b>: {{vm.produto.classProduto.cdClassProduto}} {{vm.produto.classProduto.dsClassProduto}}
-				</div>
-				<div class="panel-body">
-					<select class="js-data-example-ajax" id="field_entidade5" style="width: 100%">
-						<option value="" selected="selected"></option>
-					</select>
-				</div>
-			</div>
-		</div>
+        <jhi-alert-error></jhi-alert-error>
         
+        <div class="row">
+            <div class="col-md-3">
+                <div class="thumbnail container-thumbnail" ngf-drop ngf-change="vm.setBlImagem($file, vm.produto)" ngf-pattern="'image/*'">
+                    <img class="img-responsive image-thumbnail" data-ng-src="{{'data:' + vm.produto.blImagemContentType + ';base64,' + vm.produto.blImagem}}" ng-if="vm.produto.blImagem"/>
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="file" ngf-select class="btn btn-success btn-block btn-thumbnail" 
+                                ngf-change="vm.setBlImagem($file, vm.produto)" accept="image/*" translate="entity.action.addimage">
+                            Imagem
+                        </button>   
+                        <div ng-if="vm.produto.blImagem">
+                            <button ng-click="vm.produto.blImagem=null;vm.produto.blImagemContentType=null;"
+                                    class="btn btn-danger btn-thumbnail pull-right">
+                                <span class="mdi mdi-delete-forever"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-9">
+                <div class="form-group">
+                    <label class="control-label" translate="gpwebApp.produto.nmProduto" for="field_nmProduto">Nome</label>
+                    <input type="text" class="form-control text-uppercase" name="nmProduto" id="field_nmProduto"
+                            ng-model="vm.produto.nmProduto"
+                            required ng-minlength="1" ng-maxlength="50" autofocus />
+                    <div ng-show="editForm.nmProduto.$invalid">
+                        <p class="help-block"
+                            ng-show="editForm.nmProduto.$error.required" translate="entity.validation.required">
+                            O campo é obrigatório.
+                        </p>
+                        <p class="help-block"
+                            ng-show="editForm.nmProduto.$error.minlength" translate="entity.validation.minlength" translate-value-min="1">
+                            Este campo não pode ter menos que 1 caractere.
+                        </p>
+                        <p class="help-block"
+                            ng-show="editForm.nmProduto.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="50">
+                            Este campo não pode ter mais que 50 caracteres.
+                        </p>
+                    </div>
+                </div>
+            </div>                      
+           
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="id" translate="global.field.id">Código</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                            ng-model="vm.produto.id" readonly />
+                </div>
+            </div>
+            
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label class="control-label" translate="gpwebApp.produto.cdProduto" for="field_cdProduto">Código Produto</label>
+                    <input type="number" class="form-control" name="cdProduto" id="field_cdProduto"
+                            ng-model="vm.produto.cdProduto"
+                             />
+                </div>
+            </div>
+            
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label class="control-label" translate="gpwebApp.produto.cdNcm" for="field_cdNcm">Código NCM</label>
+                    <input type="text" class="form-control text-uppercase" name="cdNcm" id="field_cdNcm"
+                            ng-model="vm.produto.cdNcm"
+                            ng-maxlength="8" />
+                    <div ng-show="editForm.cdNcm.$invalid">
+                        <p class="help-block"
+                            ng-show="editForm.cdNcm.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="8">
+                            Este campo não pode ter mais que 8 caracteres.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label class="control-label" translate="gpwebApp.produto.cdBarras" for="field_cdBarras">Código de Barras</label>
+                    <input type="text" class="form-control text-uppercase" name="cdBarras" id="field_cdBarras"
+                            ng-model="vm.produto.cdBarras"
+                            ng-maxlength="25" />
+                    <div ng-show="editForm.cdBarras.$invalid">
+                        <p class="help-block"
+                            ng-show="editForm.cdBarras.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="25">
+                            Este campo não pode ter mais que 25 caracteres.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label class="control-label" translate="gpwebApp.produto.cdEan" for="field_cdEan">Código EAN</label>
+                    <input type="text" class="form-control text-uppercase" name="cdEan" id="field_cdEan"
+                            ng-model="vm.produto.cdEan"
+                            ng-maxlength="20" />
+                    <div ng-show="editForm.cdEan.$invalid">
+                        <p class="help-block"
+                            ng-show="editForm.cdEan.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="20">
+                            Este campo não pode ter mais que 20 caracteres.
+                        </p>
+                    </div>
+                </div>                
+            </div>
+            
+            <div class="col-md-3">
+               <div class="form-group">
+                    <label class="control-label" translate="gpwebApp.produto.cdAnp" for="field_cdAnp">Código ANP</label>
+                    <input type="text" class="form-control text-uppercase" name="cdAnp" id="field_cdAnp"
+                            ng-model="vm.produto.cdAnp"
+                            ng-maxlength="9" />
+                    <div ng-show="editForm.cdAnp.$invalid">
+                        <p class="help-block"
+                            ng-show="editForm.cdAnp.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="9">
+                            Este campo não pode ter mais que 9 caracteres.
+                        </p>
+                    </div>
+                </div>                
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label" translate="gpwebApp.produto.dsAnp" for="field_dsAnp">Descrição ANP</label>
+                    <input type="text" class="form-control text-uppercase" name="dsAnp" id="field_dsAnp"
+                            ng-model="vm.produto.dsAnp"
+                            ng-maxlength="30" />
+                    <div ng-show="editForm.dsAnp.$invalid">
+                        <p class="help-block"
+                            ng-show="editForm.dsAnp.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="30">
+                            Este campo não pode ter mais que 30 caracteres.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label class="control-label" translate="gpwebApp.produto.cdContaContabil" for="field_cdContaContabil">Código Conta Contábil</label>
+                    <input type="text" class="form-control text-uppercase" name="cdContaContabil" id="field_cdContaContabil"
+                            ng-model="vm.produto.cdContaContabil"
+                            ng-maxlength="25" />
+                    <div ng-show="editForm.cdContaContabil.$invalid">
+                        <p class="help-block"
+                            ng-show="editForm.cdContaContabil.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="25">
+                            Este campo não pode ter mais que 25 caracteres.
+                        </p>
+                    </div>
+                </div>                
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label class="control-label" translate="gpwebApp.produto.materiaPrima" for="field_materiaPrima">Matéria Prima</label>
+                    <input type="text" class="form-control text-uppercase" name="materiaPrima" id="field_materiaPrima"
+                            ng-model="vm.produto.materiaPrima"
+                            ng-maxlength="1" />
+                    <div ng-show="editForm.materiaPrima.$invalid">
+                        <p class="help-block"
+                            ng-show="editForm.materiaPrima.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="1">
+                            Este campo não pode ter menos que 1 caractere.
+                        </p>
+                    </div>
+                </div>
+            </div>            
+        </div>    
+        
+        <div class="row">
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label class="control-label" translate="gpwebApp.produto.vlReal" for="field_vlReal">Valor Real</label>
+                    <input type="number" class="form-control" name="vlReal" id="field_vlReal"
+                            ng-model="vm.produto.vlReal"
+                             />
+                </div>    
+            </div>
+
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label class="control-label" translate="gpwebApp.produto.vlEstoque" for="field_vlEstoque">Valor Estoque</label>
+                    <input type="number" class="form-control" name="vlEstoque" id="field_vlEstoque"
+                            ng-model="vm.produto.vlEstoque"
+                             />
+                </div>    
+            </div>
+            
+            <div class="col-md-8">
+                <div class="form-group">
+                    <label class="control-label" translate="gpwebApp.produto.dsInformacoes" for="field_dsInformacoes">Informações</label>
+                    <input type="text" class="form-control text-uppercase" name="dsInformacoes" id="field_dsInformacoes"
+                            ng-model="vm.produto.dsInformacoes"
+                            ng-maxlength="200" />
+                    <div ng-show="editForm.dsInformacoes.$invalid">
+                        <p class="help-block"
+                            ng-show="editForm.dsInformacoes.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="200">
+                            Este campo não pode ter mais que 200 caracteres.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>        
+        
+        <div class="row select2-padding-bottom">
+            <div class="col-md-6">
+                <!-- Diretiva Grupo-->
+                <div class="form-group">
+                    <label class="control-label" translate="gpwebApp.produto.grupo">
+                        Grupo
+                    </label>                   
+                    <ourselect id-select="field_entidade1" ng-model="vm.produto.grupo" 
+                        entity-field-name="nmGrupo" entity-field-id="id" entity-url="grupos">
+                    </ourselect>
+                    <select class="js-data-example-ajax" id="field_entidade1" style="width: 100%">
+                        <option value="" selected="selected"></option>
+                    </select>                   
+                    <div class="select2-label">
+                        <span>{{vm.produto.grupo.id + " - "}}  {{vm.produto.grupo.nmGrupo}} 
+                            <a class="select2-btn pull-right"	ng-click="vm.produto.grupo = null">
+                                <span class="mdi mdi-close-octagon"></span>&nbsp;
+                            </a>
+                        </span>
+                    </div>                  
+                </div>
+            </div>
+            <div class="col-md-6">
+                <!-- Diretiva SubGrupo-->                
+                <div class="form-group">
+                    <label class="control-label" translate="gpwebApp.produto.subgrupo">
+                        Subgrupo
+                    </label>                   
+                    <ourselect id-select="field_entidade2" ng-model="vm.produto.subgrupo" 
+                        entity-field-name="nmSubgrupo" entity-field-id="id" entity-url="subgrupos">
+                    </ourselect>
+                    <select class="js-data-example-ajax" id="field_entidade2" style="width: 100%">
+                        <option value="" selected="selected"></option>
+                    </select>                   
+                    <div class="select2-label">
+                        <span>{{vm.produto.subgrupo.id + " - "}}  {{vm.produto.subgrupo.nmSubgrupo}} 
+                            <a class="select2-btn pull-right"	ng-click="vm.produto.subgrupo = null">
+                                <span class="mdi mdi-close-octagon"></span>&nbsp;
+                            </a>
+                        </span>
+                    </div>                  
+                </div>
+            </div>
+        </div>  
+		
+		<div class="row select2-padding-bottom">
+            <div class="col-md-6">
+                <!-- Diretiva Marca-->
+                <div class="form-group">
+                    <label class="control-label" translate="gpwebApp.produto.marca">
+                        Marca
+                    </label>                   
+                    <ourselect id-select="field_entidade3" ng-model="vm.produto.marca" 
+                        entity-field-name="nmFabricante" entity-field-id="id" entity-url="marcas">
+                    </ourselect>
+                    <select class="js-data-example-ajax" id="field_entidade3" style="width: 100%">
+                        <option value="" selected="selected"></option>
+                    </select>                   
+                    <div class="select2-label">
+                        <span>{{vm.produto.marca.id + " - "}}  {{vm.produto.marca.nmFabricante}} 
+                            <a class="select2-btn pull-right"	ng-click="vm.produto.marca = null">
+                                <span class="mdi mdi-close-octagon"></span>&nbsp;
+                            </a>
+                        </span>
+                    </div>                  
+                </div>                
+            </div>
+		    <div class="col-md-6">
+		        <!-- Diretiva Unidade-->
+                <div class="form-group">
+                    <label class="control-label" translate="gpwebApp.produto.unidade">
+                        Unidade
+                    </label>                   
+                    <ourselect id-select="field_entidade4" ng-model="vm.produto.unidade" 
+                        entity-field-name="dsUnidade" entity-field-id="id" entity-url="unidades">
+                    </ourselect>
+                    <select class="js-data-example-ajax" id="field_entidade4" style="width: 100%">
+                        <option value="" selected="selected"></option>
+                    </select>                   
+                    <div class="select2-label">
+                        <span>{{vm.produto.unidade.id + " - "}}  {{vm.produto.unidade.dsUnidade}} 
+                            <a class="select2-btn pull-right"	ng-click="vm.produto.unidade = null">
+                                <span class="mdi mdi-close-octagon"></span>&nbsp;
+                            </a>
+                        </span>
+                    </div>                  
+                </div>                 
+		    </div>
+		</div>
+        <div class="row">
+            <div class="col-md-6">
+		        <!-- Diretiva ClassProduto-->
+                <div class="form-group">
+                    <label class="control-label" translate="gpwebApp.produto.classProduto">
+                        Unidade
+                    </label>                   
+                    <ourselect id-select="field_entidade5" ng-model="vm.produto.classProduto" 
+                        entity-field-name="dsClassProduto" entity-field-id="cdClassProduto" entity-url="class-produtos">
+                    </ourselect>
+                    <select class="js-data-example-ajax" id="field_entidade5" style="width: 100%">
+                        <option value="" selected="selected"></option>
+                    </select>                   
+                    <div class="select2-label">
+                        <span>{{vm.produto.classProduto.cdClassProduto + " - "}}  {{vm.produto.classProduto.dsClassProduto}} 
+                            <a class="select2-btn pull-right"	ng-click="vm.produto.classProduto = null">
+                                <span class="mdi mdi-close-octagon"></span>&nbsp;
+                            </a>
+                        </span>
+                    </div>                  
+                </div>                
+		    </div>
+        </div> 
+        
+        <div class="form-group">
+            <div class="checkbox">                   
+                <label>
+                    <input type="checkbox" name="flBalanca" ng-model="vm.produto.flBalanca" />
+                    <span class="checkbox__label" translate="gpwebApp.produto.flBalanca">Balanca</span>
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="checkbox">                   
+                <label>
+                    <input type="checkbox" name="flSngpc" ng-model="vm.produto.flSngpc" />
+                    <span class="checkbox__label" translate="gpwebApp.produto.flSngpc">SNGPC</span>
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="checkbox">                   
+                <label>
+                    <input type="checkbox" name="flMedProlonga" ng-model="vm.produto.flMedProlonga" />
+                    <span class="checkbox__label" translate="gpwebApp.produto.flMedProlonga">Uso Prolongado</span>
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label class="control-label" translate="gpwebApp.produto.dsClassTerapeutica" for="field_dsClassTerapeutica">Classe Terapêutica</label>
+                    <input type="text" class="form-control" name="dsClassTerapeutica" id="field_dsClassTerapeutica"
+                            ng-model="vm.produto.dsClassTerapeutica"
+                            ng-maxlength="30" />
+                    <div ng-show="editForm.dsClassTerapeutica.$invalid">
+                        <p class="help-block"
+                            ng-show="editForm.dsClassTerapeutica.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="30">
+                            Este campo não pode ter mais que 30 caracteres.
+                        </p>
+                    </div>
+                </div>    
+            </div>            
+        </div>
+        <div class="form-group">
+            <div class="checkbox">                   
+                <label>
+                    <input type="checkbox" name="flInativo" ng-model="vm.produto.flInativo" />
+                    <span class="checkbox__label" translate="gpwebApp.produto.flInativo">Inativo</span>
+                </label>
+            </div>
+        </div>        
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
-            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        <button type="button" class="btn btn-default ripple" data-dismiss="modal" ng-click="vm.clear()">
+            <span translate="entity.action.cancel">Cancelar</span>
         </button>
-        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
-            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        <button type="submit" class="btn btn-success ripple ripple-light" ng-disabled="editForm.$invalid || vm.isSaving">
+            <span translate="entity.action.save">Salvar</span>
         </button>
     </div>
 </form>
