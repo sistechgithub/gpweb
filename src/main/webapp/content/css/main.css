@@ -661,6 +661,43 @@ Componente Busca
   }
 }
 
+/* ==========================================================================
+Componente Thumbnail Imagem
+========================================================================== */
+.container-thumbnail{
+    min-height:248px; 
+    max-height:248px;
+}
+.image-thumbnail{
+    max-width: 180px; 
+    max-height:200px;
+}
+.btn-thumbnail{
+    border-radius: 0 !important;
+}
+
+/* ==========================================================================
+Componente Select2
+========================================================================== */
+.select2-padding-bottom{
+    padding-bottom: 10px;
+}
+.select2-label    {
+    max-width: 87%;
+    background: transparent;
+    position: relative;
+    margin-top: -29px;
+    margin-left: 9px;
+}
+
+.select2-btn{
+    color: #888;
+    line-height: 26px;
+}
+.select2-btn:hover{
+    color: #888; 
+}
+
 /*
 ===========================================================================
 Página de Visualização de Itens Cadastrados
@@ -900,3 +937,44 @@ Página Classificação do Produto
   min-width: 152px;
   max-width: 152px;
 }
+
+/* ===========================================================================
+Página Catalogo de Produto
+=========================================================================== */
+.col-catalogo-codigo{
+  min-width: 99px;
+  max-width: 99px;
+}
+.col-catalogo-codigo-produto{
+  min-width: 165px;
+  max-width: 165px;
+}
+.col-catalogo-codigoBarras{
+  min-width: 168px;
+  max-width: 168px;
+}
+.col-catalogo-imagem{
+  min-width: 100px;
+  max-width: 100px;
+}
+.col-catalogo-nome{
+  min-width: 736px;
+  max-width: 736px;
+}
+.col-catalogo-marca{
+  min-width: 90px;
+  max-width: 90px;
+}
+.col-catalogo-valorEstoque{
+  min-width: 142px;
+  max-width: 142px;
+}
+.col-catalogo-inativo{
+  min-width: 98px;
+  max-width: 98px;
+}
+.col-catalogo-acoes{
+  min-width: 152px;
+  max-width: 152px;
+}
+

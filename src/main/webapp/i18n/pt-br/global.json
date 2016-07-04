@@ -94,7 +94,7 @@
     "entity": {
         "action": {
             "addblob": "Adicionar blob",
-            "addimage": "Adicionar imagem",
+            "addimage": "Imagem",
             "back": "Voltar",
             "cancel": "Cancelar",
             "delete": "Excluir",
