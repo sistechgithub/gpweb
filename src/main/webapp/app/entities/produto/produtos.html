@@ -35,33 +35,118 @@
     </div>
     
     <div class="box-body">
+        <div class="row">
+            <div class="col-md-4" ng-repeat="produto in vm.produtos track by produto.id">
+                <div class="box-produto">                                                   
+                    <div class="box-body-produto">    
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <div class="box-img-produto">
+                                    <a ng-if="produto.blImagem" ng-click="vm.openFile(produto.blImagemContentType, produto.blImagem)">
+                                        <img class="img-responsive" data-ng-src="{{'data:' + produto.blImagemContentType + ';base64,' + produto.blImagem}}"/>
+                                    </a>
+                                </div>    
+                            </div>
+                            <div class="row col-xs-8 col-xs-push-1 no-padding-right">
+                                <div class="no-padding-left">
+                                    <div>
+                                        {{produto.nmProduto}}    
+                                    </div>
+                                </div>    
+                            </div>
+                            
+                            <div class="row col-xs-8 col-xs-push-1 no-padding-right padding-top-10">                                
+                                <div class="col-xs-6 no-padding-left">
+                                    <div>
+                                        <strong translate="gpwebApp.produto.cdProduto">Código Produto</strong>
+                                    </div>
+                                    {{produto.cdProduto}}
+
+                                </div>
+                                <div class="col-xs-6 no-padding">
+                                    <div>
+                                        <strong translate="gpwebApp.produto.cdBarras">Código de Barras</strong>
+                                    </div> 
+                                    {{produto.cdBarras}}   
+                                </div>
+                            </div>
+                            
+                            <div class="row col-xs-8 col-xs-push-1 no-padding-right padding-top-10">
+                                <div class="col-xs-6 no-padding-left">
+                                    <div>
+                                        <strong translate="gpwebApp.produto.marca">Marca</strong>
+                                    </div>
+                                    {{produto.marca.nmFabricante}}
+                                </div>
+                                <div class="col-xs-6 no-padding">
+                                    <div>
+                                        <strong translate="gpwebApp.produto.vlReal">Valor Real</strong>
+                                    </div>
+                                    {{produto.vlReal}}                             
+                                </div>
+                            </div>                               
+                        </div>
+                    </div><!-- /.box-body-produto -->
+                                        
+                    <div class="box-footer-produto">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <div class="text-center pull-left">
+                                    <div>
+                                        <strong translate="gpwebApp.produto.flInativo"> Inativo</strong>
+                                    </div>
+                                    <div>
+                                        <i class="mdi"
+                                            ng-class="{'mdi-check text-success': produto.flInativo,
+                                            'mdi-close text-danger': !produto.flInativo}">
+                                        </i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-8"> 
+                                <div class="pull-right">
+                                    <button type="submit"
+                                            ui-sref="produto-detail({id:produto.id})"
+                                            class="btn btn-success btn-sm ripple ripple-light"
+                                            data-toggle="tooltip" data-placement="top" title="Visualizar">
+                                        <span class="mdi mdi-eye"></span>
+                                    </button>
+                                    <button type="submit"
+                                            ui-sref="produto.edit({id:produto.id})"
+                                            class="btn btn-primary btn-sm ripple ripple-light"
+                                            data-toggle="tooltip" data-placement="top" title="Editar">
+                                        <span class="mdi mdi-pencil"></span>
+                                    </button>
+                                    <button type="submit"
+                                            ui-sref="produto.delete({id:produto.id})"
+                                            class="btn btn-danger btn-sm ripple ripple-light"
+                                            data-toggle="tooltip" data-placement="top" title="Deletar">
+                                        <span class="mdi mdi-delete"></span>
+                                    </button>
+                                </div>                            
+                            </div>    
+                        </div>                                                                        
+                    </div><!-- /.box-footer-produto -->
+                    
+                    <div class="clearfix"></div>
+                                 
+                </div><!-- /.box-produto -->                
+            </div><!-- /.col-md-4 -->                        
+        </div><!-- /.row -->       
+    </div><!-- /.box-body -->
+    
+    <!-- <div class="box-body">
         <div class="table-responsive">
             <table class="jh-table table table-bordered table-hover">
                 <thead>
                     <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
                         <th jh-sort-by="id" class="col-md-1 col-catalogo-codigo"><span translate="global.field.id">Código</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>
                         <th jh-sort-by="cdProduto" class="col-md-1 col-catalogo-codigo-produto"><span translate="gpwebApp.produto.cdProduto">Código Produto</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>
-                        <!-- <th jh-sort-by="cdBarras" class="col-md-1 col-catalogo-codigoBarras"><span translate="gpwebApp.produto.cdBarras">Código de Barras</span> <span class="glyphicon glyphicon-sort pull-right"></span></th> -->
+                        <th jh-sort-by="cdBarras" class="col-md-1 col-catalogo-codigoBarras"><span translate="gpwebApp.produto.cdBarras">Código de Barras</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>
                         <th jh-sort-by="blImagem" class="col-md-1 col-catalogo-imagem"><span translate="gpwebApp.produto.blImagem">Imagem</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>
                         <th jh-sort-by="nmProduto"><span translate="gpwebApp.produto.nmProduto">Nome</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>
-                        <!-- <th jh-sort-by="marca.id" class="col-md-1 col-catalogo-marca"><span translate="gpwebApp.produto.marca">Marca</span> <span class="glyphicon glyphicon-sort pull-right"></span></th> -->
-                        <!-- <th jh-sort-by="cdNcm"><span translate="gpwebApp.produto.cdNcm">Código NCM</span> <span class="glyphicon glyphicon-sort"></span></th> -->
-                        <!-- <th jh-sort-by="cdEan"><span translate="gpwebApp.produto.cdEan">Código EAN</span> <span class="glyphicon glyphicon-sort"></span></th>
-                        <th jh-sort-by="cdAnp"><span translate="gpwebApp.produto.cdAnp">Cd Anp</span> <span class="glyphicon glyphicon-sort"></span></th>
-                        <th jh-sort-by="dsAnp"><span translate="gpwebApp.produto.dsAnp">Descrição ANP</span> <span class="glyphicon glyphicon-sort"></span></th>
-                        <th jh-sort-by="cdContaContabil"><span translate="gpwebApp.produto.cdContaContabil">Código Conta Contábil</span> <span class="glyphicon glyphicon-sort"></span></th>
-                        <th jh-sort-by="materiaPrima"><span translate="gpwebApp.produto.materiaPrima">Matéria Prima</span> <span class="glyphicon glyphicon-sort"></span></th>
-                        <th jh-sort-by="flBalanca"><span translate="gpwebApp.produto.flBalanca">Balança</span> <span class="glyphicon glyphicon-sort"></span></th> -->
-                        <!-- <th jh-sort-by="flSngpc"><span translate="gpwebApp.produto.flSngpc">SNGPC</span> <span class="glyphicon glyphicon-sort"></span></th>
-                        <th jh-sort-by="flMedProlonga"><span translate="gpwebApp.produto.flMedProlonga">Uso Prolongado</span> <span class="glyphicon glyphicon-sort"></span></th>
-                        <th jh-sort-by="dsClassTerapeutica"><span translate="gpwebApp.produto.dsClassTerapeutica">Classe Terapêutica</span> <span class="glyphicon glyphicon-sort"></span></th> -->
-                        <!-- <th jh-sort-by="vlReal"><span translate="gpwebApp.produto.vlReal">Valor Real</span> <span class="glyphicon glyphicon-sort"></span></th> -->
-                        <th jh-sort-by="vlEstoque" class="col-md-1 col-catalogo-valorEstoque"><span translate="gpwebApp.produto.vlEstoque">Valor Estoque</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>
-                        <!-- <th jh-sort-by="dsInformacoes"><span translate="gpwebApp.produto.dsInformacoes">Informações</span> <span class="glyphicon glyphicon-sort"></span></th> -->
-                        <!-- <th jh-sort-by="grupo.id"><span translate="gpwebApp.produto.grupo">Grupo</span> <span class="glyphicon glyphicon-sort"></span></th> -->
-                        <!-- <th jh-sort-by="unidade.id"><span translate="gpwebApp.produto.unidade">Unidade</span> <span class="glyphicon glyphicon-sort"></span></th> -->
-                        <!-- <th jh-sort-by="classProduto.id"><span translate="gpwebApp.produto.classProduto">Classificação</span> <span class="glyphicon glyphicon-sort"></span></th> -->
-                        <!-- <th jh-sort-by="subgrupo.id"><span translate="gpwebApp.produto.subgrupo">Subgrupo</span> <span class="glyphicon glyphicon-sort"></span></th> -->
+                        <th jh-sort-by="marca.id" class="col-md-1 col-catalogo-marca"><span translate="gpwebApp.produto.marca">Marca</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>
+                        <th jh-sort-by="vlReal"><span translate="gpwebApp.produto.vlReal">Valor Real</span> <span class="glyphicon glyphicon-sort"></span></th>
                         <th jh-sort-by="flInativo" class="col-md-1 col-catalogo-inativo"><span translate="gpwebApp.produto.flInativo"> Inativo</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>
                         <th class="col-md-1 col-catalogo-acoes text-center"><span translate="global.field.actions">Ações</span></th>
                     </tr>
@@ -70,42 +155,16 @@
                     <tr ng-repeat="produto in vm.produtos track by produto.id">
                         <td><a ui-sref="produto-detail({id:produto.id})">{{produto.id}}</a></td>
                         <td>{{produto.cdProduto}}</td>
-                        <!-- <td>{{produto.cdBarras}}</td> -->
+                        <td>{{produto.cdBarras}}</td>
                         <td class="text-center">
                             <a ng-if="produto.blImagem" ng-click="vm.openFile(produto.blImagemContentType, produto.blImagem)">
                                 <img data-ng-src="{{'data:' + produto.blImagemContentType + ';base64,' + produto.blImagem}}" style="max-height: 30px;"/>
                             </a>
-                            <!-- <span ng-if="produto.blImagem">{{produto.blImagemContentType}}, {{vm.byteSize(produto.blImagem)}}</span> -->
                         </td>  
                         <td>{{produto.nmProduto}}</td>
-                        <!-- <td>
+                        <td>
                             <a ui-sref="marca-detail({id:produto.marca.id})">{{produto.marca.nmFabricante}}</a>
-                        </td> -->
-                        <!-- <td>{{produto.cdNcm}}</td> -->
-                        <!-- <td>{{produto.cdEan}}</td>
-                        <td>{{produto.cdAnp}}</td>
-                        <td>{{produto.dsAnp}}</td>
-                        <td>{{produto.cdContaContabil}}</td>
-                        <td>{{produto.materiaPrima}}</td>
-                        <td>{{produto.flBalanca}}</td> -->                        
-                        <!-- <td>{{produto.flSngpc}}</td>
-                        <td>{{produto.flMedProlonga}}</td>
-                        <td>{{produto.dsClassTerapeutica}}</td> -->
-                        <!-- <td>{{produto.vlReal}}</td> -->
-                        <td class="text-right">{{produto.vlEstoque}}</td>
-                        <!-- <td>{{produto.dsInformacoes}}</td> -->
-                        <!-- <td>
-                            <a ui-sref="grupo-detail({id:produto.grupo.id})">{{produto.grupo.id}}</a>
-                        </td> -->
-                        <!-- <td>
-                            <a ui-sref="unidade-detail({id:produto.unidade.id})">{{produto.unidade.id}}</a>
-                        </td> -->
-                        <!-- <td>
-                            <a ui-sref="class-produto-detail({id:produto.classProduto.id})">{{produto.classProduto.cdClassProduto}}</a>
-                        </td> -->
-                        <!-- <td>
-                            <a ui-sref="subgrupo-detail({id:produto.subgrupo.id})">{{produto.subgrupo.id}}</a>
-                        </td>  -->                        
+                        </td>                      
                         <td class="text-center">
                             <i class="mdi"
                                 ng-class="{'mdi-check text-success': produto.flInativo,
@@ -137,11 +196,13 @@
                     </tr>
                 </tbody>
             </table>
-        </div><!-- /.table-responsive -->
-    </div><!-- /.box-body -->
+        </div>/.table-responsive
+    </div> -->
     
     <div class="text-center">
         <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
         <uib-pagination class="pagination-sm" total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
     </div><!-- /.pagination -->
 </div>
+
+
