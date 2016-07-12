@@ -1,7 +1,11 @@
-body {
-    background: #fafafa;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #333;
+/* ==========================================================================
+Angular Loading Bar
+========================================================================== */
+#loading-bar .bar {
+  background: #87ceff !important;
+}
+#loading-bar-spinner {
+  display: none !important;
 }
 
 /* ==========================================================================
@@ -203,41 +207,113 @@ Custom alerts for notification
     background: none;
     border: none;
     font: inherit;
+    font-family: "Roboto";
+    font-size: 15px;
+    font-weight: 400;
     color: inherit;
-    padding: 0;
-    margin: 0;
+    padding: 0px 0px 20px 0px;
+    margin: 0; 
 }
-
 .alert .popover pre {
     font-size: 10px;
 }
-
 .alerts .toast {
     position: fixed;
     width: 100%;
     z-index: 998;
 }
-
 .alerts .toast.left {
     left: 5px;
 }
-
 .alerts .toast.right {
     right: 5px;
 }
-
 .alerts .toast.top {
     top: 55px;
 }
-
 .alerts .toast.bottom {
     bottom: 55px;
 }
-
 @media screen and (min-width: 480px) {
     .alerts .toast {
-        width: 50%;
+        width: 50%;       
     }
+}
+.alerts .toast .alert {
+    font-family: "Material Design Icons";
+    color: #fff;
+    padding: 25px 25px 5px 25px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+}
+.alerts .toast .alert-dismissable .close, .alerts .toast .alert-dismissible .close {
+    position: relative;
+    top: -6px;
+    right: -7px;
+    color: inherit;
+}
+.alerts .toast .alert-success {
+    background-color: rgba(0,121,107,0.9);
+}
+.alerts .toast .alert-success:hover {
+    background-color: rgba(0,121,107,1);
+}
+.alerts .toast .alert-success:before {
+    content: "\f12c";
+    float: left;
+    font-size: 27px;
+    line-height: 1;
+    position: relative;
+    top: -4px;
+    left: -9px;
+}
+.alerts .toast .alert-info {
+    background-color: rgba(25,118,210,0.9);
+}
+.alerts .toast .alert-info:hover {
+    background-color: rgba(25,118,210,1);
+}
+.alerts .toast .alert-info:before {
+    content: "\f2fc";
+    float: left;
+    font-size: 27px;
+    line-height: 1;
+    position: relative;
+    top: -4px;
+    left: -9px;
+}
+.alerts .toast .alert-warning {
+    background-color: rgba(255,160,0,0.9);
+}
+.alerts .toast .alert-warning:hover {
+    background-color: rgba(255,160,0,1);
+}
+.alerts .toast .alert-warning:before {
+    content: "\f028";
+    float: left;
+    font-size: 27px;
+    line-height: 1;
+    position: relative;
+    top: -4px;
+    left: -9px;
+}
+.alerts .toast .alert-danger {
+    background-color: rgba(211,47,47,0.9);
+}
+.alerts .toast .alert-danger:hover {
+    background-color: rgba(211,47,47,1);
+}
+.alerts .toast .alert-danger:before {
+    content: "\f026";
+    float: left;
+    font-size: 27px;
+    line-height: 1;
+    position: relative;
+    top: -4px;
+    left: -9px;
 }
 
 /* ==========================================================================
@@ -1010,7 +1086,7 @@ Página Catalogo de Produto Blocos
   width: 100%;
   background: #fafafa;    
   border: 1px solid #d7d7d7;
-  padding: 15px;
+  padding: 13px;
   margin-bottom: 20px;
   min-height: 235px; 
   max-height: 235px;
@@ -1027,7 +1103,7 @@ Página Catalogo de Produto Blocos
   border: 0px solid #d7d7d7;
 }
 .box-body-produto{
-  font-size: 0.857em; /*12px*/
+  font-size: 0.929em; /*13px*/
   word-wrap: break-word;
   margin-top: 5px;
   min-height: 142px;
