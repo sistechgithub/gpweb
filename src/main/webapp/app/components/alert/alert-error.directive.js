@@ -29,7 +29,7 @@
                         type: 'danger',
                         msg: key,
                         params: data,
-                        timeout: 5000,
+                        timeout: 5500,
                         toast: AlertService.isToast(),
                         scoped: true
                     },
