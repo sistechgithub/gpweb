@@ -31,7 +31,8 @@
                         $translatePartialLoader.addPart('login');
                         return $translate.refresh();
                     }]
-                }
+                },
+                backdrop: 'static'
             });
             modalInstance.result.then(
                 resetModal,

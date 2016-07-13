@@ -33,6 +33,7 @@
             collapseNavbar();
             Auth.logout();
             $state.go('home');
+            LoginService.open();
         }
 
         function toggleNavbar() {

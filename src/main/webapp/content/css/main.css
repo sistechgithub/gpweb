@@ -420,7 +420,6 @@ ui bootstrap tweaks
 }
 
 
-
 /* jhipster-needle-css-add-main JHipster will add new css style */
 
 
@@ -447,6 +446,16 @@ Paleta de Cores
 .bg-danger{
   background: #d32f2f !important;
  }
+
+/* ==========================================================================
+Logomarca da sistech
+========================================================================== */
+.sistech-logo {
+    width: 347px;
+    height: 230px;
+    background: url("../images/logo.svg") no-repeat center;
+    background-size: contain;
+}
 
 /* ==========================================================================
 Icones Material Design
@@ -574,11 +583,20 @@ Navbar
  /* ==========================================================================
 Sidebar
 =========================================================================== */
-.sidebar-mini.sidebar-collapse .logo-minisidebar-hidden {
+.sistech-logo-sidebar {
+    width: 216px;
+    height: 97px;
+    background: url("../images/logo.svg") no-repeat;
+    background-size: contain;
+    margin: 5px 0px 0px 12px;
+}
+.sidebar-mini.sidebar-collapse .sistech-logo-sidebar{
   display: none;
 }
-.logo-sidebar{
-  padding: 5px 2px 20px 0px
+@media (max-width: 768px) {
+    .sidebar-mini.sidebar-collapse .sistech-logo-sidebar{
+      display: inline-block;
+    }
 }
  /* ==========================================================================
 Login Dashboard
