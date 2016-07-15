@@ -36,5 +36,18 @@
     toggleFullScreen();
   });
 
+/*================================================================================
+  Item Name: Sidebar Offcanvas
+================================================================================*/
+
+//Fecha a sidebar ao clicar ou tocar fora da mesma na versão mobile.
+function hideOffcanvas($element){
+    $element.removeClass('sidebar-open');
+}    
+$('html, body').on('click', function(e){
+    if(this === e.target)
+    hideOffcanvas($('body'));
+});
+
 
   

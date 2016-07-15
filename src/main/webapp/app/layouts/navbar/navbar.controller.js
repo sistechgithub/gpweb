@@ -45,11 +45,11 @@
         }
         
         $ocLazyLoad.load([{
-          files: ['content/js/AdminLTE-navbar.js'],
-          cache: false
+            files: ['content/js/AdminLTE-navbar.js'],
+            cache: false
         },{
-          files: ['content/js/fullscreen.js'],
-          cache: false
+            files: ['content/js/App.js'],
+            cache: false
         }]);
 
     }
