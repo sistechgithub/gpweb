@@ -55,16 +55,16 @@
                         <td><a ui-sref="promocao-detail({id:promocao.id})">{{promocao.id}}</a></td>
                         <td class="text-uppercase">{{promocao.dsPromocao}}</td>
                         <td>
-                            <span ng-show="promocao.dtVencimento && (promocao.nnTipo == 1)">{{promocao.dtVencimento | date:'dd/MM/yyyy'}}</span>
-                            <div ng-show="promocao.dtVencimento && (promocao.nnTipo < 1) || (promocao.nnTipo >= 2)"> - </div>
+                            <span ng-show="promocao.nnTipo == 1">{{promocao.dtVencimento | date:'dd/MM/yyyy'}}</span>
+                            <div ng-show="promocao.nnTipo != 1"> - </div>
                         </td>
                         <td>
-                            <span ng-show="promocao.nnDiaData && (promocao.nnTipo == 2)">{{promocao.nnDiaData}}</span>
-                            <div ng-show="promocao.dtVencimento && (promocao.nnTipo < 2) || (promocao.nnTipo >= 3)"> - </div>
+                            <span ng-show="promocao.nnTipo == 2">{{promocao.nnDiaData}}</span>
+                            <div ng-show="promocao.nnTipo != 2"> - </div>
                         </td>
                         <td class="text-uppercase">
-                            <span ng-show="promocao.nnDiaSemana && (promocao.nnTipo == 3)">{{promocao.nnDiaSemana}}</span>
-                            <div ng-show="promocao.dtVencimento && (promocao.nnTipo < 3) || (promocao.nnTipo >= 4)"> - </div>
+                            <span ng-show="promocao.nnTipo == 3">{{promocao.nnDiaSemana}}</span>
+                            <div ng-show="promocao.nnTipo != 3"> - </div>
                         </td>
                         <td>{{promocao.vlPromocao}}</td>                        
                         <td class="text-center">
