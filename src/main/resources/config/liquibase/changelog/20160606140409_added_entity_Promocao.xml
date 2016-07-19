@@ -33,7 +33,7 @@
                 <constraints nullable="true" />
             </column>
             
-            <column name="nn_dia_semana" type="integer">
+            <column name="nn_dia_semana" type="varchar(8)">
                 <constraints nullable="true" />
             </column>
             
