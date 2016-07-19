@@ -2,26 +2,26 @@
     "gpwebApp": {
         "promocao" : {
             "home": {
-                "title": "Promocaos",
-                "createLabel": "Criar novo Promocao",
-                "createOrEditLabel": "Criar ou editar Promocao",
-                "search": "Pesquisar por Promocao"
+                "title": "Promoções",
+                "createLabel": "Adicionar",
+                "createOrEditLabel": "Criar ou editar Promoção",
+                "search": "Pesquisar"
             },
-            "created": "Um novo Promocao é criado com o identificador {{ param }}",
-            "updated": "Um Promocao é atualizado com o identificador {{ param }}",
-            "deleted": "Um Promocao é deletado com o identificador {{ param }}",
+            "created": "Uma nova Promoção foi criada com o código {{ param }}",
+            "updated": "A Promoção {{ param }} foi atualizada com sucesso!",
+            "deleted": "A Promoção {{ param }} foi deletada com sucesso!",
             "delete": {
-                "question": "Tem certeza de que deseja excluir Promocao {{ id }}?"
+                "question": "Tem certeza de que deseja excluir a Promoção {{ id }}?"
             },
             "detail": {
-                "title": "Promocao"
+                "title": "Promoção"
             },
-            "dsPromocao": "Ds Promocao",
-            "dtVencimento": "Dt Vencimento",
-            "nnDiaData": "Nn Dia Data",
-            "nnDiaSemana": "Nn Dia Semana",
-            "flInativo": "Fl Inativo",
-            "vlPromocao": "Vl Promocao",            
+            "dsPromocao": "Nome",
+            "dtVencimento": "Até",
+            "nnDiaData": "Dia",
+            "nnDiaSemana":"Em",
+            "vlPromocao": "Desconto (%)",
+            "flInativo": "Inativo",
             "nnTipo": "Nn Tipo"
         }
     }

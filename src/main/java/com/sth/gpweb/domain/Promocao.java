@@ -35,7 +35,7 @@ public class Promocao implements Serializable {
     private Integer nnDiaData;
 
     @Column(name = "nn_dia_semana")
-    private Integer nnDiaSemana;
+    private String nnDiaSemana;
 
     @Column(name = "fl_inativo")
     private Boolean flInativo;
@@ -78,11 +78,11 @@ public class Promocao implements Serializable {
         this.nnDiaData = nnDiaData;
     }
 
-    public Integer getNnDiaSemana() {
+    public String getNnDiaSemana() {
         return nnDiaSemana;
     }
 
-    public void setNnDiaSemana(Integer nnDiaSemana) {
+    public void setNnDiaSemana(String nnDiaSemana) {
         this.nnDiaSemana = nnDiaSemana;
     }
 
