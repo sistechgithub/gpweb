@@ -2,26 +2,26 @@
     "gpwebApp": {
         "promocao" : {
             "home": {
-                "title": "Promocaos",
-                "createLabel": "Create a new Promocao",
-                "createOrEditLabel": "Create or edit a Promocao",
-                "search": "Search for Promocao"
+                "title": "Promotions",
+                "createLabel": "New",
+                "createOrEditLabel": "Create or edit a Promotion",
+                "search": "Search"
             },
-            "created": "A new Promocao is created with identifier {{ param }}",
-            "updated": "A Promocao is updated with identifier {{ param }}",
-            "deleted": "A Promocao is deleted with identifier {{ param }}",
+            "created": "A new Promotion is created with identifier {{ param }}",
+            "updated": "The Promotion {{ param }} has been updated successfully",
+            "deleted": "The Promotion {{ param }} has been deleted successfully",
             "delete": {
-                "question": "Are you sure you want to delete Promocao {{ id }}?"
+                "question": "Are you sure you want to delete Promotion {{ id }}?"
             },
             "detail": {
-                "title": "Promocao"
+                "title": "Promotion"
             },
-            "dsPromocao": "Ds Promocao",
-            "dtVencimento": "Dt Vencimento",
-            "nnDiaData": "Nn Dia Data",
-            "nnDiaSemana": "Nn Dia Semana",
-            "flInativo": "Fl Inativo",
-            "vlPromocao": "Vl Promocao",         
+            "dsPromocao": "Name",
+            "dtVencimento": "To",
+            "nnDiaData": "Day",
+            "nnDiaSemana": "In",
+            "vlPromocao": "Discount",
+            "flInativo": "Inactive",         
             "nnTipo": "Nn Tipo"
         }
     }

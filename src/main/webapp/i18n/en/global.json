@@ -13,10 +13,10 @@
                 "payments": "Payments",
                 "grupo": "Group",
                 "subgrupo": "Subgroup",
-                "promocao": "Promocao",
-                "filial": "Filial",
+                "promocao": "Promotion",
+                "filial": "Branch",
                 "marca": "Brand",
-                "unidade": "Unidade",
+                "unidade": "Unit",
                 "catalogo": "Catalog",
                 "classProduto": "Classification",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
