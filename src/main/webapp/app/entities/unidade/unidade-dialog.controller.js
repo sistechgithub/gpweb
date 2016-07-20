@@ -24,9 +24,18 @@
         var onSaveError = function () {
             vm.isSaving = false;
         };
+        
+        var onBeforeSaveOrUpdate = function(){
+            //Setting to uppercase
+        	vm.unidade.dsUnidade = angular.uppercase(vm.unidade.dsUnidade);
+            vm.unidade.sgUnidade = angular.uppercase(vm.unidade.sgUnidade);
+        };
 
         vm.save = function () {
             vm.isSaving = true;
+            
+            onBeforeSaveOrUpdate(); //validations rules
+            
             if (vm.unidade.id !== null) {
                 Unidade.update(vm.unidade, onSaveSuccess, onSaveError);
             } else {
