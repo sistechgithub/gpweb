@@ -24,9 +24,19 @@
         var onSaveError = function () {
             vm.isSaving = false;
         };
+        
+        var onBeforeSaveOrUpdate = function(){            
+            //Setting to uppercase
+          	vm.marca.nmFabricante = angular.uppercase(vm.marca.nmFabricante);
+            vm.marca.nmFantasia = angular.uppercase(vm.marca.nmFantasia);
+            vm.marca.cdCgf = angular.uppercase(vm.marca.cdCgf);
+        }; 
 
         vm.save = function () {
             vm.isSaving = true;
+            
+            onBeforeSaveOrUpdate(); //validations rules
+            
             if (vm.marca.id !== null) {
                 Marca.update(vm.marca, onSaveSuccess, onSaveError);
             } else {

@@ -2,6 +2,7 @@ package com.sth.gpweb.web.rest;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -58,10 +59,13 @@ public class SubgrupoResource {
         if (subgrupo.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("subgrupo", "idexists", "A new subgrupo cannot already have an ID")).body(null);
         }
+        
+        subgrupo.setDtOperacao(LocalDate.now()); //Always use the operation date from server
+        
         Subgrupo result = subgrupoService.save(subgrupo);
         return ResponseEntity.created(new URI("/api/subgrupos/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert("subgrupo", result.getId().toString()))
-            .body(result);
+            .body(result);               
     }
 
     /**
@@ -82,6 +86,9 @@ public class SubgrupoResource {
         if (subgrupo.getId() == null) {
             return createSubgrupo(subgrupo);
         }
+        
+        subgrupo.setDtOperacao(LocalDate.now()); //Always use the operation date from server
+        
         Subgrupo result = subgrupoService.save(subgrupo);
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert("subgrupo", subgrupo.getId().toString()))

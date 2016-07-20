@@ -98,9 +98,9 @@
                                 dsComplemento: null,
                                 cdTel: null,
                                 cdFax: null,
-                                flInativo: null,
+                                flInativo: false,
                                 nmFantasia: null,
-                                vlComissao: null,
+                                vlComissao: 0.00,
                                 dtOperacao: null,                                
                                 id: null
                             };
