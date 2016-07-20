@@ -95,8 +95,8 @@
                                 dtVencimento: null,
                                 nnDiaData: null,
                                 nnDiaSemana: null,
-                                flInativo: null,
-                                vlPromocao: null,                                
+                                flInativo: false,
+                                vlPromocao: 0.00,                                
                                 nnTipo: null,
                                 id: null
                             };

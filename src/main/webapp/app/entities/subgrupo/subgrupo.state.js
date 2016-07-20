@@ -92,11 +92,11 @@
                         entity: function () {
                             return {
                                 nmSubgrupo: null,
-                                vlValor: null,
-                                vlCusto: null,
+                                vlValor: 0.00,
+                                vlCusto: 0.00,
                                 dtOperacao: null,
-                                flEnvio: null,
-                                nnNovo: null,
+                                flEnvio: false,
+                                nnNovo: 1,
                                 id: null
                             };
                         }

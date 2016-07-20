@@ -21,9 +21,16 @@
         function clear () {
             $uibModalInstance.dismiss('cancel');
         }
+        
+        var onBeforeSaveOrUpdate = function(){       	        	
+         	vm.classProduto.dsClassProduto = angular.uppercase(vm.classProduto.dsClassProduto); //Setting to uppercase
+        };
 
         function save () {
             vm.isSaving = true;
+            
+            onBeforeSaveOrUpdate(); //validations rules
+            
             if (vm.classProduto.id !== null) {
                 ClassProduto.update(vm.classProduto, onSaveSuccess, onSaveError);
             } else {
