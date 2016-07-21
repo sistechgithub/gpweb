@@ -130,7 +130,8 @@
         "userexists": "Usuário já existente!",
         "emailexists": "Este email já está cadastrado!",
         "idexists": "Código já cadastrado!",
-        "nmexists": "{{entityName}} já cadastrado(a)!"        
+        "nmexists": "{{entityName}} já cadastrado(a)!",
+        "sgexists": "Sigla já cadastrada!"
     },
     "footer": {
         "company": "Sistemas Empresariais",
