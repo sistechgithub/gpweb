@@ -130,7 +130,8 @@
         "userexists": "Login name already used!",
         "emailexists": "E-mail is already in use!",
         "idexists": "ID is already in use!",
-        "nmexists": "{{ entityName }} is already in use!"
+        "nmexists": "{{ entityName }} is already in use!",
+        "sgexists": "Initial is already in use!"
     },
     "footer": {
         "company": "Business Systems",
