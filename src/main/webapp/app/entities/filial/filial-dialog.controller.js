@@ -24,9 +24,23 @@
         var onSaveError = function () {
             vm.isSaving = false;
         };
+        
+        var onBeforeSaveOrUpdate = function(){
+            //Setting to uppercase
+        	vm.filial.nmFilial = angular.uppercase(vm.filial.nmFilial);
+            vm.filial.nmRazao = angular.uppercase(vm.filial.nmRazao);
+            vm.filial.cdCgf = angular.uppercase(vm.filial.cdCgf);
+            vm.filial.dsComplemento = angular.uppercase(vm.filial.dsComplemento);
+            vm.filial.dsPisCofins = angular.uppercase(vm.filial.dsPisCofins);
+            vm.filial.dsObs = angular.uppercase(vm.filial.dsObs);
+            vm.filial.dsSite = angular.uppercase(vm.filial.dsSite);          
+        };
 
         vm.save = function () {
             vm.isSaving = true;
+            
+            onBeforeSaveOrUpdate(); //validations rules
+            
             if (vm.filial.id !== null) {
                 Filial.update(vm.filial, onSaveSuccess, onSaveError);
             } else {
