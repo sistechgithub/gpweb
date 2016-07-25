@@ -542,6 +542,11 @@ Icones Material Design
     top: 2px;
     font-size: 26px;
 }
+.mdi-3x::before {
+    position: relative;
+    top: 4px;
+    font-size: 30px;
+}
 
 /* ==========================================================================
 Fieldset
@@ -836,14 +841,17 @@ Página de Visualização de Itens Cadastrados
     }
 }
 .btn-print{
-    margin-top: 10px;
+    margin-top: 16px;
 }
 .box-detail{
-    padding: 20px;
+    padding: 0 20px;
 }
-.border-detail{
-    border-left: 5px solid #31b0d5;
+.box-detail-divider{
+    margin: 20px 0;
+    border: 0;
+    border-top: 1px solid #eee;
 }
+
 /*
 ===========================================================================
 Página Unidades
@@ -1166,3 +1174,4 @@ Página Catalogo de Produtos - Blocos
   padding: 0;
   padding-top: 15px;
 }
+
