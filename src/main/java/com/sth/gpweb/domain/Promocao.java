@@ -25,7 +25,7 @@ public class Promocao implements Serializable {
 
     @NotNull
     @Size(min = 1, max = 30)
-    @Column(name = "ds_promocao", length = 30, nullable = false)
+    @Column(name = "ds_promocao", length = 30, nullable = false, unique = true)
     private String dsPromocao;
 
     @Column(name = "dt_vencimento")
@@ -35,16 +35,16 @@ public class Promocao implements Serializable {
     private Integer nnDiaData;
 
     @Column(name = "nn_dia_semana")
-    private Integer nnDiaSemana;
+    private String nnDiaSemana;
 
     @Column(name = "fl_inativo")
     private Boolean flInativo;
 
     @Column(name = "vl_promocao", precision=10, scale=2)
-    private BigDecimal vlPromocao;
+    private BigDecimal vlPromocao;    
 
-    @Column(name = "nn_pontos")
-    private Integer nnPontos;
+    @Column(name = "nn_tipo")
+    private Integer nnTipo;
 
     public Long getId() {
         return id;
@@ -78,11 +78,11 @@ public class Promocao implements Serializable {
         this.nnDiaData = nnDiaData;
     }
 
-    public Integer getNnDiaSemana() {
+    public String getNnDiaSemana() {
         return nnDiaSemana;
     }
 
-    public void setNnDiaSemana(Integer nnDiaSemana) {
+    public void setNnDiaSemana(String nnDiaSemana) {
         this.nnDiaSemana = nnDiaSemana;
     }
 
@@ -101,13 +101,13 @@ public class Promocao implements Serializable {
     public void setVlPromocao(BigDecimal vlPromocao) {
         this.vlPromocao = vlPromocao;
     }
-
-    public Integer getNnPontos() {
-        return nnPontos;
+    
+    public Integer getNnTipo() {
+        return nnTipo;
     }
 
-    public void setNnPontos(Integer nnPontos) {
-        this.nnPontos = nnPontos;
+    public void setNnTipo(Integer nnTipo) {
+        this.nnTipo = nnTipo;
     }
 
     @Override
@@ -139,8 +139,8 @@ public class Promocao implements Serializable {
             ", nnDiaData='" + nnDiaData + "'" +
             ", nnDiaSemana='" + nnDiaSemana + "'" +
             ", flInativo='" + flInativo + "'" +
-            ", vlPromocao='" + vlPromocao + "'" +
-            ", nnPontos='" + nnPontos + "'" +
+            ", vlPromocao='" + vlPromocao + "'" +     
+            ", nnTipo='" + nnTipo + "'" +
             '}';
     }
 }

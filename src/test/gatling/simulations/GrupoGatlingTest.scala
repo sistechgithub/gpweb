@@ -67,7 +67,7 @@ class GrupoGatlingTest extends Simulation {
             .exec(http("Create new grupo")
             .post("/api/grupos")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "nmGrupo":"SAMPLE_TEXT", "vlComissao":null, "vlDesconto":null, "flPromo":null, "flDesco":null, "dtPromo":"2020-01-01T00:00:00.000Z", "dtOperacao":"2020-01-01T00:00:00.000Z", "flSemContagem":null, "flEnvio":null, "nnNovo":"0", "nnDay":"0", "nnDayWeek":"SAMPLE_TEXT", "nnType":"0"}""")).asJSON
+            .body(StringBody("""{"id":null, "nmGrupo":"SAMPLE_TEXT", "vlComissao":null, "vlDesconto":null, "flPromo":null, "flDesco":null, "dtPromo":"2020-01-01T00:00:00.000Z", "dtOperacao":"2020-01-01T00:00:00.000Z", "flSemContagem":null, "flEnvio":null, "nnNovo":"0", "nnDia":"0", "nnDiaSemana":"SAMPLE_TEXT", "nnTipo":"0"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_grupo_url"))).exitHereIfFailed
             .pause(10)

@@ -3,42 +3,42 @@
         "produto" : {
             "home": {
                 "title": "Catálogos",
-                "createLabel": "Criar novo Catalogo",
-                "createOrEditLabel": "Criar ou editar Catalogo",
-                "search": "Pesquisar por Catalogo"
+                "createLabel": "Adicionar",
+                "createOrEditLabel": "Criar ou editar Produto",
+                "search": "Pesquisar"
             },
-            "created": "Um novo Catalogo é criado com o identificador {{ param }}",
-            "updated": "Um Catalogo é atualizado com o identificador {{ param }}",
-            "deleted": "Um Catalogo é deletado com o identificador {{ param }}",
+            "created": "Um novo Produto foi criado com o código {{ param }}",
+            "updated": "O Produto {{ param }} foi atualizado com sucesso!",
+            "deleted": "O Produto {{ param }} foi deletado com sucesso!",
             "delete": {
-                "question": "Tem certeza de que deseja excluir Catalogo {{ id }}?"
+                "question": "Tem certeza de que deseja excluir o Produto {{ id }}?"
             },
             "detail": {
-                "title": "Catalogo"
+                "title": "Catálogo"
             },
-            "cdProduto": "Cd Catalogo",
-            "cdBarras": "Cd Barras",
-            "nmProduto": "Nm Catalogo",
-            "cdNcm": "Cd Ncm",
-            "cdEan": "Cd Ean",
-            "cdAnp": "Cd Anp",
-            "dsAnp": "Ds Anp",
-            "cdContaContabil": "Cd Conta Contabil",
-            "materiaPrima": "Materia Prima",
-            "flBalanca": "Fl Balanca",
-            "flInativo": "Fl Inativo",
-            "flSngpc": "Fl Sngpc",
-            "flMedProlonga": "Fl Med Prolonga",
-            "dsClassTerapeutica": "Ds Class Terapeutica",
-            "vlReal": "Vl Real",
-            "vlEstoque": "Vl Estoque",
-            "dsInformacoes": "Ds Informacoes",
-            "blImagem": "Bl Imagem",
+            "blImagem": "Imagem",
+            "nmProduto": "Nome",
+            "cdProduto": "Código Produto",
+            "cdNcm": "Código NCM",
+            "cdBarras": "Código de Barras",       
+            "cdEan": "Código EAN",
+            "cdAnp": "Código ANP",
+            "dsAnp": "Descrição ANP",
+            "cdContaContabil": "Código Conta Contábil",
+            "materiaPrima": "Matéria Prima",
+            "vlReal": "Valor Real",
+            "vlEstoque": "Valor Estoque",
+            "dsInformacoes": "Informações",            
             "grupo": "Grupo",
+            "subgrupo": "Subgrupo",
             "marca": "Marca",
             "unidade": "Unidade",
-            "classProduto": "Classificação",
-            "subgrupo": "Subgrupo"
+            "classProduto": "Classificação",            
+            "flBalanca": "Balança",            
+            "flSngpc": "SNGPC",
+            "flMedProlonga": "Uso Prolongado",
+            "dsClassTerapeutica": "Classe Terapêutica",
+            "flInativo": "Inativo"
         }
     }
 }

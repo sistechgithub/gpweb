@@ -19,6 +19,7 @@ import javax.inject.Inject;
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -51,9 +52,17 @@ public class FilialResource {
     @Timed
     public ResponseEntity<Filial> createFilial(@Valid @RequestBody Filial filial) throws URISyntaxException {
         log.debug("REST request to save Filial : {}", filial);
+        
         if (filial.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("filial", "idexists", "A new filial cannot already have an ID")).body(null);
         }
+        
+        if (filialService.findNmFilialExists(filial.getNmFilial()) != null) {
+            return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("filial", "nmexists", "A new filial cannot already have an ID")).body(null);
+        }
+        
+        filial.setDtOperacao(LocalDate.now()); //Always use the operation date from server
+        
         Filial result = filialService.save(filial);
         return ResponseEntity.created(new URI("/api/filials/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert("filial", result.getId().toString()))
@@ -78,6 +87,9 @@ public class FilialResource {
         if (filial.getId() == null) {
             return createFilial(filial);
         }
+        
+        filial.setDtOperacao(LocalDate.now()); //Always use the operation date from server
+        
         Filial result = filialService.save(filial);
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert("filial", filial.getId().toString()))

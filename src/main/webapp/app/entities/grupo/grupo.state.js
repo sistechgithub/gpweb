@@ -101,9 +101,9 @@
                                 flSemContagem: false,
                                 flEnvio: false,
                                 nnNovo: 1,
-                                nnDay: null,
-                                nnDayWeek: null,
-                                nnType: null,
+                                nnDia: null,
+                                nnDiaSemana: null,
+                                nnTipo: 0,
                                 id: null
                             };
                         }

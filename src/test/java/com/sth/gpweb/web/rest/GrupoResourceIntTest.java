@@ -76,13 +76,13 @@ public class GrupoResourceIntTest {
     private static final Integer DEFAULT_NN_NOVO = 1;
     private static final Integer UPDATED_NN_NOVO = 2;
 
-    private static final Integer DEFAULT_NN_DAY = 1;
-    private static final Integer UPDATED_NN_DAY = 2;
-    private static final String DEFAULT_NN_DAY_WEEK = "AAAAA";
-    private static final String UPDATED_NN_DAY_WEEK = "BBBBB";
+    private static final Integer DEFAULT_NN_DIA = 1;
+    private static final Integer UPDATED_NN_DIA = 2;
+    private static final String DEFAULT_NN_DIA_SEMANA = "AAAAA";
+    private static final String UPDATED_NN_DIA_SEMANA = "BBBBB";
 
-    private static final Integer DEFAULT_NN_TYPE = 1;
-    private static final Integer UPDATED_NN_TYPE = 2;
+    private static final Integer DEFAULT_NN_TIPO = 1;
+    private static final Integer UPDATED_NN_TIPO = 2;
 
     @Inject
     private GrupoRepository grupoRepository;
@@ -127,9 +127,9 @@ public class GrupoResourceIntTest {
         grupo.setFlSemContagem(DEFAULT_FL_SEM_CONTAGEM);
         grupo.setFlEnvio(DEFAULT_FL_ENVIO);
         grupo.setNnNovo(DEFAULT_NN_NOVO);
-        grupo.setNnDay(DEFAULT_NN_DAY);
-        grupo.setNnDayWeek(DEFAULT_NN_DAY_WEEK);
-        grupo.setNnType(DEFAULT_NN_TYPE);
+        grupo.setNnDia(DEFAULT_NN_DIA);
+        grupo.setNnDiaSemana(DEFAULT_NN_DIA_SEMANA);
+        grupo.setNnTipo(DEFAULT_NN_TIPO);
     }
 
     @Test
@@ -158,9 +158,9 @@ public class GrupoResourceIntTest {
         assertThat(testGrupo.isFlSemContagem()).isEqualTo(DEFAULT_FL_SEM_CONTAGEM);
         assertThat(testGrupo.isFlEnvio()).isEqualTo(DEFAULT_FL_ENVIO);
         assertThat(testGrupo.getNnNovo()).isEqualTo(DEFAULT_NN_NOVO);
-        assertThat(testGrupo.getNnDay()).isEqualTo(DEFAULT_NN_DAY);
-        assertThat(testGrupo.getNnDayWeek()).isEqualTo(DEFAULT_NN_DAY_WEEK);
-        assertThat(testGrupo.getNnType()).isEqualTo(DEFAULT_NN_TYPE);
+        assertThat(testGrupo.getNnDia()).isEqualTo(DEFAULT_NN_DIA);
+        assertThat(testGrupo.getNnDiaSemana()).isEqualTo(DEFAULT_NN_DIA_SEMANA);
+        assertThat(testGrupo.getNnTipo()).isEqualTo(DEFAULT_NN_TIPO);
 
         // Validate the Grupo in ElasticSearch
         Grupo grupoEs = grupoSearchRepository.findOne(testGrupo.getId());
@@ -206,9 +206,9 @@ public class GrupoResourceIntTest {
                 .andExpect(jsonPath("$.[*].flSemContagem").value(hasItem(DEFAULT_FL_SEM_CONTAGEM.booleanValue())))
                 .andExpect(jsonPath("$.[*].flEnvio").value(hasItem(DEFAULT_FL_ENVIO.booleanValue())))
                 .andExpect(jsonPath("$.[*].nnNovo").value(hasItem(DEFAULT_NN_NOVO)))
-                .andExpect(jsonPath("$.[*].nnDay").value(hasItem(DEFAULT_NN_DAY)))
-                .andExpect(jsonPath("$.[*].nnDayWeek").value(hasItem(DEFAULT_NN_DAY_WEEK.toString())))
-                .andExpect(jsonPath("$.[*].nnType").value(hasItem(DEFAULT_NN_TYPE)));
+                .andExpect(jsonPath("$.[*].nnDia").value(hasItem(DEFAULT_NN_DIA)))
+                .andExpect(jsonPath("$.[*].nnDiaSemana").value(hasItem(DEFAULT_NN_DIA_SEMANA.toString())))
+                .andExpect(jsonPath("$.[*].nnTipo").value(hasItem(DEFAULT_NN_TIPO)));
     }
 
     @Test
@@ -232,9 +232,9 @@ public class GrupoResourceIntTest {
             .andExpect(jsonPath("$.flSemContagem").value(DEFAULT_FL_SEM_CONTAGEM.booleanValue()))
             .andExpect(jsonPath("$.flEnvio").value(DEFAULT_FL_ENVIO.booleanValue()))
             .andExpect(jsonPath("$.nnNovo").value(DEFAULT_NN_NOVO))
-            .andExpect(jsonPath("$.nnDay").value(DEFAULT_NN_DAY))
-            .andExpect(jsonPath("$.nnDayWeek").value(DEFAULT_NN_DAY_WEEK.toString()))
-            .andExpect(jsonPath("$.nnType").value(DEFAULT_NN_TYPE));
+            .andExpect(jsonPath("$.nnDia").value(DEFAULT_NN_DIA))
+            .andExpect(jsonPath("$.nnDiaSemana").value(DEFAULT_NN_DIA_SEMANA.toString()))
+            .andExpect(jsonPath("$.nnTipo").value(DEFAULT_NN_TIPO));
     }
 
     @Test
@@ -266,9 +266,9 @@ public class GrupoResourceIntTest {
         updatedGrupo.setFlSemContagem(UPDATED_FL_SEM_CONTAGEM);
         updatedGrupo.setFlEnvio(UPDATED_FL_ENVIO);
         updatedGrupo.setNnNovo(UPDATED_NN_NOVO);
-        updatedGrupo.setNnDay(UPDATED_NN_DAY);
-        updatedGrupo.setNnDayWeek(UPDATED_NN_DAY_WEEK);
-        updatedGrupo.setNnType(UPDATED_NN_TYPE);
+        updatedGrupo.setNnDia(UPDATED_NN_DIA);
+        updatedGrupo.setNnDiaSemana(UPDATED_NN_DIA_SEMANA);
+        updatedGrupo.setNnTipo(UPDATED_NN_TIPO);
 
         restGrupoMockMvc.perform(put("/api/grupos")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -289,9 +289,9 @@ public class GrupoResourceIntTest {
         assertThat(testGrupo.isFlSemContagem()).isEqualTo(UPDATED_FL_SEM_CONTAGEM);
         assertThat(testGrupo.isFlEnvio()).isEqualTo(UPDATED_FL_ENVIO);
         assertThat(testGrupo.getNnNovo()).isEqualTo(UPDATED_NN_NOVO);
-        assertThat(testGrupo.getNnDay()).isEqualTo(UPDATED_NN_DAY);
-        assertThat(testGrupo.getNnDayWeek()).isEqualTo(UPDATED_NN_DAY_WEEK);
-        assertThat(testGrupo.getNnType()).isEqualTo(UPDATED_NN_TYPE);
+        assertThat(testGrupo.getNnDia()).isEqualTo(UPDATED_NN_DIA);
+        assertThat(testGrupo.getNnDiaSemana()).isEqualTo(UPDATED_NN_DIA_SEMANA);
+        assertThat(testGrupo.getNnTipo()).isEqualTo(UPDATED_NN_TIPO);
 
         // Validate the Grupo in ElasticSearch
         Grupo grupoEs = grupoSearchRepository.findOne(testGrupo.getId());
@@ -341,8 +341,8 @@ public class GrupoResourceIntTest {
             .andExpect(jsonPath("$.[*].flSemContagem").value(hasItem(DEFAULT_FL_SEM_CONTAGEM.booleanValue())))
             .andExpect(jsonPath("$.[*].flEnvio").value(hasItem(DEFAULT_FL_ENVIO.booleanValue())))
             .andExpect(jsonPath("$.[*].nnNovo").value(hasItem(DEFAULT_NN_NOVO)))
-            .andExpect(jsonPath("$.[*].nnDay").value(hasItem(DEFAULT_NN_DAY)))
-            .andExpect(jsonPath("$.[*].nnDayWeek").value(hasItem(DEFAULT_NN_DAY_WEEK.toString())))
-            .andExpect(jsonPath("$.[*].nnType").value(hasItem(DEFAULT_NN_TYPE)));
+            .andExpect(jsonPath("$.[*].nnDia").value(hasItem(DEFAULT_NN_DIA)))
+            .andExpect(jsonPath("$.[*].nnDiaSemana").value(hasItem(DEFAULT_NN_DIA_SEMANA.toString())))
+            .andExpect(jsonPath("$.[*].nnTipo").value(hasItem(DEFAULT_NN_TIPO)));
     }
 }

@@ -71,7 +71,7 @@
                     return $translate.refresh();
                 }],
                 entity: ['$stateParams', 'Promocao', function($stateParams, Promocao) {
-                    return Promocao.get({id : $stateParams.id});
+                    return Promocao.get({id : $stateParams.id}).$promise;
                 }]
             }
         })
@@ -95,9 +95,9 @@
                                 dtVencimento: null,
                                 nnDiaData: null,
                                 nnDiaSemana: null,
-                                flInativo: null,
-                                vlPromocao: null,
-                                nnPontos: null,
+                                flInativo: false,
+                                vlPromocao: 0.00,                                
+                                nnTipo: null,
                                 id: null
                             };
                         }
@@ -124,7 +124,7 @@
                     size: 'lg',
                     resolve: {
                         entity: ['Promocao', function(Promocao) {
-                            return Promocao.get({id : $stateParams.id});
+                            return Promocao.get({id : $stateParams.id}).$promise;
                         }]
                     }
                 }).result.then(function() {
@@ -148,7 +148,7 @@
                     size: 'md',
                     resolve: {
                         entity: ['Promocao', function(Promocao) {
-                            return Promocao.get({id : $stateParams.id});
+                            return Promocao.get({id : $stateParams.id}).$promise;
                         }]
                     }
                 }).result.then(function() {

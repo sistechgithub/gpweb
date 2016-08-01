@@ -72,7 +72,8 @@
 	                  // allowClear: true, //Don't use this cause not work with ngModel
 	              	  closeOnSelect: true,
 	              	  cache: false,
-	              	  theme: "classic",
+	              	  theme: "default",
+                      language: "pt-BR",    
 	              	 minimumResultsForSearch: -1,
 	              	  ajax: {
 	              		url: "/api/_search/" + scope.entityUrl + "/select?size=20&sort=id,asc",

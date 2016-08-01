@@ -22,7 +22,7 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="ds_promocao" type="varchar(30)">
-                <constraints nullable="false" />
+                <constraints unique="true" nullable="false" />
             </column>
             
             <column name="dt_vencimento" type="date">
@@ -33,7 +33,7 @@
                 <constraints nullable="true" />
             </column>
             
-            <column name="nn_dia_semana" type="integer">
+            <column name="nn_dia_semana" type="varchar(8)">
                 <constraints nullable="true" />
             </column>
             
@@ -45,7 +45,7 @@
                 <constraints nullable="true" />
             </column>
             
-            <column name="nn_pontos" type="integer">
+            <column name="nn_tipo" type="integer">
                 <constraints nullable="true" />
             </column>
             

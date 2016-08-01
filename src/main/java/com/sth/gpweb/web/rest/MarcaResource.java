@@ -22,6 +22,7 @@ import javax.inject.Inject;
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -54,9 +55,17 @@ public class MarcaResource {
     @Timed
     public ResponseEntity<Marca> createMarca(@Valid @RequestBody Marca marca) throws URISyntaxException {
         log.debug("REST request to save Marca : {}", marca);
+        
         if (marca.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("marca", "idexists", "A new marca cannot already have an ID")).body(null);
         }
+        
+        if (marcaService.findNmFabricanteExists(marca.getNmFabricante()) != null) {
+            return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("marca", "nmexists", "A new marca cannot already have an ID")).body(null);
+        }
+        
+        marca.setDtOperacao(LocalDate.now()); //Always use the operation date from server
+        
         Marca result = marcaService.save(marca);
         return ResponseEntity.created(new URI("/api/marcas/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert("marca", result.getId().toString()))
@@ -81,6 +90,9 @@ public class MarcaResource {
         if (marca.getId() == null) {
             return createMarca(marca);
         }
+        
+        marca.setDtOperacao(LocalDate.now()); //Always use the operation date from server
+        
         Marca result = marcaService.save(marca);
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert("marca", marca.getId().toString()))
