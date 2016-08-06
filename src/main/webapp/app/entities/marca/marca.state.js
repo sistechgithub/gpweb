@@ -91,7 +91,7 @@
                     resolve: {
                         entity: function () {
                             return {
-                                nmFabricante: null,
+                                nmMarca: null,
                                 cdCgc: null,
                                 cdCgf: null,
                                 nnNumero: null,

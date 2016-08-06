@@ -18,21 +18,21 @@
             </div>
             <div class="col-xs-12 col-sm-10">
                 <div class="form-group">
-                    <label class="control-label" translate="gpwebApp.marca.nmFabricante" for="field_nmFabricante">Razão Social</label>
-                    <input type="text" class="form-control text-uppercase" name="nmFabricante" id="field_nmFabricante"
-                            ng-model="vm.marca.nmFabricante"
+                    <label class="control-label" translate="gpwebApp.marca.nmMarca" for="field_nmMarca">Razão Social</label>
+                    <input type="text" class="form-control text-uppercase" name="nmMarca" id="field_nmMarca"
+                            ng-model="vm.marca.nmMarca"
                             required ng-minlength="1" ng-maxlength="35" maxlength="35" />
-                    <div ng-show="editForm.nmFabricante.$invalid">
+                    <div ng-show="editForm.nmMarca.$invalid">
                         <p class="help-block"
-                            ng-show="editForm.nmFabricante.$error.required" translate="entity.validation.required">
+                            ng-show="editForm.nmMarca.$error.required" translate="entity.validation.required">
                             O campo é obrigatório.
                         </p>
                         <p class="help-block"
-                            ng-show="editForm.nmFabricante.$error.minlength" translate="entity.validation.minlength" translate-value-min="1">
+                            ng-show="editForm.nmMarca.$error.minlength" translate="entity.validation.minlength" translate-value-min="1">
                             Este campo não pode ter menos que 1 caractere.
                         </p>
                         <p class="help-block"
-                            ng-show="editForm.nmFabricante.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="35">
+                            ng-show="editForm.nmMarca.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="35">
                             Este campo não pode ter mais que 35 caracteres.
                         </p>
                     </div>

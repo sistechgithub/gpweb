@@ -15,11 +15,11 @@ import java.util.List;
 @SuppressWarnings("unused")
 public interface MarcaRepository extends JpaRepository<Marca,Long> {
     
-    //Verify if nmFabricante already exits on database before insert	
- 	@Query("SELECT f.nmFabricante FROM Marca f where f.nmFabricante = :nmFabricante") 
- 	String findNmFabricanteExists(@Param("nmFabricante") String nmFabricante);
+    //Verify if nmMarca already exits on database before insert	
+ 	@Query("SELECT f.nmMarca FROM Marca f where f.nmMarca = :nmMarca") 
+ 	String findNmMarcaExists(@Param("nmMarca") String nmMarca);
 
 	//Find by name, used by select2 on product
-	Page<Marca> findByNmFabricanteStartingWithOrderByNmFabricanteAsc(String descricao, Pageable pageable);
+	Page<Marca> findByNmMarcaStartingWithOrderByNmMarcaAsc(String descricao, Pageable pageable);
 	
 }

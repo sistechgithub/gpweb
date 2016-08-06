@@ -60,7 +60,7 @@ public class MarcaResource {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("marca", "idexists", "A new marca cannot already have an ID")).body(null);
         }
         
-        if (marcaService.findNmFabricanteExists(marca.getNmFabricante()) != null) {
+        if (marcaService.findNmMarcaExists(marca.getNmMarca()) != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("marca", "nmexists", "A new marca cannot already have an ID")).body(null);
         }
         
@@ -194,7 +194,7 @@ public class MarcaResource {
     		if(query.trim().equalsIgnoreCase("*")){
     			page = marcaService.findAll(pageable);
     		}else{
-    			page = marcaService.findByNmFabricanteStartingWithOrderByNmFabricanteAsc(query, pageable);    			
+    			page = marcaService.findByNmMarcaStartingWithOrderByNmMarcaAsc(query, pageable);    			
     		};    	
 	    	
 	    	HttpHeaders headers = new HttpHeaders();
