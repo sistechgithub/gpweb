@@ -137,10 +137,8 @@ public class FilialResourceIntTest {
         filial.setCdTel2(DEFAULT_CD_TEL_2);
         filial.setCdFax(DEFAULT_CD_FAX);
         filial.setDtOperacao(DEFAULT_DT_OPERACAO);
-        filial.setNnVersao(DEFAULT_NN_VERSAO);
         filial.setFlTprec(DEFAULT_FL_TPREC);
         filial.setDsPisCofins(DEFAULT_DS_PIS_COFINS);
-        filial.setNnMdfVersao(DEFAULT_NN_MDF_VERSAO);
         filial.setFlEnviaEmail(DEFAULT_FL_ENVIA_EMAIL);
         filial.setDsObs(DEFAULT_DS_OBS);
     }
@@ -174,10 +172,8 @@ public class FilialResourceIntTest {
         assertThat(testFilial.getCdTel2()).isEqualTo(DEFAULT_CD_TEL_2);
         assertThat(testFilial.getCdFax()).isEqualTo(DEFAULT_CD_FAX);
         assertThat(testFilial.getDtOperacao()).isEqualTo(DEFAULT_DT_OPERACAO);
-        assertThat(testFilial.getNnVersao()).isEqualTo(DEFAULT_NN_VERSAO);
         assertThat(testFilial.isFlTprec()).isEqualTo(DEFAULT_FL_TPREC);
         assertThat(testFilial.getDsPisCofins()).isEqualTo(DEFAULT_DS_PIS_COFINS);
-        assertThat(testFilial.getNnMdfVersao()).isEqualTo(DEFAULT_NN_MDF_VERSAO);
         assertThat(testFilial.isFlEnviaEmail()).isEqualTo(DEFAULT_FL_ENVIA_EMAIL);
         assertThat(testFilial.getDsObs()).isEqualTo(DEFAULT_DS_OBS);
 
@@ -228,10 +224,8 @@ public class FilialResourceIntTest {
                 .andExpect(jsonPath("$.[*].cdTel2").value(hasItem(DEFAULT_CD_TEL_2.toString())))
                 .andExpect(jsonPath("$.[*].cdFax").value(hasItem(DEFAULT_CD_FAX.toString())))
                 .andExpect(jsonPath("$.[*].dtOperacao").value(hasItem(DEFAULT_DT_OPERACAO.toString())))
-                .andExpect(jsonPath("$.[*].nnVersao").value(hasItem(DEFAULT_NN_VERSAO)))
                 .andExpect(jsonPath("$.[*].flTprec").value(hasItem(DEFAULT_FL_TPREC.booleanValue())))
                 .andExpect(jsonPath("$.[*].dsPisCofins").value(hasItem(DEFAULT_DS_PIS_COFINS.toString())))
-                .andExpect(jsonPath("$.[*].nnMdfVersao").value(hasItem(DEFAULT_NN_MDF_VERSAO)))
                 .andExpect(jsonPath("$.[*].flEnviaEmail").value(hasItem(DEFAULT_FL_ENVIA_EMAIL.booleanValue())))
                 .andExpect(jsonPath("$.[*].dsObs").value(hasItem(DEFAULT_DS_OBS.toString())));
     }
@@ -260,10 +254,8 @@ public class FilialResourceIntTest {
             .andExpect(jsonPath("$.cdTel2").value(DEFAULT_CD_TEL_2.toString()))
             .andExpect(jsonPath("$.cdFax").value(DEFAULT_CD_FAX.toString()))
             .andExpect(jsonPath("$.dtOperacao").value(DEFAULT_DT_OPERACAO.toString()))
-            .andExpect(jsonPath("$.nnVersao").value(DEFAULT_NN_VERSAO))
             .andExpect(jsonPath("$.flTprec").value(DEFAULT_FL_TPREC.booleanValue()))
             .andExpect(jsonPath("$.dsPisCofins").value(DEFAULT_DS_PIS_COFINS.toString()))
-            .andExpect(jsonPath("$.nnMdfVersao").value(DEFAULT_NN_MDF_VERSAO))
             .andExpect(jsonPath("$.flEnviaEmail").value(DEFAULT_FL_ENVIA_EMAIL.booleanValue()))
             .andExpect(jsonPath("$.dsObs").value(DEFAULT_DS_OBS.toString()));
     }
@@ -300,10 +292,8 @@ public class FilialResourceIntTest {
         updatedFilial.setCdTel2(UPDATED_CD_TEL_2);
         updatedFilial.setCdFax(UPDATED_CD_FAX);
         updatedFilial.setDtOperacao(UPDATED_DT_OPERACAO);
-        updatedFilial.setNnVersao(UPDATED_NN_VERSAO);
         updatedFilial.setFlTprec(UPDATED_FL_TPREC);
         updatedFilial.setDsPisCofins(UPDATED_DS_PIS_COFINS);
-        updatedFilial.setNnMdfVersao(UPDATED_NN_MDF_VERSAO);
         updatedFilial.setFlEnviaEmail(UPDATED_FL_ENVIA_EMAIL);
         updatedFilial.setDsObs(UPDATED_DS_OBS);
 
@@ -329,10 +319,8 @@ public class FilialResourceIntTest {
         assertThat(testFilial.getCdTel2()).isEqualTo(UPDATED_CD_TEL_2);
         assertThat(testFilial.getCdFax()).isEqualTo(UPDATED_CD_FAX);
         assertThat(testFilial.getDtOperacao()).isEqualTo(UPDATED_DT_OPERACAO);
-        assertThat(testFilial.getNnVersao()).isEqualTo(UPDATED_NN_VERSAO);
         assertThat(testFilial.isFlTprec()).isEqualTo(UPDATED_FL_TPREC);
         assertThat(testFilial.getDsPisCofins()).isEqualTo(UPDATED_DS_PIS_COFINS);
-        assertThat(testFilial.getNnMdfVersao()).isEqualTo(UPDATED_NN_MDF_VERSAO);
         assertThat(testFilial.isFlEnviaEmail()).isEqualTo(UPDATED_FL_ENVIA_EMAIL);
         assertThat(testFilial.getDsObs()).isEqualTo(UPDATED_DS_OBS);
 
@@ -387,10 +375,8 @@ public class FilialResourceIntTest {
             .andExpect(jsonPath("$.[*].cdTel2").value(hasItem(DEFAULT_CD_TEL_2.toString())))
             .andExpect(jsonPath("$.[*].cdFax").value(hasItem(DEFAULT_CD_FAX.toString())))
             .andExpect(jsonPath("$.[*].dtOperacao").value(hasItem(DEFAULT_DT_OPERACAO.toString())))
-            .andExpect(jsonPath("$.[*].nnVersao").value(hasItem(DEFAULT_NN_VERSAO)))
             .andExpect(jsonPath("$.[*].flTprec").value(hasItem(DEFAULT_FL_TPREC.booleanValue())))
             .andExpect(jsonPath("$.[*].dsPisCofins").value(hasItem(DEFAULT_DS_PIS_COFINS.toString())))
-            .andExpect(jsonPath("$.[*].nnMdfVersao").value(hasItem(DEFAULT_NN_MDF_VERSAO)))
             .andExpect(jsonPath("$.[*].flEnviaEmail").value(hasItem(DEFAULT_FL_ENVIA_EMAIL.booleanValue())))
             .andExpect(jsonPath("$.[*].dsObs").value(hasItem(DEFAULT_DS_OBS.toString())));
     }
