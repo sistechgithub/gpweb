@@ -16,8 +16,8 @@
             "detail": {
                 "title": "Brand"
             },
-            "nmFabricante": "Company Name",
-            "nmFabricante2": "Name",
+            "nmMarca": "Company Name",
+            "nmMarca2": "Name",
             "cdCgc": "CNPJ",
             "cdCgf": "State Registration",
             "nnNumero": "Number",

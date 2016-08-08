@@ -25,8 +25,8 @@ public class Marca implements Serializable {
 
     @NotNull
     @Size(min = 1, max = 35)
-    @Column(name = "nm_fabricante", length = 35, nullable = false, unique = true)
-    private String nmFabricante;
+    @Column(name = "nm_marca", length = 35, nullable = false, unique = true)
+    private String nmMarca;
 
     @Size(max = 18)
     @Column(name = "cd_cgc", length = 18)
@@ -72,12 +72,12 @@ public class Marca implements Serializable {
         this.id = id;
     }
 
-    public String getNmFabricante() {
-        return nmFabricante;
+    public String getNmMarca() {
+        return nmMarca;
     }
 
-    public void setNmFabricante(String nmFabricante) {
-        this.nmFabricante = nmFabricante;
+    public void setNmMarca(String nmMarca) {
+        this.nmMarca = nmMarca;
     }
 
     public String getCdCgc() {
@@ -184,7 +184,7 @@ public class Marca implements Serializable {
     public String toString() {
         return "Marca{" +
             "id=" + id +
-            ", nmFabricante='" + nmFabricante + "'" +
+            ", nmMarca='" + nmMarca + "'" +
             ", cdCgc='" + cdCgc + "'" +
             ", cdCgf='" + cdCgf + "'" +
             ", nnNumero='" + nnNumero + "'" +

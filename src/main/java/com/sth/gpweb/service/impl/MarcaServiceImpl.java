@@ -96,26 +96,26 @@ public class MarcaServiceImpl implements MarcaService{
     }
     
     /**
-     * Search for the nmFabricante already exists.
+     * Search for the nmMarca already exists.
      *
-     *  @param query the nmFabricante
+     *  @param query the nmMarca
      *  @return the list of entities
      */
     @Transactional(readOnly = true)    
-    public String findNmFabricanteExists(String nmFabricante){
-    	log.debug("Request to search if the nmFabricante: {} already exists", nmFabricante);
-        return marcaRepository.findNmFabricanteExists(nmFabricante);
+    public String findNmMarcaExists(String nmMarca){
+    	log.debug("Request to search if the nmMarca: {} already exists", nmMarca);
+        return marcaRepository.findNmMarcaExists(nmMarca);
     }
     
     /**
-     * Search for the nmFabricante
+     * Search for the nmMarca
      *
-     *  @param query the nmFabricante
+     *  @param query the nmMarca
      *  @return the list of entities
      */
      @Transactional(readOnly = true)
-     public Page<Marca> findByNmFabricanteStartingWithOrderByNmFabricanteAsc(String descricao, Pageable pageable){
+     public Page<Marca> findByNmMarcaStartingWithOrderByNmMarcaAsc(String descricao, Pageable pageable){
     	log.debug("Request to...", descricao);
-        return marcaRepository.findByNmFabricanteStartingWithOrderByNmFabricanteAsc(descricao, pageable);
+        return marcaRepository.findByNmMarcaStartingWithOrderByNmMarcaAsc(descricao, pageable);
      }
 }

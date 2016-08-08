@@ -82,8 +82,8 @@
                                     <div>
                                         <strong translate="gpwebApp.produto.marca">Marca</strong>
                                     </div>
-                                    <span>{{produto.marca.nmFabricante}}</span>
-                                    <span ng-hide="produto.marca.nmFabricante != null"> - </span>
+                                    <span>{{produto.marca.nmMarca}}</span>
+                                    <span ng-hide="produto.marca.nmMarca != null"> - </span>
                                 </div>
                                 <div class="col-xs-6 no-padding">
                                     <div>
@@ -170,7 +170,7 @@
                         </td>  
                         <td>{{produto.nmProduto}}</td>
                         <td>
-                            <a ui-sref="marca-detail({id:produto.marca.id})">{{produto.marca.nmFabricante}}</a>
+                            <a ui-sref="marca-detail({id:produto.marca.id})">{{produto.marca.nmMarca}}</a>
                         </td>                      
                         <td class="text-center">
                             <i class="mdi"
