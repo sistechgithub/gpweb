@@ -97,10 +97,6 @@
             "fieldType": "LocalDate"
         },
         {
-            "fieldName": "nnVersao",
-            "fieldType": "Integer"
-        },
-        {
             "fieldName": "flTprec",
             "fieldType": "Boolean"
         },
@@ -111,10 +107,6 @@
                 "maxlength"
             ],
             "fieldValidateRulesMaxlength": "2"
-        },
-        {
-            "fieldName": "nnMdfVersao",
-            "fieldType": "Integer"
         },
         {
             "fieldName": "flEnviaEmail",

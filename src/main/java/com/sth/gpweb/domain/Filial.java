@@ -72,18 +72,12 @@ public class Filial implements Serializable {
     @Column(name = "dt_operacao")
     private LocalDate dtOperacao;
 
-    @Column(name = "nn_versao")
-    private Integer nnVersao;
-
     @Column(name = "fl_tprec")
     private Boolean flTprec;
 
     @Size(max = 2)
     @Column(name = "ds_pis_cofins", length = 2)
     private String dsPisCofins;
-
-    @Column(name = "nn_mdf_versao")
-    private Integer nnMdfVersao;
 
     @Column(name = "fl_envia_email")
     private Boolean flEnviaEmail;
@@ -204,14 +198,6 @@ public class Filial implements Serializable {
         this.dtOperacao = dtOperacao;
     }
 
-    public Integer getNnVersao() {
-        return nnVersao;
-    }
-
-    public void setNnVersao(Integer nnVersao) {
-        this.nnVersao = nnVersao;
-    }
-
     public Boolean isFlTprec() {
         return flTprec;
     }
@@ -226,14 +212,6 @@ public class Filial implements Serializable {
 
     public void setDsPisCofins(String dsPisCofins) {
         this.dsPisCofins = dsPisCofins;
-    }
-
-    public Integer getNnMdfVersao() {
-        return nnMdfVersao;
-    }
-
-    public void setNnMdfVersao(Integer nnMdfVersao) {
-        this.nnMdfVersao = nnMdfVersao;
     }
 
     public Boolean isFlEnviaEmail() {
@@ -289,10 +267,8 @@ public class Filial implements Serializable {
             ", cdTel2='" + cdTel2 + "'" +
             ", cdFax='" + cdFax + "'" +
             ", dtOperacao='" + dtOperacao + "'" +
-            ", nnVersao='" + nnVersao + "'" +
             ", flTprec='" + flTprec + "'" +
             ", dsPisCofins='" + dsPisCofins + "'" +
-            ", nnMdfVersao='" + nnMdfVersao + "'" +
             ", flEnviaEmail='" + flEnviaEmail + "'" +
             ", dsObs='" + dsObs + "'" +
             '}';

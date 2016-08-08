@@ -73,19 +73,11 @@
                 <constraints nullable="true" />
             </column>
             
-            <column name="nn_versao" type="integer">
-                <constraints nullable="true" />
-            </column>
-            
             <column name="fl_tprec" type="bit">
                 <constraints nullable="true" />
             </column>
             
             <column name="ds_pis_cofins" type="varchar(2)">
-                <constraints nullable="true" />
-            </column>
-            
-            <column name="nn_mdf_versao" type="integer">
                 <constraints nullable="true" />
             </column>
             

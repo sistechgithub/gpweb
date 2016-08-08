@@ -51,32 +51,16 @@
                 <div class="box-detail-divider"></div>
             </dl>
             <dl class="col-xs-12 col-sm-4">
-                <dt><span translate="gpwebApp.filial.nnVersao">Versao</span></dt>
-                <dd>
-                    <span>{{vm.filial.nnVersao}}</span>
-                    <span ng-hide="vm.filial.nnVersao != null"> - </span>
-                </dd>
-                <div class="box-detail-divider"></div>
-            </dl>                               
-        </div>
-        
-        <div class="row">
-            <dl class="col-xs-12 col-sm-4">
-                <dt><span translate="gpwebApp.filial.nnMdfVersao">Versao MDF</span></dt>
-                <dd>
-                    <span>{{vm.filial.nnMdfVersao}}</span>
-                    <span ng-hide="vm.filial.nnMdfVersao != null"> - </span>
-                </dd>
-                <div class="box-detail-divider"></div>
-            </dl>
-            <dl class="col-xs-12 col-sm-4">
                 <dt><span translate="gpwebApp.filial.cdTel">Telefone</span></dt>
                 <dd>
                     <span>{{vm.filial.cdTel | brPhoneNumber}}</span>
                     <span ng-hide="vm.filial.cdTel != null"> - </span>
                 </dd>
                 <div class="box-detail-divider"></div>
-            </dl>
+            </dl>                               
+        </div>
+        
+        <div class="row">            
             <dl class="col-xs-12 col-sm-4">
                 <dt><span translate="gpwebApp.filial.cdTel1">Telefone 2</span></dt>
                 <dd>
@@ -84,10 +68,7 @@
                     <span ng-hide="vm.filial.cdTel1 != null"> - </span>
                 </dd>
                 <div class="box-detail-divider"></div>
-            </dl>                           
-        </div>
-        
-        <div class="row">
+            </dl>
             <dl class="col-xs-12 col-sm-4">
                 <dt><span translate="gpwebApp.filial.cdTel2">Telefone 3</span></dt>
                 <dd>
@@ -103,7 +84,10 @@
                     <span ng-hide="vm.filial.cdFax != null"> - </span>
                 </dd>
                 <div class="box-detail-divider"></div>
-            </dl>
+            </dl>                           
+        </div>
+        
+        <div class="row">
             <dl class="col-xs-12 col-sm-4">
                 <dt><span translate="gpwebApp.filial.flEnviaEmail">Envio de Email</span></dt>
                 <dd>
@@ -111,9 +95,6 @@
                 </dd>
                 <div class="box-detail-divider"></div>
             </dl>
-        </div>
-        
-        <div class="row">
             <dl class="col-xs-12 col-sm-4">
                 <dt><span translate="gpwebApp.filial.dsSite">Site</span></dt>
                 <dd>
@@ -130,6 +111,9 @@
                 </dd>
                 <div class="box-detail-divider"></div>
             </dl>
+        </div>
+        
+        <div class="row">
             <dl class="col-xs-12 col-sm-4">
                 <dt><span translate="gpwebApp.filial.flAtiva">Fl Ativa</span></dt>
                 <dd>

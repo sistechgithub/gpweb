@@ -94,8 +94,6 @@
                                 nmFilial: null,
                                 nmRazao: null,
                                 nnNumero: null,
-                                nnVersao: null,
-                                nnMdfVersao: null,
                                 cdCnpj: null,
                                 cdCgf: null,                       
                                 cdTel: null,
