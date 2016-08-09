@@ -104,4 +104,17 @@ public class ProdutoServiceImpl implements ProdutoService{
     	log.debug("Request to search if the nmProduto: {} already exists", nmProduto);
         return produtoRepository.findNmProdutoExists(nmProduto);
     }
+    
+    /**
+     * Search for the nmProduto
+     * Used on productfilial page
+     *
+     *  @param query the nmProduto
+     *  @return the list of entities
+     */
+    @Transactional(readOnly = true)
+    public Page<Produto> findByNomeStartingWithOrderByNomeAsc(String descricao, Pageable pageable){
+    	log.debug("Request to...", descricao);
+        return produtoRepository.findByNmProdutoStartingWithOrderByNmProdutoAsc(descricao, pageable);
+    }
 }
