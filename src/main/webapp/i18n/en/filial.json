@@ -28,10 +28,8 @@
             "cdTel1": "Phone 2",
             "cdTel2": "Phone 3",
             "cdFax": "Fax",
-            "dtOperacao": "Date operation",
-            "nnVersao": "Version",            
+            "dtOperacao": "Date operation",            
             "dsPisCofins": "PIS/COFINS",
-            "nnMdfVersao": "Version MDF",
             "flEnviaEmail": "Send e-mail",
             "dsObs": "Obs.",
             "flTprec": "Fl Tprec"

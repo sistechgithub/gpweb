@@ -41,7 +41,7 @@
                 <thead>
                     <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
                         <th jh-sort-by="id" class="col-md-1 col-marca-codigo"><span translate="global.field.id">Código</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>
-                        <th jh-sort-by="nmFabricante"><span translate="gpwebApp.marca.nmFabricante2">Nome</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>
+                        <th jh-sort-by="nmMarca"><span translate="gpwebApp.marca.nmMarca2">Nome</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>
                         <th jh-sort-by="cdTel" class="col-md-1 col-marca-telefone"><span translate="gpwebApp.marca.cdTel">Telefone</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>
                         <th jh-sort-by="flInativo" class="col-md-1 col-marca-inativo"><span translate="gpwebApp.marca.flInativo">Inativo</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>                    
                         <th class="col-md-1 col-marca-acoes text-center" translate="global.field.actions">Ações</th>
@@ -51,7 +51,7 @@
                 <tbody>
                     <tr ng-repeat="marca in vm.marcas track by marca.id">
                         <td><a ui-sref="marca-detail({id:marca.id})">{{marca.id}}</a></td>
-                        <td class="text-uppercase">{{marca.nmFabricante}}</td>
+                        <td class="text-uppercase">{{marca.nmMarca}}</td>
                         <td>{{marca.cdTel | brPhoneNumber}}</td>
                         <td class="text-center">
                             <i class="mdi"

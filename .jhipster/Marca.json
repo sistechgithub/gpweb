@@ -2,7 +2,7 @@
     "relationships": [],
     "fields": [
         {
-            "fieldName": "nmFabricante",
+            "fieldName": "nmMarca",
             "fieldType": "String",
             "fieldValidateRules": [
                 "required",

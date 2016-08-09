@@ -120,9 +120,9 @@ public class ClassProdutoServiceImpl implements ClassProdutoService{
     }    
     
     /**
-     * Search for the dsUnidade
+     * Search for the nmUnidade
      *
-     *  @param query the nmFabricante
+     *  @param query the nmMarca
      *  @return the list of entities
      */
     @Transactional(readOnly = true)

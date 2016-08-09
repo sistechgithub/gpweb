@@ -106,7 +106,7 @@ public class MarcaResourceIntTest {
     public void initTest() {
         marcaSearchRepository.deleteAll();
         marca = new Marca();
-        marca.setNmFabricante(DEFAULT_NM_FABRICANTE);
+        marca.setNmMarca(DEFAULT_NM_FABRICANTE);
         marca.setCdCgc(DEFAULT_CD_CGC);
         marca.setCdCgf(DEFAULT_CD_CGF);
         marca.setNnNumero(DEFAULT_NN_NUMERO);
@@ -135,7 +135,7 @@ public class MarcaResourceIntTest {
         List<Marca> marcas = marcaRepository.findAll();
         assertThat(marcas).hasSize(databaseSizeBeforeCreate + 1);
         Marca testMarca = marcas.get(marcas.size() - 1);
-        assertThat(testMarca.getNmFabricante()).isEqualTo(DEFAULT_NM_FABRICANTE);
+        assertThat(testMarca.getNmMarca()).isEqualTo(DEFAULT_NM_FABRICANTE);
         assertThat(testMarca.getCdCgc()).isEqualTo(DEFAULT_CD_CGC);
         assertThat(testMarca.getCdCgf()).isEqualTo(DEFAULT_CD_CGF);
         assertThat(testMarca.getNnNumero()).isEqualTo(DEFAULT_NN_NUMERO);
@@ -154,10 +154,10 @@ public class MarcaResourceIntTest {
 
     @Test
     @Transactional
-    public void checkNmFabricanteIsRequired() throws Exception {
+    public void checkNmMarcaIsRequired() throws Exception {
         int databaseSizeBeforeTest = marcaRepository.findAll().size();
         // set the field null
-        marca.setNmFabricante(null);
+        marca.setNmMarca(null);
 
         // Create the Marca, which fails.
 
@@ -181,7 +181,7 @@ public class MarcaResourceIntTest {
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.[*].id").value(hasItem(marca.getId().intValue())))
-                .andExpect(jsonPath("$.[*].nmFabricante").value(hasItem(DEFAULT_NM_FABRICANTE.toString())))
+                .andExpect(jsonPath("$.[*].nmMarca").value(hasItem(DEFAULT_NM_FABRICANTE.toString())))
                 .andExpect(jsonPath("$.[*].cdCgc").value(hasItem(DEFAULT_CD_CGC.toString())))
                 .andExpect(jsonPath("$.[*].cdCgf").value(hasItem(DEFAULT_CD_CGF.toString())))
                 .andExpect(jsonPath("$.[*].nnNumero").value(hasItem(DEFAULT_NN_NUMERO)))
@@ -205,7 +205,7 @@ public class MarcaResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON))
             .andExpect(jsonPath("$.id").value(marca.getId().intValue()))
-            .andExpect(jsonPath("$.nmFabricante").value(DEFAULT_NM_FABRICANTE.toString()))
+            .andExpect(jsonPath("$.nmMarca").value(DEFAULT_NM_FABRICANTE.toString()))
             .andExpect(jsonPath("$.cdCgc").value(DEFAULT_CD_CGC.toString()))
             .andExpect(jsonPath("$.cdCgf").value(DEFAULT_CD_CGF.toString()))
             .andExpect(jsonPath("$.nnNumero").value(DEFAULT_NN_NUMERO))
@@ -237,7 +237,7 @@ public class MarcaResourceIntTest {
         // Update the marca
         Marca updatedMarca = new Marca();
         updatedMarca.setId(marca.getId());
-        updatedMarca.setNmFabricante(UPDATED_NM_FABRICANTE);
+        updatedMarca.setNmMarca(UPDATED_NM_FABRICANTE);
         updatedMarca.setCdCgc(UPDATED_CD_CGC);
         updatedMarca.setCdCgf(UPDATED_CD_CGF);
         updatedMarca.setNnNumero(UPDATED_NN_NUMERO);
@@ -258,7 +258,7 @@ public class MarcaResourceIntTest {
         List<Marca> marcas = marcaRepository.findAll();
         assertThat(marcas).hasSize(databaseSizeBeforeUpdate);
         Marca testMarca = marcas.get(marcas.size() - 1);
-        assertThat(testMarca.getNmFabricante()).isEqualTo(UPDATED_NM_FABRICANTE);
+        assertThat(testMarca.getNmMarca()).isEqualTo(UPDATED_NM_FABRICANTE);
         assertThat(testMarca.getCdCgc()).isEqualTo(UPDATED_CD_CGC);
         assertThat(testMarca.getCdCgf()).isEqualTo(UPDATED_CD_CGF);
         assertThat(testMarca.getNnNumero()).isEqualTo(UPDATED_NN_NUMERO);
@@ -308,7 +308,7 @@ public class MarcaResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON))
             .andExpect(jsonPath("$.[*].id").value(hasItem(marca.getId().intValue())))
-            .andExpect(jsonPath("$.[*].nmFabricante").value(hasItem(DEFAULT_NM_FABRICANTE.toString())))
+            .andExpect(jsonPath("$.[*].nmMarca").value(hasItem(DEFAULT_NM_FABRICANTE.toString())))
             .andExpect(jsonPath("$.[*].cdCgc").value(hasItem(DEFAULT_CD_CGC.toString())))
             .andExpect(jsonPath("$.[*].cdCgf").value(hasItem(DEFAULT_CD_CGF.toString())))
             .andExpect(jsonPath("$.[*].nnNumero").value(hasItem(DEFAULT_NN_NUMERO)))

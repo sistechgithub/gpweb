@@ -16,8 +16,8 @@
             "detail": {
                 "title": "Marca"
             },
-            "nmFabricante": "Razão Social",
-            "nmFabricante2": "Nome",
+            "nmMarca": "Razão Social",
+            "nmMarca2": "Nome",
             "cdCgc": "CNPJ",
             "cdCgf": "Inscrição Estadual",
             "cdTel": "Telefone",
