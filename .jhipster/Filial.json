@@ -49,7 +49,7 @@
             "fieldValidateRulesMaxlength": "30"
         },
         {
-            "fieldName": "flAtiva",
+            "fieldName": "flInativo",
             "fieldType": "Boolean"
         },
         {

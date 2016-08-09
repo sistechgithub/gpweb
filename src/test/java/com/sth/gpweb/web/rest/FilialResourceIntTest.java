@@ -59,8 +59,8 @@ public class FilialResourceIntTest {
     private static final String DEFAULT_DS_SITE = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     private static final String UPDATED_DS_SITE = "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB";
 
-    private static final Boolean DEFAULT_FL_ATIVA = false;
-    private static final Boolean UPDATED_FL_ATIVA = true;
+    private static final Boolean DEFAULT_FL_INATIVO = false;
+    private static final Boolean UPDATED_FL_INATIVO = true;
     private static final String DEFAULT_NM_RAZAO = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     private static final String UPDATED_NM_RAZAO = "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB";
     private static final String DEFAULT_CD_TEL = "AAAAAAAAAAAAA";
@@ -130,7 +130,7 @@ public class FilialResourceIntTest {
         filial.setCdCnpj(DEFAULT_CD_CNPJ);
         filial.setCdCgf(DEFAULT_CD_CGF);
         filial.setDsSite(DEFAULT_DS_SITE);
-        filial.setFlAtiva(DEFAULT_FL_ATIVA);
+        filial.setFlInativo(DEFAULT_FL_INATIVO);
         filial.setNmRazao(DEFAULT_NM_RAZAO);
         filial.setCdTel(DEFAULT_CD_TEL);
         filial.setCdTel1(DEFAULT_CD_TEL_1);
@@ -165,7 +165,7 @@ public class FilialResourceIntTest {
         assertThat(testFilial.getCdCnpj()).isEqualTo(DEFAULT_CD_CNPJ);
         assertThat(testFilial.getCdCgf()).isEqualTo(DEFAULT_CD_CGF);
         assertThat(testFilial.getDsSite()).isEqualTo(DEFAULT_DS_SITE);
-        assertThat(testFilial.isFlAtiva()).isEqualTo(DEFAULT_FL_ATIVA);
+        assertThat(testFilial.isFlInativo()).isEqualTo(DEFAULT_FL_INATIVO);
         assertThat(testFilial.getNmRazao()).isEqualTo(DEFAULT_NM_RAZAO);
         assertThat(testFilial.getCdTel()).isEqualTo(DEFAULT_CD_TEL);
         assertThat(testFilial.getCdTel1()).isEqualTo(DEFAULT_CD_TEL_1);
@@ -217,7 +217,7 @@ public class FilialResourceIntTest {
                 .andExpect(jsonPath("$.[*].cdCnpj").value(hasItem(DEFAULT_CD_CNPJ.toString())))
                 .andExpect(jsonPath("$.[*].cdCgf").value(hasItem(DEFAULT_CD_CGF.toString())))
                 .andExpect(jsonPath("$.[*].dsSite").value(hasItem(DEFAULT_DS_SITE.toString())))
-                .andExpect(jsonPath("$.[*].flAtiva").value(hasItem(DEFAULT_FL_ATIVA.booleanValue())))
+                .andExpect(jsonPath("$.[*].flInativo").value(hasItem(DEFAULT_FL_INATIVO.booleanValue())))
                 .andExpect(jsonPath("$.[*].nmRazao").value(hasItem(DEFAULT_NM_RAZAO.toString())))
                 .andExpect(jsonPath("$.[*].cdTel").value(hasItem(DEFAULT_CD_TEL.toString())))
                 .andExpect(jsonPath("$.[*].cdTel1").value(hasItem(DEFAULT_CD_TEL_1.toString())))
@@ -247,7 +247,7 @@ public class FilialResourceIntTest {
             .andExpect(jsonPath("$.cdCnpj").value(DEFAULT_CD_CNPJ.toString()))
             .andExpect(jsonPath("$.cdCgf").value(DEFAULT_CD_CGF.toString()))
             .andExpect(jsonPath("$.dsSite").value(DEFAULT_DS_SITE.toString()))
-            .andExpect(jsonPath("$.flAtiva").value(DEFAULT_FL_ATIVA.booleanValue()))
+            .andExpect(jsonPath("$.flInativo").value(DEFAULT_FL_INATIVO.booleanValue()))
             .andExpect(jsonPath("$.nmRazao").value(DEFAULT_NM_RAZAO.toString()))
             .andExpect(jsonPath("$.cdTel").value(DEFAULT_CD_TEL.toString()))
             .andExpect(jsonPath("$.cdTel1").value(DEFAULT_CD_TEL_1.toString()))
@@ -285,7 +285,7 @@ public class FilialResourceIntTest {
         updatedFilial.setCdCnpj(UPDATED_CD_CNPJ);
         updatedFilial.setCdCgf(UPDATED_CD_CGF);
         updatedFilial.setDsSite(UPDATED_DS_SITE);
-        updatedFilial.setFlAtiva(UPDATED_FL_ATIVA);
+        updatedFilial.setFlInativo(UPDATED_FL_INATIVO);
         updatedFilial.setNmRazao(UPDATED_NM_RAZAO);
         updatedFilial.setCdTel(UPDATED_CD_TEL);
         updatedFilial.setCdTel1(UPDATED_CD_TEL_1);
@@ -312,7 +312,7 @@ public class FilialResourceIntTest {
         assertThat(testFilial.getCdCnpj()).isEqualTo(UPDATED_CD_CNPJ);
         assertThat(testFilial.getCdCgf()).isEqualTo(UPDATED_CD_CGF);
         assertThat(testFilial.getDsSite()).isEqualTo(UPDATED_DS_SITE);
-        assertThat(testFilial.isFlAtiva()).isEqualTo(UPDATED_FL_ATIVA);
+        assertThat(testFilial.isFlInativo()).isEqualTo(UPDATED_FL_INATIVO);
         assertThat(testFilial.getNmRazao()).isEqualTo(UPDATED_NM_RAZAO);
         assertThat(testFilial.getCdTel()).isEqualTo(UPDATED_CD_TEL);
         assertThat(testFilial.getCdTel1()).isEqualTo(UPDATED_CD_TEL_1);
@@ -368,7 +368,7 @@ public class FilialResourceIntTest {
             .andExpect(jsonPath("$.[*].cdCnpj").value(hasItem(DEFAULT_CD_CNPJ.toString())))
             .andExpect(jsonPath("$.[*].cdCgf").value(hasItem(DEFAULT_CD_CGF.toString())))
             .andExpect(jsonPath("$.[*].dsSite").value(hasItem(DEFAULT_DS_SITE.toString())))
-            .andExpect(jsonPath("$.[*].flAtiva").value(hasItem(DEFAULT_FL_ATIVA.booleanValue())))
+            .andExpect(jsonPath("$.[*].flInativo").value(hasItem(DEFAULT_FL_INATIVO.booleanValue())))
             .andExpect(jsonPath("$.[*].nmRazao").value(hasItem(DEFAULT_NM_RAZAO.toString())))
             .andExpect(jsonPath("$.[*].cdTel").value(hasItem(DEFAULT_CD_TEL.toString())))
             .andExpect(jsonPath("$.[*].cdTel1").value(hasItem(DEFAULT_CD_TEL_1.toString())))

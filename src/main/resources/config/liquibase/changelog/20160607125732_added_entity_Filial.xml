@@ -45,7 +45,7 @@
                 <constraints nullable="true" />
             </column>
             
-            <column name="fl_ativa" type="bit">
+            <column name="fl_inativo" type="bit">
                 <constraints nullable="true" />
             </column>
             

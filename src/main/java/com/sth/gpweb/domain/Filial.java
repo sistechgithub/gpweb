@@ -46,8 +46,8 @@ public class Filial implements Serializable {
     @Column(name = "ds_site", length = 30)
     private String dsSite;
 
-    @Column(name = "fl_ativa")
-    private Boolean flAtiva;
+    @Column(name = "fl_inativo")
+    private Boolean flInativo;
 
     @Size(max = 150)
     @Column(name = "nm_razao", length = 150)
@@ -142,12 +142,12 @@ public class Filial implements Serializable {
         this.dsSite = dsSite;
     }
 
-    public Boolean isFlAtiva() {
-        return flAtiva;
+    public Boolean isFlInativo() {
+        return flInativo;
     }
 
-    public void setFlAtiva(Boolean flAtiva) {
-        this.flAtiva = flAtiva;
+    public void setFlInativo(Boolean flInativo) {
+        this.flInativo = flInativo;
     }
 
     public String getNmRazao() {
@@ -260,7 +260,7 @@ public class Filial implements Serializable {
             ", cdCnpj='" + cdCnpj + "'" +
             ", cdCgf='" + cdCgf + "'" +
             ", dsSite='" + dsSite + "'" +
-            ", flAtiva='" + flAtiva + "'" +
+            ", flInativo='" + flInativo + "'" +
             ", nmRazao='" + nmRazao + "'" +
             ", cdTel='" + cdTel + "'" +
             ", cdTel1='" + cdTel1 + "'" +

@@ -45,7 +45,7 @@
                         <th jh-sort-by="cdCnpj" class="col-md-1 col-filial-cnpj"><span translate="gpwebApp.filial.cdCnpj">Cd Cnpj</span> <span class="glyphicon glyphicon-sort pull-right"></span></th> 
                         <th jh-sort-by="cdTel" class="col-md-1 col-filial-telefone"><span translate="gpwebApp.filial.cdTel">Cd Tel</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>
                         <th jh-sort-by="cdFax" class="col-md-1 col-filial-fax"><span translate="gpwebApp.filial.cdFax">Cd Fax</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>
-                        <th jh-sort-by="flAtiva" class="col-md-1 col-filial-ativo"><span translate="gpwebApp.filial.flAtiva">Fl Ativa</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>  
+                        <th jh-sort-by="flInativo" class="col-md-1 col-filial-ativo"><span translate="gpwebApp.filial.flInativo">Inativo</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>  
                         <th class="col-md-1 col-filial-acoes text-center" translate="global.field.actions">Ações</th>
                     </tr>
                 </thead>
@@ -59,8 +59,8 @@
                         <td>{{filial.cdFax | brPhoneNumber}}</td>
                         <td class="text-uppercase text-center">
                             <i class="mdi"
-                                ng-class="{'mdi-check text-success': filial.flAtiva,
-                                'mdi-close text-danger': !filial.flAtiva}">
+                                ng-class="{'mdi-check text-success': filial.flInativo,
+                                'mdi-close text-danger': !filial.flInativo}">
                             </i>
                         </td> 
                         <td class="text-center">
