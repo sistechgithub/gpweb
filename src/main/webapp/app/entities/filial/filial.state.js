@@ -107,7 +107,7 @@
                                 dtOperacao: null, 
                                 flEnviaEmail: false,
                                 flTprec: false,
-                                flAtiva: false,                                
+                                flInativo: false,                                
                                 id: null
                             };
                         }
