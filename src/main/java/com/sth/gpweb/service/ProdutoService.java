@@ -56,4 +56,13 @@ public interface ProdutoService {
      *  @return the list of entities
      */
     Page<Produto> search(String query, Pageable pageable);
+    
+    /**
+     * Search for the produto corresponding to the query name.
+     * Used on productfilial page
+     * 
+     *  @param description query for the name
+     *  @return the list of entities
+     */
+    Page<Produto> findByNomeStartingWithOrderByNomeAsc(String descricao, Pageable pageable);
 }

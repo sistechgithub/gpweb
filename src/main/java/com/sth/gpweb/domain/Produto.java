@@ -91,19 +91,19 @@ public class Produto implements Serializable {
     @Column(name = "bl_imagem_content_type")
     private String blImagemContentType;
 
-    @ManyToOne
+    @OneToOne
     private Grupo grupo;
 
-    @ManyToOne
+    @OneToOne
     private Marca marca;
 
-    @ManyToOne
+    @OneToOne
     private Unidade unidade;
 
-    @ManyToOne
+    @OneToOne
     private ClassProduto classProduto;
     
-    @ManyToOne
+    @OneToOne
     private Subgrupo subgrupo;
 
     public Long getId() {

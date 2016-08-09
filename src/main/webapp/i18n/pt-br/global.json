@@ -19,6 +19,7 @@
                 "unidade": "Unidade",
                 "catalogo": "Catálogo",
                 "classProduto": "Classificação",
+                "produtoFilial": "Produto Filial",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
