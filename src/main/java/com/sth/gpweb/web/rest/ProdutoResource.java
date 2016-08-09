@@ -28,6 +28,7 @@ import com.sth.gpweb.domain.Produto;
 import com.sth.gpweb.service.ProdutoService;
 import com.sth.gpweb.web.rest.util.HeaderUtil;
 import com.sth.gpweb.web.rest.util.PaginationUtil;
+import com.sth.gpweb.web.rest.util.Selection;
 
 /**
  * REST controller for managing Produto.
@@ -166,5 +167,43 @@ public class ProdutoResource {
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
 
+    /**
+     * SEARCH  /_search/produtos/select?query=:query : search for the produto corresponding
+     * to the query.
+     *
+     * @param query the query of the produto search
+     * @return the result of the search
+     */
+    @RequestMapping(value = "/_search/produtos/select",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public ResponseEntity<Selection> searchProdutoNew(@RequestParam String query, Pageable pageable)
+        throws URISyntaxException {
+    	
+    	try{
+    		Page<Produto> page;
+    		
+    		if(query.trim().equalsIgnoreCase("*")){
+    			page = produtoService.findAll(pageable);
+    		}else{
+    			page = produtoService.findByNomeStartingWithOrderByNomeAsc(query, pageable);    			
+    		};
+    		
+	    	HttpHeaders headers = new HttpHeaders();
+	    	headers = PaginationUtil.generateSearchPaginationHttpHeaders(query, page, "/api/_search/produtos/select");
+	    	
+	    	//Json modified to supply select component on frontend
+	        Selection sel = new Selection(page);	        
+	        
+	        return new ResponseEntity<Selection>(sel, headers, HttpStatus.OK);
+	        
+    	}catch(Exception e){
+    		log.error(e.getMessage());
+    		
+    		return ResponseEntity.badRequest().header("Falha", e.getMessage()).body(null);
+    	}
+		
+    }
 
 }

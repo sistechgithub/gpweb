@@ -59,7 +59,7 @@ public interface GrupoService {
     String findNmGrupoExists(String nmGrupo);
     
     /**
-     * Search for the produto corresponding to the query name.
+     * Search for the grupo corresponding to the query name.
      * Used on product page
      * 
      *  @param description query for the name
