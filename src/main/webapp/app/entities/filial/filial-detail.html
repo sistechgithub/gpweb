@@ -88,6 +88,14 @@
         </div>
         
         <div class="row">
+           <dl class="col-xs-12 col-sm-4">
+                <dt><span translate="gpwebApp.filial.dsEmail">Email</span></dt>
+                <dd>
+                    <span class="text-uppercase">{{vm.filial.dsEmail}}</span>
+                    <span ng-hide="vm.filial.dsEmail != null"> - </span>
+                </dd>
+                <div class="box-detail-divider"></div>
+            </dl>
             <dl class="col-xs-12 col-sm-4">
                 <dt><span translate="gpwebApp.filial.flEnviaEmail">Envio de Email</span></dt>
                 <dd>
@@ -103,7 +111,10 @@
                 </dd>
                 <div class="box-detail-divider"></div>
             </dl>
-            <dl class="col-xs-12 col-sm-4">
+        </div>
+        
+        <div class="row">
+            <dl class="col-xs-12 col-sm-12">
                 <dt><span translate="gpwebApp.filial.dsObs">Obs.</span></dt>
                 <dd>
                     <span class="text-uppercase">{{vm.filial.dsObs}}</span>

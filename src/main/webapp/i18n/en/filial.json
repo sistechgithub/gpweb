@@ -30,6 +30,7 @@
             "cdFax": "Fax",
             "dtOperacao": "Date operation",            
             "dsPisCofins": "PIS/COFINS",
+            "dsEmail": "E-mail",
             "flEnviaEmail": "Send e-mail",
             "dsObs": "Obs.",
             "flTprec": "Fl Tprec"

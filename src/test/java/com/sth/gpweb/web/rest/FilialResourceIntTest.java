@@ -85,7 +85,9 @@ public class FilialResourceIntTest {
 
     private static final Integer DEFAULT_NN_MDF_VERSAO = 1;
     private static final Integer UPDATED_NN_MDF_VERSAO = 2;
-
+    
+    private static final String DEFAULT_DS_EMAIL = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    private static final String UPDATED_DS_EMAIL = "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB";
     private static final Boolean DEFAULT_FL_ENVIA_EMAIL = false;
     private static final Boolean UPDATED_FL_ENVIA_EMAIL = true;
     private static final String DEFAULT_DS_OBS = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
@@ -139,6 +141,7 @@ public class FilialResourceIntTest {
         filial.setDtOperacao(DEFAULT_DT_OPERACAO);
         filial.setFlTprec(DEFAULT_FL_TPREC);
         filial.setDsPisCofins(DEFAULT_DS_PIS_COFINS);
+        filial.setDsEmail(DEFAULT_DS_EMAIL);
         filial.setFlEnviaEmail(DEFAULT_FL_ENVIA_EMAIL);
         filial.setDsObs(DEFAULT_DS_OBS);
     }
@@ -174,6 +177,7 @@ public class FilialResourceIntTest {
         assertThat(testFilial.getDtOperacao()).isEqualTo(DEFAULT_DT_OPERACAO);
         assertThat(testFilial.isFlTprec()).isEqualTo(DEFAULT_FL_TPREC);
         assertThat(testFilial.getDsPisCofins()).isEqualTo(DEFAULT_DS_PIS_COFINS);
+        assertThat(testFilial.getDsEmail()).isEqualTo(DEFAULT_DS_EMAIL);
         assertThat(testFilial.isFlEnviaEmail()).isEqualTo(DEFAULT_FL_ENVIA_EMAIL);
         assertThat(testFilial.getDsObs()).isEqualTo(DEFAULT_DS_OBS);
 
@@ -226,6 +230,7 @@ public class FilialResourceIntTest {
                 .andExpect(jsonPath("$.[*].dtOperacao").value(hasItem(DEFAULT_DT_OPERACAO.toString())))
                 .andExpect(jsonPath("$.[*].flTprec").value(hasItem(DEFAULT_FL_TPREC.booleanValue())))
                 .andExpect(jsonPath("$.[*].dsPisCofins").value(hasItem(DEFAULT_DS_PIS_COFINS.toString())))
+                .andExpect(jsonPath("$.[*].dsEmail").value(hasItem(DEFAULT_DS_EMAIL.toString())))
                 .andExpect(jsonPath("$.[*].flEnviaEmail").value(hasItem(DEFAULT_FL_ENVIA_EMAIL.booleanValue())))
                 .andExpect(jsonPath("$.[*].dsObs").value(hasItem(DEFAULT_DS_OBS.toString())));
     }
@@ -256,6 +261,7 @@ public class FilialResourceIntTest {
             .andExpect(jsonPath("$.dtOperacao").value(DEFAULT_DT_OPERACAO.toString()))
             .andExpect(jsonPath("$.flTprec").value(DEFAULT_FL_TPREC.booleanValue()))
             .andExpect(jsonPath("$.dsPisCofins").value(DEFAULT_DS_PIS_COFINS.toString()))
+            .andExpect(jsonPath("$.dsEmail").value(DEFAULT_DS_EMAIL.toString()))
             .andExpect(jsonPath("$.flEnviaEmail").value(DEFAULT_FL_ENVIA_EMAIL.booleanValue()))
             .andExpect(jsonPath("$.dsObs").value(DEFAULT_DS_OBS.toString()));
     }
@@ -294,6 +300,7 @@ public class FilialResourceIntTest {
         updatedFilial.setDtOperacao(UPDATED_DT_OPERACAO);
         updatedFilial.setFlTprec(UPDATED_FL_TPREC);
         updatedFilial.setDsPisCofins(UPDATED_DS_PIS_COFINS);
+        updatedFilial.setDsEmail(UPDATED_DS_EMAIL);
         updatedFilial.setFlEnviaEmail(UPDATED_FL_ENVIA_EMAIL);
         updatedFilial.setDsObs(UPDATED_DS_OBS);
 
@@ -321,6 +328,7 @@ public class FilialResourceIntTest {
         assertThat(testFilial.getDtOperacao()).isEqualTo(UPDATED_DT_OPERACAO);
         assertThat(testFilial.isFlTprec()).isEqualTo(UPDATED_FL_TPREC);
         assertThat(testFilial.getDsPisCofins()).isEqualTo(UPDATED_DS_PIS_COFINS);
+        assertThat(testFilial.getDsEmail()).isEqualTo(UPDATED_DS_EMAIL);
         assertThat(testFilial.isFlEnviaEmail()).isEqualTo(UPDATED_FL_ENVIA_EMAIL);
         assertThat(testFilial.getDsObs()).isEqualTo(UPDATED_DS_OBS);
 
@@ -377,6 +385,7 @@ public class FilialResourceIntTest {
             .andExpect(jsonPath("$.[*].dtOperacao").value(hasItem(DEFAULT_DT_OPERACAO.toString())))
             .andExpect(jsonPath("$.[*].flTprec").value(hasItem(DEFAULT_FL_TPREC.booleanValue())))
             .andExpect(jsonPath("$.[*].dsPisCofins").value(hasItem(DEFAULT_DS_PIS_COFINS.toString())))
+            .andExpect(jsonPath("$.[*].dsEmail").value(hasItem(DEFAULT_DS_EMAIL.toString())))
             .andExpect(jsonPath("$.[*].flEnviaEmail").value(hasItem(DEFAULT_FL_ENVIA_EMAIL.booleanValue())))
             .andExpect(jsonPath("$.[*].dsObs").value(hasItem(DEFAULT_DS_OBS.toString())));
     }
