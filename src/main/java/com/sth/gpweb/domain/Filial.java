@@ -41,7 +41,7 @@ public class Filial implements Serializable {
     @Size(max = 18)
     @Column(name = "cd_cgf", length = 18)
     private String cdCgf;
-
+    
     @Size(max = 30)
     @Column(name = "ds_site", length = 30)
     private String dsSite;
@@ -78,6 +78,10 @@ public class Filial implements Serializable {
     @Size(max = 2)
     @Column(name = "ds_pis_cofins", length = 2)
     private String dsPisCofins;
+    
+    @Size(max = 100)
+    @Column(name = "ds_email", length = 100)
+    private String dsEmail;
 
     @Column(name = "fl_envia_email")
     private Boolean flEnviaEmail;
@@ -133,7 +137,7 @@ public class Filial implements Serializable {
     public void setCdCgf(String cdCgf) {
         this.cdCgf = cdCgf;
     }
-
+    
     public String getDsSite() {
         return dsSite;
     }
@@ -213,6 +217,14 @@ public class Filial implements Serializable {
     public void setDsPisCofins(String dsPisCofins) {
         this.dsPisCofins = dsPisCofins;
     }
+    
+    public String getDsEmail() {
+        return dsEmail;
+    }
+
+    public void setDsEmail(String dsEmail) {
+        this.dsEmail = dsEmail;
+    }
 
     public Boolean isFlEnviaEmail() {
         return flEnviaEmail;
@@ -258,7 +270,7 @@ public class Filial implements Serializable {
             ", nnNumero='" + nnNumero + "'" +
             ", dsComplemento='" + dsComplemento + "'" +
             ", cdCnpj='" + cdCnpj + "'" +
-            ", cdCgf='" + cdCgf + "'" +
+            ", cdCgf='" + cdCgf + "'" +            
             ", dsSite='" + dsSite + "'" +
             ", flInativo='" + flInativo + "'" +
             ", nmRazao='" + nmRazao + "'" +
@@ -269,6 +281,7 @@ public class Filial implements Serializable {
             ", dtOperacao='" + dtOperacao + "'" +
             ", flTprec='" + flTprec + "'" +
             ", dsPisCofins='" + dsPisCofins + "'" +
+            ", dsEmail='" + dsEmail + "'" +
             ", flEnviaEmail='" + flEnviaEmail + "'" +
             ", dsObs='" + dsObs + "'" +
             '}';
