@@ -49,7 +49,7 @@
             "fieldValidateRulesMaxlength": "30"
         },
         {
-            "fieldName": "flAtiva",
+            "fieldName": "flInativo",
             "fieldType": "Boolean"
         },
         {
@@ -107,6 +107,14 @@
                 "maxlength"
             ],
             "fieldValidateRulesMaxlength": "2"
+        },
+        {
+            "fieldName": "dsEmail",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "100"
         },
         {
             "fieldName": "flEnviaEmail",

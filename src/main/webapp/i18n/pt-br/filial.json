@@ -22,7 +22,7 @@
             "cdCnpj": "CNPJ",
             "cdCgf": "Inscrição estadual",
             "dsSite": "Site",
-            "flAtiva": "Ativo",
+            "flInativo": "Inativo",
             "nmRazao": "Razão social",
             "cdTel": "Telefone",
             "cdTel1": "Telefone 2",
@@ -30,6 +30,7 @@
             "cdFax": "Fax",
             "dtOperacao": "Data operacão",            
             "dsPisCofins": "PIS/COFINS",
+            "dsEmail": "E-mail",
             "flEnviaEmail": "Envio de email",
             "dsObs": "Obs.",
             "flTprec": "Fl Tprec"

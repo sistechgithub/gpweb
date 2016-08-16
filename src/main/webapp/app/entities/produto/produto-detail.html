@@ -60,10 +60,10 @@
             </dl>
             
             <dl class="col-xs-12 col-sm-3">
-                <dt><span translate="gpwebApp.produto.cdEan">Código EAN</span></dt>
+                <dt><span translate="gpwebApp.produto.cdGtin">Código GTIN</span></dt>
                 <dd>
-                    <span>{{vm.produto.cdEan}}</span>
-                    <span ng-hide="vm.produto.cdEan != null"> - </span>
+                    <span>{{vm.produto.cdGtin}}</span>
+                    <span ng-hide="vm.produto.cdGtin != null"> - </span>
                 </dd>
                 <div class="box-detail-divider"></div>
             </dl>
@@ -173,10 +173,10 @@
             </dl>
             
             <dl class="col-xs-12 col-sm-3">
-                <dt><span translate="gpwebApp.produto.vlReal">Valor Real</span></dt>
+                <dt><span translate="gpwebApp.produto.vlVenda">Valor Venda</span></dt>
                 <dd>
-                    <span>{{vm.produto.vlReal | currency:'':2}}</span>
-                    <span ng-hide="vm.produto.vlReal != null"> - </span>
+                    <span>{{vm.produto.vlVenda | currency:'':2}}</span>
+                    <span ng-hide="vm.produto.vlVenda != null"> - </span>
                 </dd>
                 <div class="box-detail-divider"></div>
             </dl>   

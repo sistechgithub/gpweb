@@ -37,7 +37,7 @@
                 <constraints nullable="true" />
             </column>
             
-            <column name="cd_ean" type="varchar(20)">
+            <column name="cd_gtin" type="varchar(20)">
                 <constraints nullable="true" />
             </column>
             
@@ -77,7 +77,7 @@
                 <constraints nullable="true" />
             </column>
             
-            <column name="vl_real" type="decimal(10,2)">
+            <column name="vl_venda" type="decimal(10,2)">
                 <constraints nullable="true" />
             </column>
             

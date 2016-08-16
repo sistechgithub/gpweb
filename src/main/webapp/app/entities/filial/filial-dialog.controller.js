@@ -33,7 +33,8 @@
             vm.filial.dsComplemento = angular.uppercase(vm.filial.dsComplemento);
             vm.filial.dsPisCofins = angular.uppercase(vm.filial.dsPisCofins);
             vm.filial.dsObs = angular.uppercase(vm.filial.dsObs);
-            vm.filial.dsSite = angular.uppercase(vm.filial.dsSite);          
+            vm.filial.dsSite = angular.uppercase(vm.filial.dsSite);
+            vm.filial.dsEmail = angular.uppercase(vm.filial.dsEmail);
         };
 
         vm.save = function () {

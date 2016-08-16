@@ -45,7 +45,7 @@
                 <constraints nullable="true" />
             </column>
             
-            <column name="fl_ativa" type="bit">
+            <column name="fl_inativo" type="bit">
                 <constraints nullable="true" />
             </column>
             
@@ -78,6 +78,10 @@
             </column>
             
             <column name="ds_pis_cofins" type="varchar(2)">
+                <constraints nullable="true" />
+            </column>
+            
+            <column name="ds_email" type="varchar(100)">
                 <constraints nullable="true" />
             </column>
             

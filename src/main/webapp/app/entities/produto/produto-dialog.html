@@ -101,13 +101,13 @@
             
             <div class="col-md-3">
                 <div class="form-group">
-                    <label class="control-label" translate="gpwebApp.produto.cdEan" for="field_cdEan">Código EAN</label>
-                    <input type="text" class="form-control text-uppercase" name="cdEan" id="field_cdEan"
-                            ng-model="vm.produto.cdEan"
+                    <label class="control-label" translate="gpwebApp.produto.cdGtin" for="field_cdGtin">Código GTIN</label>
+                    <input type="text" class="form-control text-uppercase" name="cdGtin" id="field_cdGtin"
+                            ng-model="vm.produto.cdGtin"
                             ng-maxlength="20" />
-                    <div ng-show="editForm.cdEan.$invalid">
+                    <div ng-show="editForm.cdGtin.$invalid">
                         <p class="help-block"
-                            ng-show="editForm.cdEan.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="20">
+                            ng-show="editForm.cdGtin.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="20">
                             Este campo não pode ter mais que 20 caracteres.
                         </p>
                     </div>
@@ -178,18 +178,18 @@
         <div class="row">
             <div class="col-md-2">
                 <div class="form-group">
-                    <label class="control-label" translate="gpwebApp.produto.vlReal" for="field_vlReal">Valor Real</label>
-                    <input type="number" class="form-control" name="vlReal" id="field_vlReal"
-                            ng-model="vm.produto.vlReal"
-                             />
-                </div>    
-            </div>
-
-            <div class="col-md-2">
-                <div class="form-group">
                     <label class="control-label" translate="gpwebApp.produto.vlEstoque" for="field_vlEstoque">Valor Estoque</label>
                     <input type="number" class="form-control" name="vlEstoque" id="field_vlEstoque"
                             ng-model="vm.produto.vlEstoque"
+                             />
+                </div>    
+            </div>
+            
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label class="control-label" translate="gpwebApp.produto.vlVenda" for="field_vlVenda">Valor Venda</label>
+                    <input type="number" class="form-control" name="vlVenda" id="field_vlVenda"
+                            ng-model="vm.produto.vlVenda"
                              />
                 </div>    
             </div>

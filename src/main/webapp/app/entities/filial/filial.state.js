@@ -104,10 +104,11 @@
                                 dsPisCofins: null,                                                                
                                 dsObs: null,
                                 dsSite: null,
-                                dtOperacao: null, 
+                                dtOperacao: null,
+                                dsEmail: null,
                                 flEnviaEmail: false,
                                 flTprec: false,
-                                flAtiva: false,                                
+                                flInativo: false,                                
                                 id: null
                             };
                         }
