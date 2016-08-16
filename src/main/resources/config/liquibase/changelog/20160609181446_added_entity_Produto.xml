@@ -37,7 +37,7 @@
                 <constraints nullable="true" />
             </column>
             
-            <column name="cd_ean" type="varchar(20)">
+            <column name="cd_gtin" type="varchar(20)">
                 <constraints nullable="true" />
             </column>
             

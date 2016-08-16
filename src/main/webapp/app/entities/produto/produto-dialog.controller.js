@@ -67,7 +67,7 @@
         	vm.produto.nmProduto = angular.uppercase(vm.produto.nmProduto);
         	vm.produto.cdBarras  = angular.uppercase(vm.produto.cdBarras);
         	vm.produto.cdNcm     = angular.uppercase(vm.produto.cdNcm);
-        	vm.produto.cdEan     = angular.uppercase(vm.produto.cdEan);
+        	vm.produto.cdGtin     = angular.uppercase(vm.produto.cdGtin);
         	vm.produto.cdAnp     = angular.uppercase(vm.produto.cdAnp);
         	vm.produto.dsAnp     = angular.uppercase(vm.produto.dsAnp);
         	vm.produto.cdContaContabil = angular.uppercase(vm.produto.cdContaContabil);

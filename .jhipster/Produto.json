@@ -64,7 +64,7 @@
             "fieldValidateRulesMaxlength": "8"
         },
         {
-            "fieldName": "cdEan",
+            "fieldName": "cdGtin",
             "fieldType": "String",
             "fieldValidateRules": [
                 "maxlength"

@@ -54,8 +54,8 @@ public class ProdutoResourceIntTest {
     private static final String UPDATED_NM_PRODUTO = "B";
     private static final String DEFAULT_CD_NCM = "AAAAAAAA";
     private static final String UPDATED_CD_NCM = "BBBBBBBB";
-    private static final String DEFAULT_CD_EAN = "AAAAAAAAAAAAAAAAAAAA";
-    private static final String UPDATED_CD_EAN = "BBBBBBBBBBBBBBBBBBBB";
+    private static final String DEFAULT_CD_GTIN = "AAAAAAAAAAAAAAAAAAAA";
+    private static final String UPDATED_CD_GTIN = "BBBBBBBBBBBBBBBBBBBB";
     private static final String DEFAULT_CD_ANP = "AAAAAAAAA";
     private static final String UPDATED_CD_ANP = "BBBBBBBBB";
     private static final String DEFAULT_DS_ANP = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
@@ -129,7 +129,7 @@ public class ProdutoResourceIntTest {
         produto.setCdBarras(DEFAULT_CD_BARRAS);
         produto.setNmProduto(DEFAULT_NM_PRODUTO);
         produto.setCdNcm(DEFAULT_CD_NCM);
-        produto.setCdEan(DEFAULT_CD_EAN);
+        produto.setCdGtin(DEFAULT_CD_GTIN);
         produto.setCdAnp(DEFAULT_CD_ANP);
         produto.setDsAnp(DEFAULT_DS_ANP);
         produto.setCdContaContabil(DEFAULT_CD_CONTA_CONTABIL);
@@ -166,7 +166,7 @@ public class ProdutoResourceIntTest {
         assertThat(testProduto.getCdBarras()).isEqualTo(DEFAULT_CD_BARRAS);
         assertThat(testProduto.getNmProduto()).isEqualTo(DEFAULT_NM_PRODUTO);
         assertThat(testProduto.getCdNcm()).isEqualTo(DEFAULT_CD_NCM);
-        assertThat(testProduto.getCdEan()).isEqualTo(DEFAULT_CD_EAN);
+        assertThat(testProduto.getCdGtin()).isEqualTo(DEFAULT_CD_GTIN);
         assertThat(testProduto.getCdAnp()).isEqualTo(DEFAULT_CD_ANP);
         assertThat(testProduto.getDsAnp()).isEqualTo(DEFAULT_DS_ANP);
         assertThat(testProduto.getCdContaContabil()).isEqualTo(DEFAULT_CD_CONTA_CONTABIL);
@@ -220,7 +220,7 @@ public class ProdutoResourceIntTest {
                 .andExpect(jsonPath("$.[*].cdBarras").value(hasItem(DEFAULT_CD_BARRAS.toString())))
                 .andExpect(jsonPath("$.[*].nmProduto").value(hasItem(DEFAULT_NM_PRODUTO.toString())))
                 .andExpect(jsonPath("$.[*].cdNcm").value(hasItem(DEFAULT_CD_NCM.toString())))
-                .andExpect(jsonPath("$.[*].cdEan").value(hasItem(DEFAULT_CD_EAN.toString())))
+                .andExpect(jsonPath("$.[*].cdGtin").value(hasItem(DEFAULT_CD_GTIN.toString())))
                 .andExpect(jsonPath("$.[*].cdAnp").value(hasItem(DEFAULT_CD_ANP.toString())))
                 .andExpect(jsonPath("$.[*].dsAnp").value(hasItem(DEFAULT_DS_ANP.toString())))
                 .andExpect(jsonPath("$.[*].cdContaContabil").value(hasItem(DEFAULT_CD_CONTA_CONTABIL.toString())))
@@ -252,7 +252,7 @@ public class ProdutoResourceIntTest {
             .andExpect(jsonPath("$.cdBarras").value(DEFAULT_CD_BARRAS.toString()))
             .andExpect(jsonPath("$.nmProduto").value(DEFAULT_NM_PRODUTO.toString()))
             .andExpect(jsonPath("$.cdNcm").value(DEFAULT_CD_NCM.toString()))
-            .andExpect(jsonPath("$.cdEan").value(DEFAULT_CD_EAN.toString()))
+            .andExpect(jsonPath("$.cdGtin").value(DEFAULT_CD_GTIN.toString()))
             .andExpect(jsonPath("$.cdAnp").value(DEFAULT_CD_ANP.toString()))
             .andExpect(jsonPath("$.dsAnp").value(DEFAULT_DS_ANP.toString()))
             .andExpect(jsonPath("$.cdContaContabil").value(DEFAULT_CD_CONTA_CONTABIL.toString()))
@@ -292,7 +292,7 @@ public class ProdutoResourceIntTest {
         updatedProduto.setCdBarras(UPDATED_CD_BARRAS);
         updatedProduto.setNmProduto(UPDATED_NM_PRODUTO);
         updatedProduto.setCdNcm(UPDATED_CD_NCM);
-        updatedProduto.setCdEan(UPDATED_CD_EAN);
+        updatedProduto.setCdGtin(UPDATED_CD_GTIN);
         updatedProduto.setCdAnp(UPDATED_CD_ANP);
         updatedProduto.setDsAnp(UPDATED_DS_ANP);
         updatedProduto.setCdContaContabil(UPDATED_CD_CONTA_CONTABIL);
@@ -321,7 +321,7 @@ public class ProdutoResourceIntTest {
         assertThat(testProduto.getCdBarras()).isEqualTo(UPDATED_CD_BARRAS);
         assertThat(testProduto.getNmProduto()).isEqualTo(UPDATED_NM_PRODUTO);
         assertThat(testProduto.getCdNcm()).isEqualTo(UPDATED_CD_NCM);
-        assertThat(testProduto.getCdEan()).isEqualTo(UPDATED_CD_EAN);
+        assertThat(testProduto.getCdGtin()).isEqualTo(UPDATED_CD_GTIN);
         assertThat(testProduto.getCdAnp()).isEqualTo(UPDATED_CD_ANP);
         assertThat(testProduto.getDsAnp()).isEqualTo(UPDATED_DS_ANP);
         assertThat(testProduto.getCdContaContabil()).isEqualTo(UPDATED_CD_CONTA_CONTABIL);
@@ -379,7 +379,7 @@ public class ProdutoResourceIntTest {
             .andExpect(jsonPath("$.[*].cdBarras").value(hasItem(DEFAULT_CD_BARRAS.toString())))
             .andExpect(jsonPath("$.[*].nmProduto").value(hasItem(DEFAULT_NM_PRODUTO.toString())))
             .andExpect(jsonPath("$.[*].cdNcm").value(hasItem(DEFAULT_CD_NCM.toString())))
-            .andExpect(jsonPath("$.[*].cdEan").value(hasItem(DEFAULT_CD_EAN.toString())))
+            .andExpect(jsonPath("$.[*].cdGtin").value(hasItem(DEFAULT_CD_GTIN.toString())))
             .andExpect(jsonPath("$.[*].cdAnp").value(hasItem(DEFAULT_CD_ANP.toString())))
             .andExpect(jsonPath("$.[*].dsAnp").value(hasItem(DEFAULT_DS_ANP.toString())))
             .andExpect(jsonPath("$.[*].cdContaContabil").value(hasItem(DEFAULT_CD_CONTA_CONTABIL.toString())))
