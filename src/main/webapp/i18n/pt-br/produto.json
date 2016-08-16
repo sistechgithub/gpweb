@@ -26,7 +26,7 @@
             "dsAnp": "Descrição ANP",
             "cdContaContabil": "Código Conta Contábil",
             "materiaPrima": "Matéria Prima",
-            "vlReal": "Valor Real",
+            "vlVenda": "Valor Venda",
             "vlEstoque": "Valor Estoque",
             "dsInformacoes": "Informações",            
             "grupo": "Grupo",

@@ -26,7 +26,7 @@
             "dsAnp": "ANP Description",
             "cdContaContabil": "Accounting Account",
             "materiaPrima": "Feedstock",
-            "vlReal": "Real Value",
+            "vlVenda": "Sale Value",
             "vlEstoque": "Stock Value",
             "dsInformacoes": "Information",
             "grupo": "Group",
