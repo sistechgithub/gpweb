@@ -74,8 +74,8 @@ public class Produto implements Serializable {
     @Column(name = "ds_class_terapeutica", length = 30)
     private String dsClassTerapeutica;
 
-    @Column(name = "vl_real", precision=10, scale=2)
-    private BigDecimal vlReal;
+    @Column(name = "vl_Venda", precision=10, scale=2)
+    private BigDecimal vlVenda;
 
     @Column(name = "vl_estoque", precision=10, scale=2)
     private BigDecimal vlEstoque;
@@ -226,12 +226,12 @@ public class Produto implements Serializable {
         this.dsClassTerapeutica = dsClassTerapeutica;
     }
 
-    public BigDecimal getVlReal() {
-        return vlReal;
+    public BigDecimal getVlVenda() {
+        return vlVenda;
     }
 
-    public void setVlReal(BigDecimal vlReal) {
-        this.vlReal = vlReal;
+    public void setVlVenda(BigDecimal vlVenda) {
+        this.vlVenda = vlVenda;
     }
 
     public BigDecimal getVlEstoque() {
@@ -344,7 +344,7 @@ public class Produto implements Serializable {
             ", flSngpc='" + flSngpc + "'" +
             ", flMedProlonga='" + flMedProlonga + "'" +
             ", dsClassTerapeutica='" + dsClassTerapeutica + "'" +
-            ", vlReal='" + vlReal + "'" +
+            ", vlVenda='" + vlVenda + "'" +
             ", vlEstoque='" + vlEstoque + "'" +
             ", dsInformacoes='" + dsInformacoes + "'" +
             ", blImagem='" + blImagem + "'" +

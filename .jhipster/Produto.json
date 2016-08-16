@@ -128,7 +128,7 @@
             "fieldValidateRulesMaxlength": "30"
         },
         {
-            "fieldName": "vlReal",
+            "fieldName": "vlVenda",
             "fieldType": "BigDecimal"
         },
         {

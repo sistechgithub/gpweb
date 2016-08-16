@@ -105,7 +105,7 @@
                                 flSngpc: null,
                                 flMedProlonga: null,
                                 dsClassTerapeutica: null,
-                                vlReal: 0.00,
+                                vlVenda: 0.00,
                                 vlEstoque: 0.00,
                                 dsInformacoes: null,
                                 blImagem: null,

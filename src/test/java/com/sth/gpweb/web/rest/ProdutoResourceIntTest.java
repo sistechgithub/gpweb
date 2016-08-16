@@ -79,8 +79,8 @@ public class ProdutoResourceIntTest {
     private static final String DEFAULT_DS_CLASS_TERAPEUTICA = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     private static final String UPDATED_DS_CLASS_TERAPEUTICA = "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB";
 
-    private static final BigDecimal DEFAULT_VL_REAL = new BigDecimal(1);
-    private static final BigDecimal UPDATED_VL_REAL = new BigDecimal(2);
+    private static final BigDecimal DEFAULT_VL_VENDA = new BigDecimal(1);
+    private static final BigDecimal UPDATED_VL_VENDA = new BigDecimal(2);
 
     private static final BigDecimal DEFAULT_VL_ESTOQUE = new BigDecimal(1);
     private static final BigDecimal UPDATED_VL_ESTOQUE = new BigDecimal(2);
@@ -139,7 +139,7 @@ public class ProdutoResourceIntTest {
         produto.setFlSngpc(DEFAULT_FL_SNGPC);
         produto.setFlMedProlonga(DEFAULT_FL_MED_PROLONGA);
         produto.setDsClassTerapeutica(DEFAULT_DS_CLASS_TERAPEUTICA);
-        produto.setVlReal(DEFAULT_VL_REAL);
+        produto.setVlVenda(DEFAULT_VL_VENDA);
         produto.setVlEstoque(DEFAULT_VL_ESTOQUE);
         produto.setDsInformacoes(DEFAULT_DS_INFORMACOES);
         produto.setBlImagem(DEFAULT_BL_IMAGEM);
@@ -176,7 +176,7 @@ public class ProdutoResourceIntTest {
         assertThat(testProduto.isFlSngpc()).isEqualTo(DEFAULT_FL_SNGPC);
         assertThat(testProduto.isFlMedProlonga()).isEqualTo(DEFAULT_FL_MED_PROLONGA);
         assertThat(testProduto.getDsClassTerapeutica()).isEqualTo(DEFAULT_DS_CLASS_TERAPEUTICA);
-        assertThat(testProduto.getVlReal()).isEqualTo(DEFAULT_VL_REAL);
+        assertThat(testProduto.getVlVenda()).isEqualTo(DEFAULT_VL_VENDA);
         assertThat(testProduto.getVlEstoque()).isEqualTo(DEFAULT_VL_ESTOQUE);
         assertThat(testProduto.getDsInformacoes()).isEqualTo(DEFAULT_DS_INFORMACOES);
         assertThat(testProduto.getBlImagem()).isEqualTo(DEFAULT_BL_IMAGEM);
@@ -230,7 +230,7 @@ public class ProdutoResourceIntTest {
                 .andExpect(jsonPath("$.[*].flSngpc").value(hasItem(DEFAULT_FL_SNGPC.booleanValue())))
                 .andExpect(jsonPath("$.[*].flMedProlonga").value(hasItem(DEFAULT_FL_MED_PROLONGA.booleanValue())))
                 .andExpect(jsonPath("$.[*].dsClassTerapeutica").value(hasItem(DEFAULT_DS_CLASS_TERAPEUTICA.toString())))
-                .andExpect(jsonPath("$.[*].vlReal").value(hasItem(DEFAULT_VL_REAL.intValue())))
+                .andExpect(jsonPath("$.[*].vlVenda").value(hasItem(DEFAULT_VL_VENDA.intValue())))
                 .andExpect(jsonPath("$.[*].vlEstoque").value(hasItem(DEFAULT_VL_ESTOQUE.intValue())))
                 .andExpect(jsonPath("$.[*].dsInformacoes").value(hasItem(DEFAULT_DS_INFORMACOES.toString())))
                 .andExpect(jsonPath("$.[*].blImagemContentType").value(hasItem(DEFAULT_BL_IMAGEM_CONTENT_TYPE)))
@@ -262,7 +262,7 @@ public class ProdutoResourceIntTest {
             .andExpect(jsonPath("$.flSngpc").value(DEFAULT_FL_SNGPC.booleanValue()))
             .andExpect(jsonPath("$.flMedProlonga").value(DEFAULT_FL_MED_PROLONGA.booleanValue()))
             .andExpect(jsonPath("$.dsClassTerapeutica").value(DEFAULT_DS_CLASS_TERAPEUTICA.toString()))
-            .andExpect(jsonPath("$.vlReal").value(DEFAULT_VL_REAL.intValue()))
+            .andExpect(jsonPath("$.vlVenda").value(DEFAULT_VL_VENDA.intValue()))
             .andExpect(jsonPath("$.vlEstoque").value(DEFAULT_VL_ESTOQUE.intValue()))
             .andExpect(jsonPath("$.dsInformacoes").value(DEFAULT_DS_INFORMACOES.toString()))
             .andExpect(jsonPath("$.blImagemContentType").value(DEFAULT_BL_IMAGEM_CONTENT_TYPE))
@@ -302,7 +302,7 @@ public class ProdutoResourceIntTest {
         updatedProduto.setFlSngpc(UPDATED_FL_SNGPC);
         updatedProduto.setFlMedProlonga(UPDATED_FL_MED_PROLONGA);
         updatedProduto.setDsClassTerapeutica(UPDATED_DS_CLASS_TERAPEUTICA);
-        updatedProduto.setVlReal(UPDATED_VL_REAL);
+        updatedProduto.setVlVenda(UPDATED_VL_VENDA);
         updatedProduto.setVlEstoque(UPDATED_VL_ESTOQUE);
         updatedProduto.setDsInformacoes(UPDATED_DS_INFORMACOES);
         updatedProduto.setBlImagem(UPDATED_BL_IMAGEM);
@@ -331,7 +331,7 @@ public class ProdutoResourceIntTest {
         assertThat(testProduto.isFlSngpc()).isEqualTo(UPDATED_FL_SNGPC);
         assertThat(testProduto.isFlMedProlonga()).isEqualTo(UPDATED_FL_MED_PROLONGA);
         assertThat(testProduto.getDsClassTerapeutica()).isEqualTo(UPDATED_DS_CLASS_TERAPEUTICA);
-        assertThat(testProduto.getVlReal()).isEqualTo(UPDATED_VL_REAL);
+        assertThat(testProduto.getVlVenda()).isEqualTo(UPDATED_VL_VENDA);
         assertThat(testProduto.getVlEstoque()).isEqualTo(UPDATED_VL_ESTOQUE);
         assertThat(testProduto.getDsInformacoes()).isEqualTo(UPDATED_DS_INFORMACOES);
         assertThat(testProduto.getBlImagem()).isEqualTo(UPDATED_BL_IMAGEM);
@@ -389,7 +389,7 @@ public class ProdutoResourceIntTest {
             .andExpect(jsonPath("$.[*].flSngpc").value(hasItem(DEFAULT_FL_SNGPC.booleanValue())))
             .andExpect(jsonPath("$.[*].flMedProlonga").value(hasItem(DEFAULT_FL_MED_PROLONGA.booleanValue())))
             .andExpect(jsonPath("$.[*].dsClassTerapeutica").value(hasItem(DEFAULT_DS_CLASS_TERAPEUTICA.toString())))
-            .andExpect(jsonPath("$.[*].vlReal").value(hasItem(DEFAULT_VL_REAL.intValue())))
+            .andExpect(jsonPath("$.[*].vlVenda").value(hasItem(DEFAULT_VL_VENDA.intValue())))
             .andExpect(jsonPath("$.[*].vlEstoque").value(hasItem(DEFAULT_VL_ESTOQUE.intValue())))
             .andExpect(jsonPath("$.[*].dsInformacoes").value(hasItem(DEFAULT_DS_INFORMACOES.toString())))
             .andExpect(jsonPath("$.[*].blImagemContentType").value(hasItem(DEFAULT_BL_IMAGEM_CONTENT_TYPE)))
