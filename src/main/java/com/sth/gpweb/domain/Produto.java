@@ -39,8 +39,8 @@ public class Produto implements Serializable {
     private String cdNcm;
 
     @Size(max = 20)
-    @Column(name = "cd_ean", length = 20)
-    private String cdEan;
+    @Column(name = "cd_gtin", length = 20)
+    private String cdGtin;
 
     @Size(max = 9)
     @Column(name = "cd_anp", length = 9)
@@ -146,12 +146,12 @@ public class Produto implements Serializable {
         this.cdNcm = cdNcm;
     }
 
-    public String getCdEan() {
-        return cdEan;
+    public String getCdGtin() {
+        return cdGtin;
     }
 
-    public void setCdEan(String cdEan) {
-        this.cdEan = cdEan;
+    public void setCdGtin(String cdGtin) {
+        this.cdGtin = cdGtin;
     }
 
     public String getCdAnp() {
@@ -334,7 +334,7 @@ public class Produto implements Serializable {
             ", cdBarras='" + cdBarras + "'" +
             ", nmProduto='" + nmProduto + "'" +
             ", cdNcm='" + cdNcm + "'" +
-            ", cdEan='" + cdEan + "'" +
+            ", cdGtin='" + cdGtin + "'" +
             ", cdAnp='" + cdAnp + "'" +
             ", dsAnp='" + dsAnp + "'" +
             ", cdContaContabil='" + cdContaContabil + "'" +

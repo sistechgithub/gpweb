@@ -95,7 +95,7 @@
                                 cdBarras: null,
                                 nmProduto: null,
                                 cdNcm: null,
-                                cdEan: null,
+                                cdGtin: null,
                                 cdAnp: null,
                                 dsAnp: null,
                                 cdContaContabil: null,

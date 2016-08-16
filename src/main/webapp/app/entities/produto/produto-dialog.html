@@ -101,13 +101,13 @@
             
             <div class="col-md-3">
                 <div class="form-group">
-                    <label class="control-label" translate="gpwebApp.produto.cdEan" for="field_cdEan">Código EAN</label>
-                    <input type="text" class="form-control text-uppercase" name="cdEan" id="field_cdEan"
-                            ng-model="vm.produto.cdEan"
+                    <label class="control-label" translate="gpwebApp.produto.cdGtin" for="field_cdGtin">Código GTIN</label>
+                    <input type="text" class="form-control text-uppercase" name="cdGtin" id="field_cdGtin"
+                            ng-model="vm.produto.cdGtin"
                             ng-maxlength="20" />
-                    <div ng-show="editForm.cdEan.$invalid">
+                    <div ng-show="editForm.cdGtin.$invalid">
                         <p class="help-block"
-                            ng-show="editForm.cdEan.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="20">
+                            ng-show="editForm.cdGtin.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="20">
                             Este campo não pode ter mais que 20 caracteres.
                         </p>
                     </div>

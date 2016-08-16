@@ -21,7 +21,7 @@
             "cdProduto": "Código Produto",
             "cdNcm": "Código NCM",
             "cdBarras": "Código de Barras",       
-            "cdEan": "Código EAN",
+            "cdGtin": "Código GTIN",
             "cdAnp": "Código ANP",
             "dsAnp": "Descrição ANP",
             "cdContaContabil": "Código Conta Contábil",
