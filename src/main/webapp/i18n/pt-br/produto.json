@@ -25,7 +25,6 @@
             "cdAnp": "Código ANP",
             "dsAnp": "Descrição ANP",
             "cdContaContabil": "Código Conta Contábil",
-            "materiaPrima": "Matéria Prima",
             "vlVenda": "Valor Venda",
             "vlEstoque": "Valor Estoque",
             "dsInformacoes": "Informações",            
@@ -37,7 +36,6 @@
             "flBalanca": "Balança",            
             "flSngpc": "SNGPC",
             "flUsoProlongado": "Uso Prolongado",
-            "dsClassTerapeutica": "Classe Terapêutica",
             "flInativo": "Inativo"
         }
     }

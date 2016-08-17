@@ -23,7 +23,7 @@
                 </dd>
             </dl>
             
-            <dl class="col-xs-12 col-sm-7 no-padding-left add-mob-padding-left-15">
+            <dl class="col-xs-12 col-sm-7">
                 <dt><span translate="gpwebApp.produto.nmProduto">Nome</span></dt>
                 <dd>
                     <span class="text-uppercase">{{vm.produto.nmProduto}}</span>
@@ -41,20 +41,20 @@
                 <div class="box-detail-divider"></div>
             </dl>
             
-            <dl class="col-xs-12 col-sm-1 no-padding-left add-mob-padding-left-15">
-                <dt><span translate="gpwebApp.produto.cdNcm">Código NCM</span></dt>
+            <dl class="col-xs-12 col-sm-4">
+                <dt><span translate="gpwebApp.produto.cdBarras">Código de Barras</span></dt>
                 <dd>
-                    <span>{{vm.produto.cdNcm}}</span>
-                    <span ng-hide="vm.produto.cdNcm != null"> - </span>
+                    <span>{{vm.produto.cdBarras}}</span>
+                    <span ng-hide="vm.produto.cdBarras != null"> - </span>
                 </dd>
                 <div class="box-detail-divider"></div>
             </dl>
             
             <dl class="col-xs-12 col-sm-3">
-                <dt><span translate="gpwebApp.produto.cdBarras">Código de Barras</span></dt>
+                <dt><span translate="gpwebApp.produto.cdNcm">Código NCM</span></dt>
                 <dd>
-                    <span>{{vm.produto.cdBarras}}</span>
-                    <span ng-hide="vm.produto.cdBarras != null"> - </span>
+                    <span>{{vm.produto.cdNcm}}</span>
+                    <span ng-hide="vm.produto.cdNcm != null"> - </span>
                 </dd>
                 <div class="box-detail-divider"></div>
             </dl>
@@ -66,8 +66,10 @@
                     <span ng-hide="vm.produto.cdGtin != null"> - </span>
                 </dd>
                 <div class="box-detail-divider"></div>
-            </dl>
-            
+            </dl>            
+        </div>
+        
+        <div class="row">
             <dl class="col-xs-12 col-sm-3">
                 <dt><span translate="gpwebApp.produto.cdAnp">Código ANP</span></dt>
                 <dd>
@@ -76,9 +78,7 @@
                 </dd>
                 <div class="box-detail-divider"></div>
             </dl>
-        </div>
-        
-        <div class="row">
+            
             <dl class="col-xs-12 col-sm-3">
                 <dt><span translate="gpwebApp.produto.dsAnp">Descrição ANP</span></dt>
                 <dd>
@@ -95,16 +95,7 @@
                     <span ng-hide="vm.produto.cdContaContabil != null"> - </span>
                 </dd>
                 <div class="box-detail-divider"></div>
-            </dl> 
-            
-            <dl class="col-xs-12 col-sm-3">
-                <dt><span translate="gpwebApp.produto.materiaPrima">Matéria Prima</span></dt>
-                <dd>
-                    <span class="text-uppercase">{{vm.produto.materiaPrima}}</span>
-                    <span ng-hide="vm.produto.materiaPrima != null"> - </span>
-                </dd>
-                <div class="box-detail-divider"></div>
-            </dl> 
+            </dl>  
             
             <dl class="col-xs-12 col-sm-3">
                 <dt><span translate="gpwebApp.produto.flBalanca">Balança</span></dt>
@@ -190,30 +181,21 @@
                 </dd>
                 <div class="box-detail-divider"></div>
             </dl>
-            
-            <dl class="col-xs-12 col-sm-3">
+
+            <dl class="col-xs-12 col-sm-9">
                 <dt><span translate="gpwebApp.produto.flUsoProlongado">Uso Prolongado</span></dt>
                 <dd>
                     <span class="text-uppercase">{{vm.produto.flUsoProlongado ? 'Sim' : 'Não'}}</span>
                 </dd>
                 <div class="box-detail-divider"></div>
-            </dl> 
-            
-            <dl class="col-xs-12 col-sm-6">
-                <dt><span translate="gpwebApp.produto.dsClassTerapeutica">Classe Terapêutica</span></dt>
-                <dd>
-                    <span class="text-uppercase">{{vm.produto.dsClassTerapeutica}}</span>
-                    <span ng-hide="vm.produto.dsClassTerapeutica != null"> - </span>
-                </dd>
-                <div class="box-detail-divider"></div>
-            </dl>   
+            </dl>
         </div>
         
         <div class="row">
             <dl class="col-xs-12 col-sm-12">
                 <dt><span translate="gpwebApp.produto.dsInformacoes">Informações</span></dt>
                 <dd>
-                    <span class="text-uppercase">{{vm.produto.dsInformacoes}}</span>
+                    <span class="text-uppercase break">{{vm.produto.dsInformacoes}}</span>
                     <span ng-hide="vm.produto.dsInformacoes != null"> - </span>
                 </dd>
                 <div class="box-detail-divider"></div>

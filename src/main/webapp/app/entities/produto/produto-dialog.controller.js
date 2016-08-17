@@ -71,8 +71,6 @@
         	vm.produto.cdAnp     = angular.uppercase(vm.produto.cdAnp);
         	vm.produto.dsAnp     = angular.uppercase(vm.produto.dsAnp);
         	vm.produto.cdContaContabil = angular.uppercase(vm.produto.cdContaContabil);
-        	vm.produto.materiaPrima = angular.uppercase(vm.produto.materiaPrima);
-        	vm.produto.dsClassTerapeutica = angular.uppercase(vm.produto.dsClassTerapeutica);
         	vm.produto.dsInformacoes = angular.uppercase(vm.produto.dsInformacoes);        	
         };
 

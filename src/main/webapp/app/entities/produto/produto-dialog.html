@@ -161,31 +161,16 @@
             </div>
             <div class="col-md-3">
                 <div class="form-group">
-                    <label class="control-label" translate="gpwebApp.produto.materiaPrima" for="field_materiaPrima">Matéria Prima</label>
-                    <input type="text" class="form-control text-uppercase" name="materiaPrima" id="field_materiaPrima"
-                            ng-model="vm.produto.materiaPrima"
-                            ng-maxlength="1" />
-                    <div ng-show="editForm.materiaPrima.$invalid">
-                        <p class="help-block"
-                            ng-show="editForm.materiaPrima.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="1">
-                            Este campo não pode ter menos que 1 caractere.
-                        </p>
-                    </div>
-                </div>
-            </div>            
-        </div>    
-        
-        <div class="row">
-            <div class="col-md-2">
-                <div class="form-group">
                     <label class="control-label" translate="gpwebApp.produto.vlEstoque" for="field_vlEstoque">Valor Estoque</label>
                     <input type="number" class="form-control" name="vlEstoque" id="field_vlEstoque"
                             ng-model="vm.produto.vlEstoque"
                              />
                 </div>    
-            </div>
-            
-            <div class="col-md-2">
+            </div>          
+        </div>    
+        
+        <div class="row">
+            <div class="col-md-3">
                 <div class="form-group">
                     <label class="control-label" translate="gpwebApp.produto.vlVenda" for="field_vlVenda">Valor Venda</label>
                     <input type="number" class="form-control" name="vlVenda" id="field_vlVenda"
@@ -194,7 +179,7 @@
                 </div>    
             </div>
             
-            <div class="col-md-8">
+            <div class="col-md-9">
                 <div class="form-group">
                     <label class="control-label" translate="gpwebApp.produto.dsInformacoes" for="field_dsInformacoes">Informações</label>
                     <input type="text" class="form-control text-uppercase" name="dsInformacoes" id="field_dsInformacoes"
@@ -346,22 +331,6 @@
                     <span class="checkbox__label" translate="gpwebApp.produto.flUsoProlongado">Uso Prolongado</span>
                 </label>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <div class="form-group">
-                    <label class="control-label" translate="gpwebApp.produto.dsClassTerapeutica" for="field_dsClassTerapeutica">Classe Terapêutica</label>
-                    <input type="text" class="form-control" name="dsClassTerapeutica" id="field_dsClassTerapeutica"
-                            ng-model="vm.produto.dsClassTerapeutica"
-                            ng-maxlength="30" />
-                    <div ng-show="editForm.dsClassTerapeutica.$invalid">
-                        <p class="help-block"
-                            ng-show="editForm.dsClassTerapeutica.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="30">
-                            Este campo não pode ter mais que 30 caracteres.
-                        </p>
-                    </div>
-                </div>    
-            </div>            
         </div>
         <div class="form-group">
             <div class="checkbox">                   

@@ -54,10 +54,6 @@ public class Produto implements Serializable {
     @Column(name = "cd_conta_contabil", length = 25)
     private String cdContaContabil;
 
-    @Size(max = 1)
-    @Column(name = "materia_prima", length = 1)
-    private String materiaPrima;
-
     @Column(name = "fl_balanca")
     private Boolean flBalanca;
 
@@ -69,10 +65,6 @@ public class Produto implements Serializable {
 
     @Column(name = "fl_uso_prolongado")
     private Boolean flUsoProlongado;
-
-    @Size(max = 30)
-    @Column(name = "ds_class_terapeutica", length = 30)
-    private String dsClassTerapeutica;
 
     @Column(name = "vl_Venda", precision=10, scale=2)
     private BigDecimal vlVenda;
@@ -178,14 +170,6 @@ public class Produto implements Serializable {
         this.cdContaContabil = cdContaContabil;
     }
 
-    public String getMateriaPrima() {
-        return materiaPrima;
-    }
-
-    public void setMateriaPrima(String materiaPrima) {
-        this.materiaPrima = materiaPrima;
-    }
-
     public Boolean isFlBalanca() {
         return flBalanca;
     }
@@ -216,14 +200,6 @@ public class Produto implements Serializable {
 
     public void setFlUsoProlongado(Boolean flUsoProlongado) {
         this.flUsoProlongado = flUsoProlongado;
-    }
-
-    public String getDsClassTerapeutica() {
-        return dsClassTerapeutica;
-    }
-
-    public void setDsClassTerapeutica(String dsClassTerapeutica) {
-        this.dsClassTerapeutica = dsClassTerapeutica;
     }
 
     public BigDecimal getVlVenda() {
@@ -338,12 +314,10 @@ public class Produto implements Serializable {
             ", cdAnp='" + cdAnp + "'" +
             ", dsAnp='" + dsAnp + "'" +
             ", cdContaContabil='" + cdContaContabil + "'" +
-            ", materiaPrima='" + materiaPrima + "'" +
             ", flBalanca='" + flBalanca + "'" +
             ", flInativo='" + flInativo + "'" +
             ", flSngpc='" + flSngpc + "'" +
             ", flUsoProlongado='" + flUsoProlongado + "'" +
-            ", dsClassTerapeutica='" + dsClassTerapeutica + "'" +
             ", vlVenda='" + vlVenda + "'" +
             ", vlEstoque='" + vlEstoque + "'" +
             ", dsInformacoes='" + dsInformacoes + "'" +
