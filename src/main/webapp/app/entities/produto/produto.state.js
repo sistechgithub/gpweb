@@ -103,7 +103,7 @@
                                 flBalanca: null,
                                 flInativo: null,
                                 flSngpc: null,
-                                flMedProlonga: null,
+                                flUsoProlongado: null,
                                 dsClassTerapeutica: null,
                                 vlVenda: 0.00,
                                 vlEstoque: 0.00,

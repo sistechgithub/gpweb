@@ -116,7 +116,7 @@
             "fieldType": "Boolean"
         },
         {
-            "fieldName": "flMedProlonga",
+            "fieldName": "flUsoProlongado",
             "fieldType": "Boolean"
         },
         {

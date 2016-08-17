@@ -69,7 +69,7 @@
                 <constraints nullable="true" />
             </column>
             
-            <column name="fl_med_prolonga" type="bit">
+            <column name="fl_uso_prolongado" type="bit">
                 <constraints nullable="true" />
             </column>
             

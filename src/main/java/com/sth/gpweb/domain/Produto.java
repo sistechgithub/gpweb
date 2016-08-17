@@ -67,8 +67,8 @@ public class Produto implements Serializable {
     @Column(name = "fl_sngpc")
     private Boolean flSngpc;
 
-    @Column(name = "fl_med_prolonga")
-    private Boolean flMedProlonga;
+    @Column(name = "fl_uso_prolongado")
+    private Boolean flUsoProlongado;
 
     @Size(max = 30)
     @Column(name = "ds_class_terapeutica", length = 30)
@@ -210,12 +210,12 @@ public class Produto implements Serializable {
         this.flSngpc = flSngpc;
     }
 
-    public Boolean isFlMedProlonga() {
-        return flMedProlonga;
+    public Boolean isFlUsoProlongado() {
+        return flUsoProlongado;
     }
 
-    public void setFlMedProlonga(Boolean flMedProlonga) {
-        this.flMedProlonga = flMedProlonga;
+    public void setFlUsoProlongado(Boolean flUsoProlongado) {
+        this.flUsoProlongado = flUsoProlongado;
     }
 
     public String getDsClassTerapeutica() {
@@ -342,7 +342,7 @@ public class Produto implements Serializable {
             ", flBalanca='" + flBalanca + "'" +
             ", flInativo='" + flInativo + "'" +
             ", flSngpc='" + flSngpc + "'" +
-            ", flMedProlonga='" + flMedProlonga + "'" +
+            ", flUsoProlongado='" + flUsoProlongado + "'" +
             ", dsClassTerapeutica='" + dsClassTerapeutica + "'" +
             ", vlVenda='" + vlVenda + "'" +
             ", vlEstoque='" + vlEstoque + "'" +
