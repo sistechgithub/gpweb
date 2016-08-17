@@ -36,7 +36,7 @@
             "classProduto": "Classificação",            
             "flBalanca": "Balança",            
             "flSngpc": "SNGPC",
-            "flMedProlonga": "Uso Prolongado",
+            "flUsoProlongado": "Uso Prolongado",
             "dsClassTerapeutica": "Classe Terapêutica",
             "flInativo": "Inativo"
         }
