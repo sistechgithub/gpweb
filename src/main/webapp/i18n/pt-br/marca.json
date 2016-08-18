@@ -19,7 +19,7 @@
             "nmMarca": "Razão Social",
             "nmMarca2": "Nome",
             "cdCnpj": "CNPJ",
-            "cdCgf": "Inscrição Estadual",
+            "cdIe": "Inscrição Estadual",
             "cdTel": "Telefone",
             "cdFax": "Fax",
             "flInativo": "Inativo",

@@ -21,7 +21,7 @@
             "fieldValidateRulesMaxlength": "18"
         },
         {
-            "fieldName": "cdCgf",
+            "fieldName": "cdIe",
             "fieldType": "String",
             "fieldValidateRules": [
                 "maxlength"

@@ -93,7 +93,7 @@
                             return {
                                 nmMarca: null,
                                 cdCnpj: null,
-                                cdCgf: null,
+                                cdIe: null,
                                 nnNumero: null,
                                 dsComplemento: null,
                                 cdTel: null,
