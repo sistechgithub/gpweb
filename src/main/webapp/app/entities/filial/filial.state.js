@@ -95,7 +95,7 @@
                                 nmRazao: null,
                                 nnNumero: null,
                                 cdCnpj: null,
-                                cdCgf: null,                       
+                                cdIe: null,                       
                                 cdTel: null,
                                 cdTel1: null,
                                 cdTel2: null,
