@@ -39,8 +39,8 @@ public class Filial implements Serializable {
     private String cdCnpj;
 
     @Size(max = 18)
-    @Column(name = "cd_cgf", length = 18)
-    private String cdCgf;
+    @Column(name = "cd_ie", length = 18)
+    private String cdIe;
     
     @Size(max = 30)
     @Column(name = "ds_site", length = 30)
@@ -130,12 +130,12 @@ public class Filial implements Serializable {
         this.cdCnpj = cdCnpj;
     }
 
-    public String getCdCgf() {
-        return cdCgf;
+    public String getCdIe() {
+        return cdIe;
     }
 
-    public void setCdCgf(String cdCgf) {
-        this.cdCgf = cdCgf;
+    public void setCdIe(String cdIe) {
+        this.cdIe = cdIe;
     }
     
     public String getDsSite() {
@@ -270,7 +270,7 @@ public class Filial implements Serializable {
             ", nnNumero='" + nnNumero + "'" +
             ", dsComplemento='" + dsComplemento + "'" +
             ", cdCnpj='" + cdCnpj + "'" +
-            ", cdCgf='" + cdCgf + "'" +            
+            ", cdIe='" + cdIe + "'" +            
             ", dsSite='" + dsSite + "'" +
             ", flInativo='" + flInativo + "'" +
             ", nmRazao='" + nmRazao + "'" +

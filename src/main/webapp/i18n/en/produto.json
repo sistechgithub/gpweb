@@ -25,7 +25,6 @@
             "cdAnp": "ANP Code",
             "dsAnp": "ANP Description",
             "cdContaContabil": "Accounting Account",
-            "materiaPrima": "Feedstock",
             "vlVenda": "Sale Value",
             "vlEstoque": "Stock Value",
             "dsInformacoes": "Information",
@@ -37,7 +36,6 @@
             "flBalanca": "Balance",
             "flSngpc": "SNGPC",
             "flUsoProlongado": "Prolonged Use",
-            "dsClassTerapeutica": "Therapeutic Class",
             "flInativo": "Inactive"
         }
     }

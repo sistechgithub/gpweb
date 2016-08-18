@@ -92,8 +92,8 @@
                         entity: function () {
                             return {
                                 nmMarca: null,
-                                cdCgc: null,
-                                cdCgf: null,
+                                cdCnpj: null,
+                                cdIe: null,
                                 nnNumero: null,
                                 dsComplemento: null,
                                 cdTel: null,

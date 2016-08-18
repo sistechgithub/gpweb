@@ -53,10 +53,6 @@
                 <constraints nullable="true" />
             </column>
             
-            <column name="materia_prima" type="varchar(1)">
-                <constraints nullable="true" />
-            </column>
-            
             <column name="fl_balanca" type="bit">
                 <constraints nullable="true" />
             </column>
@@ -70,10 +66,6 @@
             </column>
             
             <column name="fl_uso_prolongado" type="bit">
-                <constraints nullable="true" />
-            </column>
-            
-            <column name="ds_class_terapeutica" type="varchar(30)">
                 <constraints nullable="true" />
             </column>
             
