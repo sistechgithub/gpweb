@@ -18,7 +18,7 @@
             },
             "nmMarca": "Company Name",
             "nmMarca2": "Name",
-            "cdCgc": "CNPJ",
+            "cdCnpj": "CNPJ",
             "cdCgf": "State Registration",
             "nnNumero": "Number",
             "dsComplemento": "Complement",

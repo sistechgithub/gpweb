@@ -59,15 +59,15 @@
         <div class="row">
 			<div class="col-xs-12 col-sm-4">  
                 <div class="form-group">
-                    <label class="control-label" translate="gpwebApp.marca.cdCgc" for="field_cdCgc">CNPJ</label>
-                    <input type="text" class="form-control" name="cdCgc" id="field_cdCgc"
-                            ng-model="vm.marca.cdCgc"
+                    <label class="control-label" translate="gpwebApp.marca.cdCnpj" for="field_cdCnpj">CNPJ</label>
+                    <input type="text" class="form-control" name="cdCnpj" id="field_cdCnpj"
+                            ng-model="vm.marca.cdCnpj"
                             ng-maxlength="18" 
                             ui-br-cnpj-mask
                             placeholder="00.000.000/0000-00" />
-                    <div ng-show="editForm.cdCgc.$invalid">
+                    <div ng-show="editForm.cdCnpj.$invalid">
                         <p class="help-block"
-                            ng-show="editForm.cdCgc.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="18">
+                            ng-show="editForm.cdCnpj.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="18">
                             Este campo não pode ter mais que 18 caracteres.
                         </p>
                     </div>

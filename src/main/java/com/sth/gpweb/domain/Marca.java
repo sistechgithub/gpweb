@@ -29,8 +29,8 @@ public class Marca implements Serializable {
     private String nmMarca;
 
     @Size(max = 18)
-    @Column(name = "cd_cgc", length = 18)
-    private String cdCgc;
+    @Column(name = "cd_cnpj", length = 18)
+    private String cdCnpj;
 
     @Size(max = 18)
     @Column(name = "cd_cgf", length = 18)
@@ -80,12 +80,12 @@ public class Marca implements Serializable {
         this.nmMarca = nmMarca;
     }
 
-    public String getCdCgc() {
-        return cdCgc;
+    public String getCdCnpj() {
+        return cdCnpj;
     }
 
-    public void setCdCgc(String cdCgc) {
-        this.cdCgc = cdCgc;
+    public void setCdCnpj(String cdCnpj) {
+        this.cdCnpj = cdCnpj;
     }
 
     public String getCdCgf() {
@@ -185,7 +185,7 @@ public class Marca implements Serializable {
         return "Marca{" +
             "id=" + id +
             ", nmMarca='" + nmMarca + "'" +
-            ", cdCgc='" + cdCgc + "'" +
+            ", cdCnpj='" + cdCnpj + "'" +
             ", cdCgf='" + cdCgf + "'" +
             ", nnNumero='" + nnNumero + "'" +
             ", dsComplemento='" + dsComplemento + "'" +

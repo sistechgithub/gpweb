@@ -48,8 +48,8 @@ public class MarcaResourceIntTest {
 
     private static final String DEFAULT_NM_FABRICANTE = "A";
     private static final String UPDATED_NM_FABRICANTE = "B";
-    private static final String DEFAULT_CD_CGC = "AAAAAAAAAAAAAAAAAA";
-    private static final String UPDATED_CD_CGC = "BBBBBBBBBBBBBBBBBB";
+    private static final String DEFAULT_CD_CNPJ = "AAAAAAAAAAAAAAAAAA";
+    private static final String UPDATED_CD_CNPJ = "BBBBBBBBBBBBBBBBBB";
     private static final String DEFAULT_CD_CGF = "AAAAAAAAAAAAAAAAAA";
     private static final String UPDATED_CD_CGF = "BBBBBBBBBBBBBBBBBB";
 
@@ -107,7 +107,7 @@ public class MarcaResourceIntTest {
         marcaSearchRepository.deleteAll();
         marca = new Marca();
         marca.setNmMarca(DEFAULT_NM_FABRICANTE);
-        marca.setCdCgc(DEFAULT_CD_CGC);
+        marca.setCdCnpj(DEFAULT_CD_CNPJ);
         marca.setCdCgf(DEFAULT_CD_CGF);
         marca.setNnNumero(DEFAULT_NN_NUMERO);
         marca.setDsComplemento(DEFAULT_DS_COMPLEMENTO);
@@ -136,7 +136,7 @@ public class MarcaResourceIntTest {
         assertThat(marcas).hasSize(databaseSizeBeforeCreate + 1);
         Marca testMarca = marcas.get(marcas.size() - 1);
         assertThat(testMarca.getNmMarca()).isEqualTo(DEFAULT_NM_FABRICANTE);
-        assertThat(testMarca.getCdCgc()).isEqualTo(DEFAULT_CD_CGC);
+        assertThat(testMarca.getCdCnpj()).isEqualTo(DEFAULT_CD_CNPJ);
         assertThat(testMarca.getCdCgf()).isEqualTo(DEFAULT_CD_CGF);
         assertThat(testMarca.getNnNumero()).isEqualTo(DEFAULT_NN_NUMERO);
         assertThat(testMarca.getDsComplemento()).isEqualTo(DEFAULT_DS_COMPLEMENTO);
@@ -182,7 +182,7 @@ public class MarcaResourceIntTest {
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.[*].id").value(hasItem(marca.getId().intValue())))
                 .andExpect(jsonPath("$.[*].nmMarca").value(hasItem(DEFAULT_NM_FABRICANTE.toString())))
-                .andExpect(jsonPath("$.[*].cdCgc").value(hasItem(DEFAULT_CD_CGC.toString())))
+                .andExpect(jsonPath("$.[*].cdCnpj").value(hasItem(DEFAULT_CD_CNPJ.toString())))
                 .andExpect(jsonPath("$.[*].cdCgf").value(hasItem(DEFAULT_CD_CGF.toString())))
                 .andExpect(jsonPath("$.[*].nnNumero").value(hasItem(DEFAULT_NN_NUMERO)))
                 .andExpect(jsonPath("$.[*].dsComplemento").value(hasItem(DEFAULT_DS_COMPLEMENTO.toString())))
@@ -206,7 +206,7 @@ public class MarcaResourceIntTest {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON))
             .andExpect(jsonPath("$.id").value(marca.getId().intValue()))
             .andExpect(jsonPath("$.nmMarca").value(DEFAULT_NM_FABRICANTE.toString()))
-            .andExpect(jsonPath("$.cdCgc").value(DEFAULT_CD_CGC.toString()))
+            .andExpect(jsonPath("$.cdCnpj").value(DEFAULT_CD_CNPJ.toString()))
             .andExpect(jsonPath("$.cdCgf").value(DEFAULT_CD_CGF.toString()))
             .andExpect(jsonPath("$.nnNumero").value(DEFAULT_NN_NUMERO))
             .andExpect(jsonPath("$.dsComplemento").value(DEFAULT_DS_COMPLEMENTO.toString()))
@@ -238,7 +238,7 @@ public class MarcaResourceIntTest {
         Marca updatedMarca = new Marca();
         updatedMarca.setId(marca.getId());
         updatedMarca.setNmMarca(UPDATED_NM_FABRICANTE);
-        updatedMarca.setCdCgc(UPDATED_CD_CGC);
+        updatedMarca.setCdCnpj(UPDATED_CD_CNPJ);
         updatedMarca.setCdCgf(UPDATED_CD_CGF);
         updatedMarca.setNnNumero(UPDATED_NN_NUMERO);
         updatedMarca.setDsComplemento(UPDATED_DS_COMPLEMENTO);
@@ -259,7 +259,7 @@ public class MarcaResourceIntTest {
         assertThat(marcas).hasSize(databaseSizeBeforeUpdate);
         Marca testMarca = marcas.get(marcas.size() - 1);
         assertThat(testMarca.getNmMarca()).isEqualTo(UPDATED_NM_FABRICANTE);
-        assertThat(testMarca.getCdCgc()).isEqualTo(UPDATED_CD_CGC);
+        assertThat(testMarca.getCdCnpj()).isEqualTo(UPDATED_CD_CNPJ);
         assertThat(testMarca.getCdCgf()).isEqualTo(UPDATED_CD_CGF);
         assertThat(testMarca.getNnNumero()).isEqualTo(UPDATED_NN_NUMERO);
         assertThat(testMarca.getDsComplemento()).isEqualTo(UPDATED_DS_COMPLEMENTO);
@@ -309,7 +309,7 @@ public class MarcaResourceIntTest {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON))
             .andExpect(jsonPath("$.[*].id").value(hasItem(marca.getId().intValue())))
             .andExpect(jsonPath("$.[*].nmMarca").value(hasItem(DEFAULT_NM_FABRICANTE.toString())))
-            .andExpect(jsonPath("$.[*].cdCgc").value(hasItem(DEFAULT_CD_CGC.toString())))
+            .andExpect(jsonPath("$.[*].cdCnpj").value(hasItem(DEFAULT_CD_CNPJ.toString())))
             .andExpect(jsonPath("$.[*].cdCgf").value(hasItem(DEFAULT_CD_CGF.toString())))
             .andExpect(jsonPath("$.[*].nnNumero").value(hasItem(DEFAULT_NN_NUMERO)))
             .andExpect(jsonPath("$.[*].dsComplemento").value(hasItem(DEFAULT_DS_COMPLEMENTO.toString())))

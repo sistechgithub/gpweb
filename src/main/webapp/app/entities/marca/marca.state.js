@@ -92,7 +92,7 @@
                         entity: function () {
                             return {
                                 nmMarca: null,
-                                cdCgc: null,
+                                cdCnpj: null,
                                 cdCgf: null,
                                 nnNumero: null,
                                 dsComplemento: null,
