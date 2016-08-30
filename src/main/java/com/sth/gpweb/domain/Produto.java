@@ -54,10 +54,6 @@ public class Produto implements Serializable {
     @Column(name = "cd_conta_contabil", length = 25)
     private String cdContaContabil;
 
-    @Size(max = 1)
-    @Column(name = "materia_prima", length = 1)
-    private String materiaPrima;
-
     @Column(name = "fl_balanca")
     private Boolean flBalanca;
 
@@ -67,12 +63,8 @@ public class Produto implements Serializable {
     @Column(name = "fl_sngpc")
     private Boolean flSngpc;
 
-    @Column(name = "fl_med_prolonga")
-    private Boolean flMedProlonga;
-
-    @Size(max = 30)
-    @Column(name = "ds_class_terapeutica", length = 30)
-    private String dsClassTerapeutica;
+    @Column(name = "fl_uso_prolongado")
+    private Boolean flUsoProlongado;
 
     @Column(name = "vl_Venda", precision=10, scale=2)
     private BigDecimal vlVenda;
@@ -178,14 +170,6 @@ public class Produto implements Serializable {
         this.cdContaContabil = cdContaContabil;
     }
 
-    public String getMateriaPrima() {
-        return materiaPrima;
-    }
-
-    public void setMateriaPrima(String materiaPrima) {
-        this.materiaPrima = materiaPrima;
-    }
-
     public Boolean isFlBalanca() {
         return flBalanca;
     }
@@ -210,20 +194,12 @@ public class Produto implements Serializable {
         this.flSngpc = flSngpc;
     }
 
-    public Boolean isFlMedProlonga() {
-        return flMedProlonga;
+    public Boolean isFlUsoProlongado() {
+        return flUsoProlongado;
     }
 
-    public void setFlMedProlonga(Boolean flMedProlonga) {
-        this.flMedProlonga = flMedProlonga;
-    }
-
-    public String getDsClassTerapeutica() {
-        return dsClassTerapeutica;
-    }
-
-    public void setDsClassTerapeutica(String dsClassTerapeutica) {
-        this.dsClassTerapeutica = dsClassTerapeutica;
+    public void setFlUsoProlongado(Boolean flUsoProlongado) {
+        this.flUsoProlongado = flUsoProlongado;
     }
 
     public BigDecimal getVlVenda() {
@@ -338,12 +314,10 @@ public class Produto implements Serializable {
             ", cdAnp='" + cdAnp + "'" +
             ", dsAnp='" + dsAnp + "'" +
             ", cdContaContabil='" + cdContaContabil + "'" +
-            ", materiaPrima='" + materiaPrima + "'" +
             ", flBalanca='" + flBalanca + "'" +
             ", flInativo='" + flInativo + "'" +
             ", flSngpc='" + flSngpc + "'" +
-            ", flMedProlonga='" + flMedProlonga + "'" +
-            ", dsClassTerapeutica='" + dsClassTerapeutica + "'" +
+            ", flUsoProlongado='" + flUsoProlongado + "'" +
             ", vlVenda='" + vlVenda + "'" +
             ", vlEstoque='" + vlEstoque + "'" +
             ", dsInformacoes='" + dsInformacoes + "'" +

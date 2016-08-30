@@ -161,31 +161,16 @@
             </div>
             <div class="col-md-3">
                 <div class="form-group">
-                    <label class="control-label" translate="gpwebApp.produto.materiaPrima" for="field_materiaPrima">Matéria Prima</label>
-                    <input type="text" class="form-control text-uppercase" name="materiaPrima" id="field_materiaPrima"
-                            ng-model="vm.produto.materiaPrima"
-                            ng-maxlength="1" />
-                    <div ng-show="editForm.materiaPrima.$invalid">
-                        <p class="help-block"
-                            ng-show="editForm.materiaPrima.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="1">
-                            Este campo não pode ter menos que 1 caractere.
-                        </p>
-                    </div>
-                </div>
-            </div>            
-        </div>    
-        
-        <div class="row">
-            <div class="col-md-2">
-                <div class="form-group">
                     <label class="control-label" translate="gpwebApp.produto.vlEstoque" for="field_vlEstoque">Valor Estoque</label>
                     <input type="number" class="form-control" name="vlEstoque" id="field_vlEstoque"
                             ng-model="vm.produto.vlEstoque"
                              />
                 </div>    
-            </div>
-            
-            <div class="col-md-2">
+            </div>          
+        </div>    
+        
+        <div class="row">
+            <div class="col-md-3">
                 <div class="form-group">
                     <label class="control-label" translate="gpwebApp.produto.vlVenda" for="field_vlVenda">Valor Venda</label>
                     <input type="number" class="form-control" name="vlVenda" id="field_vlVenda"
@@ -194,7 +179,7 @@
                 </div>    
             </div>
             
-            <div class="col-md-8">
+            <div class="col-md-9">
                 <div class="form-group">
                     <label class="control-label" translate="gpwebApp.produto.dsInformacoes" for="field_dsInformacoes">Informações</label>
                     <input type="text" class="form-control text-uppercase" name="dsInformacoes" id="field_dsInformacoes"
@@ -216,20 +201,37 @@
                 <div class="form-group">
                     <label class="control-label" translate="gpwebApp.produto.grupo">
                         Grupo
-                    </label>                   
-                    <ourselect id-select="field_entidade1" ng-model="vm.produto.grupo" 
-                        entity-field-name="nmGrupo" entity-field-id="id" entity-url="grupos">
-                    </ourselect>
-                    <select class="js-data-example-ajax" id="field_entidade1" style="width: 100%">
-                        <option value="" selected="selected"></option>
-                    </select>                   
-                    <div class="select2-label">
-                        <span>{{vm.produto.grupo.id + " - "}}  {{vm.produto.grupo.nmGrupo}} 
-                            <a class="select2-btn pull-right"	ng-click="vm.produto.grupo = null">
-                                <span class="mdi mdi-close-octagon"></span>&nbsp;
-                            </a>
-                        </span>
-                    </div>                  
+                    </label>                      
+		            <div class="row">  
+						<div class="col-md-4">               
+					     <sc-select
+					       ng-model="vm.produto.grupo"
+					       sc-options="grupo as grupo.id for grupo in vm.obj.searchAsync(searchText, page, 'api/_search/grupos/select', 'id')"
+					       page-limit="vm.obj.asyncPageLimit"
+					       total-items="vm.obj.totalResults"
+					       placeholder="Código"
+					       loading-delay="200">
+					     </sc-select>
+					    </div> 
+						<div class="col-md-6">
+			             <sc-select
+						       ng-model="vm.produto.grupo"
+						       sc-options="grupo as grupo.nmGrupo for grupo in vm.obj.searchAsync(searchText, page, 'api/_search/grupos/select', 'nmGrupo')"
+						       page-limit="vm.obj.asyncPageLimit"
+						       total-items="vm.obj.totalResults"
+						       placeholder="Descrição"
+						       loading-delay="200">
+						 </sc-select>			     
+					    </div>
+					    
+					    <div class="col-md-1">			     
+					     <div class="col-md-1">
+					     	<button type="button" class="btn btn-default" ng-click="vm.produto.grupo = null">
+					            <span class="glyphicon glyphicon-ban-circle"></span>
+					        </button>
+					     </div>
+			            </div>
+				     </div>                                   
                 </div>
             </div>
             <div class="col-md-6">
@@ -342,26 +344,10 @@
         <div class="form-group">
             <div class="checkbox">                   
                 <label>
-                    <input type="checkbox" name="flMedProlonga" ng-model="vm.produto.flMedProlonga" />
-                    <span class="checkbox__label" translate="gpwebApp.produto.flMedProlonga">Uso Prolongado</span>
+                    <input type="checkbox" name="flUsoProlongado" ng-model="vm.produto.flUsoProlongado" />
+                    <span class="checkbox__label" translate="gpwebApp.produto.flUsoProlongado">Uso Prolongado</span>
                 </label>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <div class="form-group">
-                    <label class="control-label" translate="gpwebApp.produto.dsClassTerapeutica" for="field_dsClassTerapeutica">Classe Terapêutica</label>
-                    <input type="text" class="form-control" name="dsClassTerapeutica" id="field_dsClassTerapeutica"
-                            ng-model="vm.produto.dsClassTerapeutica"
-                            ng-maxlength="30" />
-                    <div ng-show="editForm.dsClassTerapeutica.$invalid">
-                        <p class="help-block"
-                            ng-show="editForm.dsClassTerapeutica.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="30">
-                            Este campo não pode ter mais que 30 caracteres.
-                        </p>
-                    </div>
-                </div>    
-            </div>            
         </div>
         <div class="form-group">
             <div class="checkbox">                   

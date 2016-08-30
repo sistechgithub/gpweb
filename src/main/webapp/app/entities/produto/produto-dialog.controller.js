@@ -5,9 +5,9 @@
         .module('gpwebApp')
         .controller('ProdutoDialogController', ProdutoDialogController);
 
-    ProdutoDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', '$q', 'DataUtils', 'entity', 'Produto', 'Grupo', 'Marca', 'Unidade', 'ClassProduto', 'Subgrupo'];
+    ProdutoDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', '$q', 'DataUtils', 'entity', 'Produto', 'Grupo', 'Marca', 'Unidade', 'ClassProduto', 'Subgrupo', 'NewSelectService'];
 
-    function ProdutoDialogController ($timeout, $scope, $stateParams, $uibModalInstance, $q, DataUtils, entity, Produto, Grupo, Marca, Unidade, ClassProduto, Subgrupo) {
+    function ProdutoDialogController ($timeout, $scope, $stateParams, $uibModalInstance, $q, DataUtils, entity, Produto, Grupo, Marca, Unidade, ClassProduto, Subgrupo, NewSelectService) {
         var vm = this;
 
         vm.produto = entity;
@@ -16,6 +16,9 @@
         vm.openFile = DataUtils.openFile;
         vm.save = save;
         vm.grupos = Grupo.query({filter: 'produto-is-null'});
+        
+        vm.obj = NewSelectService.obj;
+        
         $q.all([vm.produto.$promise, vm.grupos.$promise]).then(function() {
             if (!vm.produto.grupo || !vm.produto.grupo.id) {
                 return $q.reject();
@@ -71,8 +74,6 @@
         	vm.produto.cdAnp     = angular.uppercase(vm.produto.cdAnp);
         	vm.produto.dsAnp     = angular.uppercase(vm.produto.dsAnp);
         	vm.produto.cdContaContabil = angular.uppercase(vm.produto.cdContaContabil);
-        	vm.produto.materiaPrima = angular.uppercase(vm.produto.materiaPrima);
-        	vm.produto.dsClassTerapeutica = angular.uppercase(vm.produto.dsClassTerapeutica);
         	vm.produto.dsInformacoes = angular.uppercase(vm.produto.dsInformacoes);        	
         };
 

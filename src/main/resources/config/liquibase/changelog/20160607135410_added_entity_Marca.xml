@@ -25,11 +25,11 @@
                 <constraints unique="true" nullable="false" />
             </column>
             
-            <column name="cd_cgc" type="varchar(18)">
+            <column name="cd_cnpj" type="varchar(18)">
                 <constraints nullable="true" />
             </column>
             
-            <column name="cd_cgf" type="varchar(18)">
+            <column name="cd_ie" type="varchar(18)">
                 <constraints nullable="true" />
             </column>
             

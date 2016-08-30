@@ -4,7 +4,7 @@
         <a class="btn btn-default btn-print pull-right hidden-xs" href="javascript:window.print();"><i class="mdi mdi-printer mdi-3x"></i></a>
     </div><!-- /.box-header -->
     
-    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
 
     <div class="box-body">
         <div class="row">
@@ -35,10 +35,10 @@
         
         <div class="row">
             <dl class="col-xs-12 col-sm-4">
-                <dt><span translate="gpwebApp.filial.cdCgf">Inscrição estadual</span></dt>
+                <dt><span translate="gpwebApp.filial.cdIe">Inscrição estadual</span></dt>
                 <dd>
-                    <span>{{vm.filial.cdCgf}}</span>
-                    <span ng-hide="vm.filial.cdCgf != null"> - </span>
+                    <span>{{vm.filial.cdIe}}</span>
+                    <span ng-hide="vm.filial.cdIe != null"> - </span>
                 </dd>
                 <div class="box-detail-divider"></div>
             </dl>
@@ -125,7 +125,7 @@
         </div>
         
         <div class="row">
-            <dl class="col-xs-12 col-sm-4">
+            <dl class="col-xs-12 col-sm-12">
                 <dt><span translate="gpwebApp.filial.flInativo">Fl Inativo</span></dt>
                 <dd>
                     <span class="text-uppercase">{{vm.filial.flInativo ? 'Sim' : 'Não'}}</span>
@@ -136,10 +136,14 @@
     </div><!-- /.box-body -->
 
     <div class="box-footer no-border">
-        <button type="submit"
-                onclick="window.history.back()"
+        <button type="button"
+                ui-sref="{{ vm.previousState }}"
                 class="btn btn-info ripple ripple-light">
             <span translate="entity.action.back"> Voltar</span>
+        </button>
+        
+        <button type="button" ui-sref="filial-detail.edit({id:vm.filial.id})" class="btn btn-primary ripple ripple-light">
+            <span translate="entity.action.edit"> Editar</span>
         </button>
     </div><!-- /.box-footer -->
 </div><!-- /.box -->
