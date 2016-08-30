@@ -201,20 +201,37 @@
                 <div class="form-group">
                     <label class="control-label" translate="gpwebApp.produto.grupo">
                         Grupo
-                    </label>                   
-                    <ourselect id-select="field_entidade1" ng-model="vm.produto.grupo" 
-                        entity-field-name="nmGrupo" entity-field-id="id" entity-url="grupos">
-                    </ourselect>
-                    <select class="js-data-example-ajax" id="field_entidade1" style="width: 100%">
-                        <option value="" selected="selected"></option>
-                    </select>                   
-                    <div class="select2-label">
-                        <span>{{vm.produto.grupo.id + " - "}}  {{vm.produto.grupo.nmGrupo}} 
-                            <a class="select2-btn pull-right"	ng-click="vm.produto.grupo = null">
-                                <span class="mdi mdi-close-octagon"></span>&nbsp;
-                            </a>
-                        </span>
-                    </div>                  
+                    </label>                      
+		            <div class="row">  
+						<div class="col-md-4">               
+					     <sc-select
+					       ng-model="vm.produto.grupo"
+					       sc-options="grupo as grupo.id for grupo in vm.obj.searchAsync(searchText, page, 'api/_search/grupos/select', 'id')"
+					       page-limit="vm.obj.asyncPageLimit"
+					       total-items="vm.obj.totalResults"
+					       placeholder="Código"
+					       loading-delay="200">
+					     </sc-select>
+					    </div> 
+						<div class="col-md-6">
+			             <sc-select
+						       ng-model="vm.produto.grupo"
+						       sc-options="grupo as grupo.nmGrupo for grupo in vm.obj.searchAsync(searchText, page, 'api/_search/grupos/select', 'nmGrupo')"
+						       page-limit="vm.obj.asyncPageLimit"
+						       total-items="vm.obj.totalResults"
+						       placeholder="Descrição"
+						       loading-delay="200">
+						 </sc-select>			     
+					    </div>
+					    
+					    <div class="col-md-1">			     
+					     <div class="col-md-1">
+					     	<button type="button" class="btn btn-default" ng-click="vm.produto.grupo = null">
+					            <span class="glyphicon glyphicon-ban-circle"></span>
+					        </button>
+					     </div>
+			            </div>
+				     </div>                                   
                 </div>
             </div>
             <div class="col-md-6">

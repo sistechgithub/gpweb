@@ -1,9 +1,8 @@
 package com.sth.gpweb.web.rest.util;
 
 import java.util.List;
-import com.google.gson.annotations.SerializedName;
 
-import gherkin.deps.com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 
 /**
  * Utility class for sc-select when front-end search for a relationship entity

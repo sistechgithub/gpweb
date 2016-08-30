@@ -3,6 +3,7 @@ package com.sth.gpweb.service;
 import com.sth.gpweb.domain.Grupo;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
@@ -66,4 +67,14 @@ public interface GrupoService {
      *  @return the list of entities
      */
     Page<Grupo> findByNomeStartingWithOrderByNomeAsc(String descricao, Pageable pageable);
+    
+    /**
+     * Search for the grupo corresponding to the query name.
+     * Used on product page
+     * 
+     *  @param description query for the name
+     *  @return the list of entities
+     */
+    Page<Grupo> findByIdStartingWithOrderByIdAsc(String id, Pageable pageable);
+	
 }
