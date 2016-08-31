@@ -117,4 +117,16 @@ public class ProdutoServiceImpl implements ProdutoService{
     	log.debug("Request to...", descricao);
         return produtoRepository.findByNmProdutoStartingWithOrderByNmProdutoAsc(descricao, pageable);
     }
+    
+    /**
+     * Search for the id
+     *
+     *  @param id to find where id starting by
+     *  @return the list of entities
+     */
+    @Transactional(readOnly = true)
+    public Page<Produto> findByIdStartingWithOrderByIdAsc(String id, Pageable pageable){
+    	log.debug("Request to...", id);
+        return produtoRepository.findByIdStartingWithOrderByIdAsc(id, pageable);
+    }
 }
