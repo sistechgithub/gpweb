@@ -130,4 +130,30 @@ public class GrupoServiceImpl implements GrupoService{
     	log.debug("Request to...", id);
         return grupoRepository.findByIdStartingWithOrderByIdAsc(id, pageable);
     }
+    
+    /**
+     *  Get all the grupos ordered by name.
+     *  
+     *  @param pageable the pagination information
+     *  @return the list of entities
+     */
+    @Transactional(readOnly = true) 
+    public Page<Grupo> findAllOrderByNmGrupo(Pageable pageable) {
+        log.debug("Request to get all Grupos ordered by name");
+        Page<Grupo> result = grupoRepository.findAllOrderByNmGrupo(pageable); 
+        return result;
+    }
+    
+    /**
+     *  Get all the grupos ordered by id.
+     *  
+     *  @param pageable the pagination information
+     *  @return the list of entities
+     */
+    @Transactional(readOnly = true) 
+    public Page<Grupo> findAllOrderById(Pageable pageable) {
+        log.debug("Request to get all Grupos ordered by id");
+        Page<Grupo> result = grupoRepository.findAllOrderById(pageable); 
+        return result;
+    }
 }
