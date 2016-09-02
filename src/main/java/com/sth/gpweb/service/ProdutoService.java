@@ -3,7 +3,6 @@ package com.sth.gpweb.service;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import com.sth.gpweb.domain.Grupo;
 import com.sth.gpweb.domain.Produto;
 
 /**
@@ -74,5 +73,20 @@ public interface ProdutoService {
      *  @return the list of entities
      */
     Page<Produto> findByIdStartingWithOrderByIdAsc(String id, Pageable pageable);
+
+    /**
+     *  Get all the produtos ordered by name.
+     *  
+     *  @param pageable the pagination information
+     *  @return the list of entities
+     */
+    Page<Produto> findAllOrderByNmProduto(Pageable pageable);
     
+    /**
+     *  Get all the produtos ordered by id.
+     *  
+     *  @param pageable the pagination information
+     *  @return the list of entities
+     */
+    Page<Produto> findAllOrderById(Pageable pageable);
 }
