@@ -187,7 +187,13 @@ public class ProdutoResource {
     		
     		if(query.trim().equalsIgnoreCase("*")){
     			//Find all
-    			page = produtoService.findAll(pageable); 
+    			if(field.trim().equalsIgnoreCase("id")){
+    				//Find by id
+    				page = produtoService.findAllOrderById(pageable); 
+    			}else{
+    				//Find by name
+    				page = produtoService.findAllOrderByNmProduto(pageable);
+    			} 
     		}else{    			
     			if(field.trim().equalsIgnoreCase("id")){
     				//Find by id

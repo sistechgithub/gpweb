@@ -129,4 +129,30 @@ public class ProdutoServiceImpl implements ProdutoService{
     	log.debug("Request to...", id);
         return produtoRepository.findByIdStartingWithOrderByIdAsc(id, pageable);
     }
+    
+    /**
+     *  Get all the produtos ordered by name.
+     *  
+     *  @param pageable the pagination information
+     *  @return the list of entities
+     */
+    @Transactional(readOnly = true) 
+    public Page<Produto> findAllOrderByNmProduto(Pageable pageable) {
+        log.debug("Request to get all Products ordered by name");
+        Page<Produto> result = produtoRepository.findAllOrderByNmProduto(pageable); 
+        return result;
+    }
+    
+    /**
+     *  Get all the grupos ordered by id.
+     *  
+     *  @param pageable the pagination information
+     *  @return the list of entities
+     */
+    @Transactional(readOnly = true) 
+    public Page<Produto> findAllOrderById(Pageable pageable) {
+        log.debug("Request to get all Products ordered by id");
+        Page<Produto> result = produtoRepository.findAllOrderById(pageable); 
+        return result;
+    }
 }

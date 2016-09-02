@@ -21,4 +21,10 @@ public interface ProdutoRepository extends JpaRepository<Produto,Long> {
 	
 	@Query(value = "select p from Produto p where cast(p.id as string) like :id || '%'") 
 	Page<Produto> findByIdStartingWithOrderByIdAsc(@Param("id") String id, Pageable pageable);
+	
+	@Query(value = "select p from Produto p order by p.nmProduto")
+	Page<Produto> findAllOrderByNmProduto(Pageable pageable);
+	
+	@Query(value = "select p from Produto p order by p.id")
+	Page<Produto> findAllOrderById(Pageable pageable);
 }
