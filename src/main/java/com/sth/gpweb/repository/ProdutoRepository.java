@@ -16,7 +16,9 @@ public interface ProdutoRepository extends JpaRepository<Produto,Long> {
 	//Verify if nmProduto already exists on database before insert	
 	@Query("SELECT g.nmProduto FROM Produto g where g.nmProduto = :nmProduto") 
 	String findNmProdutoExists(@Param("nmProduto") String nmProduto);
-
-	//Find by name, used by select2 on productfilial at frontend page
+	
 	Page<Produto> findByNmProdutoStartingWithOrderByNmProdutoAsc(String descricao, Pageable pageable);
+	
+	@Query(value = "select p from Produto p where cast(p.id as string) like :id || '%'") 
+	Page<Produto> findByIdStartingWithOrderByIdAsc(@Param("id") String id, Pageable pageable);
 }

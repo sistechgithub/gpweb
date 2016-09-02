@@ -10,28 +10,46 @@
         <jhi-alert-error></jhi-alert-error>
         
         <!-- Diretiva Product Catalog-->
-        <div class="row">
-        <div class="col-md-6">                
-        	<div class="form-group">
-                <label class="control-label" translate="gpwebApp.produtoFilial.produto">
-                    Produto
-                </label>                   
-                <ourselect id-select="field_entidade1" ng-model="vm.produtoFilial.produto" 
-                    entity-field-name="nmProduto" entity-field-id="id" entity-url="produtos">
-                </ourselect>
-                <select class="js-data-example-ajax" id="field_entidade1" style="width: 100%">
-                    <option value="" selected="selected"></option>
-                </select>                   
-                <div class="select2-label">
-                    <span>{{vm.produtoFilial.produto.id}} - {{vm.produtoFilial.produto.nmProduto}} 
-                        <a class="select2-btn pull-right"	ng-click="vm.produtoFilial.produto = null">
-                            <span class="mdi mdi-close-octagon"></span>&nbsp;
-                        </a>
-                    </span>
-                </div>                  
+        <div class="row select2-padding-bottom">
+            <div class="col-md-6">
+                <!-- Diretiva Produto-->
+                <div class="form-group">
+                    <label class="control-label" translate="gpwebApp.produtoFilial.produto">
+                        Produto
+                    </label>                      
+		            <div class="row">  
+						<div class="col-md-4">               
+					     <sc-select
+					       ng-model="vm.produtoFilial.produto"
+					       sc-options="produto as produto.id for produto in vm.obj.searchAsync(searchText, page, 'api/_search/produtos/select', 'id')"
+					       page-limit="vm.obj.asyncPageLimit"
+					       total-items="vm.obj.totalResults"
+					       placeholder="Código"
+					       loading-delay="200">
+					     </sc-select>
+					    </div> 
+						<div class="col-md-6">
+			             <sc-select
+						       ng-model="vm.produtoFilial.produto"
+						       sc-options="produto as produto.nmProduto for produto in vm.obj.searchAsync(searchText, page, 'api/_search/produtos/select', 'nmProduto')"
+						       page-limit="vm.obj.asyncPageLimit"
+						       total-items="vm.obj.totalResults"
+						       placeholder="Descrição"
+						       loading-delay="200">
+						 </sc-select>			     
+					    </div>
+					    
+					    <div class="col-md-1">			     
+					     <div class="col-md-1">
+					     	<button type="button" class="btn btn-default" ng-click="vm.produtoFilial.produto = null">
+					            <span class="glyphicon glyphicon-ban-circle"></span>
+					        </button>
+					     </div>
+			            </div>
+				     </div>                                   
+                </div>
             </div>
-        </div>
-        </div>
+        </div>  
         
         <!-- Global data from catalog -->	
         <hr/>

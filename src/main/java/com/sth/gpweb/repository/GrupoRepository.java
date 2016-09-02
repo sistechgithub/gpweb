@@ -22,4 +22,10 @@ public interface GrupoRepository extends JpaRepository<Grupo,Long> {
 	
 	@Query(value = "select g from Grupo g where cast(g.id as string) like :id || '%'") 
 	Page<Grupo> findByIdStartingWithOrderByIdAsc(@Param("id") String id, Pageable pageable);
+	
+	@Query(value = "select g from Grupo g order by g.nmGrupo")
+	Page<Grupo> findAllOrderByNmGrupo(Pageable pageable);
+	
+	@Query(value = "select g from Grupo g order by g.id")
+	Page<Grupo> findAllOrderById(Pageable pageable);
 }
