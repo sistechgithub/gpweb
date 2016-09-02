@@ -76,5 +76,20 @@ public interface GrupoService {
      *  @return the list of entities
      */
     Page<Grupo> findByIdStartingWithOrderByIdAsc(String id, Pageable pageable);
-	
+    
+    /**
+     *  Get all the grupos ordered by name.
+     *  
+     *  @param pageable the pagination information
+     *  @return the list of entities
+     */
+    Page<Grupo> findAllOrderByNmGrupo(Pageable pageable);
+    
+    /**
+     *  Get all the grupos ordered by id.
+     *  
+     *  @param pageable the pagination information
+     *  @return the list of entities
+     */
+    Page<Grupo> findAllOrderById(Pageable pageable);	
 }

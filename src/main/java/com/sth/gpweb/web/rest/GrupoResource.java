@@ -194,7 +194,13 @@ public class GrupoResource {
     		
     		if(query.trim().equalsIgnoreCase("*")){
     			//Find all
-    			page = grupoService.findAll(pageable); 
+    			if(field.trim().equalsIgnoreCase("id")){
+    				//Find by id
+    				page = grupoService.findAllOrderById(pageable); 
+    			}else{
+    				//Find by name
+    				page = grupoService.findAllOrderByNmGrupo(pageable);
+    			} 
     		}else{    			
     			if(field.trim().equalsIgnoreCase("id")){
     				//Find by id
