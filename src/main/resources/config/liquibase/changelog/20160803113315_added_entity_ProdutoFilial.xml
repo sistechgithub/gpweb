@@ -106,11 +106,11 @@
             </column>
             
             <column name="produto_id" type="bigint">
-                <constraints unique="true" nullable="true" />
+                <constraints nullable="true" />
             </column>            
             
             <column name="promocao_id" type="bigint">
-                <constraints unique="true" nullable="true" />
+                <constraints nullable="true" />
             </column>
             
             <column name="filial_id" type="bigint">

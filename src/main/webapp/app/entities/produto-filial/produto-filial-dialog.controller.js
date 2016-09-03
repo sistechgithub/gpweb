@@ -5,9 +5,9 @@
         .module('gpwebApp')
         .controller('ProdutoFilialDialogController', ProdutoFilialDialogController);
 
-    ProdutoFilialDialogController.$inject = ['$timeout', '$scope', '$stateParams', 'DataUtils', '$uibModalInstance', '$q', 'entity', 'ProdutoFilial', 'Produto', 'Filial', 'Promocao'];
+    ProdutoFilialDialogController.$inject = ['$timeout', '$scope', '$stateParams', 'DataUtils', '$uibModalInstance', '$q', 'entity', 'ProdutoFilial', 'Produto', 'Filial', 'Promocao', 'NewSelectService'];
 
-    function ProdutoFilialDialogController ($timeout, $scope, $stateParams, DataUtils, $uibModalInstance, $q, entity, ProdutoFilial, Produto, Filial, Promocao) {
+    function ProdutoFilialDialogController ($timeout, $scope, $stateParams, DataUtils, $uibModalInstance, $q, entity, ProdutoFilial, Produto, Filial, Promocao, NewSelectService) {
         var vm = this;
 
         vm.produtoFilial = entity;
@@ -18,20 +18,9 @@
         vm.openFile = DataUtils.openFile;
         vm.save = save;
         vm.getProductDetail = getProductDetail;
-        vm.produtos = Produto.query({filter: 'produtofilial-is-null'});
         
+        vm.obj = NewSelectService.obj;
         
-      
-      
-        
-        $q.all([vm.produtoFilial.$promise, vm.produtos.$promise]).then(function() {
-            if (!vm.produtoFilial.produto || !vm.produtoFilial.produto.id) {
-                return $q.reject();
-            }
-            return Produto.get({id : vm.produtoFilial.produto.id}).$promise;
-        }).then(function(produto) {
-            vm.produtos.push(produto);
-        });
         vm.filials = Filial.query();
         vm.promocaos = Promocao.query({filter: 'produtofilial-is-null'});
         $q.all([vm.produtoFilial.$promise, vm.promocaos.$promise]).then(function() {
@@ -78,7 +67,7 @@
         
         function getProductDetail() {        	
         	if(vm.produtoFilial.produto && vm.produtoFilial.produto.id){
-        		Produto.get({id : vm.produtoFilial.produto.id}).$promise.then(function(data){        			
+        		Produto.get({id : vm.produtoFilial.produto.id}).$promise.then(function(data){     
         			vm.produtoFilial.produto = data;
         		},function(){
         			console.log('Erro ao buscar dados do produto: ' + vm.produtoFilial.produto.id);
