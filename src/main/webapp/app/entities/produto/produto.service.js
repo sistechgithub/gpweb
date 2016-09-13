@@ -23,10 +23,21 @@
             'update': {
                 method: 'PUT',
                 transformRequest: function (data) {
+                	
+                	//Convert Date from Grupo
                 	if(data.grupo){                		
                 		data.grupo.dtOperacao = DateUtils.convertLocalDateToServer(
                 				//This convertion is necessary cause the component scselect returns an object date
                 				new Date(data.grupo.dtOperacao.year, data.grupo.dtOperacao.month, data.grupo.dtOperacao.day)
+                		);
+                		
+                	};
+                	
+                	//Convert Date from SubGrupo
+                	if(data.subgrupo){                		
+                		data.subgrupo.dtOperacao = DateUtils.convertLocalDateToServer(
+                				//This convertion is necessary cause the component scselect returns an object date
+                				new Date(data.subgrupo.dtOperacao.year, data.subgrupo.dtOperacao.month, data.subgrupo.dtOperacao.day)
                 		);
                 		
                 	};
@@ -36,12 +47,23 @@
             'save': {
                 method: 'POST',
                 transformRequest: function (data) {
+                	
+                	//Convert Date from Grupo
                 	if(data.grupo){                		
                 		data.grupo.dtOperacao = DateUtils.convertLocalDateToServer(
                 				//This convertion is necessary cause the component scselect returns an object date
                 				new Date(data.grupo.dtOperacao.year, data.grupo.dtOperacao.month, data.grupo.dtOperacao.day)
                 		);                		
                 	};
+                	
+                	//Convert Date from SubGrupo
+                	if(data.subgrupo){                		
+                		data.subgrupo.dtOperacao = DateUtils.convertLocalDateToServer(
+                				//This convertion is necessary cause the component scselect returns an object date
+                				new Date(data.subgrupo.dtOperacao.year, data.subgrupo.dtOperacao.month, data.subgrupo.dtOperacao.day)
+                		);                		
+                	};
+                	
                     return angular.toJson(data);
                 }
             }
