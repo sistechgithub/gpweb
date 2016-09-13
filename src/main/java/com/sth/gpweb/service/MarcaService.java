@@ -1,10 +1,9 @@
 package com.sth.gpweb.service;
 
-import com.sth.gpweb.domain.Marca;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import java.util.List;
+import com.sth.gpweb.domain.Marca;
 
 /**
  * Service Interface for managing Marca.
@@ -65,4 +64,29 @@ public interface MarcaService {
      *  @return the list of entities
      */
      Page<Marca> findByNmMarcaStartingWithOrderByNmMarcaAsc(String descricao, Pageable pageable);
+     
+     /**
+      * Search for the Marca corresponding to the query name.
+      * Used on product page
+      * 
+      *  @param description query for the name
+      *  @return the list of entities
+      */
+     Page<Marca> findByIdStartingWithOrderByIdAsc(String id, Pageable pageable);
+     
+     /**
+      *  Get all the Marcas ordered by name.
+      *  
+      *  @param pageable the pagination information
+      *  @return the list of entities
+      */
+     Page<Marca> findAllOrderByNmMarca(Pageable pageable);
+     
+     /**
+      *  Get all the Marcas ordered by id.
+      *  
+      *  @param pageable the pagination information
+      *  @return the list of entities
+      */
+     Page<Marca> findAllOrderById(Pageable pageable);
 }
