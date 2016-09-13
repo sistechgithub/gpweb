@@ -41,6 +41,15 @@
                 		);
                 		
                 	};
+                	
+                	//Convert Date from Marca
+                	if(data.marca){                		
+                		data.marca.dtOperacao = DateUtils.convertLocalDateToServer(
+                				//This convertion is necessary cause the component scselect returns an object date
+                				new Date(data.marca.dtOperacao.year, data.marca.dtOperacao.month, data.marca.dtOperacao.day)
+                		);
+                	};
+                	
                     return angular.toJson(data);
                 }
             },
@@ -61,6 +70,14 @@
                 		data.subgrupo.dtOperacao = DateUtils.convertLocalDateToServer(
                 				//This convertion is necessary cause the component scselect returns an object date
                 				new Date(data.subgrupo.dtOperacao.year, data.subgrupo.dtOperacao.month, data.subgrupo.dtOperacao.day)
+                		);                		
+                	};
+                	
+                	//Convert Date from Marca
+                	if(data.marca){                		
+                		data.marca.dtOperacao = DateUtils.convertLocalDateToServer(
+                				//This convertion is necessary cause the component scselect returns an object date
+                				new Date(data.marca.dtOperacao.year, data.subgrupo.dtOperacao.month, data.marca.dtOperacao.day)
                 		);                		
                 	};
                 	
