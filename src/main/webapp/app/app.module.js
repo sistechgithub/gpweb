@@ -20,7 +20,8 @@
             'whimsicalRipple',
             'ui.utils.masks',
             'idf.br-filters',
-            'sc.select'
+            'sc.select',
+            'dualmultiselect'
             // jhipster-needle-angularjs-add-module JHipster will add new module here
         ])
         .run(run);
