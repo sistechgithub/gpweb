@@ -41,9 +41,9 @@
                     <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
                         <th class="col-md-1 col-grupo-codigo" jh-sort-by="id"><span translate="global.field.id">Código</span> <span class="glyphicon glyphicon-sort"></span></th>
                         <th class="col-md-7" jh-sort-by="nmGrupo"><span translate="gpwebApp.grupo.name">Nome</span> <span class="glyphicon glyphicon-sort"></span></th>
-                        <th class="col-md-1 col-grupo-comissao" jh-sort-by="vlComissao"><span translate="gpwebApp.grupo.commission">Comissão (%)</span> <span class="glyphicon glyphicon-sort"></span></th>
-                        <th class="col-md-1 col-grupo-promocao" jh-sort-by="flPromo"><span translate="gpwebApp.grupo.promotion">Promoção</span> <span class="glyphicon glyphicon-sort"></span></th>
-                        <th class="col-md-1 col-grupo-semdesconto" jh-sort-by="flDesco"><span translate="gpwebApp.grupo.noDiscount">Sem Desconto</span> <span class="glyphicon glyphicon-sort"></span></th>
+                        <th class="col-md-1 col-grupo-comissao text-right" jh-sort-by="vlComissao"><span translate="gpwebApp.grupo.commission">Comissão (%)</span> <span class="glyphicon glyphicon-sort"></span></th>
+                        <th class="col-md-1 col-grupo-promocao text-center" jh-sort-by="flPromo"><span translate="gpwebApp.grupo.promotion">Promoção</span> <span class="glyphicon glyphicon-sort"></span></th>
+                        <th class="col-md-1 col-grupo-semdesconto text-center" jh-sort-by="flDesco"><span translate="gpwebApp.grupo.noDiscount">Sem Desconto</span> <span class="glyphicon glyphicon-sort"></span></th>
                         <th class="col-md-1 col-grupo-acoes text-center"><span translate="global.field.actions">Ações</span></th>
                     </tr>
                 </thead>
@@ -52,33 +52,33 @@
                     <tr ng-repeat="grupo in vm.grupos track by grupo.id">
                         <td><a ui-sref="grupo-detail({id:grupo.id})">{{grupo.id}}</a></td>
                         <td class="text-uppercase">{{grupo.nmGrupo}}</td>
-                        <td>{{grupo.vlComissao | currency:'':2}}</td>
-                        <td>
-                            <small ng-show="grupo.flPromo" class="label bg-green">Sim</small>
-                            <small ng-show="!grupo.flPromo" class="label bg-red">Não</small>
+                        <td class="text-right">{{grupo.vlComissao | currency:'':2}}</td>
+                        <td class="text-uppercase text-center">
+                            <small ng-show="grupo.flPromo" class="label bg-green" translate="global.condition.true">Sim</small>
+                            <small ng-show="!grupo.flPromo" class="label bg-red" translate="global.condition.false">Não</small>
                         </td>
-                        <td>                            
-                            <small ng-show="grupo.flDesco" class="label bg-green">Sim</small>
-                            <small ng-show="!grupo.flDesco" class="label bg-red">Não</small>
+                        <td class="text-uppercase text-center">                            
+                            <small ng-show="grupo.flDesco" class="label bg-green" translate="global.condition.true">Sim</small>
+                            <small ng-show="!grupo.flDesco" class="label bg-red" translate="global.condition.false">Não</small>
                         </td>
                         <td>
                             <div>
                                 <button type="submit"
                                         ui-sref="grupo-detail({id:grupo.id})"
                                         class="btn btn-success btn-outline btn-sm ripple ripple-light"
-                                        data-toggle="tooltip" data-placement="top" title="Visualizar">
+                                        uib-tooltip="Visualizar">
                                     <span class="mdi mdi-eye"></span>
                                 </button>
                                 <button type="submit"
                                         ui-sref="grupo.edit({id:grupo.id})"
                                         class="btn btn-primary btn-outline btn-sm ripple ripple-light"
-                                        data-toggle="tooltip" data-placement="top" title="Editar">
+                                        uib-tooltip="Editar">
                                     <span class="mdi mdi-pencil"></span>
                                 </button>
                                 <button type="submit"
                                         ui-sref="grupo.delete({id:grupo.id})"
                                         class="btn btn-danger btn-outline btn-sm ripple ripple-light"
-                                        data-toggle="tooltip" data-placement="top" title="Deletar">
+                                        uib-tooltip="Deletar">
                                     <span class="mdi mdi-delete"></span>
                                 </button>
                             </div>
