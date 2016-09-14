@@ -8,6 +8,13 @@
 
     function Produto ($resource, DateUtils) {
         var resourceUrl =  'api/produtos/:id';
+        
+        //This convertion is necessary cause the component scselect returns an object date
+        function converteDateFromScSelect(valueDate){
+        	return DateUtils.convertLocalDateToServer(  				
+    				new Date(valueDate.year, valueDate.month, valueDate.day)
+    		);
+        };
 
         return $resource(resourceUrl, {}, {
             'query': { method: 'GET', isArray: true},
@@ -26,28 +33,17 @@
                 	
                 	//Convert Date from Grupo
                 	if(data.grupo){                		
-                		data.grupo.dtOperacao = DateUtils.convertLocalDateToServer(
-                				//This convertion is necessary cause the component scselect returns an object date
-                				new Date(data.grupo.dtOperacao.year, data.grupo.dtOperacao.month, data.grupo.dtOperacao.day)
-                		);
-                		
+                		data.grupo.dtOperacao = converteDateFromScSelect(data.grupo.dtOperacao);                		
                 	};
                 	
                 	//Convert Date from SubGrupo
                 	if(data.subgrupo){                		
-                		data.subgrupo.dtOperacao = DateUtils.convertLocalDateToServer(
-                				//This convertion is necessary cause the component scselect returns an object date
-                				new Date(data.subgrupo.dtOperacao.year, data.subgrupo.dtOperacao.month, data.subgrupo.dtOperacao.day)
-                		);
-                		
+                		data.subgrupo.dtOperacao = converteDateFromScSelect(data.subgrupo.dtOperacao);                		
                 	};
                 	
                 	//Convert Date from Marca
                 	if(data.marca){                		
-                		data.marca.dtOperacao = DateUtils.convertLocalDateToServer(
-                				//This convertion is necessary cause the component scselect returns an object date
-                				new Date(data.marca.dtOperacao.year, data.marca.dtOperacao.month, data.marca.dtOperacao.day)
-                		);
+                		data.marca.dtOperacao = converteDateFromScSelect(data.marca.dtOperacao);
                 	};
                 	
                     return angular.toJson(data);
@@ -59,26 +55,17 @@
                 	
                 	//Convert Date from Grupo
                 	if(data.grupo){                		
-                		data.grupo.dtOperacao = DateUtils.convertLocalDateToServer(
-                				//This convertion is necessary cause the component scselect returns an object date
-                				new Date(data.grupo.dtOperacao.year, data.grupo.dtOperacao.month, data.grupo.dtOperacao.day)
-                		);                		
+                		data.grupo.dtOperacao = converteDateFromScSelect(data.grupo.dtOperacao);                		
                 	};
                 	
                 	//Convert Date from SubGrupo
                 	if(data.subgrupo){                		
-                		data.subgrupo.dtOperacao = DateUtils.convertLocalDateToServer(
-                				//This convertion is necessary cause the component scselect returns an object date
-                				new Date(data.subgrupo.dtOperacao.year, data.subgrupo.dtOperacao.month, data.subgrupo.dtOperacao.day)
-                		);                		
+                		data.subgrupo.dtOperacao = converteDateFromScSelect(data.subgrupo.dtOperacao);               		
                 	};
                 	
                 	//Convert Date from Marca
                 	if(data.marca){                		
-                		data.marca.dtOperacao = DateUtils.convertLocalDateToServer(
-                				//This convertion is necessary cause the component scselect returns an object date
-                				new Date(data.marca.dtOperacao.year, data.subgrupo.dtOperacao.month, data.marca.dtOperacao.day)
-                		);                		
+                		data.marca.dtOperacao = converteDateFromScSelect(data.marca.dtOperacao);  		
                 	};
                 	
                     return angular.toJson(data);
