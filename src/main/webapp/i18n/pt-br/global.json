@@ -90,6 +90,10 @@
         },
         "ribbon": {
             "dev":"Development"
+        },
+        "condition": {
+            "true": "Sim",
+            "false": "Não"
         }
     },
     "entity": {
