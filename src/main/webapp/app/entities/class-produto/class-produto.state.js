@@ -125,7 +125,7 @@
                         entity: function () {
                             return {
                                 cdClassProduto: null,
-                                dsClassProduto: null,
+                                nmClassProduto: null,
                                 id: null
                             };
                         }

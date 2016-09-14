@@ -355,22 +355,38 @@
 		        <!-- Diretiva ClassProduto-->
                 <div class="form-group">
                     <label class="control-label" translate="gpwebApp.produto.classProduto">
-                        Unidade
-                    </label>                   
-                    <ourselect id-select="field_entidade5" ng-model="vm.produto.classProduto" 
-                        entity-field-name="dsClassProduto" entity-field-id="cdClassProduto" entity-url="class-produtos">
-                    </ourselect>
-                    <select class="js-data-example-ajax" id="field_entidade5" style="width: 100%">
-                        <option value="" selected="selected"></option>
-                    </select>                   
-                    <div class="select2-label">
-                        <span>{{vm.produto.classProduto.cdClassProduto + " - "}}  {{vm.produto.classProduto.dsClassProduto}} 
-                            <a class="select2-btn pull-right"	ng-click="vm.produto.classProduto = null">
-                                <span class="mdi mdi-close-octagon"></span>&nbsp;
-                            </a>
-                        </span>
-                    </div>                  
-                </div>                
+                        Classificação
+                    </label>                      
+		            <div class="row">  
+						<div class="col-md-4">               
+					     <sc-select
+					       ng-model="vm.produto.classProduto"
+					       sc-options="classProduto as classProduto.id for classProduto in vm.obj.searchAsync(searchText, page, 'api/_search/class-produtos/select', 'id')"
+					       page-limit="vm.obj.asyncPageLimit"
+					       total-items="vm.obj.totalResults"
+					       placeholder="Código"
+					       loading-delay="200">
+					     </sc-select>
+					    </div> 
+						<div class="col-md-6">
+			             <sc-select
+						       ng-model="vm.produto.classProduto"
+						       sc-options="classProduto as classProduto.nmClassProduto for classProduto in vm.obj.searchAsync(searchText, page, 'api/_search/class-produtos/select', 'nmClassProduto')"
+						       page-limit="vm.obj.asyncPageLimit"
+						       total-items="vm.obj.totalResults"
+						       placeholder="Descrição"
+						       loading-delay="200">
+						 </sc-select>			     
+					    </div>					    
+					    <div class="col-md-1">			     
+						    <div class="col-md-1">
+						    	<button type="button" class="btn btn-default" ng-click="vm.produto.classProduto = null">
+						           <span class="glyphicon glyphicon-ban-circle"></span>
+						       	</button>
+						    </div>
+			            </div>
+				     </div>                                   
+                </div>                 
 		    </div>
         </div> 
         
