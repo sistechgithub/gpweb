@@ -313,25 +313,41 @@
                 </div>               
             </div>
 		    <div class="col-md-6">
-		        <!-- Diretiva Unidade-->
+		        <!-- Diretiva Unidade-->                
                 <div class="form-group">
                     <label class="control-label" translate="gpwebApp.produto.unidade">
                         Unidade
-                    </label>                   
-                    <ourselect id-select="field_entidade4" ng-model="vm.produto.unidade" 
-                        entity-field-name="nmUnidade" entity-field-id="id" entity-url="unidades">
-                    </ourselect>
-                    <select class="js-data-example-ajax" id="field_entidade4" style="width: 100%">
-                        <option value="" selected="selected"></option>
-                    </select>                   
-                    <div class="select2-label">
-                        <span>{{vm.produto.unidade.id + " - "}}  {{vm.produto.unidade.nmUnidade}} 
-                            <a class="select2-btn pull-right"	ng-click="vm.produto.unidade = null">
-                                <span class="mdi mdi-close-octagon"></span>&nbsp;
-                            </a>
-                        </span>
-                    </div>                  
-                </div>                 
+                    </label>                      
+		            <div class="row">  
+						<div class="col-md-4">               
+					     <sc-select
+					       ng-model="vm.produto.unidade"
+					       sc-options="unidade as unidade.id for unidade in vm.obj.searchAsync(searchText, page, 'api/_search/unidades/select', 'id')"
+					       page-limit="vm.obj.asyncPageLimit"
+					       total-items="vm.obj.totalResults"
+					       placeholder="Código"
+					       loading-delay="200">
+					     </sc-select>
+					    </div> 
+						<div class="col-md-6">
+			             <sc-select
+						       ng-model="vm.produto.unidade"
+						       sc-options="unidade as unidade.nmUnidade for unidade in vm.obj.searchAsync(searchText, page, 'api/_search/unidades/select', 'nmUnidade')"
+						       page-limit="vm.obj.asyncPageLimit"
+						       total-items="vm.obj.totalResults"
+						       placeholder="Descrição"
+						       loading-delay="200">
+						 </sc-select>			     
+					    </div>					    
+					    <div class="col-md-1">			     
+						    <div class="col-md-1">
+						    	<button type="button" class="btn btn-default" ng-click="vm.produto.unidade = null">
+						           <span class="glyphicon glyphicon-ban-circle"></span>
+						       	</button>
+						    </div>
+			            </div>
+				     </div>                                   
+                </div>              
 		    </div>
 		</div>
         <div class="row">
