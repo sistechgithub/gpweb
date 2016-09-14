@@ -39,15 +39,9 @@
             <table class="jh-table table table-striped table-hover">
                 <thead>
                     <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
-<<<<<<< HEAD
-                        <th jh-sort-by="id" class="col-md-1 col-classificacao-codigo"><span translate="global.field.id">Código</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>
-                        <th jh-sort-by="cdClassProduto" class="col-md-1 col-classificacao-codigoClassificacao"><span translate="gpwebApp.classProduto.cdClassProduto">Código da Classificação</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>
-                        <th jh-sort-by="nmClassProduto" class="col-md-9"><span translate="gpwebApp.classProduto.nmClassProduto">Nome</span> <span class="glyphicon glyphicon-sort pull-right"></span></th>
-=======
                         <th jh-sort-by="id" class="col-md-1 col-classificacao-codigo"><span translate="global.field.id">Código</span> <span class="glyphicon glyphicon-sort"></span></th>
                         <th jh-sort-by="cdClassProduto" class="col-md-1 col-classificacao-codigo-classificacao"><span translate="gpwebApp.classProduto.cdClassProduto">Código da Classificação</span> <span class="glyphicon glyphicon-sort"></span></th>
-                        <th jh-sort-by="dsClassProduto" class="col-md-9"><span translate="gpwebApp.classProduto.dsClassProduto">Nome</span> <span class="glyphicon glyphicon-sort"></span></th>
->>>>>>> master
+                        <th jh-sort-by="nmClassProduto" class="col-md-9"><span translate="gpwebApp.classProduto.nmClassProduto">Nome</span> <span class="glyphicon glyphicon-sort"></span></th>
                         <th class="col-md-1 col-classificacao-acoes text-center" translate="global.field.actions">Ações</th>
                     </tr>
                 </thead>
@@ -56,13 +50,8 @@
                     <tr ng-repeat="classProduto in vm.classProdutos track by classProduto.id">
                         <td><a ui-sref="class-produto-detail({id:classProduto.id})">{{classProduto.id}}</a></td>
                         <td class="text-center text-uppercase">{{classProduto.cdClassProduto}}</td>
-<<<<<<< HEAD
                         <td class="text-uppercase">{{classProduto.nmClassProduto}}</td>
-                        <td class="text-right">
-=======
-                        <td class="text-uppercase">{{classProduto.dsClassProduto}}</td>
                         <td>
->>>>>>> master
                             <div>
                                 <button type="submit"
                                         ui-sref="class-produto-detail({id:classProduto.id})"
