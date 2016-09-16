@@ -26,6 +26,11 @@
   }
 }
 
+//Datapicker
+.uib-datepicker-popup.dropdown-menu {
+    padding: 7px 4px;
+}
+
 //Navbar custom dropdown menu
 .navbar-nav .dropdown-menu {
   @include box-shadow($box-boxshadow !important);
