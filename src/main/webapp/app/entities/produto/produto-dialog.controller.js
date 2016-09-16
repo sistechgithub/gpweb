@@ -5,9 +5,9 @@
         .module('gpwebApp')
         .controller('ProdutoDialogController', ProdutoDialogController);
 
-    ProdutoDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', '$q', 'DataUtils', 'entity', 'Produto', 'Grupo', 'Marca', 'Unidade', 'ClassProduto', 'Subgrupo', 'NewSelectService'];
+    ProdutoDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', '$q', 'DataUtils', 'entity', 'Produto', 'Marca', 'Unidade', 'ClassProduto', 'NewSelectService'];
 
-    function ProdutoDialogController ($timeout, $scope, $stateParams, $uibModalInstance, $q, DataUtils, entity, Produto, Grupo, Marca, Unidade, ClassProduto, Subgrupo, NewSelectService) {
+    function ProdutoDialogController ($timeout, $scope, $stateParams, $uibModalInstance, $q, DataUtils, entity, Produto, Marca, Unidade, ClassProduto, NewSelectService) {
         var vm = this;
 
         vm.produto = entity;
@@ -15,18 +15,8 @@
         vm.byteSize = DataUtils.byteSize;
         vm.openFile = DataUtils.openFile;
         vm.save = save;
-        vm.grupos = Grupo.query({filter: 'produto-is-null'});
+        vm.obj = NewSelectService.obj;        
         
-        vm.obj = NewSelectService.obj;
-        
-        $q.all([vm.produto.$promise, vm.grupos.$promise]).then(function() {
-            if (!vm.produto.grupo || !vm.produto.grupo.id) {
-                return $q.reject();
-            }
-            return Grupo.get({id : vm.produto.grupo.id}).$promise;
-        }).then(function(grupo) {
-            vm.grupos.push(grupo);
-        });
         vm.marcas = Marca.query({filter: 'produto-is-null'});
         $q.all([vm.produto.$promise, vm.marcas.$promise]).then(function() {
             if (!vm.produto.marca || !vm.produto.marca.id) {
@@ -45,15 +35,7 @@
         }).then(function(unidade) {
             vm.unidades.push(unidade);
         });
-        vm.subgrupos = Subgrupo.query({filter: 'produto-is-null'});
-        $q.all([vm.produto.$promise, vm.subgrupos.$promise]).then(function() {
-            if (!vm.produto.subgrupo || !vm.produto.subgrupo.id) {
-                return $q.reject();
-            }
-            return Subgrupo.get({id : vm.produto.subgrupo.id}).$promise;
-        }).then(function(subgrupo) {
-            vm.subgrupos.push(subgrupo);
-        });
+        
         vm.classprodutos = ClassProduto.query();
 
         $timeout(function (){
