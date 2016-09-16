@@ -71,9 +71,10 @@ table.text-center {
 
 //Striped Table
 .table-striped > tbody > tr:nth-of-type(odd) {
-  background-color: #f8f8f8;
+  background-color: #f7f7f7;
 }
 
+//Hover Table
 .table-hover > tbody > tr {
   transition-duration: .28s;
   transition-timing-function: cubic-bezier(.4,0,.2,1);
@@ -81,7 +82,7 @@ table.text-center {
 }
 
 .table-hover > tbody > tr:hover {
-  background-color: #f4f4f4;
+  background-color: #eee;
 }
 
 //Table Responsive

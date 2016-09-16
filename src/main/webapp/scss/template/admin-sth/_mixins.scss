@@ -226,8 +226,9 @@
         &.active > a,
         &.active > span > a{      
             color: $sidebar-light-hover-color;
-            background: $sidebar-light-hover-bg;    
-        }
+            background: $sidebar-light-hover-bg;
+            font-weight: 600;
+        }        
         &.active {
             border-left-color: $light-blue;
             > a,
@@ -241,6 +242,7 @@
             background: $sidebar-light-submenu-bg;
         }
     }
+
     //All links within the sidebar menu
     .sidebar a {
         color: $sidebar-light-color;
@@ -258,9 +260,6 @@
             &.active > span > a,    
             > a:hover, > span > a:hover {
                 color: $sidebar-light-submenu-hover-color;
-            }
-            &.active > a,
-            &.active > span > a {  
                 font-weight: 600;
             }
         }
