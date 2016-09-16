@@ -1,15 +1,13 @@
 package com.sth.gpweb.web.rest;
 
-import com.codahale.metrics.annotation.Timed;
-import com.google.gson.Gson;
-import com.sth.gpweb.domain.Grupo;
-import com.sth.gpweb.domain.Marca;
-import com.sth.gpweb.domain.Subgrupo;
-import com.sth.gpweb.service.MarcaService;
-import com.sth.gpweb.web.rest.util.HeaderUtil;
-import com.sth.gpweb.web.rest.util.PaginationUtil;
-import com.sth.gpweb.web.rest.util.ScSelect;
-import com.sth.gpweb.web.rest.util.Selection;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Optional;
+
+import javax.inject.Inject;
+import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,19 +17,20 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
-import javax.inject.Inject;
-import javax.validation.Valid;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.time.LocalDate;
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
-
-import static org.elasticsearch.index.query.QueryBuilders.*;
+import com.codahale.metrics.annotation.Timed;
+import com.google.gson.Gson;
+import com.sth.gpweb.domain.Marca;
+import com.sth.gpweb.service.MarcaService;
+import com.sth.gpweb.web.rest.util.HeaderUtil;
+import com.sth.gpweb.web.rest.util.PaginationUtil;
+import com.sth.gpweb.web.rest.util.ScSelect;
 
 /**
  * REST controller for managing Marca.
