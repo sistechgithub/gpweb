@@ -11,6 +11,8 @@
             > th,
             > td {
                 border-top: 1px solid $box-border-color;
+                vertical-align: middle;
+                padding: 6px;
             }
         }
     }
