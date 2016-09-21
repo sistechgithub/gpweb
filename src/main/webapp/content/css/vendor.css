@@ -13746,6 +13746,9 @@ $-webkit-keyframes flipInX {
   color: #1669bb;
   border-color: #1976d2; }
 
+.tooltip {
+  z-index: 1040; }
+
 /*
  * Component: Nav
  * -----------------------------------------------------------------------
