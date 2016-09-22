@@ -94,6 +94,7 @@
                     templateUrl: 'app/entities/grupo/grupo-dialog.html',
                     controller: 'GrupoDialogController',
                     controllerAs: 'vm',
+                    animation: false,
                     backdrop: 'static',
                     size: 'lg',
                     resolve: {
@@ -119,6 +120,7 @@
                     templateUrl: 'app/entities/grupo/grupo-dialog.html',
                     controller: 'GrupoDialogController',
                     controllerAs: 'vm',
+                    animation: false,
                     backdrop: 'static',
                     size: 'lg',
                     resolve: {
@@ -159,6 +161,7 @@
                     templateUrl: 'app/entities/grupo/grupo-dialog.html',
                     controller: 'GrupoDialogController',
                     controllerAs: 'vm',
+                    animation: false,
                     backdrop: 'static',
                     size: 'lg',
                     resolve: {
@@ -184,6 +187,7 @@
                     templateUrl: 'app/entities/grupo/grupo-delete-dialog.html',
                     controller: 'GrupoDeleteController',
                     controllerAs: 'vm',
+                    animation: false,
                     size: 'md',
                     resolve: {
                         entity: ['Grupo', function(Grupo) {
