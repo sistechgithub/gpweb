@@ -94,6 +94,7 @@
                     templateUrl: 'app/entities/unidade/unidade-dialog.html',
                     controller: 'UnidadeDialogController',
                     controllerAs: 'vm',
+                    animation: false,
                     backdrop: 'static',
                     size: 'lg',
                     resolve: {
@@ -119,6 +120,7 @@
                     templateUrl: 'app/entities/unidade/unidade-dialog.html',
                     controller: 'UnidadeDialogController',
                     controllerAs: 'vm',
+                    animation: false,
                     backdrop: 'static',
                     size: 'lg',
                     resolve: {
@@ -148,6 +150,7 @@
                     templateUrl: 'app/entities/unidade/unidade-dialog.html',
                     controller: 'UnidadeDialogController',
                     controllerAs: 'vm',
+                    animation: false,
                     backdrop: 'static',
                     size: 'lg',
                     resolve: {
@@ -173,6 +176,7 @@
                     templateUrl: 'app/entities/unidade/unidade-delete-dialog.html',
                     controller: 'UnidadeDeleteController',
                     controllerAs: 'vm',
+                    animation: false,
                     size: 'md',
                     resolve: {
                         entity: ['Unidade', function(Unidade) {

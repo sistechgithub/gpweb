@@ -94,6 +94,7 @@
                     templateUrl: 'app/entities/filial/filial-dialog.html',
                     controller: 'FilialDialogController',
                     controllerAs: 'vm',
+                    animation: false,
                     backdrop: 'static',
                     size: 'lg',
                     resolve: {
@@ -119,6 +120,7 @@
                     templateUrl: 'app/entities/filial/filial-dialog.html',
                     controller: 'FilialDialogController',
                     controllerAs: 'vm',
+                    animation: false,
                     backdrop: 'static',
                     size: 'lg',
                     resolve: {
@@ -164,6 +166,7 @@
                     templateUrl: 'app/entities/filial/filial-dialog.html',
                     controller: 'FilialDialogController',
                     controllerAs: 'vm',
+                    animation: false,
                     backdrop: 'static',
                     size: 'lg',
                     resolve: {
@@ -189,6 +192,7 @@
                     templateUrl: 'app/entities/filial/filial-delete-dialog.html',
                     controller: 'FilialDeleteController',
                     controllerAs: 'vm',
+                    animation: false,
                     size: 'md',
                     resolve: {
                         entity: ['Filial', function(Filial) {
