@@ -233,17 +233,17 @@
   min-width: 90px;
   max-width: 90px; }
 
-.col-catalogo-valorEstoque {
-  min-width: 142px;
-  max-width: 142px; }
+.col-catalogo-vlVenda {
+  min-width: 116px;
+  max-width: 116px; }
 
 .col-catalogo-inativo {
   min-width: 98px;
   max-width: 98px; }
 
 .col-catalogo-acoes {
-  min-width: 152px;
-  max-width: 152px; }
+  min-width: 126px;
+  max-width: 126px; }
 
 .box-produto {
   width: 100%;
