@@ -36,6 +36,8 @@
             <thead>
                 <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
                     <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="produto.id"><span translate="gpwebApp.produtoFilial.produto">Produto</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="filial.id"><span translate="gpwebApp.produtoFilial.filial">Filial</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="qtEmbalagem"><span translate="gpwebApp.produtoFilial.qtEmbalagem">Qt Embalagem</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="qtMin"><span translate="gpwebApp.produtoFilial.qtMin">Qt Min</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="qtMax"><span translate="gpwebApp.produtoFilial.qtMax">Qt Max</span> <span class="glyphicon glyphicon-sort"></span></th>
@@ -56,8 +58,7 @@
                     <th jh-sort-by="flInativo"><span translate="gpwebApp.produtoFilial.flInativo">Fl Inativo</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="flMateriaPrima"><span translate="gpwebApp.produtoFilial.flMateriaPrima">Fl Materia Prima</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="flComposto"><span translate="gpwebApp.produtoFilial.flComposto">Fl Composto</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="nnPontos"><span translate="gpwebApp.produtoFilial.nnPontos">Nn Pontos</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="produto.id"><span translate="gpwebApp.produtoFilial.produto">Produto</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="nnPontos"><span translate="gpwebApp.produtoFilial.nnPontos">Nn Pontos</span> <span class="glyphicon glyphicon-sort"></span></th>                    
                     <th jh-sort-by="promocao.id"><span translate="gpwebApp.produtoFilial.promocao">Promocao</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
@@ -65,6 +66,12 @@
             <tbody>
                 <tr ng-repeat="produtoFilial in vm.produtoFilials track by produtoFilial.id">
                     <td><a ui-sref="produto-filial-detail({id:produtoFilial.id})">{{produtoFilial.id}}</a></td>
+                     <td>
+                        <a ui-sref="produto-detail({id:produtoFilial.produto.id})">{{produtoFilial.produto.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="produto-detail({id:produtoFilial.filial.id})">{{produtoFilial.filial.id}}</a>
+                    </td>
                     <td>{{produtoFilial.qtEmbalagem}}</td>
                     <td>{{produtoFilial.qtMin}}</td>
                     <td>{{produtoFilial.qtMax}}</td>
@@ -85,10 +92,7 @@
                     <td>{{produtoFilial.flInativo}}</td>
                     <td>{{produtoFilial.flMateriaPrima}}</td>
                     <td>{{produtoFilial.flComposto}}</td>
-                    <td>{{produtoFilial.nnPontos}}</td>
-                    <td>
-                        <a ui-sref="produto-detail({id:produtoFilial.produto.id})">{{produtoFilial.produto.id}}</a>
-                    </td>
+                    <td>{{produtoFilial.nnPontos}}</td>                   
                     <td>
                         <a ui-sref="promocao-detail({id:produtoFilial.promocao.id})">{{produtoFilial.promocao.id}}</a>
                     </td>
