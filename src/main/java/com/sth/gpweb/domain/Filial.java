@@ -85,6 +85,9 @@ public class Filial implements Serializable {
 
     @Column(name = "fl_envia_email")
     private Boolean flEnviaEmail;
+    
+    @Column(name = "fl_matriz")
+    private Boolean flMatriz;
 
     @Size(max = 200)
     @Column(name = "ds_obs", length = 200)
@@ -233,6 +236,14 @@ public class Filial implements Serializable {
     public void setFlEnviaEmail(Boolean flEnviaEmail) {
         this.flEnviaEmail = flEnviaEmail;
     }
+    
+    public Boolean isFlMatriz() {
+        return flMatriz;
+    }
+
+    public void setFlMatriz(Boolean flMatriz) {
+        this.flMatriz = flMatriz;
+    }
 
     public String getDsObs() {
         return dsObs;
@@ -283,6 +294,7 @@ public class Filial implements Serializable {
             ", dsPisCofins='" + dsPisCofins + "'" +
             ", dsEmail='" + dsEmail + "'" +
             ", flEnviaEmail='" + flEnviaEmail + "'" +
+            ", flMatriz='" + flMatriz + "'" +
             ", dsObs='" + dsObs + "'" +
             '}';
     }

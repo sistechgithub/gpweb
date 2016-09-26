@@ -33,7 +33,8 @@
             "dsEmail": "E-mail",
             "flEnviaEmail": "Envio de email",
             "dsObs": "Obs.",
-            "flTprec": "Fl Tprec"
+            "flTprec": "Fl Tprec",
+            "flMatriz": "Matriz"
         }
     }
 }
