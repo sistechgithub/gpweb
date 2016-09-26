@@ -89,6 +89,10 @@
                 <constraints nullable="true" />
             </column>
             
+            <column name="fl_matriz" type="bit">
+                <constraints nullable="true" />
+            </column>
+            
             <column name="ds_obs" type="varchar(200)">
                 <constraints nullable="true" />
             </column>
