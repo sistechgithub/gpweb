@@ -94,6 +94,7 @@
                     templateUrl: 'app/entities/promocao/promocao-dialog.html',
                     controller: 'PromocaoDialogController',
                     controllerAs: 'vm',
+                    animation: false,
                     backdrop: 'static',
                     size: 'lg',
                     resolve: {
@@ -119,6 +120,7 @@
                     templateUrl: 'app/entities/promocao/promocao-dialog.html',
                     controller: 'PromocaoDialogController',
                     controllerAs: 'vm',
+                    animation: false,
                     backdrop: 'static',
                     size: 'lg',
                     resolve: {
@@ -153,6 +155,7 @@
                     templateUrl: 'app/entities/promocao/promocao-dialog.html',
                     controller: 'PromocaoDialogController',
                     controllerAs: 'vm',
+                    animation: false,
                     backdrop: 'static',
                     size: 'lg',
                     resolve: {
@@ -178,6 +181,7 @@
                     templateUrl: 'app/entities/promocao/promocao-delete-dialog.html',
                     controller: 'PromocaoDeleteController',
                     controllerAs: 'vm',
+                    animation: false,
                     size: 'md',
                     resolve: {
                         entity: ['Promocao', function(Promocao) {

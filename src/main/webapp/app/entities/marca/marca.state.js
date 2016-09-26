@@ -94,6 +94,7 @@
                     templateUrl: 'app/entities/marca/marca-dialog.html',
                     controller: 'MarcaDialogController',
                     controllerAs: 'vm',
+                    animation: false,
                     backdrop: 'static',
                     size: 'lg',
                     resolve: {
@@ -119,6 +120,7 @@
                     templateUrl: 'app/entities/marca/marca-dialog.html',
                     controller: 'MarcaDialogController',
                     controllerAs: 'vm',
+                    animation: false,
                     backdrop: 'static',
                     size: 'lg',
                     resolve: {
@@ -157,6 +159,7 @@
                     templateUrl: 'app/entities/marca/marca-dialog.html',
                     controller: 'MarcaDialogController',
                     controllerAs: 'vm',
+                    animation: false,
                     backdrop: 'static',
                     size: 'lg',
                     resolve: {
@@ -182,6 +185,7 @@
                     templateUrl: 'app/entities/marca/marca-delete-dialog.html',
                     controller: 'MarcaDeleteController',
                     controllerAs: 'vm',
+                    animation: false,
                     size: 'md',
                     resolve: {
                         entity: ['Marca', function(Marca) {

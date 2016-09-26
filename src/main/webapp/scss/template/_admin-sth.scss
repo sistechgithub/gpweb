@@ -34,6 +34,7 @@
 @import "admin-sth/components/pagination";
 //@import "admin-sth/components/callout";
 @import "admin-sth/components/alerts";
+@import "admin-sth/components/tooltips";
 @import "admin-sth/components/navs";
 //@import "admin-sth/components/products";
 @import "admin-sth/components/table";
@@ -51,6 +52,7 @@
 
 //PAGES
 //-------------
+@import "admin-sth/pages/product-box";
 //@import "admin-sth/pages/mailbox";
 //@import "admin-sth/pages/lockscreen";
 //@import "admin-sth/pages/login_and_register";

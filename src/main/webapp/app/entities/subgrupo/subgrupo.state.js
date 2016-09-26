@@ -94,6 +94,7 @@
                     templateUrl: 'app/entities/subgrupo/subgrupo-dialog.html',
                     controller: 'SubgrupoDialogController',
                     controllerAs: 'vm',
+                    animation: false,
                     backdrop: 'static',
                     size: 'lg',
                     resolve: {
@@ -119,6 +120,7 @@
                     templateUrl: 'app/entities/subgrupo/subgrupo-dialog.html',
                     controller: 'SubgrupoDialogController',
                     controllerAs: 'vm',
+                    animation: false,
                     backdrop: 'static',
                     size: 'lg',
                     resolve: {
@@ -152,6 +154,7 @@
                     templateUrl: 'app/entities/subgrupo/subgrupo-dialog.html',
                     controller: 'SubgrupoDialogController',
                     controllerAs: 'vm',
+                    animation: false,
                     backdrop: 'static',
                     size: 'lg',
                     resolve: {
@@ -177,6 +180,7 @@
                     templateUrl: 'app/entities/subgrupo/subgrupo-delete-dialog.html',
                     controller: 'SubgrupoDeleteController',
                     controllerAs: 'vm',
+                    animation: false,
                     size: 'md',
                     resolve: {
                         entity: ['Subgrupo', function(Subgrupo) {
