@@ -1,12 +1,27 @@
 package com.sth.gpweb.domain;
 
-import org.springframework.data.elasticsearch.annotations.Document;
-
-import javax.persistence.*;
-import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Lob;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.springframework.data.elasticsearch.annotations.Document;
+
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 /**
  * A Produto.
@@ -97,6 +112,16 @@ public class Produto implements Serializable {
     
     @OneToOne
     private Subgrupo subgrupo;
+    
+    @Transient
+    @JsonSerialize
+    @JsonDeserialize
+    private List<Filial> filials;
+    
+    @Transient
+    @JsonSerialize
+    @JsonDeserialize
+    private List<Filial> filialsNotUsed;
 
     public Long getId() {
         return id;
@@ -104,9 +129,41 @@ public class Produto implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+	}   
+
+    public List<Filial> getFilials() {
+        return filials;
     }
 
-    public Long getCdProduto() {
+    public List<Filial> getFilialsNotUsed() {
+		return filialsNotUsed;
+	}
+
+	public void setFilialsNotUsed(List<Filial> filialsNotUsed) {
+		this.filialsNotUsed = filialsNotUsed;
+	}
+
+	public void setFilials(List<Filial> filials) {
+        this.filials = filials;
+    }
+
+	public Boolean getFlBalanca() {
+		return flBalanca;
+	}
+
+	public Boolean getFlInativo() {
+		return flInativo;
+	}
+
+	public Boolean getFlSngpc() {
+		return flSngpc;
+	}
+
+	public Boolean getFlUsoProlongado() {
+		return flUsoProlongado;
+	}
+
+	public Long getCdProduto() {
         return cdProduto;
     }
 
@@ -302,27 +359,15 @@ public class Produto implements Serializable {
         return Objects.hashCode(id);
     }
 
-    @Override
-    public String toString() {
-        return "Produto{" +
-            "id=" + id +
-            ", cdProduto='" + cdProduto + "'" +
-            ", cdBarras='" + cdBarras + "'" +
-            ", nmProduto='" + nmProduto + "'" +
-            ", cdNcm='" + cdNcm + "'" +
-            ", cdGtin='" + cdGtin + "'" +
-            ", cdAnp='" + cdAnp + "'" +
-            ", dsAnp='" + dsAnp + "'" +
-            ", cdContaContabil='" + cdContaContabil + "'" +
-            ", flBalanca='" + flBalanca + "'" +
-            ", flInativo='" + flInativo + "'" +
-            ", flSngpc='" + flSngpc + "'" +
-            ", flUsoProlongado='" + flUsoProlongado + "'" +
-            ", vlVenda='" + vlVenda + "'" +
-            ", vlEstoque='" + vlEstoque + "'" +
-            ", dsInformacoes='" + dsInformacoes + "'" +
-            ", blImagem='" + blImagem + "'" +
-            ", blImagemContentType='" + blImagemContentType + "'" +
-            '}';
-    }
+	@Override
+	public String toString() {
+		return "Produto [id=" + id + ", cdProduto=" + cdProduto + ", cdBarras=" + cdBarras + ", nmProduto=" + nmProduto
+				+ ", cdNcm=" + cdNcm + ", cdGtin=" + cdGtin + ", cdAnp=" + cdAnp + ", dsAnp=" + dsAnp
+				+ ", cdContaContabil=" + cdContaContabil + ", flBalanca=" + flBalanca + ", flInativo=" + flInativo
+				+ ", flSngpc=" + flSngpc + ", flUsoProlongado=" + flUsoProlongado + ", vlVenda=" + vlVenda
+				+ ", vlEstoque=" + vlEstoque + ", dsInformacoes=" + dsInformacoes + ", blImagem="
+				+ Arrays.toString(blImagem) + ", blImagemContentType=" + blImagemContentType + ", grupo=" + grupo
+				+ ", marca=" + marca + ", unidade=" + unidade + ", classProduto=" + classProduto + ", subgrupo="
+				+ subgrupo + ", filials=" + filials + "]";
+	}    
 }
