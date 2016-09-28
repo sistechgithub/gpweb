@@ -94,6 +94,7 @@
                     templateUrl: 'app/entities/produto/produto-dialog.html',
                     controller: 'ProdutoDialogController',
                     controllerAs: 'vm',
+                    animation: false,
                     backdrop: 'static',
                     size: 'lg',
                     resolve: {
@@ -119,6 +120,7 @@
                     templateUrl: 'app/entities/produto/produto-dialog.html',
                     controller: 'ProdutoDialogController',
                     controllerAs: 'vm',
+                    animation: false,
                     backdrop: 'static',
                     size: 'lg',
                     resolve: {
@@ -163,6 +165,7 @@
                     templateUrl: 'app/entities/produto/produto-dialog.html',
                     controller: 'ProdutoDialogController',
                     controllerAs: 'vm',
+                    animation: false,
                     backdrop: 'static',
                     size: 'lg',
                     resolve: {
@@ -188,6 +191,7 @@
                     templateUrl: 'app/entities/produto/produto-delete-dialog.html',
                     controller: 'ProdutoDeleteController',
                     controllerAs: 'vm',
+                    animation: false,
                     size: 'md',
                     resolve: {
                         entity: ['Produto', function(Produto) {
