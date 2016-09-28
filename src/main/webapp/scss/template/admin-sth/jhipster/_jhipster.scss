@@ -347,6 +347,12 @@ entity tables helpers
 .padding-top-5 { padding-top: 5px !important; }
 .padding-bottom-5 { padding-bottom: 5px !important; }
 .padding-5 { padding: 5px !important; }
+/* 7px */
+.padding-left-7 { padding-left: 7px !important; }
+.padding-right-7 { padding-right: 7px !important; }
+.padding-top-7 { padding-top: 7px !important; }
+.padding-bottom-7 { padding-bottom: 7px !important; }
+.padding-7 { padding: 7px !important; }
 /* 10px */
 .padding-left-10 { padding-left: 10px !important; }
 .padding-right-10 { padding-right: 10px !important; }
@@ -367,11 +373,25 @@ entity tables helpers
 .padding-20 { padding: 20px !important; }
 
 @media screen and (max-width: 768px) {
+    .no-mob-padding-left { padding-left: 0px !important; }
+    .no-mob-padding-right { padding-right: 0px !important; }
+    .no-mob-padding-top { padding-top: 0px !important; }
+    .no-mob-padding-bottom { padding-bottom: 0px !important; }
+    .no-mob-padding-top-bot { padding-top: 0px !important; padding-bottom: 0px !important; }
+    .no-mob-padding-lef-rig { padding-left: 0px !important; padding-right: 0px !important; }
+    .no-mob-padding { padding: 0px !important; }
+    
     .mob-padding-left-5 { padding-left: 5px !important; }
     .mob-padding-right-5 { padding-right: 5px !important; }
     .mob-padding-top-5 { padding-top: 5px !important; }
     .mob-padding-bottom-5 { padding-bottom: 5px !important; }
     .mob-padding-5 { padding: 5px !important; }
+    
+    .mob-padding-left-7 { padding-left: 7px !important; }
+    .mob-padding-right-7 { padding-right: 7px !important; }
+    .mob-padding-top-7 { padding-top: 7px !important; }
+    .mob-padding-bottom-7 { padding-bottom: 7px !important; }
+    .mob-padding-7 { padding: 7px !important; }
     
     .mob-padding-left-10 { padding-left: 10px !important; }
     .mob-padding-right-10 { padding-right: 10px !important; }
