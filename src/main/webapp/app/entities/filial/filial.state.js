@@ -142,6 +142,7 @@
                                 dtOperacao: null,
                                 dsEmail: null,
                                 flEnviaEmail: false,
+                                flMatriz: false,
                                 flTprec: false,
                                 flInativo: false,                                
                                 id: null

@@ -90,6 +90,8 @@ public class FilialResourceIntTest {
     private static final String UPDATED_DS_EMAIL = "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB";
     private static final Boolean DEFAULT_FL_ENVIA_EMAIL = false;
     private static final Boolean UPDATED_FL_ENVIA_EMAIL = true;
+    private static final Boolean DEFAULT_FL_MATRIZ = false;
+    private static final Boolean UPDATED_FL_MATRIZ = true;
     private static final String DEFAULT_DS_OBS = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     private static final String UPDATED_DS_OBS = "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB";
 
@@ -143,6 +145,7 @@ public class FilialResourceIntTest {
         filial.setDsPisCofins(DEFAULT_DS_PIS_COFINS);
         filial.setDsEmail(DEFAULT_DS_EMAIL);
         filial.setFlEnviaEmail(DEFAULT_FL_ENVIA_EMAIL);
+        filial.setFlMatriz(DEFAULT_FL_MATRIZ);
         filial.setDsObs(DEFAULT_DS_OBS);
     }
 
@@ -179,6 +182,7 @@ public class FilialResourceIntTest {
         assertThat(testFilial.getDsPisCofins()).isEqualTo(DEFAULT_DS_PIS_COFINS);
         assertThat(testFilial.getDsEmail()).isEqualTo(DEFAULT_DS_EMAIL);
         assertThat(testFilial.isFlEnviaEmail()).isEqualTo(DEFAULT_FL_ENVIA_EMAIL);
+        assertThat(testFilial.isFlMatriz()).isEqualTo(DEFAULT_FL_MATRIZ);
         assertThat(testFilial.getDsObs()).isEqualTo(DEFAULT_DS_OBS);
 
         // Validate the Filial in ElasticSearch
@@ -232,6 +236,7 @@ public class FilialResourceIntTest {
                 .andExpect(jsonPath("$.[*].dsPisCofins").value(hasItem(DEFAULT_DS_PIS_COFINS.toString())))
                 .andExpect(jsonPath("$.[*].dsEmail").value(hasItem(DEFAULT_DS_EMAIL.toString())))
                 .andExpect(jsonPath("$.[*].flEnviaEmail").value(hasItem(DEFAULT_FL_ENVIA_EMAIL.booleanValue())))
+                .andExpect(jsonPath("$.[*].flMatriz").value(hasItem(DEFAULT_FL_MATRIZ.booleanValue())))
                 .andExpect(jsonPath("$.[*].dsObs").value(hasItem(DEFAULT_DS_OBS.toString())));
     }
 
@@ -263,6 +268,7 @@ public class FilialResourceIntTest {
             .andExpect(jsonPath("$.dsPisCofins").value(DEFAULT_DS_PIS_COFINS.toString()))
             .andExpect(jsonPath("$.dsEmail").value(DEFAULT_DS_EMAIL.toString()))
             .andExpect(jsonPath("$.flEnviaEmail").value(DEFAULT_FL_ENVIA_EMAIL.booleanValue()))
+            .andExpect(jsonPath("$.flMatriz").value(DEFAULT_FL_MATRIZ.booleanValue()))
             .andExpect(jsonPath("$.dsObs").value(DEFAULT_DS_OBS.toString()));
     }
 
@@ -302,6 +308,7 @@ public class FilialResourceIntTest {
         updatedFilial.setDsPisCofins(UPDATED_DS_PIS_COFINS);
         updatedFilial.setDsEmail(UPDATED_DS_EMAIL);
         updatedFilial.setFlEnviaEmail(UPDATED_FL_ENVIA_EMAIL);
+        updatedFilial.setFlMatriz(UPDATED_FL_MATRIZ);
         updatedFilial.setDsObs(UPDATED_DS_OBS);
 
         restFilialMockMvc.perform(put("/api/filials")
@@ -330,6 +337,7 @@ public class FilialResourceIntTest {
         assertThat(testFilial.getDsPisCofins()).isEqualTo(UPDATED_DS_PIS_COFINS);
         assertThat(testFilial.getDsEmail()).isEqualTo(UPDATED_DS_EMAIL);
         assertThat(testFilial.isFlEnviaEmail()).isEqualTo(UPDATED_FL_ENVIA_EMAIL);
+        assertThat(testFilial.isFlMatriz()).isEqualTo(UPDATED_FL_MATRIZ);
         assertThat(testFilial.getDsObs()).isEqualTo(UPDATED_DS_OBS);
 
         // Validate the Filial in ElasticSearch
@@ -387,6 +395,7 @@ public class FilialResourceIntTest {
             .andExpect(jsonPath("$.[*].dsPisCofins").value(hasItem(DEFAULT_DS_PIS_COFINS.toString())))
             .andExpect(jsonPath("$.[*].dsEmail").value(hasItem(DEFAULT_DS_EMAIL.toString())))
             .andExpect(jsonPath("$.[*].flEnviaEmail").value(hasItem(DEFAULT_FL_ENVIA_EMAIL.booleanValue())))
+            .andExpect(jsonPath("$.[*].flMatriz").value(hasItem(DEFAULT_FL_MATRIZ.booleanValue())))
             .andExpect(jsonPath("$.[*].dsObs").value(hasItem(DEFAULT_DS_OBS.toString())));
     }
 }

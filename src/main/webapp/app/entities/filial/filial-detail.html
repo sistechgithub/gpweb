@@ -3,7 +3,7 @@
         <h1 class="box-title"><span translate="gpwebApp.filial.detail.title">Filial</span> {{vm.filial.id}}</h1>
         <a class="btn btn-default btn-print pull-right hidden-xs" href="javascript:window.print();"><i class="mdi mdi-printer mdi-3x"></i></a>
     </div><!-- /.box-header -->
-    
+
     <jhi-alert></jhi-alert>
 
     <div class="box-body">
@@ -32,7 +32,7 @@
                 <div class="box-detail-divider"></div>
             </dl>   
         </div>
-        
+
         <div class="row">
             <dl class="col-xs-12 col-sm-4">
                 <dt><span translate="gpwebApp.filial.cdIe">Inscrição estadual</span></dt>
@@ -59,7 +59,7 @@
                 <div class="box-detail-divider"></div>
             </dl>                               
         </div>
-        
+
         <div class="row">            
             <dl class="col-xs-12 col-sm-4">
                 <dt><span translate="gpwebApp.filial.cdTel1">Telefone 2</span></dt>
@@ -86,9 +86,9 @@
                 <div class="box-detail-divider"></div>
             </dl>                           
         </div>
-        
+
         <div class="row">
-           <dl class="col-xs-12 col-sm-4">
+            <dl class="col-xs-12 col-sm-4">
                 <dt><span translate="gpwebApp.filial.dsEmail">Email</span></dt>
                 <dd>
                     <span class="text-uppercase">{{vm.filial.dsEmail}}</span>
@@ -112,7 +112,7 @@
                 <div class="box-detail-divider"></div>
             </dl>
         </div>
-        
+
         <div class="row">
             <dl class="col-xs-12 col-sm-12">
                 <dt><span translate="gpwebApp.filial.dsObs">Obs.</span></dt>
@@ -123,9 +123,17 @@
                 <div class="box-detail-divider"></div>
             </dl>
         </div>
-        
+
         <div class="row">
-            <dl class="col-xs-12 col-sm-12">
+            <dl class="col-xs-12 col-sm-4">
+                <dt><span translate="gpwebApp.filial.flMatriz">Matriz</span></dt>
+                <dd>
+                    <span class="text-uppercase">{{vm.filial.flMatriz ? 'Sim' : 'Não'}}</span>
+                </dd>
+                <div class="box-detail-divider"></div>
+            </dl>
+
+            <dl class="col-xs-12 col-sm-8">
                 <dt><span translate="gpwebApp.filial.flInativo">Fl Inativo</span></dt>
                 <dd>
                     <span class="text-uppercase">{{vm.filial.flInativo ? 'Sim' : 'Não'}}</span>
@@ -141,7 +149,7 @@
                 class="btn btn-info ripple ripple-light">
             <span translate="entity.action.back"> Voltar</span>
         </button>
-        
+
         <button type="button" ui-sref="filial-detail.edit({id:vm.filial.id})" class="btn btn-primary ripple ripple-light">
             <span translate="entity.action.edit"> Editar</span>
         </button>
