@@ -137,3 +137,8 @@
         margin-top: -7px;
     }
 }
+
+//A fix for close sidebar
+.sidebar-mini.sidebar-collapse .close-hide {
+    display: none;
+}

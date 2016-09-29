@@ -11046,6 +11046,10 @@ button.close {
 .mdi.mdi-24px:before {
   font-size: 24px; }
 
+.mdi-set.mdi-28px,
+.mdi.mdi-28px:before {
+  font-size: 28px; }
+
 .mdi-set.mdi-36px,
 .mdi.mdi-36px:before {
   font-size: 36px; }
@@ -12236,6 +12240,9 @@ button.mdi::before {
     top: 50%;
     right: 10px;
     margin-top: -7px; }
+
+.sidebar-mini.sidebar-collapse .close-hide {
+  display: none; }
 
 /*
  * Component: Control sidebar. By default, this is the right sidebar.
