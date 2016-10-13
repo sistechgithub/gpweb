@@ -60,7 +60,7 @@ gulp.task('copy', function () {
 //            merge: true
 //        }))
 //        .pipe(gulp.dest(config.dist)),
-        gulp.src(config.app + 'content/**/*.{woff,woff2,svg,ttf,eot,otf}')
+        gulp.src(config.app + 'content/fonts/*.{woff,woff2,svg,ttf,eot,otf}')
         .pipe(plumber({errorHandler: handleErrors}))
         .pipe(changed(config.dist + 'content/fonts/'))
         .pipe(flatten())
@@ -71,6 +71,9 @@ gulp.task('copy', function () {
             merge: true
         }))
         .pipe(gulp.dest(config.dist)),
+        gulp.src(config.app + 'content/**/*.js')
+        .pipe(plumber({errorHandler: handleErrors}))
+        .pipe(gulp.dest(config.dist + 'content/')),
         gulp.src([config.app + 'robots.txt', config.app + 'favicon.ico', config.app + '.htaccess'], { dot: true })
         .pipe(plumber({errorHandler: handleErrors}))
         .pipe(changed(config.dist))

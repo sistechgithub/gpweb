@@ -36,6 +36,26 @@
 .sidebar {
     padding-bottom: 10px;
 }
+
+//scroll
+.sidebar-scroll {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50px;
+    bottom: 7px;
+    overflow-y: auto;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+}
+
+@media (max-width: 767px) {
+    .sidebar-scroll {
+        top: 52px;
+        bottom: 0px;
+    }
+}
+
 // remove border from form
 .sidebar-form {
     input:focus {
@@ -77,6 +97,48 @@
             }
         }
     }
+}
+
+//close-panel
+.close-panel {
+    position: relative;
+    width: 100%;
+    padding: 4px 0px 0px 0px;
+    overflow: hidden;
+    @include clearfix;
+}
+
+//logo-panel
+.logo-panel {
+    position: relative;
+    width: 100%;
+    padding: 0px 14px 3px;
+    overflow: hidden;
+    @include clearfix;
+}
+
+.logo-sidebar {
+    width: 250px;
+    height: 95px;
+    background: url("../../../content/images/logo.svg") no-repeat;
+    background-size: contain;
+}
+
+.sidebar-mini.sidebar-collapse .logo-sidebar{
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .sidebar-mini.sidebar-collapse .logo-sidebar{
+        display: inline-block;
+    }
+}
+
+.divider{
+    width: 100px;
+    border-top: 1px solid #d2d6de;
+    padding: 0px 0px 15px 0px;
+    margin: 0 auto;
 }
 
 // Sidebar menu
@@ -167,37 +229,3 @@
     }
 }
 
-//scroll
-.sidebar-scroll {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 50px;
-    bottom: 7px;
-    overflow-y: auto;
-    overflow-x: auto;
-    -ms-overflow-style: none;
-}
-
-@media (max-width: 767px) {
-    .sidebar-scroll {
-        top: 52px;
-        bottom: 0px;
-    }
-}
-
-.sistech-logo-sidebar {
-    background-size: contain;
-    margin: 0 0 10px 0;
-    padding: 6px 14px 9px 14px;
-}
-
-.sidebar-mini.sidebar-collapse .sistech-logo-sidebar{
-    display: none;
-}
-
-@media (max-width: 768px) {
-    .sidebar-mini.sidebar-collapse .sistech-logo-sidebar{
-        display: inline-block;
-    }
-}
