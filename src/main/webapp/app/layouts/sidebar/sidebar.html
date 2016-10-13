@@ -5,15 +5,19 @@
     <section class="sidebar">
         <div class="sidebar-scroll">
             <!-- Close Sidebar -->
-            <div class="sidebar-menu no-padding-bottom">
-                <div class="btn btn-link padding-top-10 padding-right-7 ripple pull-right close-hide" data-toggle="offcanvas" role="button">
-                    <i class="mdi mdi-window-close mdi-28px pull-right"></i>
+            <div class="close-panel">
+                <div class="btn btn-link ripple close-hide pull-right padding-right-7" data-toggle="offcanvas" role="button">
+                    <i class="mdi mdi-window-close mdi-28px"></i>
                 </div>
             </div>
-
+            
             <!-- Logomarca -->
-            <img class="sistech-logo-sidebar img-responsive" src="../../../content/images/logo.svg" alt="Logomarca da Sistech">
+            <div class="logo-panel">
+                <div class="logo-sidebar img-responsive"></div>
+            </div>
 
+            <div class="divider"></div>
+            
             <!-- Sidebar Menu -->
             <ul class="sidebar-menu" ng-switch="vm.isAuthenticated()">
                 <li ui-sref-active="active" class="active ripple">
@@ -34,7 +38,7 @@
                         <!-- <li ui-sref-active="active">
                             <a href="" class="ripple">
                                 <i class="mdi mdi-account"></i> 
-                                    <span translate="global.menu.entities.person">Pessoa</span> 
+                                <span translate="global.menu.entities.person">Pessoa</span> 
                                 <i class="mdi mdi-chevron-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
