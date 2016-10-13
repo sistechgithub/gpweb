@@ -12087,7 +12087,7 @@ button.mdi::before {
 .logo-sidebar {
   width: 250px;
   height: 95px;
-  background: url("../../../content/images/logo.svg") no-repeat;
+  background: url("../../content/images/logo.svg") no-repeat;
   background-size: contain; }
 
 .sidebar-mini.sidebar-collapse .logo-sidebar {
